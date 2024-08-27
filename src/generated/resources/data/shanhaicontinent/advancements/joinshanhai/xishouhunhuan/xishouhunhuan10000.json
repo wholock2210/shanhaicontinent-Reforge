@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/xishouhunhuan/xishouhunhuan1000",
+  "criteria": {
+    "xishouhunhuan10000": {
+      "conditions": {
+        "nianxian": 10000
+      },
+      "trigger": "shanhaicontinent:xishouhunhuan"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gray",
+      "translate": "拥有魂环后才能召唤技能哦？？？？"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:textitem"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "black",
+      "translate": "吸收万年魂环"
+    }
+  },
+  "requirements": [
+    [
+      "xishouhunhuan10000"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

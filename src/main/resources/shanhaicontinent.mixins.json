@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "hua.huase.shanhaicontinent.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "shanhaicontinent.refmap.json",
+  "mixins": [
+    "MixinPlayer"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

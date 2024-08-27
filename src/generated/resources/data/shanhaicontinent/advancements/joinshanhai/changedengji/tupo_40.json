@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/changedengji/tupo_30",
+  "criteria": {
+    "changedengji_40": {
+      "conditions": {
+        "dengji": 40
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到40级"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_yanghundan"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "light_purple",
+      "translate": "魂宗"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_40"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,88 @@
+package hua.huase.shanhaicontinent.event.server;
+
+import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.capability.CapabilityRegistryHandler;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
+import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
+import hua.huase.shanhaicontinent.init.AdvenceInit;
+import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
+import hua.huase.shanhaicontinent.network.SynsAPI;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
+import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+@Mod.EventBusSubscriber(modid = SHMainBus.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+public class PWSleepingTimeCheckEvent {
+
+    private static Map<UUID,Integer> stageHashMap=new HashMap<>();
+
+    @SubscribeEvent
+    public static void onSleepingTimeCheckEvent(SleepingTimeCheckEvent event) {
+
+
+        Player entityPlayer = event.getEntity();
+
+        stageHashMap.putIfAbsent(entityPlayer.getUUID(), 0);
+        Integer integer = stageHashMap.get(entityPlayer.getUUID());
+
+        if(integer == 100 && entityPlayer instanceof ServerPlayer serverPlayer){
+            zhuansheng(serverPlayer);
+        }
+
+        stageHashMap.put(entityPlayer.getUUID(),++integer);
+
+    }
+
+    private static void zhuansheng(ServerPlayer entityPlayer) {
+        entityPlayer.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
+            if(capability.getJingshenli()<=3000)return;
+
+            for (String s : capability.getWuhunListsname()) {
+                ItemStack itemStack = WuhunGuoshiItem.getWuhunguo(s);
+                if(!itemStack.isEmpty()){
+                     if (!entityPlayer.addItem(itemStack)) {
+                         ItemEntity itementity = entityPlayer.drop(itemStack, false);
+                         if (itementity != null) {
+                             itementity.setNoPickUpDelay();
+                             itementity.setTarget(entityPlayer.getUUID());
+                         }
+                     }
+                }
+            }
+
+            AdvenceInit.menghuiwangutrigger.trigger(entityPlayer);
+
+            capability.deserializeNBT(new PlayerAttributeCapability().serializeNBT());
+
+            SynsAPI.synsPlayerAttribute(entityPlayer);
+        });
+
+    }
+
+
+    @SubscribeEvent
+    public static void onSleepingTimeCheckEvent(PlayerWakeUpEvent event) {
+        stageHashMap.remove(event.getEntity().getUUID());
+    }
+
+
+}

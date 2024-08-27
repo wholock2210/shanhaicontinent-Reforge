@@ -1,0 +1,36 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/huodeitem/bianhua",
+  "criteria": {
+    "TASK": {
+      "conditions": {
+        "effects": {
+          "shanhaicontinent:zhiwu_bianhua": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_aqua",
+      "translate": "获得《梦回万古debuff》"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:bianhua_fruit"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_purple",
+      "translate": "梦回万古"
+    }
+  },
+  "requirements": [
+    [
+      "TASK"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

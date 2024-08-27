@@ -1,0 +1,30 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "ingredients": [
+    {
+      "item": "shanhaicontinent:danfang_xihundan"
+    },
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "shanhaicontinent:shancha_fruit"
+    },
+    {
+      "item": "shanhaicontinent:shancha_fruit"
+    },
+    {
+      "item": "shanhaicontinent:shancha_fruit"
+    },
+    {
+      "item": "shanhaicontinent:shancha_fruit"
+    },
+    {
+      "item": "shanhaicontinent:shancha_fruit"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "shanhaicontinent:danyao_xihundan"
+  }
+}

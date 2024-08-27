@@ -1,0 +1,40 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/root",
+  "criteria": {
+    "zhaohualu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:pot_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "light_purple",
+      "translate": "可生万物，炼制丹药"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:pot_block"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "yellow",
+      "translate": "造化炉"
+    }
+  },
+  "requirements": [
+    [
+      "zhaohualu"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

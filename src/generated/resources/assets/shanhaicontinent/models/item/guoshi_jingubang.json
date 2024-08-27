@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "shanhaicontinent:guoshi_jingubang_base",
+      "predicate": {}
+    }
+  ]
+}

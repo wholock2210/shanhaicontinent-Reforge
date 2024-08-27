@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/changedengji/tupo_90",
+  "criteria": {
+    "changedengji_99": {
+      "conditions": {
+        "dengji": 99
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "天地压制"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_jiuhua"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_red",
+      "translate": "九九至尊"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_99"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

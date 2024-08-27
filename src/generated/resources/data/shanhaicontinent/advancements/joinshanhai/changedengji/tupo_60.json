@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/changedengji/tupo_50",
+  "criteria": {
+    "changedengji_60": {
+      "conditions": {
+        "dengji": 60
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到60级"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_haoyuan"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_blue",
+      "translate": "魂帝"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_60"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

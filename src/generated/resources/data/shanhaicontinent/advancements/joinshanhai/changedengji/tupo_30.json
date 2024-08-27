@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/changedengji/tupo_20",
+  "criteria": {
+    "changedengji_30": {
+      "conditions": {
+        "dengji": 30
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到30级"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_xvanyuandan"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_purple",
+      "translate": "魂尊"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_30"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

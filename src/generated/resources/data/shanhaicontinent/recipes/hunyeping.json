@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:emerald"
+    },
+    "S": {
+      "item": "minecraft:glass"
+    },
+    "X": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "SXS",
+    "SCS"
+  ],
+  "result": {
+    "item": "shanhaicontinent:hunyeping"
+  },
+  "show_notification": true
+}

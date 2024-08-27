@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 10387300,
+    "separation": 1,
+    "spacing": 34
+  },
+  "structures": [
+    {
+      "structure": "shanhaicontinent:gufengxiaowu01",
+      "weight": 1
+    }
+  ]
+}

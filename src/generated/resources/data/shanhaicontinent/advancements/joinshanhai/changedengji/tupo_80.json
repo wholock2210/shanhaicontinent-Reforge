@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/changedengji/tupo_70",
+  "criteria": {
+    "changedengji_80": {
+      "conditions": {
+        "dengji": 80
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到80级"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_huangjidan"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "red",
+      "translate": "斗罗"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_80"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

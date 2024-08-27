@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/juexingwuhun/juexingwuhun1",
+  "criteria": {
+    "juexingwuhun2": {
+      "conditions": {
+        "num": 2
+      },
+      "trigger": "shanhaicontinent:juexingwuhun"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "gray",
+      "translate": "觉醒武魂后并开启才能吸收魂环哦？？？？"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:textitem"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_purple",
+      "translate": "觉醒双生武魂"
+    }
+  },
+  "requirements": [
+    [
+      "juexingwuhun2"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

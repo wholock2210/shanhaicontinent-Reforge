@@ -1,0 +1,318 @@
+package hua.huase.shanhaicontinent.init;
+
+import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.capability.playerattribute.WuHunName;
+import hua.huase.shanhaicontinent.item.*;
+import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
+import hua.huase.shanhaicontinent.item.jineng.haotianshengchui.*;
+import hua.huase.shanhaicontinent.item.jineng.huang.*;
+import hua.huase.shanhaicontinent.item.jineng.jinggubang.*;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class ItemInit {
+
+
+
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, SHMainBus.MOD_ID);
+
+//    public static final RegistryObject<Item> TEXTITEM = ITEMS.register("textitem",
+//            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TEXTITEM = ITEMS.register("textitem",
+            () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(28));
+
+    public static final RegistryObject<Item> TEXTITEM1 = ITEMS.register("textitem1",
+            () -> new TextItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())));
+
+    public static final RegistryObject<Item> wanfajieshao = ITEMS.register("wanfajieshao",
+            () -> new WanfajieshaoItem(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> hunyeping = ITEMS.register("hunyeping", () -> new HunyePing(new Item.Properties()).setMaxnengliang(120));
+
+
+    public static final RegistryObject<Item> jineng_jgb_0 = ITEMS.register("jineng_jgb_0", () -> new Jineng_JGB_0(Tiers.NETHERITE, 7, -0.4F, new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_1 = ITEMS.register("jineng_jgb_1", () -> new Jineng_JGB_1(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_2 = ITEMS.register("jineng_jgb_2", () -> new Jineng_JGB_2(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_3 = ITEMS.register("jineng_jgb_3", () -> new Jineng_JGB_3(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_4 = ITEMS.register("jineng_jgb_4", () -> new Jineng_JGB_4(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_5 = ITEMS.register("jineng_jgb_5", () -> new Jineng_JGB_5(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_6 = ITEMS.register("jineng_jgb_6", () -> new Jineng_JGB_6(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_7 = ITEMS.register("jineng_jgb_7", () -> new Jineng_JGB_7(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_jgb_8 = ITEMS.register("jineng_jgb_8", () -> new Jineng_JGB_8(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> jineng_huang_0 = ITEMS.register("jineng_huang_0", () -> new Jineng_Huang_0(Tiers.NETHERITE, 1, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_1 = ITEMS.register("jineng_huang_1", () -> new Jineng_Huang_1(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_2 = ITEMS.register("jineng_huang_2", () -> new Jineng_Huang_2(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_3 = ITEMS.register("jineng_huang_3", () -> new Jineng_Huang_3(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_4 = ITEMS.register("jineng_huang_4", () -> new Jineng_Huang_4(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_5 = ITEMS.register("jineng_huang_5", () -> new Jineng_Huang_5(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_6 = ITEMS.register("jineng_huang_6", () -> new Jineng_Huang_6(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_7 = ITEMS.register("jineng_huang_7", () -> new Jineng_Huang_7(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_huang_8 = ITEMS.register("jineng_huang_8", () -> new Jineng_Huang_8(new Item.Properties()));
+
+    public static final RegistryObject<Item> jineng_htsc_0 = ITEMS.register("jineng_htsc_0", () -> new Jineng_HTSC_0(Tiers.NETHERITE, 1, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_1 = ITEMS.register("jineng_htsc_1", () -> new Jineng_HTSC_1(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_2 = ITEMS.register("jineng_htsc_2", () -> new Jineng_HTSC_2(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_3 = ITEMS.register("jineng_htsc_3", () -> new Jineng_HTSC_3(Tiers.NETHERITE, 1, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_4 = ITEMS.register("jineng_htsc_4", () -> new Jineng_HTSC_4(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_5 = ITEMS.register("jineng_htsc_5", () -> new Jineng_HTSC_5(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_6 = ITEMS.register("jineng_htsc_6", () -> new Jineng_HTSC_6(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_7 = ITEMS.register("jineng_htsc_7", () -> new Jineng_HTSC_7(new Item.Properties()));
+    public static final RegistryObject<Item> jineng_htsc_8 = ITEMS.register("jineng_htsc_8", () -> new Jineng_HTSC_8(new Item.Properties()));
+
+
+    public static HashMap<String,ArrayList<RegistryObject<Item>>> JINENGMAP = new HashMap();
+    static {
+        ArrayList<RegistryObject<Item>> Jienglist1 = new ArrayList<>();
+        Jienglist1.add(jineng_jgb_0);
+        Jienglist1.add(jineng_jgb_1);
+        Jienglist1.add(jineng_jgb_2);
+        Jienglist1.add(jineng_jgb_3);
+        Jienglist1.add(jineng_jgb_4);
+        Jienglist1.add(jineng_jgb_5);
+        Jienglist1.add(jineng_jgb_6);
+        Jienglist1.add(jineng_jgb_7);
+        Jienglist1.add(jineng_jgb_8);
+        JINENGMAP.put(WuHunName.jingubang,Jienglist1);
+
+        ArrayList<RegistryObject<Item>> Jienglist2 = new ArrayList<>();
+        Jienglist2.add(jineng_huang_0);
+        Jienglist2.add(jineng_huang_1);
+        Jienglist2.add(jineng_huang_2);
+        Jienglist2.add(jineng_huang_3);
+        Jienglist2.add(jineng_huang_4);
+        Jienglist2.add(jineng_huang_5);
+        Jienglist2.add(jineng_huang_6);
+        Jienglist2.add(jineng_huang_7);
+        Jienglist2.add(jineng_huang_8);
+        JINENGMAP.put(WuHunName.huang,Jienglist2);
+
+        ArrayList<RegistryObject<Item>> Jienglist3 = new ArrayList<>();
+        Jienglist3.add(jineng_htsc_0);
+        Jienglist3.add(jineng_htsc_1);
+        Jienglist3.add(jineng_htsc_2);
+        Jienglist3.add(jineng_htsc_3);
+        Jienglist3.add(jineng_htsc_4);
+        Jienglist3.add(jineng_htsc_5);
+        Jienglist3.add(jineng_htsc_6);
+        Jienglist3.add(jineng_htsc_7);
+        Jienglist3.add(jineng_htsc_8);
+        JINENGMAP.put(WuHunName.haotianchui,Jienglist3);
+
+    }
+
+    public static final RegistryObject<Item> guoshi_huang = ITEMS.register("guoshi_huang",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.huang));
+    public static final RegistryObject<Item> guoshi_jingubang = ITEMS.register("guoshi_jingubang",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.jingubang));
+    public static final RegistryObject<Item> guoshi_haotianchui = ITEMS.register("guoshi_haotianchui",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.haotianchui));
+
+
+
+    public static final RegistryObject<Item> danyao_qihundan        = ITEMS.register("danyao_qihundan",       () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(6));
+    public static final RegistryObject<Item> danyao_jvlingdan       = ITEMS.register("danyao_jvlingdan",     () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(18));
+    public static final RegistryObject<Item> danyao_xvanyuandan     = ITEMS.register("danyao_xvanyuandan", () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(54));
+    public static final RegistryObject<Item> danyao_yanghundan      = ITEMS.register("danyao_yanghundan",   () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(208));
+    public static final RegistryObject<Item> danyao_lingbidan       = ITEMS.register("danyao_lingbidan",     () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(416));
+    public static final RegistryObject<Item> danyao_haoyuan         = ITEMS.register("danyao_haoyuan",         () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(832));
+    public static final RegistryObject<Item> danyao_xihundan        = ITEMS.register("danyao_xihundan",       () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(1664));
+    public static final RegistryObject<Item> danyao_huangjidan      = ITEMS.register("danyao_huangjidan",   () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(3338));
+    public static final RegistryObject<Item> danyao_lushendan       = ITEMS.register("danyao_lushendan",     () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(6666));
+    public static final RegistryObject<Item> danyao_jiuhua          = ITEMS.register("danyao_jiuhua",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenli(100).setMaxjingshenli(10));
+
+    public static ArrayList<RegistryObject<Item>> DANYAOLIST = new ArrayList<>();
+    static {
+        DANYAOLIST.add(danyao_qihundan);
+        DANYAOLIST.add(danyao_jvlingdan);
+        DANYAOLIST.add(danyao_xvanyuandan);
+        DANYAOLIST.add(danyao_yanghundan);
+        DANYAOLIST.add(danyao_lingbidan);
+        DANYAOLIST.add(danyao_haoyuan);
+        DANYAOLIST.add(danyao_xihundan);
+        DANYAOLIST.add(danyao_huangjidan);
+        DANYAOLIST.add(danyao_lushendan);
+        DANYAOLIST.add(danyao_jiuhua);
+    }
+
+    public static final RegistryObject<Item> danfang_qihundan       = ITEMS.register("danfang_qihundan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_jvlingdan      = ITEMS.register("danfang_jvlingdan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_xvanyuandan    = ITEMS.register("danfang_xvanyuandan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_yanghundan     = ITEMS.register("danfang_yanghundan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_lingbidan      = ITEMS.register("danfang_lingbidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_haoyuan        = ITEMS.register("danfang_haoyuan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_xihundan       = ITEMS.register("danfang_xihundan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_huangjidan     = ITEMS.register("danfang_huangjidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_lushendan      = ITEMS.register("danfang_lushendan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_jiuhua         = ITEMS.register("danfang_jiuhua", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+
+
+    public static ArrayList<RegistryObject<Item>> DANFANGLIST = new ArrayList<>();
+    static {
+        DANFANGLIST.add(danfang_qihundan);
+        DANFANGLIST.add(danfang_jvlingdan);
+        DANFANGLIST.add(danfang_xvanyuandan);
+        DANFANGLIST.add(danfang_yanghundan);
+        DANFANGLIST.add(danfang_lingbidan);
+        DANFANGLIST.add(danfang_haoyuan);
+        DANFANGLIST.add(danfang_xihundan);
+        DANFANGLIST.add(danfang_huangjidan);
+        DANFANGLIST.add(danfang_lushendan);
+        DANFANGLIST.add(danfang_jiuhua);
+    }
+
+
+
+    public static final RegistryObject<Item> headbone       = ITEMS.register("headbone", () -> new BoneItem(new Item.Properties()).setArramIndex(0));
+    public static final RegistryObject<Item> exoskeletonsoulbone = ITEMS.register("exoskeletonsoulbone", () -> new BoneItem(new Item.Properties()).setArramIndex(1));
+    public static final RegistryObject<Item> lefthandbone   = ITEMS.register("lefthandbone", () -> new BoneItem(new Item.Properties()).setArramIndex(2));
+    public static final RegistryObject<Item> righthandbone  = ITEMS.register("righthandbone", () -> new BoneItem(new Item.Properties()).setArramIndex(3));
+    public static final RegistryObject<Item> trunkbone      = ITEMS.register("trunkbone", () -> new BoneItem(new Item.Properties()).setArramIndex(4));
+    public static final RegistryObject<Item> leftlegbone    = ITEMS.register("leftlegbone", () -> new BoneItem(new Item.Properties()).setArramIndex(5));
+    public static final RegistryObject<Item> rightlegbone   = ITEMS.register("rightlegbone", () -> new BoneItem(new Item.Properties()).setArramIndex(6));
+
+
+    public static ArrayList<RegistryObject<Item>> HUNGULIST = new ArrayList<>();
+    static {
+        HUNGULIST.add(headbone);
+        HUNGULIST.add(lefthandbone);
+        HUNGULIST.add(leftlegbone);
+        HUNGULIST.add(righthandbone);
+        HUNGULIST.add(rightlegbone);
+        HUNGULIST.add(trunkbone);
+        HUNGULIST.add(exoskeletonsoulbone);
+    }
+
+
+
+
+    //植物
+    public static final RegistryObject<Item> baisuilan_seed     = ITEMS.register("baisuilan_seed", () -> new ItemNameBlockItem(BlockInit.baisuilan.get(),new Item.Properties()));
+    public static final RegistryObject<Item> baisuilan_fruit    = ITEMS.register("baisuilan_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> fengxinzi_seed     = ITEMS.register("fengxinzi_seed", () -> new ItemNameBlockItem(BlockInit.fengxinzi.get(),new Item.Properties()));
+    public static final RegistryObject<Item> fengxinzi_fruit    = ITEMS.register("fengxinzi_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> hanxiaohua_seed    = ITEMS.register("hanxiaohua_seed", () -> new ItemNameBlockItem(BlockInit.hanxiaohua.get(),new Item.Properties()));
+    public static final RegistryObject<Item> hanxiaohua_fruit   = ITEMS.register("hanxiaohua_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> hehuan_seed        = ITEMS.register("hehuan_seed", () -> new ItemNameBlockItem(BlockInit.hehuan.get(),new Item.Properties()));
+    public static final RegistryObject<Item> hehuan_fruit       = ITEMS.register("hehuan_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> heshouwu_seed      = ITEMS.register("heshouwu_seed", () -> new ItemNameBlockItem(BlockInit.heshouwu.get(),new Item.Properties()));
+    public static final RegistryObject<Item> heshouwu_fruit     = ITEMS.register("heshouwu_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> qiuhaitang_seed    = ITEMS.register("qiuhaitang_seed", () -> new ItemNameBlockItem(BlockInit.qiuhaitang.get(),new Item.Properties()));
+    public static final RegistryObject<Item> qiuhaitang_fruit   = ITEMS.register("qiuhaitang_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> shancha_seed       = ITEMS.register("shancha_seed", () -> new ItemNameBlockItem(BlockInit.shancha.get(),new Item.Properties()));
+    public static final RegistryObject<Item> shancha_fruit      = ITEMS.register("shancha_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> wangyoucao_seed    = ITEMS.register("wangyoucao_seed", () -> new ItemNameBlockItem(BlockInit.wangyoucao.get(),new Item.Properties()));
+    public static final RegistryObject<Item> wangyoucao_fruit   = ITEMS.register("wangyoucao_fruit", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> xiwu_seed          = ITEMS.register("xiwu_seed", () -> new ItemNameBlockItem(BlockInit.xiwu.get(),new Item.Properties()));
+    public static final RegistryObject<Item> xiwu_fruit         = ITEMS.register("xiwu_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> xunyicao_seed      = ITEMS.register("xunyicao_seed", () -> new ItemNameBlockItem(BlockInit.xunyicao.get(),new Item.Properties()));
+    public static final RegistryObject<Item> xunyicao_fruit     = ITEMS.register("xunyicao_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> yueguanghua_seed   = ITEMS.register("yueguanghua_seed", () -> new ItemNameBlockItem(BlockInit.yueguanghua.get(),new Item.Properties()));
+    public static final RegistryObject<Item> yueguanghua_fruit  = ITEMS.register("yueguanghua_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> zhushamei_seed     = ITEMS.register("zhushamei_seed", () -> new ItemNameBlockItem(BlockInit.zhushamei.get(),new Item.Properties()));
+    public static final RegistryObject<Item> zhushamei_fruit    = ITEMS.register("zhushamei_fruit", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> bianhua_seed       = ITEMS.register("bianhua_seed", () -> new ItemNameBlockItem(BlockInit.bianhua.get(),new Item.Properties()));
+    public static final RegistryObject<Item> bianhua_fruit      = ITEMS.register("bianhua_fruit", () -> new Item(new Item.Properties()));
+
+    public static ArrayList<RegistryObject<Item>> SEEDLIST = new ArrayList<>();
+    static {
+        SEEDLIST.add(baisuilan_seed);
+        SEEDLIST.add(fengxinzi_seed);
+        SEEDLIST.add(hanxiaohua_seed);
+        SEEDLIST.add(hehuan_seed);
+        SEEDLIST.add(heshouwu_seed);
+        SEEDLIST.add(qiuhaitang_seed);
+        SEEDLIST.add(shancha_seed);
+        SEEDLIST.add(wangyoucao_seed);
+        SEEDLIST.add(xiwu_seed);
+        SEEDLIST.add(xunyicao_seed);
+        SEEDLIST.add(yueguanghua_seed);
+        SEEDLIST.add(zhushamei_seed);
+        SEEDLIST.add(bianhua_seed);
+    }
+
+    public static ArrayList<RegistryObject<Item>> FRUITLIST = new ArrayList<>();
+    static {
+        FRUITLIST.add(baisuilan_fruit);
+        FRUITLIST.add(fengxinzi_fruit);
+        FRUITLIST.add(hanxiaohua_fruit);
+        FRUITLIST.add(hehuan_fruit);
+        FRUITLIST.add(heshouwu_fruit);
+        FRUITLIST.add(qiuhaitang_fruit);
+        FRUITLIST.add(shancha_fruit);
+        FRUITLIST.add(wangyoucao_fruit);
+        FRUITLIST.add(xiwu_fruit);
+        FRUITLIST.add(xunyicao_fruit);
+        FRUITLIST.add(yueguanghua_fruit);
+        FRUITLIST.add(zhushamei_fruit);
+        FRUITLIST.add(bianhua_fruit);
+    }
+
+
+
+
+    public static final RegistryObject<Item> hunmin_spanw_egg = ITEMS.register("hunmin_spanw_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.hunmin, 0x888888, 0xff0000, new Item.Properties()));
+
+
+
+
+
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
+    }
+}

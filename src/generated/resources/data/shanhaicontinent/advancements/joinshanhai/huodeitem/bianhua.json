@@ -1,0 +1,45 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/root",
+  "criteria": {
+    "TASK": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:bianhua_seed"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:bianhua_fruit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "light_purple",
+      "translate": "生长时可为附近玩家提供《梦回万古debuff》"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:bianhua_seed"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_purple",
+      "translate": "彼岸花"
+    }
+  },
+  "requirements": [
+    [
+      "TASK"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

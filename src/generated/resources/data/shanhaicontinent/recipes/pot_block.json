@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "SXS",
+    "SCS"
+  ],
+  "result": {
+    "item": "shanhaicontinent:pot_block"
+  },
+  "show_notification": true
+}

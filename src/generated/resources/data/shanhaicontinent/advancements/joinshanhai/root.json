@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "xishouhunhe": {
+      "conditions": {},
+      "trigger": "shanhaicontinent:xishouhunhe"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/diamond_block.png",
+    "description": {
+      "color": "dark_green",
+      "translate": "第一次升级,踏上修行路"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:pot_block"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "gold",
+      "translate": "魂士"
+    }
+  },
+  "requirements": [
+    [
+      "xishouhunhe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,81 @@
+package hua.huase.shanhaicontinent.datagen;
+
+import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.datagen.loot.ModBlockLootTables;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.advancements.AdvancementProvider;
+import net.minecraft.data.advancements.packs.VanillaTheEndAdvancements;
+import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.data.loot.packs.VanillaEntityLoot;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+
+@Mod.EventBusSubscriber(modid = SHMainBus.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class DataGenerators {
+    @SubscribeEvent
+    public static void gatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+
+//        物品，方块模型
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
+
+        generator.addProvider(event.includeServer(), new ModLanguageProvider(packOutput, SHMainBus.MOD_ID,"zh_cn"));
+
+
+//配方
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+////        战力表
+//        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(), List.of(
+//                new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK)
+//        )));
+//
+//
+
+        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(),
+                List.of(
+                new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK)
+            ))
+        );
+
+
+        generator.addProvider(event.includeServer(), new AdvancementProvider(packOutput, lookupProvider,
+                List.of(
+                        new ModAdvanceProvider()
+            ))
+        );
+//        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
+
+//        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+//
+
+//        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+//        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+//
+//        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+//        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+//
+//        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+//                new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
+//        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+//
+//        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
+//        generator.addProvider(event.includeServer(), new ModPoiTypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
+//
+//        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+    }
+}

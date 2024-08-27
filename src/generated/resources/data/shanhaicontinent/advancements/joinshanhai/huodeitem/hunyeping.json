@@ -1,0 +1,40 @@
+{
+  "parent": "shanhaicontinent:joinshanhai/root",
+  "criteria": {
+    "hunyeping": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:hunyeping"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "能够装精纯的能量"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:hunyeping"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_green",
+      "translate": "获得魂液瓶"
+    }
+  },
+  "requirements": [
+    [
+      "hunyeping"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
