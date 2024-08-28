@@ -18144,3 +18144,5 @@
 /run-data/logs/debug-5.log.gz
 /run-data/logs/latest.log
 /.idea/
+/clientresources/
+/referenceresources/
