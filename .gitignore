@@ -8,8 +8,5 @@
 /.gitignore/
 /run/
 /run-data/
-/referenceresources/
 /out/
 /logs/
-/clientresources/
-/build/
