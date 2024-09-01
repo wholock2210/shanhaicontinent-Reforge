@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "shanhaicontinent.refmap.json",
   "mixins": [
-    "MixinPlayer"
+    "MixinPlayer",
+    "MultiNoiseBiomeSourceParameterListPresetAccessor"
   ],
   "client": [
   ],

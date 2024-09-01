@@ -1,15 +1,16 @@
 package hua.huase.shanhaicontinent.datagen;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.datagen.level.SHBiomeTagGenerator;
+import hua.huase.shanhaicontinent.datagen.level.RegistryDataGenerator;
 import hua.huase.shanhaicontinent.datagen.loot.ModBlockLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementProvider;
-import net.minecraft.data.advancements.packs.VanillaTheEndAdvancements;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.data.loot.packs.VanillaEntityLoot;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -58,6 +59,14 @@ public class DataGenerators {
                         new ModAdvanceProvider()
             ))
         );
+
+
+
+        DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, lookupProvider);
+        CompletableFuture<HolderLookup.Provider> lookupProvider1 = datapackProvider.getRegistryProvider();
+        generator.addProvider(event.includeServer(), datapackProvider);
+
+        generator.addProvider(event.includeServer(), new SHBiomeTagGenerator(packOutput, lookupProvider, existingFileHelper));
 //        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
 
 //        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
