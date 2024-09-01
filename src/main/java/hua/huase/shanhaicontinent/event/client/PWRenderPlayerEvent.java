@@ -1,24 +1,19 @@
 package hua.huase.shanhaicontinent.event.client;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
-import com.mojang.math.Axis;
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCapability;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.potion.PotionAnimation;
-import hua.huase.shanhaicontinent.potion.PotionAttribute;
 import hua.huase.shanhaicontinent.render.SHRenderApi;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderHandEvent;
@@ -27,8 +22,6 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.joml.Matrix4f;
-import org.joml.Quaternionf;
-
 import java.util.Map;
 
 import static hua.huase.shanhaicontinent.SHMainBus.HUNHUAN;
@@ -157,6 +150,14 @@ public class PWRenderPlayerEvent {
 
 
         if(entity !=null) {
+            for (MobEffectInstance activeEffect : entity.getActiveEffects()) {
+
+                if (activeEffect.getEffect() instanceof PotionAnimation potionAnimation) {
+                    potionAnimation.renderPlayer(event);
+                }
+            }
+
+
             Map<MobEffect, MobEffectInstance> activeEffectsMap = entity.getActiveEffectsMap();
             for (Map.Entry<MobEffect, MobEffectInstance> mobEffectMobEffectInstanceEntry : activeEffectsMap.entrySet()) {
                 if (mobEffectMobEffectInstanceEntry.getKey() instanceof PotionAnimation potionAnimation) {

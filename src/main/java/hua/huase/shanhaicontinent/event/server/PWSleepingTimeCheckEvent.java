@@ -7,12 +7,16 @@ import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapa
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
 import hua.huase.shanhaicontinent.init.AdvenceInit;
+import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
 import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
 import hua.huase.shanhaicontinent.network.SynsAPI;
+import hua.huase.shanhaicontinent.potion.PotionAnimation;
+import hua.huase.shanhaicontinent.potion.ZhiwuBianhua;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -55,6 +59,11 @@ public class PWSleepingTimeCheckEvent {
     private static void zhuansheng(ServerPlayer entityPlayer) {
         entityPlayer.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
             if(capability.getJingshenli()<=3000)return;
+
+
+
+
+            if(!entityPlayer.hasEffect(SHModMobEffectsinit.zhiwu_bianhua.get())) return;
 
             for (String s : capability.getWuhunListsname()) {
                 ItemStack itemStack = WuhunGuoshiItem.getWuhunguo(s);
