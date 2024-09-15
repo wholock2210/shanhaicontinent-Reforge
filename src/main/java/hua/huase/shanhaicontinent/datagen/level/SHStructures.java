@@ -2,7 +2,8 @@ package hua.huase.shanhaicontinent.datagen.level;
 
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.init.EntityInit;
-import hua.huase.shanhaicontinent.world.structure.GufengxiaowuStructure;
+import hua.huase.shanhaicontinent.world.structure.gufengxiaowu.GufengxiaowuStructure;
+import hua.huase.shanhaicontinent.world.structure.jvxiange.JvxiangeStructure;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -22,6 +23,9 @@ public class SHStructures {
 
     public static final ResourceKey<Structure> gufengxiaowu01 = registerKey("gufengxiaowu01");
     public static final ResourceKey<StructureSet> gufengxiaowu01_set = registerSetKey("gufengxiaowu01");
+
+    public static final ResourceKey<Structure> jvxiange = registerKey("jvxiange");
+    public static final ResourceKey<StructureSet> jvxiange_set = registerSetKey("jvxiange");
 
 
     public static ResourceKey<Structure> registerKey(String name) {
@@ -49,12 +53,28 @@ public class SHStructures {
                     )
                 )
         );
+        context.register(jvxiange, new JvxiangeStructure(new Structure.StructureSettings(
+                        context.lookup(Registries.BIOME).getOrThrow(SHBiomeTagGenerator.SH_OVERWORLD),
+                        Map.of(MobCategory.MONSTER, new StructureSpawnOverride(
+                                StructureSpawnOverride.BoundingBoxType.STRUCTURE,
+                                WeightedRandomList.create(new MobSpawnSettings.SpawnerData(EntityInit.hunmin.get(), 1, 1, 2))),
+                                MobCategory.UNDERGROUND_WATER_CREATURE,
+                                new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, MobSpawnSettings.EMPTY_MOB_LIST),
+                                MobCategory.AXOLOTLS,
+                                new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, MobSpawnSettings.EMPTY_MOB_LIST)
+                        ),
+                        GenerationStep.Decoration.RAW_GENERATION,
+                        TerrainAdjustment.NONE
+                    )
+                )
+        );
     }
 
     public static <T> void bootstrapSTRUCTURE_SET(BootstapContext<StructureSet> tBootstapContext) {
 
         HolderGetter<Structure> holdergetter = tBootstapContext.lookup(Registries.STRUCTURE);
         tBootstapContext.register(gufengxiaowu01_set, new StructureSet(holdergetter.getOrThrow(gufengxiaowu01), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.TRIANGULAR, 428149644)));
+        tBootstapContext.register(jvxiange_set, new StructureSet(holdergetter.getOrThrow(jvxiange), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.TRIANGULAR, 4281496)));
 
     }
 }

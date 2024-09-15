@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blockmingtieore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:blockmingtieore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:itemmingtie_from_smelting_blockmingtieore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blockmingtieore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:itemmingtie_from_smelting_blockmingtieore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

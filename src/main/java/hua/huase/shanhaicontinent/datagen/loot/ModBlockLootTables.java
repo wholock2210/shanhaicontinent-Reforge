@@ -21,6 +21,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
 
+import static hua.huase.shanhaicontinent.init.BlockInit.ORELIST;
+
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
@@ -32,7 +34,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BlockInit.SAPPHIRE_BLOCK.get());
         this.dropSelf(BlockInit.POT_BLOCK.get());
         this.dropSelf(BlockInit.SOUL_BLOCK.get());
-
+        for (RegistryObject<Block> blockRegistryObject : ORELIST) {
+            this.dropSelf(blockRegistryObject.get());
+        }
 
 
         this.dropFlower(BlockInit.baisuilan.get(),ItemInit.baisuilan_fruit.get(),ItemInit.baisuilan_seed.get());

@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.datagen;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.datagen.util.SHFinishedRecipe;
 import hua.huase.shanhaicontinent.init.BlockInit;
 import hua.huase.shanhaicontinent.init.ItemInit;
 import net.minecraft.data.PackOutput;
@@ -51,11 +52,89 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', Items.EMERALD)
                 .unlockedBy(getHasName(ItemInit.hunyeping.get()), has(Items.ENDER_PEARL))
                 .save(pWriter);
+
+        potrecipe(pWriter);
+
+        shoreSmelting(pWriter,BlockInit.blockmingtieore.get()       ,ItemInit.itemmingtie     .get(),3,200);
+        shoreSmelting(pWriter,BlockInit.blockheijinore.get()        ,ItemInit.itemheijin      .get(),4,300);
+        shoreSmelting(pWriter,BlockInit.blocklanlingjinore.get()    ,ItemInit.itemlanlingjin  .get(),5,400);
+        shoreSmelting(pWriter,BlockInit.blocklanhaizuanore.get()    ,ItemInit.itemlanhaizuan  .get(),6,500);
+        shoreSmelting(pWriter,BlockInit.blockcixuexianjinore.get()  ,ItemInit.itemcixuexianjin.get(),7,600);
+        shoreSmelting(pWriter,BlockInit.blockkongjianshiore.get()   ,ItemInit.itemkongjianshi.get(),4,200);
+
+
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemmingtie     .get(),BlockInit.blockmingtie_block.get()     );
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemheijin      .get(),BlockInit.blockheijin_block.get()      );
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemlanlingjin  .get(),BlockInit.blocklanlingjin_block.get()  );
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemlanhaizuan  .get(),BlockInit.blocklanhaizuan_block.get()  );
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemcixuexianjin.get(),BlockInit.blockcixuexianjin_block.get());
+        compositeAndDecomposeBlock(pWriter,ItemInit.itemkongjianshi .get(),BlockInit.blockkongjianshi_block.get() );
+
 //
 //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
 //                .requires(ModBlocks.SAPPHIRE_BLOCK.get())
 //                .unlockedBy(getHasName(ModBlocks.SAPPHIRE_BLOCK.get()), has(ModBlocks.SAPPHIRE_BLOCK.get()))
 //                .save(pWriter);
+    }
+
+    protected static void potrecipe(Consumer<FinishedRecipe> pWriter){
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    ItemInit.baisuilan_fruit.get())
+                        .setRANLIAO(    BlockInit.SOUL_BLOCK.get())
+                        .setJIN(        BlockInit.SOUL_BLOCK.get())
+                        .setMU(         BlockInit.SOUL_BLOCK.get())
+                        .setSHUI(       BlockInit.SOUL_BLOCK.get())
+                        .setHUO(        BlockInit.SOUL_BLOCK.get())
+                        .setTU(         BlockInit.SOUL_BLOCK.get())
+                        .setJEIGUO(     BlockInit.SOUL_BLOCK.get())
+                        .setNum(10)
+        );
+
+
+
+//        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemInit.hunyeping.get())
+////                .pattern("   ")
+//                .pattern("SXS")
+//                .pattern("SCS")
+//                .define('X', Items.ENDER_PEARL)
+//                .define('S', Blocks.GLASS)
+//                .define('C', Items.EMERALD)
+//                .unlockedBy(getHasName(ItemInit.hunyeping.get()), has(Items.ENDER_PEARL))
+//                .save(pWriter,SHMainBus.MOD_ID + ":pot/"  + getItemName(Blocks.CHISELED_STONE_BRICKS));
+
+    }
+
+//    合成块
+    protected static void compositeAndDecomposeBlock(Consumer<FinishedRecipe> pWriter , ItemLike like , ItemLike pResult){
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("XXX")
+                .pattern("XXX")
+                .pattern("XXX")
+                .define('X', like)
+                .unlockedBy(getHasName(pResult), has(like))
+                .save(pWriter,SHMainBus.MOD_ID + ":" + getItemName(pResult) + "_composite" + "_" + getItemName(like));
+
+
+
+//
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, like, 9)
+                .requires(pResult)
+                .unlockedBy(getHasName(like), has(pResult))
+                .save(pWriter,SHMainBus.MOD_ID + ":" + getItemName(like) + "_decompose" + "_" + getItemName(pResult));
+    }
+
+
+
+//矿物熔炼
+    protected static void shoreSmelting(Consumer<FinishedRecipe> pWriter , ItemLike like , ItemLike pResult, int i, int i1){
+        SimpleCookingRecipeBuilder.generic(Ingredient.of(like), RecipeCategory.MISC, pResult,
+                        i, i1, RecipeSerializer.SMELTING_RECIPE)
+                .group("sapphire").unlockedBy(getHasName(like), has(like))
+                .save(pWriter,  SHMainBus.MOD_ID + ":" + getItemName(pResult) + "_from_smelting" + "_" + getItemName(like));
+
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

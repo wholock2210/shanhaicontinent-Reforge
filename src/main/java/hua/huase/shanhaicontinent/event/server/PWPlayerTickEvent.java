@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.event.server;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.capability.AttrubuteAPI;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
@@ -28,7 +29,7 @@ public class PWPlayerTickEvent {
                 if(player.level().getGameTime()%100==0){
                     SynsAPI.synsPlayerAttribute(player);
                 }
-                float maxshengming = PlayerAttrubuteAPI.getMaxshengming(player);
+                float maxshengming = AttrubuteAPI.getMaxshengming(player);
                 if(maxshengming != player.getMaxHealth()){
                     player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(maxshengming);
                 }

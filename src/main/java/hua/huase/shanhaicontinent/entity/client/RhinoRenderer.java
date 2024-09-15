@@ -8,9 +8,11 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
+import static hua.huase.shanhaicontinent.init.EntityInit.ClientModEvents.RHINO_LAYER;
+
 public class RhinoRenderer extends MobRenderer<RhinoEntity, RhinoModel<RhinoEntity>> {
     public RhinoRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new RhinoModel<>(pContext.bakeLayer(ModModelLayers.RHINO_LAYER)), 2f);
+        super(pContext, new RhinoModel<>(pContext.bakeLayer(RHINO_LAYER)), 2f);
     }
 
     @Override

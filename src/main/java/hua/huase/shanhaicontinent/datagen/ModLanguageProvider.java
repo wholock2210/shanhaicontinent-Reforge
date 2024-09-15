@@ -16,6 +16,7 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
 // In LanguageProvider#addTranslations
 //        this.addBlock(BlockInit.text_block, "Example Block");
+        this.add("套装效果", "套装效果:");
         this.add("生命", "生命：%s/%s");
         this.add("最大生命", "最大生命：+%s");
         this.add("获得生命", "生命：+%s");

@@ -165,7 +165,7 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
         ItemStack result = recipe.get().getResultItem(null);
 
 //        this.itemHandler.extractItem(0, 1, false);
-//        this.itemHandler.extractItem(1, 1, false);
+        this.itemHandler.extractItem(1, 1, false);
         this.itemHandler.extractItem(2, 1, false);
         this.itemHandler.extractItem(3, 1, false);
         this.itemHandler.extractItem(4, 1, false);

@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static hua.huase.shanhaicontinent.init.ItemInit.ARMORLIST;
+
 public class ModItemModelProvider extends ItemModelProvider {
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
@@ -50,6 +52,12 @@ public class ModItemModelProvider extends ItemModelProvider {
             }
 
         }
+
+        for (RegistryObject<Item> itemRegistryObject : ARMORLIST) {
+            simpleItem(itemRegistryObject);
+        }
+
+
         wuqiItem(ItemInit.jineng_jgb_0);
         wuqiItem(ItemInit.jineng_htsc_0);
         wuqiItem(ItemInit.jineng_htsc_3);

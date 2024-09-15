@@ -3,6 +3,8 @@ package hua.huase.shanhaicontinent.init;
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.capability.playerattribute.WuHunName;
 import hua.huase.shanhaicontinent.item.*;
+import hua.huase.shanhaicontinent.item.armor.SHArmorBaseItem;
+import hua.huase.shanhaicontinent.item.armor.SHArmorMaterial;
 import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
 import hua.huase.shanhaicontinent.item.jineng.haotianshengchui.*;
 import hua.huase.shanhaicontinent.item.jineng.huang.*;
@@ -32,6 +34,10 @@ public class ItemInit {
 
 //    public static final RegistryObject<Item> TEXTITEM = ITEMS.register("textitem",
 //            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> sheyeitem = ITEMS.register("sheyeitem",
+            () -> new SHEyeitem(new Item.Properties()));
+
     public static final RegistryObject<Item> TEXTITEM = ITEMS.register("textitem",
             () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(28));
 
@@ -303,6 +309,82 @@ public class ItemInit {
     }
 
 
+//    装备
+
+    public static final RegistryObject<Item> itemmingtie      = ITEMS.register("itemmingtie", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> itemheijin       = ITEMS.register("itemheijin", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> itemlanlingjin   = ITEMS.register("itemlanlingjin", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> itemlanhaizuan   = ITEMS.register("itemlanhaizuan", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> itemcixuexianjin = ITEMS.register("itemcixuexianjin", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> itemkongjianshi = ITEMS.register("itemkongjianshi", () -> new Item(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> mingtie_head   = ITEMS.register("mingtie_head", () -> new SHArmorBaseItem(SHArmorMaterial.mingtie, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> mingtie_chest  = ITEMS.register("mingtie_chest", () -> new SHArmorBaseItem(SHArmorMaterial.mingtie, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> mingtie_feet   = ITEMS.register("mingtie_feet", () -> new SHArmorBaseItem(SHArmorMaterial.mingtie, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> mingtie_legs   = ITEMS.register("mingtie_legs", () -> new SHArmorBaseItem(SHArmorMaterial.mingtie, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> heijin_head         = ITEMS.register("heijin_head",      () -> new SHArmorBaseItem(SHArmorMaterial.heijin, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> heijin_chest        = ITEMS.register("heijin_chest",       () -> new SHArmorBaseItem(SHArmorMaterial.heijin, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> heijin_feet         = ITEMS.register("heijin_feet",       () -> new SHArmorBaseItem(SHArmorMaterial.heijin, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> heijin_legs     = ITEMS.register("heijin_legs",       () -> new SHArmorBaseItem(SHArmorMaterial.heijin, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+
+    public static final RegistryObject<Item> lanlingjin_head      = ITEMS.register("lanlingjin_head",       () -> new SHArmorBaseItem(SHArmorMaterial.lanlingjin, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> lanlingjin_chest     = ITEMS.register("lanlingjin_chest",      () -> new SHArmorBaseItem(SHArmorMaterial.lanlingjin, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> lanlingjin_feet      = ITEMS.register("lanlingjin_feet",       () -> new SHArmorBaseItem(SHArmorMaterial.lanlingjin, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> lanlingjin_legs      = ITEMS.register("lanlingjin_legs",       () -> new SHArmorBaseItem(SHArmorMaterial.lanlingjin, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+
+    public static final RegistryObject<Item> lanhaizuan_head      = ITEMS.register("lanhaizuan_head",       () -> new SHArmorBaseItem(SHArmorMaterial.lanhaizuan, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> lanhaizuan_chest     = ITEMS.register("lanhaizuan_chest",      () -> new SHArmorBaseItem(SHArmorMaterial.lanhaizuan, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> lanhaizuan_feet      = ITEMS.register("lanhaizuan_feet",       () -> new SHArmorBaseItem(SHArmorMaterial.lanhaizuan, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> lanhaizuan_legs      = ITEMS.register("lanhaizuan_legs",       () -> new SHArmorBaseItem(SHArmorMaterial.lanhaizuan, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+
+    public static final RegistryObject<Item> cixuexianjin_head      = ITEMS.register("cixuexianjin_head",       () -> new SHArmorBaseItem(SHArmorMaterial.cixuexianjin, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> cixuexianjin_chest     = ITEMS.register("cixuexianjin_chest",      () -> new SHArmorBaseItem(SHArmorMaterial.cixuexianjin, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> cixuexianjin_feet      = ITEMS.register("cixuexianjin_feet",       () -> new SHArmorBaseItem(SHArmorMaterial.cixuexianjin, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> cixuexianjin_legs      = ITEMS.register("cixuexianjin_legs",       () -> new SHArmorBaseItem(SHArmorMaterial.cixuexianjin, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+
+
+
+    public static ArrayList<RegistryObject<Item>> ARMORLIST = new ArrayList<>();
+    static {
+        ARMORLIST.add(itemmingtie     );
+        ARMORLIST.add(itemheijin      );
+        ARMORLIST.add(itemlanlingjin  );
+        ARMORLIST.add(itemlanhaizuan  );
+        ARMORLIST.add(itemcixuexianjin);
+        ARMORLIST.add(itemkongjianshi);
+
+        ARMORLIST.add(mingtie_head);
+        ARMORLIST.add(mingtie_chest);
+        ARMORLIST.add(mingtie_feet);
+        ARMORLIST.add(mingtie_legs);
+
+        ARMORLIST.add(heijin_head       );
+        ARMORLIST.add(heijin_chest      );
+        ARMORLIST.add(heijin_feet       );
+        ARMORLIST.add(heijin_legs       );
+
+        ARMORLIST.add(lanlingjin_head    );
+        ARMORLIST.add(lanlingjin_chest   );
+        ARMORLIST.add(lanlingjin_feet    );
+        ARMORLIST.add(lanlingjin_legs    );
+
+        ARMORLIST.add(lanhaizuan_head    );
+        ARMORLIST.add(lanhaizuan_chest   );
+        ARMORLIST.add(lanhaizuan_feet    );
+        ARMORLIST.add(lanhaizuan_legs    );
+
+        ARMORLIST.add(cixuexianjin_head    );
+        ARMORLIST.add(cixuexianjin_chest   );
+        ARMORLIST.add(cixuexianjin_feet    );
+        ARMORLIST.add(cixuexianjin_legs    );
+
+    }
 
 
     public static final RegistryObject<Item> hunmin_spanw_egg = ITEMS.register("hunmin_spanw_egg",

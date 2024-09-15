@@ -1,5 +1,6 @@
 package hua.huase.shanhaicontinent.network;
 
+import hua.huase.shanhaicontinent.capability.AttrubuteAPI;
 import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
@@ -14,7 +15,7 @@ import net.minecraftforge.network.PacketDistributor;
 public interface SynsAPI {
     static void synsPlayerAttribute(Entity entity){
         if(entity instanceof ServerPlayer livingEntity){
-            float maxshengming = PlayerAttrubuteAPI.getMaxshengming(livingEntity);
+            float maxshengming = AttrubuteAPI.getMaxshengming(livingEntity);
             if(livingEntity.getMaxHealth() != maxshengming){
                 livingEntity.getAttribute(Attributes.MAX_HEALTH).setBaseValue(maxshengming);
             }

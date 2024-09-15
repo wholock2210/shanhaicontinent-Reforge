@@ -6,7 +6,8 @@
   "refmap": "shanhaicontinent.refmap.json",
   "mixins": [
     "MixinPlayer",
-    "MultiNoiseBiomeSourceParameterListPresetAccessor"
+    "MultiNoiseBiomeSourceParameterListPresetAccessor",
+    "MixinStructureBlockEntity"
   ],
   "client": [
   ],

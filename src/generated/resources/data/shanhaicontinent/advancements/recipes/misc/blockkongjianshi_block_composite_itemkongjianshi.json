@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blockkongjianshi_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:itemkongjianshi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:blockkongjianshi_block_composite_itemkongjianshi"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blockkongjianshi_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:blockkongjianshi_block_composite_itemkongjianshi"
+    ]
+  },
+  "sends_telemetry_event": false
+}

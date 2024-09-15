@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_itemlanhaizuan": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:blocklanhaizuan_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:itemlanhaizuan_decompose_blocklanhaizuan_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_itemlanhaizuan",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:itemlanhaizuan_decompose_blocklanhaizuan_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

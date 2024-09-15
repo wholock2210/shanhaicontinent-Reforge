@@ -1,7 +1,10 @@
 package hua.huase.shanhaicontinent.recipe;
 
+import com.google.common.collect.Maps;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
 import hua.huase.shanhaicontinent.SHMainBus;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -9,10 +12,13 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Map;
 
 
 public class PotRecipe implements Recipe<SimpleContainer> {
@@ -88,18 +94,46 @@ public class PotRecipe implements Recipe<SimpleContainer> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(SHMainBus.MOD_ID, "pot_recipe");
 
-        @Override
-        public PotRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
 
-            JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
+        /**
+         * Returns a key json object as a Java HashMap.
+         */
+        static Map<String, Ingredient> keyFromJson(JsonObject pKeyEntry) {
+            Map<String, Ingredient> map = Maps.newHashMap();
 
-            for(int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+            for(Map.Entry<String, JsonElement> entry : pKeyEntry.entrySet()) {
+//                if (entry.getKey().length() != 1) {
+//                    throw new JsonSyntaxException("Invalid key entry: '" + (String)entry.getKey() + "' is an invalid symbol (must be 1 character only).");
+//                }
+//
+//                if (" ".equals(entry.getKey())) {
+//                    throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
+//                }
+
+                map.put(entry.getKey(), Ingredient.fromJson(entry.getValue(), true));
             }
 
-            return new PotRecipe(inputs, output, pRecipeId);
+//            map.put(" ", Ingredient.EMPTY);
+            return map;
+        }
+
+
+        @Override
+        public PotRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
+            Map<String, Ingredient> map = keyFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "key"));
+
+            ItemStack itemstack = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "result"));
+
+            NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
+            inputs.set(0,map.get("PEIFANG"));
+            inputs.set(1,map.get("RANLIAO"));
+            inputs.set(2,map.get("JIN"));
+            inputs.set(3,map.get("MU"));
+            inputs.set(4,map.get("SHUI"));
+            inputs.set(5,map.get("HUO"));
+            inputs.set(6,map.get("TU"));
+
+            return new PotRecipe(inputs, itemstack, pRecipeId);
         }
 
         @Override

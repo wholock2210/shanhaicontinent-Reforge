@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blockheijin_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:itemheijin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:blockheijin_block_composite_itemheijin"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blockheijin_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:blockheijin_block_composite_itemheijin"
+    ]
+  },
+  "sends_telemetry_event": false
+}

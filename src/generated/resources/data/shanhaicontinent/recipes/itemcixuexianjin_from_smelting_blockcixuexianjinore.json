@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 600,
+  "experience": 7.0,
+  "group": "sapphire",
+  "ingredient": {
+    "item": "shanhaicontinent:blockcixuexianjinore"
+  },
+  "result": "shanhaicontinent:itemcixuexianjin"
+}

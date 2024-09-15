@@ -3,6 +3,7 @@ package hua.huase.shanhaicontinent.datagen;
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.datagen.level.SHBiomeTagGenerator;
 import hua.huase.shanhaicontinent.datagen.level.RegistryDataGenerator;
+import hua.huase.shanhaicontinent.datagen.level.SHStructureTagGenerator;
 import hua.huase.shanhaicontinent.datagen.loot.ModBlockLootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -62,11 +63,17 @@ public class DataGenerators {
 
 
 
+
+
         DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, lookupProvider);
         CompletableFuture<HolderLookup.Provider> lookupProvider1 = datapackProvider.getRegistryProvider();
         generator.addProvider(event.includeServer(), datapackProvider);
-
         generator.addProvider(event.includeServer(), new SHBiomeTagGenerator(packOutput, lookupProvider, existingFileHelper));
+
+
+
+        generator.addProvider(event.includeServer(), new SHStructureTagGenerator(packOutput, lookupProvider1, existingFileHelper));
+
 //        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
 
 //        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));

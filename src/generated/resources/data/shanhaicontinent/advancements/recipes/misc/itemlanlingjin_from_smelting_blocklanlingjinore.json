@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blocklanlingjinore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:blocklanlingjinore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:itemlanlingjin_from_smelting_blocklanlingjinore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blocklanlingjinore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:itemlanlingjin_from_smelting_blocklanlingjinore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

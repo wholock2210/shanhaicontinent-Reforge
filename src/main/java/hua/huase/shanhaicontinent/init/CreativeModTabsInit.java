@@ -7,12 +7,16 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import static hua.huase.shanhaicontinent.init.BlockInit.ORELIST;
+import static hua.huase.shanhaicontinent.init.ItemInit.ARMORLIST;
 
 public class CreativeModTabsInit {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -73,7 +77,12 @@ public class CreativeModTabsInit {
                             }
 
                         }
-
+                        for (RegistryObject<Item> itemRegistryObject : ARMORLIST) {
+                            pOutput.accept(itemRegistryObject.get());
+                        }
+                        for (RegistryObject<Block> blockRegistryObject : ORELIST) {
+                            pOutput.accept(blockRegistryObject.get());
+                        }
 
                         pOutput.accept(ItemInit.hunmin_spanw_egg.get());
                     })

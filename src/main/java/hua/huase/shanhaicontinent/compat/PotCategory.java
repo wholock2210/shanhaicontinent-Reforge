@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class PotCategory implements IRecipeCategory<PotRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(SHMainBus.MOD_ID, "gem_polishing");
+    public static final ResourceLocation UID = new ResourceLocation(SHMainBus.MOD_ID, "jei_pot");
     public static final ResourceLocation TEXTURE = new ResourceLocation(SHMainBus.MOD_ID,
             "textures/gui/pot/potdisplayer.png");
 

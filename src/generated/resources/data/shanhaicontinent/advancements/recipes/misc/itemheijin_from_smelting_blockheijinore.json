@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blockheijinore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:blockheijinore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:itemheijin_from_smelting_blockheijinore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blockheijinore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:itemheijin_from_smelting_blockheijinore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

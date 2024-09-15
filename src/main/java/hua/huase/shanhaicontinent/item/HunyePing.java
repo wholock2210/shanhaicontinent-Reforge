@@ -39,7 +39,7 @@ public class HunyePing extends Item implements Nengliang{
 
         if (blockstate.getBlock() instanceof FarmBlock farmBlock && this.getNengliang(player,itemstack)>0) {
             if (player instanceof ServerPlayer) {
-                this.setNengliang(player,itemstack,this.getNengliang(player,itemstack)-random.nextInt(5)-3);
+                this.setNengliang(player,itemstack,this.getNengliang(player,itemstack)-random.nextInt(15)-13);
                 level.setBlock(blockpos, BlockInit.SOUL_BLOCK.get().defaultBlockState(), 11);
 
                 }
@@ -52,7 +52,7 @@ public class HunyePing extends Item implements Nengliang{
     }
 
 
-    private int maxnengliang =100;
+    private int maxnengliang =1200;
 
 
     @Override

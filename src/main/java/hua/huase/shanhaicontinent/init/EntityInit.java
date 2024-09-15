@@ -1,7 +1,6 @@
 package hua.huase.shanhaicontinent.init;
 
 import hua.huase.shanhaicontinent.SHMainBus;
-import hua.huase.shanhaicontinent.entity.client.ModModelLayers;
 import hua.huase.shanhaicontinent.entity.client.RhinoModel;
 import hua.huase.shanhaicontinent.entity.client.RhinoRenderer;
 import hua.huase.shanhaicontinent.entity.custom.RhinoEntity;
@@ -16,8 +15,14 @@ import hua.huase.shanhaicontinent.entity.jinengentity.jinggubang.JiNengFSHYRende
 import hua.huase.shanhaicontinent.entity.jinengitem.JinengItemEntity;
 import hua.huase.shanhaicontinent.entity.jinengitem.JinengItemRender;
 import hua.huase.shanhaicontinent.entity.mob.hunmin.HunminEntity;
+import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBox;
+import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBoxModel;
+import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBoxRenderer;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ZombieVillagerRenderer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -38,6 +43,20 @@ public class EntityInit {
 //    public static final RegistryObject<EntityType<RhinoEntity>> RHINO =
 //            ENTITY_TYPES.register("rhino", () -> EntityType.Builder.of(RhinoEntity::new, MobCategory.CREATURE)
 //                    .sized(2.5f, 2.5f).build("rhino"));
+    public static final RegistryObject<EntityType<ProtectionBox>> PROTECTION_BOX =
+        registerEntity(
+                EntityType.Builder.<ProtectionBox>of(ProtectionBox::new, MobCategory.MISC)
+                        .sized(0.5F, 0.5F)
+                        .updateInterval(Integer.MAX_VALUE)
+                        .setCustomClientFactory(ProtectionBox::new), "protection_box");
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(EntityType.Builder<T> builder, String entityName) {
+        return ENTITY_TYPES.register(entityName, () -> builder.build(entityName));
+    }
+
+
+
+
     public static final RegistryObject<EntityType<HunhuanEntity>> HUNHUAN =
             ENTITY_TYPES.register("hunhuan", () -> EntityType.Builder.of(HunhuanEntity::new, MobCategory.MISC)
                     .updateInterval(Integer.MAX_VALUE)
@@ -149,13 +168,25 @@ public class EntityInit {
 
 //            Mob
             EntityRenderers.register(EntityInit.hunmin.get(), ZombieVillagerRenderer::new);
+
+//            要塞箱子
+
+            EntityRenderers.register(EntityInit.PROTECTION_BOX.get(), ProtectionBoxRenderer::new);
+
         }
 
+
+
+    public static final ModelLayerLocation RHINO_LAYER = new ModelLayerLocation(
+            new ResourceLocation(SHMainBus.MOD_ID, "rhino_layer"), "main");
+    public static final ModelLayerLocation PROTECTION_BOX = new ModelLayerLocation(
+            new ResourceLocation(SHMainBus.MOD_ID, "protection_box"), "main");
 
 //模型图层注册
         @SubscribeEvent
         public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(ModModelLayers.RHINO_LAYER, RhinoModel::createBodyLayer);
+            event.registerLayerDefinition(RHINO_LAYER, RhinoModel::createBodyLayer);
+            event.registerLayerDefinition(PROTECTION_BOX, () -> LayerDefinition.create(ProtectionBoxModel.createMesh(), 16, 16));
 
 //        event.registerLayerDefinition(ModModelLayers.PINE_BOAT_LAYER, BoatModel::createBodyModel);
 //        event.registerLayerDefinition(ModModelLayers.PINE_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);

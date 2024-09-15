@@ -17,6 +17,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
 
+import static hua.huase.shanhaicontinent.init.BlockInit.ORELIST;
+
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, SHMainBus.MOD_ID, exFileHelper);
@@ -30,6 +32,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/pot")));
 
         blockWithItem(BlockInit.SOUL_BLOCK);
+        for (RegistryObject<Block> blockRegistryObject : ORELIST) {
+            blockWithItem(blockRegistryObject);
+        }
+
+
 //        makeCornCrop(((SHFlowerBlock) BlockInit.fengxinzi.get()), "fengxinzi_stage", "fengxinzi_stage");
         for (RegistryObject<Block> blockRegistryObject : BlockInit.FLOWERLIST) {
 

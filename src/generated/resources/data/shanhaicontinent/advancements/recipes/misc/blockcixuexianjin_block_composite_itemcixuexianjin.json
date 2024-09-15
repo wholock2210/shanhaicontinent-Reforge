@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blockcixuexianjin_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:itemcixuexianjin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "shanhaicontinent:blockcixuexianjin_block_composite_itemcixuexianjin"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_blockcixuexianjin_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "shanhaicontinent:blockcixuexianjin_block_composite_itemcixuexianjin"
+    ]
+  },
+  "sends_telemetry_event": false
+}

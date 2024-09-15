@@ -14,6 +14,9 @@ public interface ItemAttribute {
 
     public static void appendItemAttribute(ItemStack itemStack, List<Component> list) {
         itemStack.getCapability(ItemAttributeCapabilityProvider.CAPABILITY).ifPresent(itemAttributeCapability -> {
+            if(itemAttributeCapability.getNianxian()!=0){
+                list.add(Component.translatable("年限", (int)itemAttributeCapability.getNianxian()).withStyle(ChatFormatting.YELLOW));
+            }
             if(itemAttributeCapability.getMaxshengming()!=0){
                 list.add(Component.translatable("最大生命", (int)itemAttributeCapability.getMaxshengming()).withStyle(ChatFormatting.YELLOW));
             }
