@@ -140,6 +140,11 @@ public class ItemInit {
     public static final RegistryObject<Item> danyao_lushendan       = ITEMS.register("danyao_lushendan",     () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingyan(6666));
     public static final RegistryObject<Item> danyao_jiuhua          = ITEMS.register("danyao_jiuhua",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenli(100).setMaxjingshenli(10));
 
+    public static final RegistryObject<Item> danyao_huanyuandan          = ITEMS.register("danyao_huanyuandan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setShengming(100));
+    public static final RegistryObject<Item> danyao_fanmindan          = ITEMS.register("danyao_fanmindan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setShengmingbaifenbi(10));
+    public static final RegistryObject<Item> danyao_heqidan          = ITEMS.register("danyao_heqidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenli(80));
+    public static final RegistryObject<Item> danyao_zengqidan          = ITEMS.register("danyao_zengqidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenlibaifenbi(5));
+
     public static ArrayList<RegistryObject<Item>> DANYAOLIST = new ArrayList<>();
     static {
         DANYAOLIST.add(danyao_qihundan);
@@ -152,6 +157,10 @@ public class ItemInit {
         DANYAOLIST.add(danyao_huangjidan);
         DANYAOLIST.add(danyao_lushendan);
         DANYAOLIST.add(danyao_jiuhua);
+        DANYAOLIST.add(danyao_huanyuandan);
+        DANYAOLIST.add(danyao_fanmindan);
+        DANYAOLIST.add(danyao_heqidan);
+        DANYAOLIST.add(danyao_zengqidan);
     }
 
     public static final RegistryObject<Item> danfang_qihundan       = ITEMS.register("danfang_qihundan", () -> new Item(new Item.Properties()){
@@ -205,6 +214,33 @@ public class ItemInit {
         }
     });
 
+    public static final RegistryObject<Item> danfang_huanyuandan         = ITEMS.register("danfang_huanyuandan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+
+
+    public static final RegistryObject<Item> danfang_fanmindan         = ITEMS.register("danfang_fanmindan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+
+
+    public static final RegistryObject<Item> danfang_heqidan         = ITEMS.register("danfang_heqidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+
+
+    public static final RegistryObject<Item> danfang_zengqidan         = ITEMS.register("danfang_zengqidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+
 
     public static ArrayList<RegistryObject<Item>> DANFANGLIST = new ArrayList<>();
     static {
@@ -218,6 +254,10 @@ public class ItemInit {
         DANFANGLIST.add(danfang_huangjidan);
         DANFANGLIST.add(danfang_lushendan);
         DANFANGLIST.add(danfang_jiuhua);
+        DANFANGLIST.add(danfang_huanyuandan);
+        DANFANGLIST.add(danfang_fanmindan);
+        DANFANGLIST.add(danfang_heqidan);
+        DANFANGLIST.add(danfang_zengqidan);
     }
 
 

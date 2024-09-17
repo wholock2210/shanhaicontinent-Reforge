@@ -92,6 +92,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         daoyaohecheng(pWriter,ItemInit.danfang_xihundan     ,ItemInit.shancha_fruit         ,ItemInit.danyao_xihundan       ,70,3);
         daoyaohecheng(pWriter,ItemInit.danfang_huangjidan   ,ItemInit.wangyoucao_fruit      ,ItemInit.danyao_huangjidan     ,80,3);
         daoyaohecheng(pWriter,ItemInit.danfang_lushendan    ,ItemInit.xiwu_fruit            ,ItemInit.danyao_lushendan      ,90,3);
+
+        daoyaohecheng(pWriter,ItemInit.danfang_huanyuandan ,ItemInit.xunyicao_fruit      ,ItemInit.danyao_huanyuandan      ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_fanmindan   ,ItemInit.yueguanghua_fruit   ,ItemInit.danyao_fanmindan        ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_heqidan     ,ItemInit.zhushamei_fruit     ,ItemInit.danyao_heqidan          ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_zengqidan   ,ItemInit.bianhua_fruit       ,ItemInit.danyao_zengqidan        ,10,3);
 //九花
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.baisuilan_seed       ,ItemInit.danyao_jiuhua    ,10,3);
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.fengxinzi_seed       ,ItemInit.danyao_jiuhua    ,20,4);
@@ -102,6 +107,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.shancha_seed         ,ItemInit.danyao_jiuhua    ,70,9);
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.wangyoucao_seed      ,ItemInit.danyao_jiuhua    ,80,10);
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.xiwu_seed            ,ItemInit.danyao_jiuhua    ,90,11);
+
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.xunyicao_seed        ,ItemInit.danyao_jiuhua    ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.yueguanghua_seed     ,ItemInit.danyao_jiuhua    ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.zhushamei_seed       ,ItemInit.danyao_jiuhua    ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.bianhua_seed         ,ItemInit.danyao_jiuhua    ,10,3);
 
 //        装备修复
         zhuangbeixiufu(pWriter,ItemInit.mingtie_head ,20);

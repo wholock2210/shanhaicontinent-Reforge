@@ -33,12 +33,12 @@ public final class SHPlacedFeatures {
 
         // Underground
         //TODO: Make it different from copper ore
-        context.register(blockmingtieore     , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockmingtieore     ), commonOrePlacement(9, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
-        context.register(blockheijinore      , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockheijinore      ), commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
-        context.register(blocklanlingjinore  , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blocklanlingjinore  ), commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
-        context.register(blocklanhaizuanore  , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blocklanhaizuanore  ), commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
-        context.register(blockcixuexianjinore, new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockcixuexianjinore), commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
-        context.register(blockkongjianshiore , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockkongjianshiore ), commonOrePlacement(9, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80)))));
+        context.register(blockmingtieore     , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockmingtieore     ), commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
+        context.register(blockheijinore      , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockheijinore      ), commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
+        context.register(blocklanlingjinore  , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blocklanlingjinore  ), commonOrePlacement(6, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
+        context.register(blocklanhaizuanore  , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blocklanhaizuanore  ), commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
+        context.register(blockcixuexianjinore, new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockcixuexianjinore), commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
+        context.register(blockkongjianshiore , new PlacedFeature(features.getOrThrow(SHConfiguredFeatures.blockkongjianshiore ), commonOrePlacement(8, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(60)))));
 
     }
 

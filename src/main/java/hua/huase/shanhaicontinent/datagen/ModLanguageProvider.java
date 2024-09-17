@@ -135,6 +135,27 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("周身形成超强的领域，所有跨入领域的人会受到红莲业火的焚烧，而自己不断增强", "周身形成超强的领域，所有跨入领域的人会受到红莲业火的焚烧，而自己不断增强");
         this.add("上古神王附体", "上古神王附体");
 
+//玩法介绍
+        this.add("玩法介绍主题", "山海大陆1.20.1基础玩法介绍");
+        this.add("玩法介绍1页",
+                "§6基础操作：§0\n" +
+                "§6O键：§0打开属性界面。\n" +
+                "§6K键：§0魂环切换，开启武魂能够飞行，但会消耗精神力\n" +
+                "§6R键：§0召唤技能（需打开魂环显示）\n" +
+                "§6武魂觉醒：§0魂师等级突破1级时自动觉醒武魂或通过服用武魂果实获得（武魂果实可由转生获得）\n" +
+                "§6魂环吸收：§0击杀带有魂环的魂兽会掉落魂环\n" +
+                "§6魂环分解：§0攻击魂环可以加速魂环转化成魂核\n" +
+                "§6魂技：§0每吸收一个魂环增加一个魂技，通过R键召唤魂魂技再空手右键获得魂技，第一魂技可以通过铁贴绑定其它魂技能但第一魂技本事无主动效果\n" +
+                "§6升级：§0吸收魂核和炼制丹药");
+        this.add("玩法介绍2页",
+                "§6机制介绍：§0\n" +
+                "§6古风小屋：§0会固定刷新魂民，参考守卫者的刷新机制\n" +
+                "§6魂民：§0会掉落丹药和单方，玩家等级越高，掉落的单方等级越高\n" +
+                "§6魂液瓶：§0右键可收集魂核的能量，右键耕地可转化为魂土，魂土能够种植草药\n" +
+                "§6转生：§0精神力超过3000后再通过床睡觉完成转生，转生后等级属性回归0级，返还武魂果实\n" +
+                "§6魂兽分布：§0主世界距离越远，刷新的年限越高，\n" +
+                "§6造化炉：§0没有单方可以直接将魂草炼制成精华，放入单方按要求可炼制丹药，\n" +
+                "§6测试物品：§0/give @p shanhaicontinent:textitem1，服用后获得满魂环，仅测试使用");
 
 
 //方块
@@ -301,6 +322,10 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danyao_huangjidan     .get(),"§5皇极丹*Ⅷ阶");
         this.add(ItemInit.danyao_lushendan      .get(),"§4怒神丹*Ⅸ阶");
         this.add(ItemInit.danyao_jiuhua         .get(),"§1《§b九花玉露丸§1》");
+        this.add(ItemInit.danyao_huanyuandan         .get(),"§1《§b还元丹§1》");
+        this.add(ItemInit.danyao_fanmindan           .get(),"§1《§b返命丹§1》");
+        this.add(ItemInit.danyao_heqidan             .get(),"§1《§b合气丹§1》");
+        this.add(ItemInit.danyao_zengqidan           .get(),"§1《§b增气丹§1》");
         this.add(ItemInit.danfang_qihundan      .get(),"§a丹方：§f《§a气魂丹§f》*Ⅰ阶");
         this.add(ItemInit.danfang_jvlingdan     .get(),"§b丹方：§f《§b聚灵丹§f》*Ⅱ阶");
         this.add(ItemInit.danfang_xvanyuandan   .get(),"§c丹方：§f《§c玄元丹§f》*Ⅲ阶");
@@ -311,6 +336,10 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danfang_huangjidan    .get(),"§5丹方：§f《§5皇极丹§f》*Ⅷ阶");
         this.add(ItemInit.danfang_lushendan     .get(),"§4丹方：§f《§4怒神丹§f》*Ⅸ阶");
         this.add(ItemInit.danfang_jiuhua        .get(),"§4丹方：§1《§b九花玉露丸§1》***");
+        this.add(ItemInit.danfang_huanyuandan       .get(),"§4丹方：§1《§b还元丹§1》***");
+        this.add(ItemInit.danfang_fanmindan         .get(),"§4丹方：§1《§b返命丹§1》***");
+        this.add(ItemInit.danfang_heqidan           .get(),"§4丹方：§1《§b合气丹§1》***");
+        this.add(ItemInit.danfang_zengqidan         .get(),"§4丹方：§1《§b增气丹§1》***");
         this.add(ItemInit.headbone              .get(),"§c头骨 §f§k****** §e《上古神秘骨》");
         this.add(ItemInit.exoskeletonsoulbone.get(),"§c外附骨 §f§k****** §e《上古神秘骨》");
         this.add(ItemInit.lefthandbone          .get(),"§c左臂骨 §f§k****** §e《上古神秘骨》");

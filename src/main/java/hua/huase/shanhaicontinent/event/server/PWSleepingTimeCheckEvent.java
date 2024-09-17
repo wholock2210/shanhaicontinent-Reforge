@@ -5,6 +5,7 @@ import hua.huase.shanhaicontinent.capability.CapabilityRegistryHandler;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI;
 import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
 import hua.huase.shanhaicontinent.init.AdvenceInit;
 import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
@@ -80,7 +81,9 @@ public class PWSleepingTimeCheckEvent {
 
             AdvenceInit.menghuiwangutrigger.trigger(entityPlayer);
 
-            capability.deserializeNBT(new PlayerAttributeCapability().serializeNBT());
+            PlayerAttributeCapability newplayerAttributeCapability = new PlayerAttributeCapability();
+            PlayerHunHuanAPI.zhuansheng(newplayerAttributeCapability,capability,entityPlayer);
+            capability.deserializeNBT(newplayerAttributeCapability.serializeNBT());
 
             SynsAPI.synsPlayerAttribute(entityPlayer);
         });

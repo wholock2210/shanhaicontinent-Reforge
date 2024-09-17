@@ -66,12 +66,12 @@ public class SHConfiguredFeatures {
                     OreConfiguration.target(ruletest2, BlockInit.blockmingtieore.get().defaultBlockState())
                 );
 
-        FeatureUtils.register(context, blockmingtieore     , Feature.ORE, new OreConfiguration(list6, 9));
-        FeatureUtils.register(context, blockheijinore      , Feature.ORE, new OreConfiguration(list5, 8));
-        FeatureUtils.register(context, blocklanlingjinore  , Feature.ORE, new OreConfiguration(list4, 7));
-        FeatureUtils.register(context, blocklanhaizuanore  , Feature.ORE, new OreConfiguration(list3, 6));
-        FeatureUtils.register(context, blockcixuexianjinore, Feature.ORE, new OreConfiguration(list2, 5));
-        FeatureUtils.register(context, blockkongjianshiore , Feature.ORE, new OreConfiguration(list1, 9));
+        FeatureUtils.register(context, blockmingtieore     , Feature.ORE, new OreConfiguration(list6, 7));
+        FeatureUtils.register(context, blockheijinore      , Feature.ORE, new OreConfiguration(list5, 6));
+        FeatureUtils.register(context, blocklanlingjinore  , Feature.ORE, new OreConfiguration(list4, 5));
+        FeatureUtils.register(context, blocklanhaizuanore  , Feature.ORE, new OreConfiguration(list3, 4));
+        FeatureUtils.register(context, blockcixuexianjinore, Feature.ORE, new OreConfiguration(list2, 3));
+        FeatureUtils.register(context, blockkongjianshiore , Feature.ORE, new OreConfiguration(list1, 6));
 
     }
 }

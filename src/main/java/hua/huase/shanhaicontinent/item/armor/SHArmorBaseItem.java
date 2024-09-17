@@ -160,7 +160,6 @@ public class SHArmorBaseItem extends ArmorItem {
 
         if(stack.getMaxDamage()-stack.getDamageValue()<=1){
             list.add(Component.translatable("已破损").withStyle(ChatFormatting.DARK_RED));
-            list.add(Component.translatable("可通过造化炉修理").withStyle(ChatFormatting.WHITE));
             return;
         }
 
@@ -196,5 +195,8 @@ public class SHArmorBaseItem extends ArmorItem {
             list.add(Component.translatable("物防","100%").withStyle(ChatFormatting.AQUA));
             list.add(Component.translatable("回复","64").withStyle(ChatFormatting.AQUA));
         }
+
+
+        list.add(Component.translatable("可通过造化炉修理").withStyle(ChatFormatting.WHITE));
     }
 }

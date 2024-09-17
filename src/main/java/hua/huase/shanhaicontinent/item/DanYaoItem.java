@@ -1,7 +1,7 @@
 package hua.huase.shanhaicontinent.item;
 
-import hua.huase.shanhaicontinent.capability.itemattribute.ItemAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI;
 import hua.huase.shanhaicontinent.network.SynsAPI;
 import net.minecraft.ChatFormatting;
@@ -23,6 +23,7 @@ public class DanYaoItem extends Item {
 
     private float shengming;
     private float maxshengming;
+    private float shengmingbaifenbi;
     private float wugong;
     private float wufang;
     private float baojishanghai;
@@ -36,6 +37,7 @@ public class DanYaoItem extends Item {
     private float shanbi;
     private float jingyan;
     private float jingshenli;
+    private float jingshenlibaifenbi;
     private float maxjingshenli;
     private float tupochenggonggailv;
 
@@ -124,7 +126,12 @@ public class DanYaoItem extends Item {
                 if(danYaoItem.zhenshang >0){
                     PlayerHunHuanAPI.addZhenshang(player,danYaoItem.zhenshang);
                 }
-
+                if(danYaoItem.shengmingbaifenbi >0){
+                    PlayerHunHuanAPI.addShengming(player,player.getMaxHealth()*danYaoItem.shengmingbaifenbi /100f);
+                }
+                if(danYaoItem.jingshenlibaifenbi >0){
+                    PlayerHunHuanAPI.addJingshenli(player, PlayerAttrubuteAPI.getMaxjingshenli(player)* danYaoItem.jingshenlibaifenbi /100f);
+                }
 
 
 
@@ -296,6 +303,24 @@ public class DanYaoItem extends Item {
         return this;
     }
 
+    public float getShengmingbaifenbi() {
+        return shengmingbaifenbi;
+    }
+
+    public DanYaoItem setShengmingbaifenbi(float shengmingbaifenbi) {
+        this.shengmingbaifenbi = shengmingbaifenbi;
+        return this;
+    }
+
+
+    public float getJingshenlibaifenbi() {
+        return jingshenlibaifenbi;
+    }
+
+    public DanYaoItem setJingshenlibaifenbi(float jingshenlibaifenbi) {
+        this.jingshenlibaifenbi = jingshenlibaifenbi;
+        return this;
+    }
 
 
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
@@ -351,6 +376,12 @@ public class DanYaoItem extends Item {
         }
         if(this.zhenshang >0){
             list.add(Component.translatable("真伤", (int)this.zhenshang).withStyle(ChatFormatting.YELLOW));
+        }
+        if(this.shengmingbaifenbi >0){
+            list.add(Component.translatable("获得生命", (int)this.shengmingbaifenbi +"%").withStyle(ChatFormatting.YELLOW));
+        }
+        if(this.jingshenlibaifenbi >0){
+            list.add(Component.translatable("获得精神力", (int)this.jingshenlibaifenbi+"%").withStyle(ChatFormatting.YELLOW));
         }
 
     }

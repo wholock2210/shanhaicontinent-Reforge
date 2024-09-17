@@ -54,7 +54,7 @@ public class SHFinishedRecipe implements FinishedRecipe {
 
     @Override
     public ResourceLocation getId() {
-        return new ResourceLocation(SHMainBus.MOD_ID,"pot/"+BuiltInRegistries.ITEM.getKey(PEIFANG.asItem()).getPath() +"_to_"+BuiltInRegistries.ITEM.getKey(JEIGUO.asItem()).getPath()+num );
+        return new ResourceLocation(SHMainBus.MOD_ID,"pot/"+BuiltInRegistries.ITEM.getKey(JIN.asItem()).getPath()+BuiltInRegistries.ITEM.getKey(PEIFANG.asItem()).getPath() +"_to_"+BuiltInRegistries.ITEM.getKey(JEIGUO.asItem()).getPath()+num );
     }
 
     @Override

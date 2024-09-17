@@ -373,4 +373,30 @@ public interface PlayerHunHuanAPI {
                 SynsAPI.synsPlayerAttribute(player);
         });
     }
+
+
+
+    static void zhuansheng(PlayerAttributeCapability newplayerCapability, PlayerAttributeCapability oldItemCapability, ServerPlayer player) {
+
+        if(newplayerCapability!=null&&oldItemCapability!=null){
+            newplayerCapability.setWugong(newplayerCapability.getWugong()+oldItemCapability.getWugong()/10);
+//            newplayerCapability.setBaojishanghai(newplayerCapability.getBaojishanghai()+oldItemCapability.getBaojishanghai()/10);
+//            newplayerCapability.setBaojilv(newplayerCapability.getBaojilv()+oldItemCapability.getBaojilv()/10);
+            newplayerCapability.setZhenshang(newplayerCapability.getZhenshang()+oldItemCapability.getZhenshang()/10);
+//            newplayerCapability.setXixue(newplayerCapability.getXixue()+oldItemCapability.getXixue()/10);
+            newplayerCapability.setWufang(newplayerCapability.getWufang()+oldItemCapability.getWufang()/10);
+            newplayerCapability.setMaxshengming(newplayerCapability.getMaxshengming()+oldItemCapability.getMaxshengming()/10);
+            newplayerCapability.setShengminghuifu(newplayerCapability.getShengminghuifu()+oldItemCapability.getShengminghuifu()/10);
+//            newplayerCapability.setMingzhong(newplayerCapability.getMingzhong()+oldItemCapability.getMingzhong()/10);
+//            newplayerCapability.setShanbi(newplayerCapability.getShanbi()+oldItemCapability.getShanbi()/10);
+            newplayerCapability.setWuchuan(newplayerCapability.getWuchuan()+oldItemCapability.getWuchuan()/10);
+            newplayerCapability.setKangbao(newplayerCapability.getKangbao()+oldItemCapability.getKangbao()/10);
+
+            newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/10));
+            newplayerCapability.setJingshenli(0);
+            player.setHealth(newplayerCapability.getMaxshengming());
+
+        }
+
+    }
 }
