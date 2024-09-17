@@ -48,6 +48,9 @@ public class PotMenu extends AbstractContainerMenu {
     public boolean isCrafting() {
         return data.get(0) > 0;
     }
+    public int getNengliang() {
+        return data.get(2);
+    }
 
     public int getScaledProgress() {
         int progress = this.data.get(0);

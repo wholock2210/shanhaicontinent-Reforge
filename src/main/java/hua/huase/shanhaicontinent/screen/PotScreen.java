@@ -39,7 +39,21 @@ public class PotScreen extends AbstractContainerScreen<PotMenu> {
         guiGraphics.blit(TEXTURE, x, y,  0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
         renderProgressArrow(guiGraphics, x, y);
+
+
+//
+        if( this.menu.getNengliang()>0){
+
+            guiGraphics.drawString(this.font,Component.translatable("所需能量",this.menu.getNengliang())
+            ,x+24,y+78,0xFF00ff00
+            );
+        }
+
     }
+
+
+
+
 //menu.getScaledProgress()
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {

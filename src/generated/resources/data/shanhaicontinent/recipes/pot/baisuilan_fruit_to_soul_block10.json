@@ -2,30 +2,29 @@
   "type": "shanhaicontinent:pot_recipe",
   "key": {
     "HUO": {
-      "item": "shanhaicontinent:soul_block"
+      "item": "shanhaicontinent:blockcixuexianjinore"
     },
     "JEIGUO": {
       "item": "shanhaicontinent:soul_block"
     },
     "JIN": {
-      "item": "shanhaicontinent:soul_block"
+      "item": "shanhaicontinent:blockheijinore"
     },
     "MU": {
-      "item": "shanhaicontinent:soul_block"
+      "item": "shanhaicontinent:blocklanlingjinore"
     },
     "PEIFANG": {
       "item": "shanhaicontinent:baisuilan_fruit"
     },
     "RANLIAO": {
-      "item": "shanhaicontinent:soul_block"
+      "item": "shanhaicontinent:hunyeping"
     },
     "SHUI": {
-      "item": "shanhaicontinent:soul_block"
+      "item": "shanhaicontinent:blocklanhaizuanore"
     },
-    "TU": {
-      "item": "shanhaicontinent:soul_block"
-    }
+    "TU": []
   },
+  "nengliang": 10,
   "result": {
     "count": 10,
     "item": "shanhaicontinent:soul_block"

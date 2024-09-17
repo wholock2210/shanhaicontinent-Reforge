@@ -6,6 +6,7 @@ import hua.huase.shanhaicontinent.init.BlockInit;
 import hua.huase.shanhaicontinent.init.ItemInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -79,34 +81,170 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static void potrecipe(Consumer<FinishedRecipe> pWriter){
 
+//        丹药合成
+
+        daoyaohecheng(pWriter,ItemInit.danfang_qihundan     ,ItemInit.baisuilan_fruit       ,ItemInit.danyao_qihundan       ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_jvlingdan    ,ItemInit.fengxinzi_fruit       ,ItemInit.danyao_jvlingdan      ,20,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_xvanyuandan  ,ItemInit.hanxiaohua_fruit      ,ItemInit.danyao_xvanyuandan    ,30,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_yanghundan   ,ItemInit.hehuan_fruit          ,ItemInit.danyao_yanghundan     ,40,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_lingbidan    ,ItemInit.heshouwu_fruit        ,ItemInit.danyao_lingbidan      ,50,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_haoyuan      ,ItemInit.qiuhaitang_fruit      ,ItemInit.danyao_haoyuan        ,60,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_xihundan     ,ItemInit.shancha_fruit         ,ItemInit.danyao_xihundan       ,70,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_huangjidan   ,ItemInit.wangyoucao_fruit      ,ItemInit.danyao_huangjidan     ,80,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_lushendan    ,ItemInit.xiwu_fruit            ,ItemInit.danyao_lushendan      ,90,3);
+//九花
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.baisuilan_seed       ,ItemInit.danyao_jiuhua    ,10,3);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.fengxinzi_seed       ,ItemInit.danyao_jiuhua    ,20,4);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.hanxiaohua_seed      ,ItemInit.danyao_jiuhua    ,30,5);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.hehuan_seed          ,ItemInit.danyao_jiuhua    ,40,6);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.heshouwu_seed        ,ItemInit.danyao_jiuhua    ,50,7);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.qiuhaitang_seed      ,ItemInit.danyao_jiuhua    ,60,8);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.shancha_seed         ,ItemInit.danyao_jiuhua    ,70,9);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.wangyoucao_seed      ,ItemInit.danyao_jiuhua    ,80,10);
+        daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.xiwu_seed            ,ItemInit.danyao_jiuhua    ,90,11);
+
+//        装备修复
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_head ,20);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_chest,20);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_feet ,20);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_legs ,20);
+
+        zhuangbeixiufu(pWriter,ItemInit.heijin_head ,30);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_chest,30);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_feet ,30);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_legs ,30);
+
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_head   ,40);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_chest  ,40);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_feet   ,40);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_legs   ,40);
+
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_head   ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_chest  ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_feet   ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_legs   ,50);
+
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_head ,60);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_chest,60);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_feet ,60);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_legs ,60);
+
+//装备合成
+
+        zhuangbeihecheng(pWriter,Items.DIAMOND_HELMET  ,ItemInit.itemmingtie ,ItemInit.mingtie_head  ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_LEGGINGS ,ItemInit.itemmingtie ,ItemInit.mingtie_chest ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_BOOTS ,ItemInit.itemmingtie ,ItemInit.mingtie_feet  ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_LEGGINGS ,ItemInit.itemmingtie ,ItemInit.mingtie_legs  ,80);
+
+
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_head  ,ItemInit.itemheijin ,ItemInit.heijin_head  ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_chest ,ItemInit.itemheijin ,ItemInit.heijin_chest ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_feet  ,ItemInit.itemheijin ,ItemInit.heijin_feet  ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_legs  ,ItemInit.itemheijin ,ItemInit.heijin_legs  ,120);
+
+
+        zhuangbeihecheng(pWriter,ItemInit.heijin_head  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_head  ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_chest ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_chest ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_feet  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_feet  ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_legs  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_legs  ,240);
+
+
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_head  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_head  ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_chest ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_chest ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_feet  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_feet  ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_legs  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_legs  ,480);
+
+
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_head  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_head  ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_chest ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_chest ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_feet  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_feet  ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_legs  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_legs  ,960);
+
+
+
         pWriter.accept(
                 new SHFinishedRecipe()
                         .setPEIFANG(    ItemInit.baisuilan_fruit.get())
-                        .setRANLIAO(    BlockInit.SOUL_BLOCK.get())
-                        .setJIN(        BlockInit.SOUL_BLOCK.get())
-                        .setMU(         BlockInit.SOUL_BLOCK.get())
-                        .setSHUI(       BlockInit.SOUL_BLOCK.get())
-                        .setHUO(        BlockInit.SOUL_BLOCK.get())
-                        .setTU(         BlockInit.SOUL_BLOCK.get())
+                        .setRANLIAO(    ItemInit.hunyeping.get())
+                        .setJIN(        BlockInit.blockheijinore.get())
+                        .setMU(         BlockInit.blocklanlingjinore.get())
+                        .setSHUI(       BlockInit.blocklanhaizuanore.get())
+                        .setHUO(        BlockInit.blockcixuexianjinore.get())
+                        .setTU(         Items.AIR)
                         .setJEIGUO(     BlockInit.SOUL_BLOCK.get())
+                        .setNengliang(10)
                         .setNum(10)
         );
-
-
-
-//        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemInit.hunyeping.get())
-////                .pattern("   ")
-//                .pattern("SXS")
-//                .pattern("SCS")
-//                .define('X', Items.ENDER_PEARL)
-//                .define('S', Blocks.GLASS)
-//                .define('C', Items.EMERALD)
-//                .unlockedBy(getHasName(ItemInit.hunyeping.get()), has(Items.ENDER_PEARL))
-//                .save(pWriter,SHMainBus.MOD_ID + ":pot/"  + getItemName(Blocks.CHISELED_STONE_BRICKS));
-
     }
 
-//    合成块
+    private static void daoyaohecheng(Consumer<FinishedRecipe> pWriter, RegistryObject<Item> danfangQihundan, RegistryObject<Item> baisuilanFruit, RegistryObject<Item> danyaoQihundan, int i, int i1) {
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    danfangQihundan.get())
+                        .setRANLIAO(    ItemInit.hunyeping.get())
+                        .setJIN(        baisuilanFruit.get())
+                        .setMU(         baisuilanFruit.get())
+                        .setSHUI(       baisuilanFruit.get())
+                        .setHUO(        baisuilanFruit.get())
+                        .setTU(         baisuilanFruit.get())
+                        .setJEIGUO(     danyaoQihundan.get())
+                        .setNengliang(i)
+                        .setNum(i1)
+        );
+    }
+
+    private static void zhuangbeihecheng(Consumer<FinishedRecipe> pWriter, RegistryObject<Item> itemRegistryObject, RegistryObject<Item> itemRegistryObject1, RegistryObject<Item> result, int nengliang) {
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    itemRegistryObject.get())
+                        .setRANLIAO(    ItemInit.hunyeping.get())
+                        .setJIN(        itemRegistryObject1.get())
+                        .setMU(         itemRegistryObject1.get())
+                        .setSHUI(       itemRegistryObject1.get())
+                        .setHUO(        itemRegistryObject1.get())
+                        .setTU(         itemRegistryObject1.get())
+                        .setJEIGUO(     result.get())
+                        .setNengliang(nengliang)
+                        .setNum(1)
+        );
+    }
+    private static void zhuangbeihecheng(Consumer<FinishedRecipe> pWriter,ItemLike like, RegistryObject<Item> itemRegistryObject1, RegistryObject<Item> result, int nengliang) {
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    like)
+                        .setRANLIAO(    ItemInit.hunyeping.get())
+                        .setJIN(        itemRegistryObject1.get())
+                        .setMU(         itemRegistryObject1.get())
+                        .setSHUI(       itemRegistryObject1.get())
+                        .setHUO(        itemRegistryObject1.get())
+                        .setTU(         itemRegistryObject1.get())
+                        .setJEIGUO(     result.get())
+                        .setNengliang(nengliang)
+                        .setNum(1)
+        );
+    }
+
+    private static void zhuangbeixiufu(Consumer<FinishedRecipe> pWriter, RegistryObject<Item> itemRegistryObject, int nengliang) {
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    itemRegistryObject.get())
+                        .setRANLIAO(    ItemInit.hunyeping.get())
+                        .setJIN(        Items.AIR)
+                        .setMU(         Items.AIR)
+                        .setSHUI(       Items.AIR)
+                        .setHUO(        Items.AIR)
+                        .setTU(         Items.AIR)
+                        .setJEIGUO(     itemRegistryObject.get())
+                        .setNengliang(nengliang)
+                        .setNum(1)
+        );
+    }
+
+    //    合成块
     protected static void compositeAndDecomposeBlock(Consumer<FinishedRecipe> pWriter , ItemLike like , ItemLike pResult){
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)

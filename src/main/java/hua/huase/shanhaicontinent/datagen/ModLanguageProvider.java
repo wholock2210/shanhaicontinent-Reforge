@@ -17,6 +17,10 @@ public class ModLanguageProvider extends LanguageProvider {
 // In LanguageProvider#addTranslations
 //        this.addBlock(BlockInit.text_block, "Example Block");
         this.add("套装效果", "套装效果:");
+        this.add("套装描述", "十分耐用，非降维伤害，不可破坏");
+        this.add("已破损", "已破损");
+        this.add("可通过造化炉修理", "可通过造化炉修理");
+        this.add("所需能量", "§c所需能量：%s");
         this.add("生命", "生命：%s/%s");
         this.add("最大生命", "最大生命：+%s");
         this.add("获得生命", "生命：+%s");
@@ -88,6 +92,52 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("creativetab.shanhaicontient_tab", "§7山海大陆");
 
 
+//        物品说明
+        this.add("用于栽培药材，可由《魂液瓶》消耗能量，右键耕地获得", "用于栽培药材，可由《魂液瓶》消耗能量，右键耕地获得");
+        this.add("以造化之气，炼制物品", "以造化之气，炼制物品");
+
+
+        this.add("玩法介绍", "玩法介绍");
+        this.add("默认o键打开属性面板，可在属性面板装配", "默认o键打开属性面板，可在属性面板装配");
+        this.add("击杀《古风小屋》中的魂民概率掉落", "击杀《古风小屋》中的魂民概率掉落");
+
+
+//        技能说明
+        this.add("蹲下释放可破环地形", "蹲下释放可破环地形");
+        this.add("每10级提升5%的物攻、暴击率、爆伤", "每10级提升5%的物攻、暴击率、爆伤");
+        this.add("能在地面上产生威力无比的震动，对前方造成伤害", "能在地面上产生威力无比的震动，对前方造成伤害");
+        this.add("在短时间内产生坚实的防护罩", "在短时间内产生坚实的防护罩");
+        this.add("每10级提升5%的物伤、暴击率、爆伤", "每10级提升5%的物伤、暴击率、爆伤");
+        this.add("--副手生效", "--副手生效");
+        this.add("发出强大的力量风暴，前方的敌人造成伤害", "发出强大的力量风暴，前方的敌人造成伤害");
+        this.add("调用全身之力，形成力量风暴，对范围内的敌人照成伤害", "调用全身之力，形成力量风暴，对范围内的敌人照成伤害");
+        this.add("锤影在周身形成一圈能量光罩进行防御", "锤影在周身形成一圈能量光罩进行防御");
+        this.add("将全身魂力集中于一点迅速发出", "将全身魂力集中于一点迅速发出");
+        this.add("引动天地之力，降下天雷", "引动天地之力，降下天雷");
+
+        this.add("每10级提升4%的物攻、物防、真伤、爆伤、抗暴、回复", "每10级提升4%的物攻、物防、真伤、爆伤、抗暴、回复");
+        this.add("向前位移，对路过的敌人造成伤害", "向前位移，对路过的敌人造成伤害");
+        this.add("召唤雷电轰击地面", "召唤雷电轰击地面");
+        this.add("造成伤害，并根据造成伤害的回复生命值", "造成伤害，并根据造成伤害的回复生命值");
+        this.add("一株草可斩日月星辰!挑出一剑，对前方大范围敌人伤害", "一株草可斩日月星辰!挑出一剑，对前方大范围敌人伤害");
+        this.add("刷新所有技能冷却", "刷新所有技能冷却");
+        this.add("受到致命伤满血复活", "受到致命伤满血复活");
+        this.add("对前方单体造成伤害", "对前方单体造成伤害");
+        this.add("物攻+6666、物防+6666、爆伤+66、爆率+66、回复+666，吸血+66", "物攻+6666、物防+6666、爆伤+66、爆率+66、回复+666，吸血+66");
+
+        this.add("《万破》：每10级增加10%的物攻", "《万破》：每10级增加10%的物攻");
+        this.add("分出三根破天神棍，对前方造成伤害", "分出三根破天神棍，对前方造成伤害");
+        this.add("对附近生物施加负面效果", "对附近生物施加负面效果");
+        this.add("以自身为中心，形成一个魂力漩涡，对5格范围内的敌人造成伤害", "以自身为中心，形成一个魂力漩涡，对5格范围内的敌人造成伤害");
+        this.add("武魂分出一些魂力可以使自己超速行驶", "武魂分出一些魂力可以使自己超速行驶");
+        this.add("身旁召唤九龙并发出令人长时间眩晕的禅音，对15格范围内的敌人施加减速和伤害", "身旁召唤九龙并发出令人长时间眩晕的禅音，对15格范围内的敌人施加减速和伤害");
+        this.add("自己与破天神棍融为一体，提升自身3000物攻，50%爆伤，20%爆率", "自己与破天神棍融为一体，提升自身3000物攻，50%爆伤，20%爆率");
+        this.add("周身形成超强的领域，所有跨入领域的人会受到红莲业火的焚烧，而自己不断增强", "周身形成超强的领域，所有跨入领域的人会受到红莲业火的焚烧，而自己不断增强");
+        this.add("上古神王附体", "上古神王附体");
+
+
+
+//方块
 
 
         this.add(BlockInit.SAPPHIRE_BLOCK   .get(),"测试方块");
@@ -107,10 +157,62 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(BlockInit.bianhua          .get(),"§2彼岸花");
         this.add(BlockInit.zhushamei        .get(),"§f朱莎玫");
 
+
+        this.add(BlockInit.blockmingtieore             .get(),"§a冥铁矿");
+        this.add(BlockInit.blockheijinore              .get(),"§a黑金矿");
+        this.add(BlockInit.blocklanlingjinore          .get(),"§a蓝灵金矿");
+        this.add(BlockInit.blocklanhaizuanore          .get(),"§a蓝海钻矿");
+        this.add(BlockInit.blockcixuexianjinore        .get(),"§a赤血仙金矿");
+        this.add(BlockInit.blockkongjianshiore         .get(),"§a空间石矿");
+
+
+        this.add(BlockInit.blockkongjianshi_block         .get(),"§b空间石块");
+        this.add(BlockInit.blockmingtie_block             .get(),"§b冥铁块");
+        this.add(BlockInit.blockheijin_block              .get(),"§b黑金块");
+        this.add(BlockInit.blocklanlingjin_block          .get(),"§b蓝灵金块");
+        this.add(BlockInit.blocklanhaizuan_block          .get(),"§b蓝海钻块");
+        this.add(BlockInit.blockcixuexianjin_block        .get(),"§b赤血仙金块");
+
+
+
+
 //物品
 
 
         this.add(ItemInit.wanfajieshao       .get(),"§1山海大陆玩法介绍");
+
+        this.add(ItemInit.itemmingtie            .get(),"§a冥铁");
+        this.add(ItemInit.itemheijin             .get(),"§a黑金");
+        this.add(ItemInit.itemlanlingjin         .get(),"§a蓝灵金");
+        this.add(ItemInit.itemlanhaizuan         .get(),"§a蓝海钻");
+        this.add(ItemInit.itemcixuexianjin       .get(),"§a赤血仙金");
+        this.add(ItemInit.itemkongjianshi        .get(),"§a空间石");
+
+        this.add(ItemInit.mingtie_head         .get(),"§a冥铁头盔");
+        this.add(ItemInit.mingtie_chest        .get(),"§a冥铁胸甲");
+        this.add(ItemInit.mingtie_feet         .get(),"§a冥铁鞋子");
+        this.add(ItemInit.mingtie_legs         .get(),"§a冥铁护腿");
+
+        this.add(ItemInit.heijin_head          .get(),"§a黑金头盔");
+        this.add(ItemInit.heijin_chest         .get(),"§a黑金胸甲");
+        this.add(ItemInit.heijin_feet          .get(),"§a黑金鞋子");
+        this.add(ItemInit.heijin_legs          .get(),"§a黑金护腿");
+
+        this.add(ItemInit.lanlingjin_head           .get(),"§a蓝灵金头盔");
+        this.add(ItemInit.lanlingjin_chest          .get(),"§a蓝灵金胸甲");
+        this.add(ItemInit.lanlingjin_feet           .get(),"§a蓝灵金鞋子");
+        this.add(ItemInit.lanlingjin_legs           .get(),"§a蓝灵金护腿");
+
+        this.add(ItemInit.lanhaizuan_head           .get(),"§a蓝海钻头盔");
+        this.add(ItemInit.lanhaizuan_chest          .get(),"§a蓝海钻胸甲");
+        this.add(ItemInit.lanhaizuan_feet           .get(),"§a蓝海钻鞋子");
+        this.add(ItemInit.lanhaizuan_legs           .get(),"§a蓝海钻护腿");
+
+        this.add(ItemInit.cixuexianjin_head           .get(),"§a赤血仙金头盔");
+        this.add(ItemInit.cixuexianjin_chest          .get(),"§a赤血仙金胸甲");
+        this.add(ItemInit.cixuexianjin_feet           .get(),"§a赤血仙金鞋子");
+        this.add(ItemInit.cixuexianjin_legs           .get(),"§a赤血仙金护腿");
+
 
 
 
@@ -219,6 +321,9 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.hunmin_spanw_egg      .get(),"生成魂民");
 
 
+
+
+//实体
         this.add(EntityInit.hunmin.get(),"§a魂民");
         this.add(EntityInit.HUNHE.get(),"§9魂核");
         this.add(EntityInit.HUNHUAN.get(),"§9魂环");

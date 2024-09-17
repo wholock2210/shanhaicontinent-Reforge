@@ -1,0 +1,34 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": {
+      "item": "shanhaicontinent:wangyoucao_fruit"
+    },
+    "JEIGUO": {
+      "item": "shanhaicontinent:danyao_huangjidan"
+    },
+    "JIN": {
+      "item": "shanhaicontinent:wangyoucao_fruit"
+    },
+    "MU": {
+      "item": "shanhaicontinent:wangyoucao_fruit"
+    },
+    "PEIFANG": {
+      "item": "shanhaicontinent:danfang_huangjidan"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping"
+    },
+    "SHUI": {
+      "item": "shanhaicontinent:wangyoucao_fruit"
+    },
+    "TU": {
+      "item": "shanhaicontinent:wangyoucao_fruit"
+    }
+  },
+  "nengliang": 80,
+  "result": {
+    "count": 3,
+    "item": "shanhaicontinent:danyao_huangjidan"
+  }
+}

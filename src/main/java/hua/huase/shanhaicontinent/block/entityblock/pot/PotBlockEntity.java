@@ -1,6 +1,8 @@
 package hua.huase.shanhaicontinent.block.entityblock.pot;
 
 import hua.huase.shanhaicontinent.init.ModelBlockEntitiesinit;
+import hua.huase.shanhaicontinent.item.HunyePing;
+import hua.huase.shanhaicontinent.item.armor.SHArmorBaseItem;
 import hua.huase.shanhaicontinent.recipe.PotRecipe;
 import hua.huase.shanhaicontinent.screen.PotMenu;
 import net.minecraft.core.BlockPos;
@@ -10,6 +12,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -19,6 +23,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,6 +36,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class PotBlockEntity extends BlockEntity implements MenuProvider {
@@ -51,6 +58,7 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 200;
+    private int nengliang = 0;
 
     public PotBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModelBlockEntitiesinit.Pot_ENTITY.get(), pPos, pBlockState);
@@ -60,6 +68,7 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
                 return switch (pIndex) {
                     case 0 -> PotBlockEntity.this.progress;
                     case 1 -> PotBlockEntity.this.maxProgress;
+                    case 2 -> PotBlockEntity.this.nengliang;
                     default -> 0;
                 };
             }
@@ -69,6 +78,7 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
                 switch (pIndex) {
                     case 0 -> PotBlockEntity.this.progress = pValue;
                     case 1 -> PotBlockEntity.this.maxProgress = pValue;
+                    case 2 -> PotBlockEntity.this.nengliang = pValue;
                 }
             }
 
@@ -143,7 +153,7 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
-        if(hasRecipe()) {
+        if(hasRecipe() && isNengliang()) {
             increaseCraftingProgress();
             setChanged(pLevel, pPos, pState);
 
@@ -152,6 +162,12 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
                 resetProgress();
             }
         } else {
+            if(hasRecipe() && !isNengliang()){
+                nengliang = getCurrentRecipe().get().getnengliang();
+            }else {
+                nengliang = 0;
+            }
+
             resetProgress();
         }
     }
@@ -165,18 +181,56 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
         ItemStack result = recipe.get().getResultItem(null);
 
 //        this.itemHandler.extractItem(0, 1, false);
-        this.itemHandler.extractItem(1, 1, false);
+
+        ItemStack stackInSlot1 = this.itemHandler.getStackInSlot(0);
+        ItemStack stackInSlot2 = ItemStack.EMPTY;
+        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem() && stackInSlot1.getItem() == result.getItem()
+                &&stackInSlot1.getItem() instanceof SHArmorBaseItem && result.getItem() instanceof SHArmorBaseItem){
+            stackInSlot2 = stackInSlot1.copy();
+            this.itemHandler.extractItem(0, 1, false);
+        }
+
+        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem() && stackInSlot1.getItem() != result.getItem()
+                &&stackInSlot1.getItem() instanceof SHArmorBaseItem && result.getItem() instanceof SHArmorBaseItem){
+            stackInSlot2 = result;
+            Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(stackInSlot1);
+            if(!enchantments.isEmpty()){
+                EnchantmentHelper.setEnchantments(enchantments, stackInSlot2);
+            }
+            stackInSlot2.setDamageValue(stackInSlot1.getDamageValue());
+            this.itemHandler.extractItem(0, 1, false);
+        }
+
+
+        ItemStack stackInSlot = this.itemHandler.getStackInSlot(1);
+        if(!stackInSlot.isEmpty() && stackInSlot.getItem() instanceof HunyePing hunyePing && recipe.get().getnengliang()>0){
+            hunyePing.setNengliang(null,stackInSlot,hunyePing.getNengliang(null,stackInSlot)-recipe.get().getnengliang());
+        }else {
+            this.itemHandler.extractItem(1, 1, false);
+        }
+
         this.itemHandler.extractItem(2, 1, false);
         this.itemHandler.extractItem(3, 1, false);
         this.itemHandler.extractItem(4, 1, false);
         this.itemHandler.extractItem(5, 1, false);
         this.itemHandler.extractItem(6, 1, false);
+//        是否为修复
+        if(stackInSlot2.isEmpty()){
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
+                    this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+        }else {
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT, stackInSlot2);
+        }
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+
+        this.getLevel().playSound((Player)null, this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ(),
+                SoundEvents.PLAYER_LEVELUP, SoundSource.BLOCKS, 1 * 0.75F, 1.0F);
+
+
+
     }
 
-    private boolean hasRecipe() {
+    public boolean hasRecipe() {
         Optional<PotRecipe> recipe = getCurrentRecipe();
 
         if(recipe.isEmpty()) {
@@ -184,10 +238,20 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
         }
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
 
-        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem()) ;
     }
 
-    private Optional<PotRecipe> getCurrentRecipe() {
+
+    public boolean isNengliang() {
+        Optional<PotRecipe> recipe = getCurrentRecipe();
+        ItemStack stackInSlot = itemHandler.getStackInSlot(1);
+        if(!stackInSlot.isEmpty() && stackInSlot.getItem() instanceof HunyePing hunyePing){
+            if(hunyePing.getNengliang(null,stackInSlot)<recipe.get().getnengliang())return false;
+        }
+        return true;
+    }
+
+    public Optional<PotRecipe> getCurrentRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
         for(int i = 0; i < itemHandler.getSlots()-1; i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));

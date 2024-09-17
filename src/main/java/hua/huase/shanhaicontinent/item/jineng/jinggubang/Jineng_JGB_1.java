@@ -48,6 +48,7 @@ public class Jineng_JGB_1 extends JinengBase{
                 entity.setPos(player.getX()+(float) (-Math.sin(((i-1)*45+player.getYRot()) * 0.017453292F)*2f),player.getY()+1.8,player.getZ()+(float) (Math.cos(((i-1)*45+player.getYRot()) * 0.017453292F)*2f));
                 entity.setItem(itemstack);
                 entity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 4F, 0.0F);
+                entity.isExploade = player.isShiftKeyDown();
                 level.addFreshEntity(entity);
             }
 //            JiNengFSHYEntity entity = new JiNengFSHYEntity(EntityInit.jinengfshy.get(), level);
@@ -70,5 +71,6 @@ public class Jineng_JGB_1 extends JinengBase{
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);
         list.add(Component.translatable("分出三根破天神棍，对前方造成伤害").withStyle(ChatFormatting.GREEN));
+        list.add(Component.translatable("蹲下释放可破环地形").withStyle(ChatFormatting.GRAY));
     }
 }

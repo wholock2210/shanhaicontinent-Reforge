@@ -2,6 +2,7 @@ package hua.huase.shanhaicontinent.event.server;
 
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.capability.AttrubuteAPI;
+import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
 import hua.huase.shanhaicontinent.potion.Jineng_huang_6;
 import hua.huase.shanhaicontinent.potion.PotionAttribute;
 import net.minecraft.world.damagesource.DamageSource;
@@ -43,11 +44,16 @@ public class PWLivingHurtEvent {
 
         if(livingEntity.getHealth()-event.getAmount()<=0){
             Map<MobEffect, MobEffectInstance> activeEffectsMap = livingEntity.getActiveEffectsMap();
+//            防止java.util.ConcurrentModificationException
+            Boolean b = false;
             for (Map.Entry<MobEffect, MobEffectInstance> mobEffectMobEffectInstanceEntry : activeEffectsMap.entrySet()) {
                 if(mobEffectMobEffectInstanceEntry.getKey() instanceof Jineng_huang_6 potionAttribute){
                     potionAttribute.chufaEvent(livingEntity,event);
-                    livingEntity.removeEffect(potionAttribute);
+                    b=true;
                 }
+            }
+            if(b){
+                livingEntity.removeEffect(SHModMobEffectsinit.jineng_huang_6.get());
             }
         }
     }

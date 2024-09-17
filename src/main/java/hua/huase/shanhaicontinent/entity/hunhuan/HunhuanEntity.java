@@ -83,7 +83,10 @@ public class HunhuanEntity extends Entity {
 
     public InteractionResult interact(Player player, InteractionHand hand) {
         if (player.isSecondaryUseActive()) {
-            return InteractionResult.PASS;
+//            return InteractionResult.PASS;
+//                    分解魂环
+            livetime+=1000;
+            return InteractionResult.SUCCESS;
         } else{
             if (!this.level().isClientSide) {
                 if(player.startRiding(this)){
@@ -93,7 +96,6 @@ public class HunhuanEntity extends Entity {
                 }else {
                     return InteractionResult.PASS;
                 }
-
             } else {
                 return InteractionResult.SUCCESS;
             }

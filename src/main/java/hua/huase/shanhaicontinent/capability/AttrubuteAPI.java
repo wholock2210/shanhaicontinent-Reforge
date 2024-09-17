@@ -73,9 +73,11 @@ public interface AttrubuteAPI {
                         istaozhuang = false;
                     }
                 }
-                ItemStack itemBySlot = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
-                if(istaozhuang && !itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
-                    value +=shArmorBaseItem.setMaxshengmingTaozhuang(itemBySlot , value);
+                if(istaozhuang){
+                    ItemStack itemBySlot = SHArmorBaseItem.getLowTaozhuang(armorSlots);
+                    if(!itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
+                        value +=shArmorBaseItem.setMaxshengmingTaozhuang(itemBySlot , value);
+                    }
                 }
 
             }
@@ -137,11 +139,12 @@ public interface AttrubuteAPI {
                         istaozhuang = false;
                     }
                 }
-                ItemStack itemBySlot = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
-                if(istaozhuang && !itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
-                    value +=shArmorBaseItem.setWufangTaozhuang(itemBySlot , value);
+                if(istaozhuang){
+                    ItemStack itemBySlot = SHArmorBaseItem.getLowTaozhuang(armorSlots);
+                    if(!itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
+                        value +=shArmorBaseItem.setWufangTaozhuang(itemBySlot , value);
+                    }
                 }
-
             }
 
         }
@@ -364,9 +367,11 @@ public interface AttrubuteAPI {
                         istaozhuang = false;
                     }
                 }
-                ItemStack itemBySlot = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
-                if(istaozhuang && !itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
-                    value +=shArmorBaseItem.setShengminghuifuTaozhuang(itemBySlot , value);
+                if(istaozhuang){
+                    ItemStack itemBySlot = SHArmorBaseItem.getLowTaozhuang(armorSlots);
+                    if(!itemBySlot.isEmpty() && itemBySlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
+                        value +=shArmorBaseItem.setShengminghuifuTaozhuang(itemBySlot , value);
+                    }
                 }
 
             }

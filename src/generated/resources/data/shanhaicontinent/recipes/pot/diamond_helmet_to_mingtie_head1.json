@@ -1,0 +1,33 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": {
+      "item": "shanhaicontinent:itemmingtie"
+    },
+    "JEIGUO": {
+      "item": "shanhaicontinent:mingtie_head"
+    },
+    "JIN": {
+      "item": "shanhaicontinent:itemmingtie"
+    },
+    "MU": {
+      "item": "shanhaicontinent:itemmingtie"
+    },
+    "PEIFANG": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping"
+    },
+    "SHUI": {
+      "item": "shanhaicontinent:itemmingtie"
+    },
+    "TU": {
+      "item": "shanhaicontinent:itemmingtie"
+    }
+  },
+  "nengliang": 80,
+  "result": {
+    "item": "shanhaicontinent:mingtie_head"
+  }
+}

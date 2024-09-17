@@ -5,17 +5,23 @@ import hua.huase.shanhaicontinent.init.BlockInit;
 import hua.huase.shanhaicontinent.recipe.PotRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableBuilder;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.recipe.vanilla.IJeiBrewingRecipe;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class PotCategory implements IRecipeCategory<PotRecipe> {
@@ -68,7 +74,9 @@ public class PotCategory implements IRecipeCategory<PotRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, PotRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 41,   27).addIngredients(recipe.getIngredients().get(0));
+
+
+        IRecipeSlotBuilder iRecipeSlotBuilder = builder.addSlot(RecipeIngredientRole.INPUT, 41, 27).addIngredients(recipe.getIngredients().get(0));
         builder.addSlot(RecipeIngredientRole.INPUT, 41,   91).addIngredients(recipe.getIngredients().get(1));
         builder.addSlot(RecipeIngredientRole.INPUT, 97,   60).addIngredients(recipe.getIngredients().get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 116,  100).addIngredients(recipe.getIngredients().get(3));
@@ -76,6 +84,19 @@ public class PotCategory implements IRecipeCategory<PotRecipe> {
         builder.addSlot(RecipeIngredientRole.INPUT, 170,  100).addIngredients(recipe.getIngredients().get(5));
         builder.addSlot(RecipeIngredientRole.INPUT, 194,  60).addIngredients(recipe.getIngredients().get(6));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 323, 60).addItemStack(recipe.getResultItem(null));
+        IRecipeSlotBuilder iRecipeSlotBuilder1 = builder.addSlot(RecipeIngredientRole.OUTPUT, 323, 60).addItemStack(recipe.getResultItem(null));
+
+
+
     }
+
+
+    @Override
+    public void draw(PotRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+
+        guiGraphics.drawString(Minecraft.getInstance().font,
+                Component.translatable("所需能量",recipe.getnengliang())
+                , 24, 78, 0xFF00ff00, false);
+    }
+
 }

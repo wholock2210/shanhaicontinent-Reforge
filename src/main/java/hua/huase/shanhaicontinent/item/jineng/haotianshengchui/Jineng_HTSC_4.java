@@ -39,6 +39,7 @@ public class Jineng_HTSC_4 extends JinengBase{
             entity.setPos(player.getX(),player.getY()+1,player.getZ());
             entity.setItem(itemstack);
             entity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3F, 0.0F);
+            entity.isExploade = player.isShiftKeyDown();
             level.addFreshEntity(entity);
 
         }
@@ -49,6 +50,7 @@ public class Jineng_HTSC_4 extends JinengBase{
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);
         list.add(Component.translatable("发出强大的力量风暴，前方的敌人造成伤害").withStyle(ChatFormatting.GREEN));
+        list.add(Component.translatable("蹲下释放可破环地形").withStyle(ChatFormatting.GRAY));
 
     }
 }

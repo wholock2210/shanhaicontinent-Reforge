@@ -37,6 +37,7 @@ public class DataGenerators {
 
 
         generator.addProvider(event.includeServer(), new ModLanguageProvider(packOutput, SHMainBus.MOD_ID,"zh_cn"));
+        generator.addProvider(event.includeServer(), new ModLanguageProvider(packOutput, SHMainBus.MOD_ID,"en_us"));
 
 
 //配方

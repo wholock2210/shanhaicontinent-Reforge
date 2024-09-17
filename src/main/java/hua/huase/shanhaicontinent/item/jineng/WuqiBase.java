@@ -20,6 +20,13 @@ public class WuqiBase extends SwordItem implements WuqiAttribute, Jineng {
         super(tier, i, v, properties);
     }
 
+
+
+    public boolean canBeDepleted() {
+        return false;
+    }
+
+
     @Override
     public float getWugong(Player player, ItemStack itemStack, float value, EquipmentSlot offhand) {
         return value;

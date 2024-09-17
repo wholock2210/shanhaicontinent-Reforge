@@ -16,17 +16,58 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static hua.huase.shanhaicontinent.item.armor.SHArmorMaterial.mingtie;
-
 public class SHArmorBaseItem extends ArmorItem {
     public SHArmorBaseItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
+
+    public static ItemStack getLowTaozhuang(Iterable<ItemStack> armorSlots) {
+        ItemStack itemStack = ItemStack.EMPTY;
+        int num = 6;
+        for (ItemStack armorSlot : armorSlots) {
+            if(!armorSlot.isEmpty() && armorSlot.getItem() instanceof SHArmorBaseItem shArmorBaseItem){
+                int materialNum = SHArmorBaseItem.getMaterialNum(shArmorBaseItem.getMaterial());
+                if(materialNum<num){
+                    itemStack = armorSlot;
+                    num = materialNum;
+                }
+            }else {
+                return ItemStack.EMPTY;
+            }
+        }
+        return itemStack;
+    }
+
+    public static int getMaterialNum(ArmorMaterial material){
+
+        if(material == SHArmorMaterial.mingtie){
+            return 1;
+        }
+        if(material == SHArmorMaterial.heijin){
+            return 2;
+        }
+        if(material == SHArmorMaterial.lanlingjin){
+            return 3;
+        }
+        if(material == SHArmorMaterial.lanhaizuan){
+            return 4;
+        }
+        if(material == SHArmorMaterial.cixuexianjin){
+            return 5;
+        }
+        return 0;
+    }
+
     @Override
     public  <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
         int maxDamage = stack.getMaxDamage();
         int damageValue = stack.getDamageValue();
+
         int i = maxDamage - damageValue-1;
+        int i1 = (int) (stack.getMaxDamage() * SHArmorBaseItem.getMaterialNum(this.material)* SHArmorBaseItem.getMaterialNum(this.material)*0.05f);
+        if(i1 <amount){
+            i = (int) Math.sqrt(amount);
+        }
         amount = (int) Math.sqrt(amount);
         return Math.min(Math.min(i,amount),200);
     }
@@ -109,6 +150,21 @@ public class SHArmorBaseItem extends ArmorItem {
 
 
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+
+
+
+        list.add(Component.translatable("套装描述").withStyle(ChatFormatting.DARK_AQUA));
+
+//        int i1 = (int) (stack.getMaxDamage() * SHArmorBaseItem.getMaterialNum(this.material)* SHArmorBaseItem.getMaterialNum(this.material)*0.05f);
+//        list.add(Component.translatable("套装描述"+i1).withStyle(ChatFormatting.DARK_AQUA));
+
+        if(stack.getMaxDamage()-stack.getDamageValue()<=1){
+            list.add(Component.translatable("已破损").withStyle(ChatFormatting.DARK_RED));
+            list.add(Component.translatable("可通过造化炉修理").withStyle(ChatFormatting.WHITE));
+            return;
+        }
+
+
         list.add(Component.translatable("最大生命", (int)((stack.getMaxDamage()-stack.getDamageValue())*0.02f)).withStyle(ChatFormatting.YELLOW));
         list.add(Component.translatable("物防", (int)((stack.getMaxDamage()-stack.getDamageValue())*0.01f)).withStyle(ChatFormatting.YELLOW));
 

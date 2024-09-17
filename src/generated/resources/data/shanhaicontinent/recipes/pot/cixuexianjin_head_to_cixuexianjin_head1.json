@@ -1,0 +1,23 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": [],
+    "JEIGUO": {
+      "item": "shanhaicontinent:cixuexianjin_head"
+    },
+    "JIN": [],
+    "MU": [],
+    "PEIFANG": {
+      "item": "shanhaicontinent:cixuexianjin_head"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping"
+    },
+    "SHUI": [],
+    "TU": []
+  },
+  "nengliang": 60,
+  "result": {
+    "item": "shanhaicontinent:cixuexianjin_head"
+  }
+}

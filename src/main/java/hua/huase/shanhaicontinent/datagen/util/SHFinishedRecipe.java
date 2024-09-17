@@ -24,6 +24,8 @@ public class SHFinishedRecipe implements FinishedRecipe {
     private ItemLike TU;
     private ItemLike JEIGUO;
     private int num;
+    private int nengliang;
+
 
     @Override
     public void serializeRecipeData(JsonObject pJson) {
@@ -38,6 +40,7 @@ public class SHFinishedRecipe implements FinishedRecipe {
         jsonobject.add("HUO",       Ingredient.of(HUO).toJson());
         jsonobject.add("TU",        Ingredient.of(TU).toJson());
         jsonobject.add("JEIGUO",    Ingredient.of(JEIGUO).toJson());
+        pJson.addProperty("nengliang",nengliang);
 
         pJson.add("key", jsonobject);
         JsonObject jsonobject1 = new JsonObject();
@@ -51,7 +54,7 @@ public class SHFinishedRecipe implements FinishedRecipe {
 
     @Override
     public ResourceLocation getId() {
-        return new ResourceLocation(SHMainBus.MOD_ID,"pot/"+BuiltInRegistries.ITEM.getKey(PEIFANG.asItem()).getPath() +"_to_"+BuiltInRegistries.ITEM.getKey(JEIGUO.asItem()).getPath() );
+        return new ResourceLocation(SHMainBus.MOD_ID,"pot/"+BuiltInRegistries.ITEM.getKey(PEIFANG.asItem()).getPath() +"_to_"+BuiltInRegistries.ITEM.getKey(JEIGUO.asItem()).getPath()+num );
     }
 
     @Override
@@ -113,6 +116,11 @@ public class SHFinishedRecipe implements FinishedRecipe {
 
     public SHFinishedRecipe setNum(int num) {
         this.num = num;
+        return this;
+    }
+
+    public SHFinishedRecipe setNengliang(int nengliang) {
+        this.nengliang = nengliang;
         return this;
     }
 }

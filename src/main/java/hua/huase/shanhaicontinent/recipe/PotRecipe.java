@@ -1,10 +1,8 @@
 package hua.huase.shanhaicontinent.recipe;
 
 import com.google.common.collect.Maps;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
 import hua.huase.shanhaicontinent.SHMainBus;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
@@ -12,7 +10,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -25,11 +22,13 @@ public class PotRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ResourceLocation id;
+    private final int nengliang;
 
-    public PotRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
+    public PotRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id, int nengliang) {
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
+        this.nengliang = nengliang;
     }
 
     @Override
@@ -52,6 +51,9 @@ public class PotRecipe implements Recipe<SimpleContainer> {
     @Override
     public NonNullList<Ingredient> getIngredients() {
         return inputItems;
+    }
+    public int getnengliang() {
+        return nengliang;
     }
 
     @Override
@@ -127,13 +129,15 @@ public class PotRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
             inputs.set(0,map.get("PEIFANG"));
             inputs.set(1,map.get("RANLIAO"));
-            inputs.set(2,map.get("JIN"));
-            inputs.set(3,map.get("MU"));
-            inputs.set(4,map.get("SHUI"));
-            inputs.set(5,map.get("HUO"));
+            inputs.set(2,map.get("MU"));
+            inputs.set(3,map.get("SHUI"));
+            inputs.set(4,map.get("HUO"));
+            inputs.set(5,map.get("JIN"));
             inputs.set(6,map.get("TU"));
 
-            return new PotRecipe(inputs, itemstack, pRecipeId);
+            int nengliang = GsonHelper.getAsInt(pSerializedRecipe, "nengliang");
+
+            return new PotRecipe(inputs, itemstack, pRecipeId,nengliang);
         }
 
         @Override
@@ -145,7 +149,7 @@ public class PotRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = pBuffer.readItem();
-            return new PotRecipe(inputs, output, pRecipeId);
+            return new PotRecipe(inputs, output, pRecipeId, 0);
         }
 
         @Override
