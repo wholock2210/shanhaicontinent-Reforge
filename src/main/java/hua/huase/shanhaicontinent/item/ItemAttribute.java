@@ -2,6 +2,8 @@ package hua.huase.shanhaicontinent.item;
 
 import hua.huase.shanhaicontinent.capability.itemattribute.ItemAttributeCapabilityProvider;
 import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
@@ -14,6 +16,13 @@ public interface ItemAttribute {
 
     public static void appendItemAttribute(ItemStack itemStack, List<Component> list) {
         itemStack.getCapability(ItemAttributeCapabilityProvider.CAPABILITY).ifPresent(itemAttributeCapability -> {
+//                Tag tag = itemStack.getOrCreateTag().get("shanhaiitematuble");
+//                itemAttributeCapability.deserializeNBT((CompoundTag) tag);
+            if(itemAttributeCapability.getNianxian()==0){
+                list.add(Component.translatable("未装配").withStyle(ChatFormatting.GRAY));
+                return;
+            }
+
             if(itemAttributeCapability.getNianxian()!=0){
                 list.add(Component.translatable("年限", (int)itemAttributeCapability.getNianxian()).withStyle(ChatFormatting.YELLOW));
             }

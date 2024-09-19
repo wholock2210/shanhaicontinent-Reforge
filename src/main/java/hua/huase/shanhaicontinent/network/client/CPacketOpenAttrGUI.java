@@ -19,6 +19,7 @@
 
 package hua.huase.shanhaicontinent.network.client;
 
+import hua.huase.shanhaicontinent.network.SynsAPI;
 import hua.huase.shanhaicontinent.screen.ModMenuTypes;
 import hua.huase.shanhaicontinent.screen.PlayerAttrubuteContainerMenu;
 import net.minecraft.network.FriendlyByteBuf;
@@ -51,6 +52,7 @@ public class  CPacketOpenAttrGUI {
                 Component.translatable("menu.title.examplemod.mymenu")
         ));
 
+        SynsAPI.synsPlayerAttribute(sender);
       }
     });
     ctx.get().setPacketHandled(true);

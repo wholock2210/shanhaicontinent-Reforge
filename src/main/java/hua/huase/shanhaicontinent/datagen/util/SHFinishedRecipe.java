@@ -41,7 +41,6 @@ public class SHFinishedRecipe implements FinishedRecipe {
         jsonobject.add("TU",        Ingredient.of(TU).toJson());
         jsonobject.add("JEIGUO",    Ingredient.of(JEIGUO).toJson());
         pJson.addProperty("nengliang",nengliang);
-
         pJson.add("key", jsonobject);
         JsonObject jsonobject1 = new JsonObject();
         jsonobject1.addProperty("item", BuiltInRegistries.ITEM.getKey(JEIGUO.asItem()).toString());

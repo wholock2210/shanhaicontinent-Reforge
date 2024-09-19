@@ -5,7 +5,7 @@
       "item": "shanhaicontinent:itemmingtie"
     },
     "JEIGUO": {
-      "item": "shanhaicontinent:mingtie_chest"
+      "item": "shanhaicontinent:mingtie_shovel"
     },
     "JIN": {
       "item": "shanhaicontinent:itemmingtie"
@@ -14,7 +14,7 @@
       "item": "shanhaicontinent:itemmingtie"
     },
     "PEIFANG": {
-      "item": "minecraft:diamond_leggings"
+      "item": "minecraft:diamond_shovel"
     },
     "RANLIAO": {
       "item": "shanhaicontinent:hunyeping"
@@ -28,6 +28,6 @@
   },
   "nengliang": 80,
   "result": {
-    "item": "shanhaicontinent:mingtie_chest"
+    "item": "shanhaicontinent:mingtie_shovel"
   }
 }

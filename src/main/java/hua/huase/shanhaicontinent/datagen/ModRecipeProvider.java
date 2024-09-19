@@ -55,7 +55,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ItemInit.hunyeping.get()), has(Items.ENDER_PEARL))
                 .save(pWriter);
 
-        potrecipe(pWriter);
 
         shoreSmelting(pWriter,BlockInit.blockmingtieore.get()       ,ItemInit.itemmingtie     .get(),3,200);
         shoreSmelting(pWriter,BlockInit.blockheijinore.get()        ,ItemInit.itemheijin      .get(),4,300);
@@ -71,7 +70,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         compositeAndDecomposeBlock(pWriter,ItemInit.itemlanhaizuan  .get(),BlockInit.blocklanhaizuan_block.get()  );
         compositeAndDecomposeBlock(pWriter,ItemInit.itemcixuexianjin.get(),BlockInit.blockcixuexianjin_block.get());
         compositeAndDecomposeBlock(pWriter,ItemInit.itemkongjianshi .get(),BlockInit.blockkongjianshi_block.get() );
-
+//pot造化炉合成表
+        potrecipe(pWriter);
 //
 //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
 //                .requires(ModBlocks.SAPPHIRE_BLOCK.get())
@@ -114,77 +114,125 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.bianhua_seed         ,ItemInit.danyao_jiuhua    ,10,3);
 
 //        装备修复
-        zhuangbeixiufu(pWriter,ItemInit.mingtie_head ,20);
-        zhuangbeixiufu(pWriter,ItemInit.mingtie_chest,20);
-        zhuangbeixiufu(pWriter,ItemInit.mingtie_feet ,20);
-        zhuangbeixiufu(pWriter,ItemInit.mingtie_legs ,20);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_head        ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_chest       ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_feet        ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_legs        ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_axe        ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_hoe        ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_pickaxe    ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_shovel     ,30);
+        zhuangbeixiufu(pWriter,ItemInit.mingtie_sword      ,30);
 
-        zhuangbeixiufu(pWriter,ItemInit.heijin_head ,30);
-        zhuangbeixiufu(pWriter,ItemInit.heijin_chest,30);
-        zhuangbeixiufu(pWriter,ItemInit.heijin_feet ,30);
-        zhuangbeixiufu(pWriter,ItemInit.heijin_legs ,30);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_head         ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_chest        ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_feet         ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_legs         ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_axe        ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_hoe        ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_pickaxe    ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_shovel     ,40);
+        zhuangbeixiufu(pWriter,ItemInit.heijin_sword      ,40);
 
-        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_head   ,40);
-        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_chest  ,40);
-        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_feet   ,40);
-        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_legs   ,40);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_head      ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_chest     ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_feet      ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_legs      ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_axe        ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_hoe        ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_pickaxe    ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_shovel     ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanlingjin_sword      ,50);
 
-        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_head   ,50);
-        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_chest  ,50);
-        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_feet   ,50);
-        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_legs   ,50);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_head      ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_chest     ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_feet      ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_legs      ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_axe        ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_hoe        ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_pickaxe    ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_shovel     ,60);
+        zhuangbeixiufu(pWriter,ItemInit.lanhaizuan_sword      ,60);
 
-        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_head ,60);
-        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_chest,60);
-        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_feet ,60);
-        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_legs ,60);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_head        ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_chest       ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_feet        ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_legs        ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_axe         ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_hoe         ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_pickaxe     ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_shovel      ,80);
+        zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_sword       ,80);
+
 
 //装备合成
 
-        zhuangbeihecheng(pWriter,Items.DIAMOND_HELMET  ,ItemInit.itemmingtie ,ItemInit.mingtie_head  ,80);
-        zhuangbeihecheng(pWriter,Items.DIAMOND_LEGGINGS ,ItemInit.itemmingtie ,ItemInit.mingtie_chest ,80);
-        zhuangbeihecheng(pWriter,Items.DIAMOND_BOOTS ,ItemInit.itemmingtie ,ItemInit.mingtie_feet  ,80);
-        zhuangbeihecheng(pWriter,Items.DIAMOND_LEGGINGS ,ItemInit.itemmingtie ,ItemInit.mingtie_legs  ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_HELMET       ,ItemInit.itemmingtie ,ItemInit.mingtie_head    ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_CHESTPLATE   ,ItemInit.itemmingtie ,ItemInit.mingtie_chest   ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_BOOTS        ,ItemInit.itemmingtie ,ItemInit.mingtie_feet    ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_LEGGINGS     ,ItemInit.itemmingtie ,ItemInit.mingtie_legs    ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_AXE          ,ItemInit.itemmingtie ,ItemInit.mingtie_axe     ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_HOE          ,ItemInit.itemmingtie ,ItemInit.mingtie_hoe     ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_PICKAXE      ,ItemInit.itemmingtie ,ItemInit.mingtie_pickaxe ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_SHOVEL       ,ItemInit.itemmingtie ,ItemInit.mingtie_shovel  ,80);
+        zhuangbeihecheng(pWriter,Items.DIAMOND_SWORD        ,ItemInit.itemmingtie ,ItemInit.mingtie_sword   ,80);
 
 
-        zhuangbeihecheng(pWriter,ItemInit.mingtie_head  ,ItemInit.itemheijin ,ItemInit.heijin_head  ,120);
-        zhuangbeihecheng(pWriter,ItemInit.mingtie_chest ,ItemInit.itemheijin ,ItemInit.heijin_chest ,120);
-        zhuangbeihecheng(pWriter,ItemInit.mingtie_feet  ,ItemInit.itemheijin ,ItemInit.heijin_feet  ,120);
-        zhuangbeihecheng(pWriter,ItemInit.mingtie_legs  ,ItemInit.itemheijin ,ItemInit.heijin_legs  ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_head       ,ItemInit.itemheijin ,ItemInit.heijin_head    ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_chest      ,ItemInit.itemheijin ,ItemInit.heijin_chest   ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_feet       ,ItemInit.itemheijin ,ItemInit.heijin_feet    ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_legs       ,ItemInit.itemheijin ,ItemInit.heijin_legs    ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_axe        ,ItemInit.itemheijin ,ItemInit.heijin_axe     ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_hoe        ,ItemInit.itemheijin ,ItemInit.heijin_hoe     ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_pickaxe    ,ItemInit.itemheijin ,ItemInit.heijin_pickaxe ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_shovel     ,ItemInit.itemheijin ,ItemInit.heijin_shovel  ,120);
+        zhuangbeihecheng(pWriter,ItemInit.mingtie_sword      ,ItemInit.itemheijin ,ItemInit.heijin_sword   ,120);
+
+        zhuangbeihecheng(pWriter,ItemInit.heijin_head         ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_head    ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_chest        ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_chest   ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_feet         ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_feet    ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_legs         ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_legs    ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_axe          ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_axe     ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_hoe          ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_hoe     ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_pickaxe      ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_pickaxe ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_shovel       ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_shovel  ,240);
+        zhuangbeihecheng(pWriter,ItemInit.heijin_sword        ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_sword   ,240);
+
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_head     ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_head    ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_chest    ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_chest   ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_feet     ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_feet    ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_legs     ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_legs    ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_axe      ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_axe     ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_hoe      ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_hoe     ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_pickaxe  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_pickaxe ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_shovel   ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_shovel  ,480);
+        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_sword    ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_sword   ,480);
+
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_head     ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_head    ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_chest    ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_chest   ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_feet     ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_feet    ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_legs     ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_legs    ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_axe      ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_axe     ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_hoe      ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_hoe     ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_pickaxe  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_pickaxe ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_shovel   ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_shovel  ,960);
+        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_sword    ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_sword   ,960);
 
 
-        zhuangbeihecheng(pWriter,ItemInit.heijin_head  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_head  ,240);
-        zhuangbeihecheng(pWriter,ItemInit.heijin_chest ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_chest ,240);
-        zhuangbeihecheng(pWriter,ItemInit.heijin_feet  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_feet  ,240);
-        zhuangbeihecheng(pWriter,ItemInit.heijin_legs  ,ItemInit.itemlanlingjin ,ItemInit.lanlingjin_legs  ,240);
-
-
-        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_head  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_head  ,480);
-        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_chest ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_chest ,480);
-        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_feet  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_feet  ,480);
-        zhuangbeihecheng(pWriter,ItemInit.lanlingjin_legs  ,ItemInit.itemlanhaizuan ,ItemInit.lanhaizuan_legs  ,480);
-
-
-        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_head  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_head  ,960);
-        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_chest ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_chest ,960);
-        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_feet  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_feet  ,960);
-        zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_legs  ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_legs  ,960);
-
-
-
-        pWriter.accept(
-                new SHFinishedRecipe()
-                        .setPEIFANG(    ItemInit.baisuilan_fruit.get())
-                        .setRANLIAO(    ItemInit.hunyeping.get())
-                        .setJIN(        BlockInit.blockheijinore.get())
-                        .setMU(         BlockInit.blocklanlingjinore.get())
-                        .setSHUI(       BlockInit.blocklanhaizuanore.get())
-                        .setHUO(        BlockInit.blockcixuexianjinore.get())
-                        .setTU(         Items.AIR)
-                        .setJEIGUO(     BlockInit.SOUL_BLOCK.get())
-                        .setNengliang(10)
-                        .setNum(10)
-        );
+//
+//        pWriter.accept(
+//                new SHFinishedRecipe()
+//                        .setPEIFANG(    ItemInit.baisuilan_fruit.get())
+//                        .setRANLIAO(    ItemInit.hunyeping.get())
+//                        .setJIN(        BlockInit.blockheijinore.get())
+//                        .setMU(         BlockInit.blocklanlingjinore.get())
+//                        .setSHUI(       BlockInit.blocklanhaizuanore.get())
+//                        .setHUO(        BlockInit.blockcixuexianjinore.get())
+//                        .setTU(         Items.AIR)
+//                        .setJEIGUO(     BlockInit.SOUL_BLOCK.get())
+//                        .setNengliang(10)
+//                        .setNum(10)
+//        );
     }
 
     private static void daoyaohecheng(Consumer<FinishedRecipe> pWriter, RegistryObject<Item> danfangQihundan, RegistryObject<Item> baisuilanFruit, RegistryObject<Item> danyaoQihundan, int i, int i1) {

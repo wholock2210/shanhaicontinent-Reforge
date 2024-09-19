@@ -34,6 +34,8 @@ public class DataGenerators {
 //        物品，方块模型
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+//方块标签
+        generator.addProvider(event.includeServer(), new SHBlockTagsProvider(packOutput, lookupProvider));
 
 
         generator.addProvider(event.includeServer(), new ModLanguageProvider(packOutput, SHMainBus.MOD_ID,"zh_cn"));

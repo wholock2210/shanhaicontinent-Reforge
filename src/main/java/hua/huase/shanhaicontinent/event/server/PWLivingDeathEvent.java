@@ -9,6 +9,7 @@ import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
 import hua.huase.shanhaicontinent.entity.mob.hunmin.HunminEntity;
 import hua.huase.shanhaicontinent.init.EntityInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -51,6 +52,10 @@ public class PWLivingDeathEvent {
         ItemStack itemStack = new ItemStack(item);
         itemStack.getCapability(ItemAttributeCapabilityProvider.CAPABILITY).ifPresent(capability1 -> {
             capability1.toUpdateNianxian(nianxian);
+
+            CompoundTag tag = itemStack.getOrCreateTag();
+            tag.put("shanhaiitematuble",capability1.serializeNBT());
+
             ItemEntity itemEntity = entity.spawnAtLocation(itemStack);
             if (itemEntity != null) {
                 itemEntity.setExtendedLifetime();

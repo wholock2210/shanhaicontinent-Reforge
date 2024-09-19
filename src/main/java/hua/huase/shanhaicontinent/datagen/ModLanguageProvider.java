@@ -19,6 +19,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("套装效果", "套装效果:");
         this.add("套装描述", "十分耐用，非降维伤害，不可破坏");
         this.add("已破损", "已破损");
+        this.add("未装配", "未装配");
         this.add("可通过造化炉修理", "可通过造化炉修理");
         this.add("所需能量", "§c所需能量：%s");
         this.add("生命", "生命：%s/%s");
@@ -209,30 +210,55 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.itemcixuexianjin       .get(),"§a赤血仙金");
         this.add(ItemInit.itemkongjianshi        .get(),"§a空间石");
 
-        this.add(ItemInit.mingtie_head         .get(),"§a冥铁头盔");
-        this.add(ItemInit.mingtie_chest        .get(),"§a冥铁胸甲");
-        this.add(ItemInit.mingtie_feet         .get(),"§a冥铁鞋子");
-        this.add(ItemInit.mingtie_legs         .get(),"§a冥铁护腿");
+        this.add(ItemInit.mingtie_head     .get(),"§a冥铁头盔");
+        this.add(ItemInit.mingtie_chest    .get(),"§a冥铁胸甲");
+        this.add(ItemInit.mingtie_feet     .get(),"§a冥铁鞋子");
+        this.add(ItemInit.mingtie_legs     .get(),"§a冥铁护腿");
+        this.add(ItemInit.mingtie_axe            .get(),"§a冥铁斧");
+        this.add(ItemInit.mingtie_hoe            .get(),"§a冥铁锄");
+        this.add(ItemInit.mingtie_pickaxe        .get(),"§a冥铁镐");
+        this.add(ItemInit.mingtie_shovel         .get(),"§a冥铁锹");
+        this.add(ItemInit.mingtie_sword          .get(),"§a冥铁剑");
 
         this.add(ItemInit.heijin_head          .get(),"§a黑金头盔");
         this.add(ItemInit.heijin_chest         .get(),"§a黑金胸甲");
         this.add(ItemInit.heijin_feet          .get(),"§a黑金鞋子");
         this.add(ItemInit.heijin_legs          .get(),"§a黑金护腿");
+        this.add(ItemInit.heijin_axe            .get(),"§a黑金斧");
+        this.add(ItemInit.heijin_hoe            .get(),"§a黑金锄");
+        this.add(ItemInit.heijin_pickaxe        .get(),"§a黑金镐");
+        this.add(ItemInit.heijin_shovel         .get(),"§a黑金锹");
+        this.add(ItemInit.heijin_sword          .get(),"§a黑金剑");
 
-        this.add(ItemInit.lanlingjin_head           .get(),"§a蓝灵金头盔");
-        this.add(ItemInit.lanlingjin_chest          .get(),"§a蓝灵金胸甲");
-        this.add(ItemInit.lanlingjin_feet           .get(),"§a蓝灵金鞋子");
-        this.add(ItemInit.lanlingjin_legs           .get(),"§a蓝灵金护腿");
+        this.add(ItemInit.lanlingjin_head            .get(),"§a蓝灵金头盔");
+        this.add(ItemInit.lanlingjin_chest           .get(),"§a蓝灵金胸甲");
+        this.add(ItemInit.lanlingjin_feet            .get(),"§a蓝灵金鞋子");
+        this.add(ItemInit.lanlingjin_legs            .get(),"§a蓝灵金护腿");
+        this.add(ItemInit.lanlingjin_axe            .get(),"§a蓝灵金斧");
+        this.add(ItemInit.lanlingjin_hoe            .get(),"§a蓝灵金锄");
+        this.add(ItemInit.lanlingjin_pickaxe        .get(),"§a蓝灵金镐");
+        this.add(ItemInit.lanlingjin_shovel         .get(),"§a蓝灵金锹");
+        this.add(ItemInit.lanlingjin_sword          .get(),"§a蓝灵金剑");
 
-        this.add(ItemInit.lanhaizuan_head           .get(),"§a蓝海钻头盔");
-        this.add(ItemInit.lanhaizuan_chest          .get(),"§a蓝海钻胸甲");
-        this.add(ItemInit.lanhaizuan_feet           .get(),"§a蓝海钻鞋子");
-        this.add(ItemInit.lanhaizuan_legs           .get(),"§a蓝海钻护腿");
+        this.add(ItemInit.lanhaizuan_head            .get(),"§a蓝海钻头盔");
+        this.add(ItemInit.lanhaizuan_chest           .get(),"§a蓝海钻胸甲");
+        this.add(ItemInit.lanhaizuan_feet            .get(),"§a蓝海钻鞋子");
+        this.add(ItemInit.lanhaizuan_legs            .get(),"§a蓝海钻护腿");
+        this.add(ItemInit.lanhaizuan_axe            .get(),"§a蓝海钻斧");
+        this.add(ItemInit.lanhaizuan_hoe            .get(),"§a蓝海钻锄");
+        this.add(ItemInit.lanhaizuan_pickaxe        .get(),"§a蓝海钻镐");
+        this.add(ItemInit.lanhaizuan_shovel         .get(),"§a蓝海钻锹");
+        this.add(ItemInit.lanhaizuan_sword          .get(),"§a蓝海钻剑");
 
-        this.add(ItemInit.cixuexianjin_head           .get(),"§a赤血仙金头盔");
-        this.add(ItemInit.cixuexianjin_chest          .get(),"§a赤血仙金胸甲");
-        this.add(ItemInit.cixuexianjin_feet           .get(),"§a赤血仙金鞋子");
-        this.add(ItemInit.cixuexianjin_legs           .get(),"§a赤血仙金护腿");
+        this.add(ItemInit.cixuexianjin_head              .get(),"§a赤血仙金头盔");
+        this.add(ItemInit.cixuexianjin_chest             .get(),"§a赤血仙金胸甲");
+        this.add(ItemInit.cixuexianjin_feet              .get(),"§a赤血仙金鞋子");
+        this.add(ItemInit.cixuexianjin_legs              .get(),"§a赤血仙金护腿");
+        this.add(ItemInit.cixuexianjin_axe            .get(),"§a赤血仙金斧");
+        this.add(ItemInit.cixuexianjin_hoe            .get(),"§a赤血仙金锄");
+        this.add(ItemInit.cixuexianjin_pickaxe        .get(),"§a赤血仙金镐");
+        this.add(ItemInit.cixuexianjin_shovel         .get(),"§a赤血仙金锹");
+        this.add(ItemInit.cixuexianjin_sword          .get(),"§a赤血仙金剑");
 
 
 

@@ -132,12 +132,13 @@ public class ItemAttributeCapability extends CapabilityAttributeBase implements 
     public CompoundTag serializeNBT() {
 
         CompoundTag nbt = super.serializeNBT();
-        nbt.putFloat("nianxian",nianxian);
+        nbt.putInt("nianxian",nianxian);
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
+        if(nbt == null)return;
         super.deserializeNBT(nbt);
         this.nianxian=nbt.getInt("nianxian");
 

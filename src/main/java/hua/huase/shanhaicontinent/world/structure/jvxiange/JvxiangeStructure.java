@@ -44,9 +44,10 @@ public class JvxiangeStructure extends Structure  {
 
         Rotation rotation = Rotation.getRandom(pContext.random());
         BlockPos blockpos = this.getLowestYIn5by5BoxOffset7Blocks(pContext, rotation);
-        return blockpos.getY() < 60 ? Optional.empty() : Optional.of(new GenerationStub(blockpos, (structurePiecesBuilder) -> {
-            this.generatePieces(structurePiecesBuilder, blockpos, rotation, pContext);
-        }));
+        return  Optional.empty() ;
+//        return blockpos.getY() < 60 ? Optional.empty() : Optional.of(new Structure.GenerationStub(blockpos, (structurePiecesBuilder) -> {
+//            this.generatePieces(structurePiecesBuilder, blockpos, rotation, pContext);
+//        }));
     }
 
     private void generatePieces(StructurePiecesBuilder structurePiecesBuilder, BlockPos blockPos, Rotation rotation, GenerationContext generationContext) {

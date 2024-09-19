@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "shanhaicontinent:item/lanlingjin_sword"
+  }
+}

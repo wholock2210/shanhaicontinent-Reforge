@@ -33,7 +33,7 @@ public class GufengxiaowuPiecees {
 
    public static void startHouseTower(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, List<StructurePiece> pieceList, RandomSource randomSource) {
 
-      SHPiece gufengxiaowu01 = addHelper(pieceList, new SHPiece(templateManager, "gufengxiaowu01", blockPos, rotation, true));
+      SHPiece gufengxiaowu01 = addHelper(pieceList, new SHPiece(templateManager, "gufengxiaowu"+randomSource.nextInt(9), blockPos, rotation, true));
    }
 
    static SHPiece addHelper(List<StructurePiece> pieceList, SHPiece SHPiece) {
@@ -64,7 +64,7 @@ public class GufengxiaowuPiecees {
 
       private static ResourceLocation makeResourceLocation(String s) {
 //         return new ResourceLocation("end_city/" + p_227503_);
-         return new ResourceLocation(SHMainBus.MOD_ID,"gufengxiaowu01");
+         return new ResourceLocation(SHMainBus.MOD_ID,s);
       }
 
       protected void addAdditionalSaveData(StructurePieceSerializationContext pContext, CompoundTag pTag) {
@@ -74,13 +74,25 @@ public class GufengxiaowuPiecees {
       }
 
       protected void handleDataMarker(String pName, BlockPos pPos, ServerLevelAccessor pLevel, RandomSource pRandom, BoundingBox pBox) {
-         if (pName.startsWith("Chest")) {
+         if (pName.startsWith("isnullchest")) {
             BlockState blockstate = Blocks.CHEST.defaultBlockState();
+            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
 
-            this.createChest(pLevel, pBox, pRandom, pPos, BuiltInLootTables.WOODLAND_MANSION, blockstate);
 
+         }else if (pName.startsWith("israndomchest0")) {
+            BlockState blockstate = Blocks.CHEST.defaultBlockState();
+            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
 
-         } else if (pBox.isInside(pPos) && Level.isInSpawnableBounds(pPos)) {
+         } else if (pName.startsWith("monter")) {
+            BlockState blockstate = Blocks.CHEST.defaultBlockState();
+            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
+
+         } else if (pName.startsWith("monsterchest")) {
+            BlockState blockstate = Blocks.CHEST.defaultBlockState();
+            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
+
+         }
+         else if (pBox.isInside(pPos) && Level.isInSpawnableBounds(pPos)) {
 //            if (pName.startsWith("Sentry")) {
 //               Shulker shulker = EntityType.SHULKER.create(pLevel.getLevel());
 //               if (shulker != null) {

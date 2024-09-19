@@ -45,16 +45,15 @@ public class BoneItem extends Item implements ItemAttribute{
 
     public net.minecraftforge.common.capabilities.ICapabilityProvider initCapabilities(ItemStack stack, @org.jetbrains.annotations.Nullable CompoundTag nbt)
     {
-        if(nbt!=null){
-            Tag tag = nbt.get("shanhaicontinent:item_attribute");
-            if(tag!=null){
-                ItemAttributeCapabilityProvider itemAttributeCapabilityProvider = this.creatItemAttribute();
-                itemAttributeCapabilityProvider.deserializeNBT((CompoundTag) tag);
-                return itemAttributeCapabilityProvider;
-            }
-        }
-        var ret = ShulkerItemStackInvWrapper.createDefaultProvider(stack);
-        return ret;
+
+
+        Tag tag = stack.getOrCreateTag().get("shanhaiitematuble");
+        ItemAttributeCapabilityProvider itemAttributeCapabilityProvider = this.creatItemAttribute();
+        itemAttributeCapabilityProvider.deserializeNBT((CompoundTag) tag);
+        return itemAttributeCapabilityProvider;
+
+//        return null;
+
     }
 
 }

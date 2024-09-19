@@ -54,7 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
 
         for (RegistryObject<Item> itemRegistryObject : ARMORLIST) {
-            simpleItem(itemRegistryObject);
+            handheldItem(itemRegistryObject);
         }
 
 

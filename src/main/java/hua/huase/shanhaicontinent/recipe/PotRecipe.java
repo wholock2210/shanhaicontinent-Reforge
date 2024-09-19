@@ -149,7 +149,9 @@ public class PotRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = pBuffer.readItem();
-            return new PotRecipe(inputs, output, pRecipeId, 0);
+            int i = pBuffer.readVarInt();
+            return new PotRecipe(inputs, output, pRecipeId, i);
+//            return new PotRecipe(inputs, output, pRecipeId, 0);
         }
 
         @Override
@@ -159,8 +161,8 @@ public class PotRecipe implements Recipe<SimpleContainer> {
             for (Ingredient ingredient : pRecipe.getIngredients()) {
                 ingredient.toNetwork(pBuffer);
             }
-
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
+            pBuffer.writeVarInt(pRecipe.getnengliang());
         }
     }
 }

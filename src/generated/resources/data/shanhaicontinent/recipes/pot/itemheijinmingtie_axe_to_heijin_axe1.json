@@ -1,0 +1,33 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "JEIGUO": {
+      "item": "shanhaicontinent:heijin_axe"
+    },
+    "JIN": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "MU": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "PEIFANG": {
+      "item": "shanhaicontinent:mingtie_axe"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping"
+    },
+    "SHUI": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "TU": {
+      "item": "shanhaicontinent:itemheijin"
+    }
+  },
+  "nengliang": 120,
+  "result": {
+    "item": "shanhaicontinent:heijin_axe"
+  }
+}
