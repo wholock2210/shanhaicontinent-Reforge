@@ -1,12 +1,17 @@
 package hua.huase.shanhaicontinent.world.structure.gufengxiaowu;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.entity.mob.hunmin.HunminEntity;
+import hua.huase.shanhaicontinent.init.EntityInit;
+import hua.huase.shanhaicontinent.world.lootables.SHLootTables;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.item.ItemStack;
@@ -15,6 +20,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.SpawnerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
@@ -33,7 +40,7 @@ public class GufengxiaowuPiecees {
 
    public static void startHouseTower(StructureTemplateManager templateManager, BlockPos blockPos, Rotation rotation, List<StructurePiece> pieceList, RandomSource randomSource) {
 
-      SHPiece gufengxiaowu01 = addHelper(pieceList, new SHPiece(templateManager, "gufengxiaowu"+randomSource.nextInt(9), blockPos, rotation, true));
+      SHPiece gufengxiaowu01 = addHelper(pieceList, new SHPiece(templateManager, "gufengxiaowu"+randomSource.nextInt(9), blockPos.above(0), rotation, true));
    }
 
    static SHPiece addHelper(List<StructurePiece> pieceList, SHPiece SHPiece) {
@@ -76,20 +83,22 @@ public class GufengxiaowuPiecees {
       protected void handleDataMarker(String pName, BlockPos pPos, ServerLevelAccessor pLevel, RandomSource pRandom, BoundingBox pBox) {
          if (pName.startsWith("isnullchest")) {
             BlockState blockstate = Blocks.CHEST.defaultBlockState();
-            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
-
-
+            this.createChest(pLevel, pBox, pRandom, pPos, pRandom.nextInt(4)==0?SHLootTables.gufengxiaowu0:BuiltInLootTables.EMPTY, blockstate);
          }else if (pName.startsWith("israndomchest0")) {
             BlockState blockstate = Blocks.CHEST.defaultBlockState();
-            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
-
+            this.createChest(pLevel, pBox, pRandom, pPos, SHLootTables.gufengxiaowu0, blockstate);
          } else if (pName.startsWith("monter")) {
-            BlockState blockstate = Blocks.CHEST.defaultBlockState();
-            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
-
+            HunminEntity hunminEntity = new HunminEntity(EntityInit.hunmin.get(), pLevel.getLevel());
+            hunminEntity.setPos(pPos.getCenter());
+            hunminEntity.finalizeSpawn(pLevel, pLevel.getCurrentDifficultyAt(hunminEntity.blockPosition()), MobSpawnType.STRUCTURE, (SpawnGroupData)null, (CompoundTag)null);
+            pLevel.addFreshEntityWithPassengers(hunminEntity);
          } else if (pName.startsWith("monsterchest")) {
-            BlockState blockstate = Blocks.CHEST.defaultBlockState();
-            this.createChest(pLevel, pBox, pRandom, pPos, (ResourceLocation) BuiltInLootTables.all().toArray()[pRandom.nextInt(BuiltInLootTables.all().size())], blockstate);
+            pLevel.setBlock(pPos, Blocks.SPAWNER.defaultBlockState(), 2);
+            BlockEntity blockentity = pLevel.getBlockEntity(pPos);
+            if (blockentity instanceof SpawnerBlockEntity) {
+               SpawnerBlockEntity spawnerblockentity = (SpawnerBlockEntity)blockentity;
+               spawnerblockentity.setEntityId(EntityInit.hunmin.get(), pRandom);
+            }
 
          }
          else if (pBox.isInside(pPos) && Level.isInSpawnableBounds(pPos)) {

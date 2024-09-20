@@ -1,6 +1,6 @@
 {
   "type": "shanhaicontinent:jvxiange",
-  "biomes": "#shanhaicontinent:has_structure/gorgon_temple",
+  "biomes": "#shanhaicontinent:has_structure/gufenxiaowu",
   "spawn_overrides": {
     "axolotls": {
       "bounding_box": "full",

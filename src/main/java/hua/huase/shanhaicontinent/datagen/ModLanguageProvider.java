@@ -165,6 +165,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(BlockInit.SAPPHIRE_BLOCK   .get(),"测试方块");
         this.add(BlockInit.SOUL_BLOCK       .get(),"§a魂土");
         this.add(BlockInit.POT_BLOCK        .get(),"§e造化炉");
+
         this.add(BlockInit.baisuilan        .get(),"§1百岁栏");
         this.add(BlockInit.fengxinzi        .get(),"§a风信子");
         this.add(BlockInit.hanxiaohua       .get(),"§b含笑花");

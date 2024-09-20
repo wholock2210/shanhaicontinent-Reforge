@@ -5,6 +5,7 @@ import hua.huase.shanhaicontinent.datagen.level.SHBiomeTagGenerator;
 import hua.huase.shanhaicontinent.datagen.level.RegistryDataGenerator;
 import hua.huase.shanhaicontinent.datagen.level.SHStructureTagGenerator;
 import hua.huase.shanhaicontinent.datagen.loot.ModBlockLootTables;
+import hua.huase.shanhaicontinent.datagen.loot.SHChestLoot;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -53,7 +54,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Set.of(),
                 List.of(
-                new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK),
+                new LootTableProvider.SubProviderEntry(SHChestLoot::new, LootContextParamSets.CHEST)
             ))
         );
 

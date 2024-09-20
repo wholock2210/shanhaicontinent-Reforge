@@ -39,10 +39,10 @@ public class SHStructures {
 
     public static void bootstrapSTRUCTURE(BootstapContext<Structure> context) {
         context.register(gufengxiaowu01, new GufengxiaowuStructure(new Structure.StructureSettings(
-                        context.lookup(Registries.BIOME).getOrThrow(SHBiomeTagGenerator.SH_OVERWORLD),
+                        context.lookup(Registries.BIOME).getOrThrow(SHBiomeTagGenerator.SH_GUFENGXIAOWU),
                         Map.of(MobCategory.MONSTER, new StructureSpawnOverride(
                                 StructureSpawnOverride.BoundingBoxType.STRUCTURE,
-                                WeightedRandomList.create(new MobSpawnSettings.SpawnerData(EntityInit.hunmin.get(), 1, 1, 2))),
+                                WeightedRandomList.create(new MobSpawnSettings.SpawnerData(EntityInit.hunmin.get(), 0, 1, 2))),
                                 MobCategory.UNDERGROUND_WATER_CREATURE,
                                 new StructureSpawnOverride(StructureSpawnOverride.BoundingBoxType.STRUCTURE, MobSpawnSettings.EMPTY_MOB_LIST),
                                 MobCategory.AXOLOTLS,
@@ -54,7 +54,7 @@ public class SHStructures {
                 )
         );
         context.register(jvxiange, new JvxiangeStructure(new Structure.StructureSettings(
-                        context.lookup(Registries.BIOME).getOrThrow(SHBiomeTagGenerator.SH_OVERWORLD),
+                        context.lookup(Registries.BIOME).getOrThrow(SHBiomeTagGenerator.SH_GUFENGXIAOWU),
                         Map.of(MobCategory.MONSTER, new StructureSpawnOverride(
                                 StructureSpawnOverride.BoundingBoxType.STRUCTURE,
                                 WeightedRandomList.create(new MobSpawnSettings.SpawnerData(EntityInit.hunmin.get(), 1, 1, 2))),
@@ -73,7 +73,7 @@ public class SHStructures {
     public static <T> void bootstrapSTRUCTURE_SET(BootstapContext<StructureSet> tBootstapContext) {
 
         HolderGetter<Structure> holdergetter = tBootstapContext.lookup(Registries.STRUCTURE);
-        tBootstapContext.register(gufengxiaowu01_set, new StructureSet(holdergetter.getOrThrow(gufengxiaowu01), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.TRIANGULAR, 428149644)));
+        tBootstapContext.register(gufengxiaowu01_set, new StructureSet(holdergetter.getOrThrow(gufengxiaowu01), new RandomSpreadStructurePlacement(20, 4, RandomSpreadType.TRIANGULAR, 428149644)));
         tBootstapContext.register(jvxiange_set, new StructureSet(holdergetter.getOrThrow(jvxiange), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.TRIANGULAR, 4281496)));
 
     }

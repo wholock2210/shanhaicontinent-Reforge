@@ -15,8 +15,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+import static net.minecraft.tags.BiomeTags.IS_END;
+import static net.minecraft.tags.BiomeTags.IS_NETHER;
+
 public class SHBiomeTagGenerator extends BiomeTagsProvider {
-    public static final TagKey<Biome> SH_OVERWORLD = TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(SHMainBus.MOD_ID, "has_structure/gorgon_temple"));
+    public static final TagKey<Biome> SH_GUFENGXIAOWU = TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(SHMainBus.MOD_ID, "has_structure/gufenxiaowu"));
 
 
     public SHBiomeTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -25,7 +28,9 @@ public class SHBiomeTagGenerator extends BiomeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(SH_OVERWORLD).addTag(BiomeTags.IS_OVERWORLD);
+        tag(SH_GUFENGXIAOWU).addTag(BiomeTags.IS_OVERWORLD)
+                .addTag(IS_END)
+        ;
 //        tag(BiomesInit.TEXT_BIOMES, Tags.Biomes.IS_PLAINS);
 
     }
