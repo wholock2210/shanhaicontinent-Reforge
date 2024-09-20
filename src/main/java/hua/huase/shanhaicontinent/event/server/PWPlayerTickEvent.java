@@ -56,7 +56,8 @@ public class PWPlayerTickEvent {
         if(!player.isCreative() && !player.isSpectator()){
 
 
-            if(capability.getDengji()>=25  && PlayerAttrubuteAPI.getJingshenli(player)>200
+//            if(capability.getDengji()>=25  && PlayerAttrubuteAPI.getJingshenli(player)>200
+            if(PlayerAttrubuteAPI.getJingshenli(player)>700
                     && capability.getWuhunName() !=null
             ){
                 player.getAbilities().mayfly=true;
@@ -66,10 +67,10 @@ public class PWPlayerTickEvent {
 
 
             if(player.getAbilities().flying && player.level().getGameTime()%10 == 0){
-                capability.setJingshenli(capability.getJingshenli()-2+ (float) capability.getDengji() /100);
+                capability.setJingshenli(capability.getJingshenli()-30+ (float) capability.getDengji() /5);
             }
             if(capability.getWuhunName() !=null && player.level().getGameTime()%20 == 0){
-                capability.setJingshenli(capability.getJingshenli()-1- (float) capability.getDengji() /10);
+                capability.setJingshenli(capability.getJingshenli()-25- (float) capability.getDengji() /5);
             }
         }
 
@@ -100,9 +101,10 @@ public class PWPlayerTickEvent {
 
             float maxjingshenli = PlayerAttrubuteAPI.getMaxjingshenli(player);
             float jingshenli1 = capability.getJingshenli();
-            if(jingshenli1<maxjingshenli && dengji>0){
+            if(jingshenli1<maxjingshenli && dengji>0 && capability.getHunhuankuaiguan()==-1){
                 int dengji1 = capability.getDengji();
-                float v = jingshenli1 + (maxjingshenli * 0.01f * (1 + dengji1 / 80));
+//                float v = jingshenli1 + (maxjingshenli * 0.01f * (1 + dengji1 / 80));
+                float v = jingshenli1 + (10 * (0.5f + dengji1 / 80));
                 capability.setJingshenli(Math.min(v,maxjingshenli));
             }
 

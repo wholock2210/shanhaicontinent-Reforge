@@ -49,7 +49,7 @@ public class PWSleepingTimeCheckEvent {
         stageHashMap.putIfAbsent(entityPlayer.getUUID(), 0);
         Integer integer = stageHashMap.get(entityPlayer.getUUID());
 
-        if(integer == 100 && entityPlayer instanceof ServerPlayer serverPlayer){
+        if(integer == 100 && entityPlayer instanceof ServerPlayer serverPlayer ){
             zhuansheng(serverPlayer);
         }
 
@@ -59,7 +59,7 @@ public class PWSleepingTimeCheckEvent {
 
     private static void zhuansheng(ServerPlayer entityPlayer) {
         entityPlayer.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
-            if(capability.getJingshenli()<=3000)return;
+            if(capability.getJingshenli()<=3000 && capability.getDengji() <99)return;
 
 
 

@@ -16,6 +16,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
 //    突破成功概率
 //    武魂      魂环
 //    物品蓸
+//    转生数
 
     private float jingyan;
     private float maxjingyan;
@@ -27,6 +28,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
     private Map<String, List<MonsterAttributeCapability>> monsterCapabilityLists = new HashMap<>();
     private List<String> wuhunListsname = new ArrayList<>();;
     ItemStackHandler boneslot = new ItemStackHandler(7);
+    private int zhuanshengshu = 0;
 
     public static HashSet<String> wuhunListsnameall= new HashSet<>();
 
@@ -75,6 +77,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
         nbt.putFloat("maxjingshenli",maxjingshenli);
         nbt.putInt("dengji",dengji);
         nbt.putInt("hunhuankuaiguan",hunhuankuaiguan);
+        nbt.putInt("zhuanshengshu",zhuanshengshu);
         for (Map.Entry<String, List<MonsterAttributeCapability>> stringListEntry : monsterCapabilityLists.entrySet()) {
             nbt.putBoolean("iswuhun"+stringListEntry.getKey(),true);
             int nameindex = 0;
@@ -98,6 +101,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
         this.maxjingshenli=nbt.getFloat("maxjingshenli");
         this.dengji=nbt.getInt("dengji");
         this.hunhuankuaiguan=nbt.getInt("hunhuankuaiguan");
+        this.zhuanshengshu=nbt.getInt("zhuanshengshu");
         this.wuhunListsname.clear();
         this.monsterCapabilityLists.clear();
         for (String s : wuhunListsnameall) {
@@ -210,5 +214,13 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
 
     public void setMonsterCapabilityLists(Map<String, List<MonsterAttributeCapability>> monsterCapabilityLists) {
         this.monsterCapabilityLists = monsterCapabilityLists;
+    }
+
+    public int getZhuanshengshu() {
+        return zhuanshengshu;
+    }
+
+    public void setZhuanshengshu(int zhuanshengshu) {
+        this.zhuanshengshu = zhuanshengshu;
     }
 }

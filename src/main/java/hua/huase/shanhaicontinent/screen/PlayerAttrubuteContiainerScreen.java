@@ -168,6 +168,7 @@ public class PlayerAttrubuteContiainerScreen extends AbstractContainerScreen<Pla
         mutableComponents.add(Component.translatable("闪避", (int)AttrubuteAPI.getShanbi(player)));
         mutableComponents.add(Component.translatable("经验", (int)PlayerAttrubuteAPI.getJingyan(player),(int)PlayerAttrubuteAPI.getMaxJingyan(player)));
         mutableComponents.add(Component.translatable("等级", (int)PlayerAttrubuteAPI.getDengji(player)));
+        mutableComponents.add(Component.translatable("转生", (int)PlayerAttrubuteAPI.getZhuansheng(player)));
 
 //        renderListText(guiGraphics,mutableComponents, x+60, y+36);
         renderListText(guiGraphics,mutableComponents, x, y);
@@ -188,7 +189,7 @@ public class PlayerAttrubuteContiainerScreen extends AbstractContainerScreen<Pla
             poseStack.pushPose();
 
             Matrix4f matrix4f = poseStack.last().pose();
-            matrix4f.translate(x+24,y+15 +index,0);
+            matrix4f.translate(x+24,y+11 +index,0);
             matrix4f.scale(0.8f,0.8f,1.0f);
 
             font.drawInBatch(mutableComponent, 0, 0, 0, false, matrix4f, guiGraphics.bufferSource(), Font.DisplayMode.SEE_THROUGH, 100, 000000);

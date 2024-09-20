@@ -20,11 +20,9 @@ import static hua.huase.shanhaicontinent.SHMainBus.random;
 public class PWPositionCheckEvent {
     @SubscribeEvent
     public static void onPositionCheck(MobSpawnEvent.PositionCheck event){
-        if(random.nextInt(10)!=0)return;
-        int i = random.nextInt(5);
-        HunheEntity.createHunhe(i+1, event.getLevel().getLevel(), new BlockPos((int) event.getX(), (int) event.getY(), (int) event.getZ()));
-
-
+        if(random.nextInt(100)!=0)return;
+        int i = random.nextInt(100);
+        HunheEntity.createHunhe(i*3+1, event.getLevel().getLevel(), new BlockPos((int) event.getX(), (int) event.getY(), (int) event.getZ()));
     }
 
 

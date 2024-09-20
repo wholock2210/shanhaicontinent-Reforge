@@ -5,7 +5,7 @@
       "item": "shanhaicontinent:itemlanhaizuan"
     },
     "JEIGUO": {
-      "item": "shanhaicontinent:hunyeping5"
+      "item": "shanhaicontinent:hunyeping4"
     },
     "JIN": {
       "item": "shanhaicontinent:itemlanhaizuan"
@@ -14,7 +14,7 @@
       "item": "shanhaicontinent:itemlanhaizuan"
     },
     "PEIFANG": {
-      "item": "shanhaicontinent:hunyeping4"
+      "item": "shanhaicontinent:hunyeping3"
     },
     "RANLIAO": {
       "item": "shanhaicontinent:blockkongjianshi_block"
@@ -28,6 +28,6 @@
   },
   "nengliang": 0,
   "result": {
-    "item": "shanhaicontinent:hunyeping5"
+    "item": "shanhaicontinent:hunyeping4"
   }
 }

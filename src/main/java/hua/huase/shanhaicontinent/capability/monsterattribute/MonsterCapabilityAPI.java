@@ -23,23 +23,29 @@ public interface MonsterCapabilityAPI {
         if(entity instanceof Mob && entity instanceof Enemy){
             ResourceKey<Level> dimension = entity.level().dimension();
             if(dimension == Level.OVERWORLD){
-                index = genOverworld(entity);
+                int i = SHMainBus.random.nextInt(3) + 1;
+                index = SHMainBus.random.nextInt((int) Math.pow(14,i));
 
-                if(((Mob) entity).getMaxHealth() >60){
-                    index = (int) (10*index*Math.log10(((Mob) entity).getMaxHealth()));
-                }
-
+            }else if(dimension == Level.NETHER){
+                int i = SHMainBus.random.nextInt(4) + 1;
+                index = SHMainBus.random.nextInt((int) Math.pow(20,i));
+            }else if(dimension == Level.END){
+                int i = SHMainBus.random.nextInt(6) + 1;
+                index = SHMainBus.random.nextInt((int) Math.pow(11,i));
             }else {
-                index = SHMainBus.random.nextInt(1500+1);
+                int i = SHMainBus.random.nextInt(7) + 1;
+                index = Math.min(SHMainBus.random.nextInt((int) Math.pow(8,i)),1000000);
+            }
 
-                if(((Mob) entity).getMaxHealth() >60){
-                    index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
-                }
 
+            if(((Mob) entity).getMaxHealth() >60){
+                index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
             }
         }else {
              index = SHMainBus.random.nextInt(100+1);
         }
+
+
         return new MonsterAttributeCapability(index);
     }
 

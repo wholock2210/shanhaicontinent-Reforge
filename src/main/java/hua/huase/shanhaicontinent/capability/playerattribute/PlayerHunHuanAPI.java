@@ -172,17 +172,18 @@ public interface PlayerHunHuanAPI {
     }
 
     static void addTupoAttibute(int dengji, PlayerAttributeCapability capability) {
+        int zhuanshengshu = capability.getZhuanshengshu();
 //        50000
-        capability.setMaxjingshenli((int) (capability.getMaxjingshenli()+dengji*10f));
+        capability.setMaxjingshenli((int) (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu));
 //        100000
-        capability.setMaxshengming((int) (capability.getMaxshengming()+dengji*20f));
+        capability.setMaxshengming((int) (capability.getMaxshengming()+dengji*1f+zhuanshengshu));
 
 //        26000
 //        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*5f));
-        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*3f));
+        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*2f+zhuanshengshu));
 //        25000
-        capability.setWugong((int) (capability.getWugong()+dengji*10f));
-        capability.setWufang((int) (capability.getWufang()+dengji*5f));
+        capability.setWugong((int) (capability.getWugong()+dengji*5f));
+        capability.setWufang((int) (capability.getWufang()+dengji*1f));
 //5050
         capability.setWuchuan((int) (capability.getWuchuan()+dengji*1f));
         capability.setZhenshang((int) (capability.getZhenshang()+dengji*0.6f));
@@ -379,21 +380,22 @@ public interface PlayerHunHuanAPI {
     static void zhuansheng(PlayerAttributeCapability newplayerCapability, PlayerAttributeCapability oldItemCapability, ServerPlayer player) {
 
         if(newplayerCapability!=null&&oldItemCapability!=null){
-            newplayerCapability.setWugong(newplayerCapability.getWugong()+oldItemCapability.getWugong()/10);
+            newplayerCapability.setWugong(newplayerCapability.getWugong()+oldItemCapability.getWugong()/20);
 //            newplayerCapability.setBaojishanghai(newplayerCapability.getBaojishanghai()+oldItemCapability.getBaojishanghai()/10);
 //            newplayerCapability.setBaojilv(newplayerCapability.getBaojilv()+oldItemCapability.getBaojilv()/10);
-            newplayerCapability.setZhenshang(newplayerCapability.getZhenshang()+oldItemCapability.getZhenshang()/10);
+            newplayerCapability.setZhenshang(newplayerCapability.getZhenshang()+oldItemCapability.getZhenshang()/20);
 //            newplayerCapability.setXixue(newplayerCapability.getXixue()+oldItemCapability.getXixue()/10);
-            newplayerCapability.setWufang(newplayerCapability.getWufang()+oldItemCapability.getWufang()/10);
-            newplayerCapability.setMaxshengming(newplayerCapability.getMaxshengming()+oldItemCapability.getMaxshengming()/10);
-            newplayerCapability.setShengminghuifu(newplayerCapability.getShengminghuifu()+oldItemCapability.getShengminghuifu()/10);
+            newplayerCapability.setWufang(newplayerCapability.getWufang()+oldItemCapability.getWufang()/20);
+            newplayerCapability.setMaxshengming(newplayerCapability.getMaxshengming()+oldItemCapability.getMaxshengming()/20);
+            newplayerCapability.setShengminghuifu(newplayerCapability.getShengminghuifu()+oldItemCapability.getShengminghuifu()/20);
 //            newplayerCapability.setMingzhong(newplayerCapability.getMingzhong()+oldItemCapability.getMingzhong()/10);
 //            newplayerCapability.setShanbi(newplayerCapability.getShanbi()+oldItemCapability.getShanbi()/10);
-            newplayerCapability.setWuchuan(newplayerCapability.getWuchuan()+oldItemCapability.getWuchuan()/10);
-            newplayerCapability.setKangbao(newplayerCapability.getKangbao()+oldItemCapability.getKangbao()/10);
+            newplayerCapability.setWuchuan(newplayerCapability.getWuchuan()+oldItemCapability.getWuchuan()/20);
+            newplayerCapability.setKangbao(newplayerCapability.getKangbao()+oldItemCapability.getKangbao()/20);
 
-            newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/10));
+            newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/20));
             newplayerCapability.setJingshenli(0);
+            newplayerCapability.setZhuanshengshu(newplayerCapability.getZhuanshengshu()+1);
             player.setHealth(newplayerCapability.getMaxshengming());
 
         }

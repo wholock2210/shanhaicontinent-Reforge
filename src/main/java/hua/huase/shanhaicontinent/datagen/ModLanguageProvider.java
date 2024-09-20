@@ -39,6 +39,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("经验", "经验：%s/%s");
         this.add("获得经验", "经验：+%s");
         this.add("等级", "等级：%s");
+        this.add("转生", "转生：%s世");
         this.add("精神力", "精神力：%s/%s");
         this.add("获得精神力", "精神力：+%s");
         this.add("获得最大精神力", "最大精神力：+%s");

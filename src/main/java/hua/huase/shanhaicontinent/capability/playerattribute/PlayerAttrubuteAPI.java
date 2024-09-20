@@ -443,6 +443,16 @@ public interface PlayerAttrubuteAPI {
         return value;
     }
 
+    static float getZhuansheng(Player player) {
+        float value = 0;
+        LazyOptional<PlayerAttributeCapability> capability = player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY);
+        if (capability.isPresent()) {
+            PlayerAttributeCapability playerAttributeCapability = capability.orElseThrow(RuntimeException::new);
+            value += playerAttributeCapability.getZhuanshengshu();
+        }
+        return value;
+    }
+
     static float getJingshenli(Player player) {
 
         float value = 0;
