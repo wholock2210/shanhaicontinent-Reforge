@@ -37,21 +37,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlockInit.POT_BLOCK.get())
 //                .pattern("   ")
+                .pattern(" K ")
                 .pattern("SXS")
                 .pattern("SCS")
                 .define('X', Items.DIAMOND)
                 .define('S', Items.GOLD_INGOT)
                 .define('C', Items.IRON_INGOT)
+                .define('K', BlockInit.blockkongjianshi_block.get())
                 .unlockedBy(getHasName(BlockInit.POT_BLOCK.get()), has(Items.IRON_INGOT))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemInit.hunyeping.get())
-//                .pattern("   ")
+                .pattern("K K")
                 .pattern("SXS")
                 .pattern("SCS")
                 .define('X', Items.ENDER_PEARL)
                 .define('S', Blocks.GLASS)
                 .define('C', Items.EMERALD)
+                .define('K', ItemInit.itemkongjianshi.get())
                 .unlockedBy(getHasName(ItemInit.hunyeping.get()), has(Items.ENDER_PEARL))
                 .save(pWriter);
 

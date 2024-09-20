@@ -26,6 +26,9 @@ public class SHConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> blockcixuexianjinore    = createKey("blockcixuexianjinore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> blockkongjianshiore     = createKey("blockkongjianshiore");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> blockcixuexianjinore_nether    = createKey("blockcixuexianjinore_nether");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> blocklanhaizuanore_end     = createKey("blocklanhaizuanore_end");
+
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(SHMainBus.MOD_ID,p_255643_));
     }
@@ -66,11 +69,30 @@ public class SHConfiguredFeatures {
                     OreConfiguration.target(ruletest2, BlockInit.blockmingtieore.get().defaultBlockState())
                 );
 
+
+
+//        RuleTest ruletest3 = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
+        RuleTest ruletest3 = new TagMatchTest(BlockTags.INFINIBURN_OVERWORLD);
+        RuleTest ruletest4 = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
+        List<OreConfiguration.TargetBlockState> list7 =
+                List.of(
+                    OreConfiguration.target(ruletest3, BlockInit.blocklanhaizuanore.get().defaultBlockState()),
+                    OreConfiguration.target(ruletest3, BlockInit.blocklanhaizuanore.get().defaultBlockState())
+                );
+        List<OreConfiguration.TargetBlockState> list8 =
+                List.of(
+                    OreConfiguration.target(ruletest4, BlockInit.blockcixuexianjinore.get().defaultBlockState()),
+                    OreConfiguration.target(ruletest4, BlockInit.blockcixuexianjinore.get().defaultBlockState())
+                );
+
+        FeatureUtils.register(context, blocklanhaizuanore_end           , Feature.ORE, new OreConfiguration(list7, 4));
+        FeatureUtils.register(context, blockcixuexianjinore_nether     , Feature.ORE, new OreConfiguration(list8, 4));
+
         FeatureUtils.register(context, blockmingtieore     , Feature.ORE, new OreConfiguration(list6, 7));
         FeatureUtils.register(context, blockheijinore      , Feature.ORE, new OreConfiguration(list5, 6));
         FeatureUtils.register(context, blocklanlingjinore  , Feature.ORE, new OreConfiguration(list4, 5));
-        FeatureUtils.register(context, blocklanhaizuanore  , Feature.ORE, new OreConfiguration(list3, 4));
-        FeatureUtils.register(context, blockcixuexianjinore, Feature.ORE, new OreConfiguration(list2, 3));
+        FeatureUtils.register(context, blocklanhaizuanore  , Feature.ORE, new OreConfiguration(list3, 1));
+        FeatureUtils.register(context, blockcixuexianjinore, Feature.ORE, new OreConfiguration(list2, 1));
         FeatureUtils.register(context, blockkongjianshiore , Feature.ORE, new OreConfiguration(list1, 6));
 
     }

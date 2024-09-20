@@ -5,6 +5,9 @@
     "C": {
       "item": "minecraft:emerald"
     },
+    "K": {
+      "item": "shanhaicontinent:itemkongjianshi"
+    },
     "S": {
       "item": "minecraft:glass"
     },
@@ -13,6 +16,7 @@
     }
   },
   "pattern": [
+    "K K",
     "SXS",
     "SCS"
   ],

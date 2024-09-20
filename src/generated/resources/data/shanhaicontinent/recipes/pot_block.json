@@ -5,6 +5,9 @@
     "C": {
       "item": "minecraft:iron_ingot"
     },
+    "K": {
+      "item": "shanhaicontinent:blockkongjianshi_block"
+    },
     "S": {
       "item": "minecraft:gold_ingot"
     },
@@ -13,6 +16,7 @@
     }
   },
   "pattern": [
+    " K ",
     "SXS",
     "SCS"
   ],
