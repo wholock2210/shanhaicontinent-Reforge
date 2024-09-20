@@ -307,7 +307,13 @@ public class ModLanguageProvider extends LanguageProvider {
 
 
         this.add(ItemInit.TEXTITEM.get(),"测试物品");
-        this.add(ItemInit.hunyeping.get(),"§a<魂液瓶> ");
+        this.add(ItemInit.hunyeping0.get(),"§a<魂液瓶> *** Ⅰ阶");
+        this.add(ItemInit.hunyeping1.get(),"§b<魂液瓶> ***  Ⅱ阶");
+        this.add(ItemInit.hunyeping2.get(),"§c<魂液瓶> *** Ⅲ阶");
+        this.add(ItemInit.hunyeping3.get(),"§d<魂液瓶> *** Ⅳ阶");
+        this.add(ItemInit.hunyeping4.get(),"§e<魂液瓶> *** Ⅴ阶");
+        this.add(ItemInit.hunyeping5.get(),"§5<魂液瓶> *** Ⅵ阶");
+        this.add(ItemInit.hunyeping6.get(),"§4<魂液瓶> *** Ⅶ阶");
 
         this.add(ItemInit.jineng_jgb_0.get(),"§e器武魂：§4破天神棍 §f------ §e《极品器武魂》");
         this.add(ItemInit.jineng_jgb_1.get(),"§e魂技：§b《分身化影》 §f------ 武魂：§e《破天神棍》");

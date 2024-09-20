@@ -2,7 +2,7 @@
   "parent": "minecraft:item/generated",
   "overrides": [
     {
-      "model": "shanhaicontinent:hunyeping_base",
+      "model": "shanhaicontinent:hunyeping2_base",
       "predicate": {}
     }
   ]

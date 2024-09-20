@@ -50,7 +50,10 @@ public class CreativeModTabsInit {
                         pOutput.accept(BlockInit.SOUL_BLOCK.get());
 
                         pOutput.accept(ItemInit.wanfajieshao.get());
-                        pOutput.accept(ItemInit.hunyeping.get());
+                        for (RegistryObject<Item> itemRegistryObject : ItemInit.hunyepinglist) {
+                            pOutput.accept(itemRegistryObject.get());
+                        }
+
                         pOutput.accept(ItemInit.guoshi_huang.get());
                         pOutput.accept(ItemInit.guoshi_jingubang.get());
                         pOutput.accept(ItemInit.guoshi_haotianchui.get());

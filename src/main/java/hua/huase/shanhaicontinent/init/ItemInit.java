@@ -49,7 +49,25 @@ public class ItemInit {
             () -> new WanfajieshaoItem(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> hunyeping = ITEMS.register("hunyeping", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(1200));
+    public static final RegistryObject<Item> hunyeping0 = ITEMS.register("hunyeping0", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(300));
+    public static final RegistryObject<Item> hunyeping1 = ITEMS.register("hunyeping1", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(600));
+    public static final RegistryObject<Item> hunyeping2 = ITEMS.register("hunyeping2", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(1200));
+    public static final RegistryObject<Item> hunyeping3 = ITEMS.register("hunyeping3", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(2400));
+    public static final RegistryObject<Item> hunyeping4 = ITEMS.register("hunyeping4", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(4800));
+    public static final RegistryObject<Item> hunyeping5 = ITEMS.register("hunyeping5", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(9600));
+    public static final RegistryObject<Item> hunyeping6 = ITEMS.register("hunyeping6", () -> new HunyePing(new Item.Properties().stacksTo(1)).setMaxnengliang(99999));
+
+
+    public static ArrayList<RegistryObject<Item>> hunyepinglist = new ArrayList<>();
+    static {
+        hunyepinglist.add(hunyeping0);
+        hunyepinglist.add(hunyeping1);
+        hunyepinglist.add(hunyeping2);
+        hunyepinglist.add(hunyeping3);
+        hunyepinglist.add(hunyeping4);
+        hunyepinglist.add(hunyeping5);
+        hunyepinglist.add(hunyeping6);
+    }
 
 
     public static final RegistryObject<Item> jineng_jgb_0 = ITEMS.register("jineng_jgb_0", () -> new Jineng_JGB_0(Tiers.NETHERITE, 7, -0.4F, new Item.Properties()));

@@ -65,7 +65,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         wuqiItem(ItemInit.guoshi_huang);
         wuqiItem(ItemInit.guoshi_haotianchui);
         wuqiItem(ItemInit.guoshi_jingubang);
-        wuqiItem(ItemInit.hunyeping);
+        for (RegistryObject<Item> itemRegistryObject : ItemInit.hunyepinglist) {
+            wuqiItem(itemRegistryObject);
+        }
 
 
         simpleItem(ItemInit.wanfajieshao);

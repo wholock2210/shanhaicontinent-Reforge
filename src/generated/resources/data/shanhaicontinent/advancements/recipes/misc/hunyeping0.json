@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hunyeping": {
+    "has_hunyeping0": {
       "conditions": {
         "items": [
           {
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "shanhaicontinent:hunyeping"
+        "recipe": "shanhaicontinent:hunyeping0"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hunyeping",
+      "has_hunyeping0",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "shanhaicontinent:hunyeping"
+      "shanhaicontinent:hunyeping0"
     ]
   },
   "sends_telemetry_event": false

@@ -6,7 +6,37 @@
         "items": [
           {
             "items": [
-              "shanhaicontinent:hunyeping"
+              "shanhaicontinent:hunyeping0"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping1"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping2"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping3"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping4"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping5"
+            ]
+          },
+          {
+            "items": [
+              "shanhaicontinent:hunyeping6"
             ]
           }
         ]
@@ -23,7 +53,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "shanhaicontinent:hunyeping"
+      "item": "shanhaicontinent:hunyeping0"
     },
     "show_toast": true,
     "title": {

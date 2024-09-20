@@ -15,7 +15,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffects;
 
 import java.util.function.Consumer;
 
@@ -126,12 +125,20 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
 
         Advancement hunyeping = Advancement.Builder.advancement().parent(root)
-                .display(ItemInit.hunyeping.get()
+                .display(ItemInit.hunyeping0.get()
                         ,Component.translatable("获得魂液瓶").withStyle(ChatFormatting.DARK_GREEN)
                         ,Component.translatable("能够装精纯的能量").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.TASK, true, true, false)
-                .addCriterion("hunyeping", InventoryChangeTrigger.TriggerInstance.hasItems(ItemInit.hunyeping.get()))
+                .addCriterion("hunyeping", InventoryChangeTrigger.TriggerInstance.hasItems(
+                        ItemInit.hunyeping0.get(),
+                        ItemInit.hunyeping1.get(),
+                        ItemInit.hunyeping2.get(),
+                        ItemInit.hunyeping3.get(),
+                        ItemInit.hunyeping4.get(),
+                        ItemInit.hunyeping5.get(),
+                        ItemInit.hunyeping6.get()
+                ))
                 .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/huodeitem/hunyeping");
 
 

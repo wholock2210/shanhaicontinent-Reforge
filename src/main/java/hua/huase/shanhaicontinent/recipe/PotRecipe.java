@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.item.HunyePing;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -39,7 +40,17 @@ public class PotRecipe implements Recipe<SimpleContainer> {
         int index = 0;
         for (Ingredient inputItem : inputItems) {
             if(!inputItem.test(pContainer.getItem(index))){
-                return false;
+                for (ItemStack item : inputItem.getItems()) {
+                    if((item.getItem() instanceof HunyePing) &&
+                            (pContainer.getItem(index).getItem() instanceof HunyePing) && index == 1){
+
+                    }else {
+
+                        return false;
+                    }
+                }
+
+
             }
             index++;
         }
