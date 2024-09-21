@@ -140,7 +140,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
         return maxjingyan;
     }
 
-    public void setMaxjingyan(int maxjingyan) {
+    public void setMaxjingyan(float maxjingyan) {
         this.maxjingyan = maxjingyan;
     }
 

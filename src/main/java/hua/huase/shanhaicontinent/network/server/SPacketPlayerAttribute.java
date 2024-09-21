@@ -29,6 +29,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.network.NetworkEvent;
 
+import java.util.Collections;
 import java.util.function.Supplier;
 
 public class SPacketPlayerAttribute {
@@ -60,6 +61,10 @@ public class SPacketPlayerAttribute {
           LazyOptional<PlayerAttributeCapability> capability = entity.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY);
           capability.ifPresent(capability1 -> {
             capability1.deserializeNBT(msg.nbt);
+
+
+            //排序
+            Collections.sort(capability1.getWuhunListsname());
           });
         }
 

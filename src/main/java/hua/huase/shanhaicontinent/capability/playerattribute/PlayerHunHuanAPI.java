@@ -15,6 +15,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -40,10 +41,11 @@ public interface PlayerHunHuanAPI {
                     player.sendSystemMessage(Component.translatable("成功觉醒武魂",s));
                     ((ServerPlayer)player).connection.send(new ClientboundSetTitleTextPacket(Component.translatable("成功觉醒武魂",s)));
                     b=!b;
-                    if(random.nextInt(4) == 0){
+                    if(random.nextInt(5) == 0){
                         juexingShuangsheng(player);
                     }
-
+                    //排序
+                    Collections.sort(capability.getWuhunListsname());
                     AdvenceInit.juexingwuhuntrigger.trigger((ServerPlayer) player, capability.getWuhunListsname().size());
                     SynsAPI.synsPlayerAttribute(player);
                 }
@@ -174,19 +176,19 @@ public interface PlayerHunHuanAPI {
     static void addTupoAttibute(int dengji, PlayerAttributeCapability capability) {
         int zhuanshengshu = capability.getZhuanshengshu();
 //        50000
-        capability.setMaxjingshenli((int) (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu));
+        capability.setMaxjingshenli( (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu));
 //        100000
-        capability.setMaxshengming((int) (capability.getMaxshengming()+dengji*1f+zhuanshengshu));
+        capability.setMaxshengming( (capability.getMaxshengming()+dengji*1f+zhuanshengshu));
 
 //        26000
 //        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*5f));
-        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*2f+zhuanshengshu));
+        capability.setMaxjingyan( (capability.getMaxjingyan()+dengji*1f+zhuanshengshu));
 //        25000
-        capability.setWugong((int) (capability.getWugong()+dengji*5f));
-        capability.setWufang((int) (capability.getWufang()+dengji*1f));
+        capability.setWugong((int) (capability.getWugong()+dengji*1.2f+zhuanshengshu));
+        capability.setWufang((int) (capability.getWufang()+dengji*0.8f+zhuanshengshu));
 //5050
-        capability.setWuchuan((int) (capability.getWuchuan()+dengji*1f));
-        capability.setZhenshang((int) (capability.getZhenshang()+dengji*0.6f));
+        capability.setWuchuan((int) (capability.getWuchuan()+dengji*1f+zhuanshengshu));
+        capability.setZhenshang((int) (capability.getZhenshang()+dengji*0.2f+zhuanshengshu));
         capability.setShengminghuifu((int) (capability.getShengminghuifu()+dengji*0.2f));
 
     }

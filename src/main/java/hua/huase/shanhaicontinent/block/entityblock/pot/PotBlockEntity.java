@@ -184,20 +184,26 @@ public class PotBlockEntity extends BlockEntity implements MenuProvider {
 
         ItemStack stackInSlot1 = this.itemHandler.getStackInSlot(0);
         ItemStack stackInSlot2 = ItemStack.EMPTY;
-        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem() && stackInSlot1.getItem() == result.getItem()
-                &&stackInSlot1.getItem() instanceof SHArmorBaseItem && result.getItem() instanceof SHArmorBaseItem){
-            stackInSlot2 = stackInSlot1.copy();
-            this.itemHandler.extractItem(0, 1, false);
-        }
+//        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem() && stackInSlot1.getItem() == result.getItem()
+//                &&stackInSlot1.getItem() instanceof SHArmorBaseItem && result.getItem() instanceof SHArmorBaseItem){
+//            stackInSlot2 = stackInSlot1.copy();
+//            Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(stackInSlot1);
+//            if(!enchantments.isEmpty()){
+//                EnchantmentHelper.setEnchantments(enchantments, stackInSlot2);
+//            }
+//            stackInSlot2.setDamageValue(stackInSlot2.getMaxDamage());
+//            this.itemHandler.extractItem(0, 1, false);
+//        }
 
-        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem() && stackInSlot1.getItem() != result.getItem()
-                &&stackInSlot1.getItem() instanceof SHArmorBaseItem && result.getItem() instanceof SHArmorBaseItem){
+        if(!stackInSlot1.isEmpty() && stackInSlot1.isDamageableItem()){
             stackInSlot2 = result;
+            CompoundTag tag = stackInSlot1.getOrCreateTag();
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(stackInSlot1);
             if(!enchantments.isEmpty()){
                 EnchantmentHelper.setEnchantments(enchantments, stackInSlot2);
             }
             stackInSlot2.setDamageValue(stackInSlot1.getDamageValue());
+            stackInSlot2.setTag(tag);
             this.itemHandler.extractItem(0, 1, false);
         }
 

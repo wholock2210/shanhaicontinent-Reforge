@@ -47,8 +47,11 @@ public class Jineng_HTSC_7_Entity extends ThrowableItemProjectile {
     public void tick(){
         super.tick();
         if(!this.level().isClientSide && this.level().getGameTime()%10 == 0){
-            for (Entity entity : this.level().getEntities(this, this.getBoundingBox().inflate(1))) {
-                this.onHitEntity(entity);
+            for (Entity entity : this.level().getEntities(this, this.getBoundingBox())) {
+
+                if (!entity.is(this.getOwner())) {
+                    this.onHitEntity(entity);
+                }
                 this.explode();
             }
         }

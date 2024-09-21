@@ -57,9 +57,7 @@ public class PWPlayerTickEvent {
 
 
 //            if(capability.getDengji()>=25  && PlayerAttrubuteAPI.getJingshenli(player)>200
-            if(PlayerAttrubuteAPI.getJingshenli(player)>700
-                    && capability.getWuhunName() !=null
-            ){
+            if(PlayerAttrubuteAPI.getMaxjingshenli(player)>3000){
                 player.getAbilities().mayfly=true;
             }else {
                 player.getAbilities().mayfly=false;

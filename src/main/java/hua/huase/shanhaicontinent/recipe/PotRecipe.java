@@ -37,12 +37,25 @@ public class PotRecipe implements Recipe<SimpleContainer> {
         if(pLevel.isClientSide()) {
             return false;
         }
+
+
         int index = 0;
         for (Ingredient inputItem : inputItems) {
-            if(!inputItem.test(pContainer.getItem(index))){
+            ItemStack item1 = pContainer.getItem(index);
+            if(!inputItem.test(item1)){
+                if(inputItem.isEmpty() && !item1.isEmpty()){
+                    return false;
+
+                }
+
                 for (ItemStack item : inputItem.getItems()) {
-                    if((item.getItem() instanceof HunyePing) &&
-                            (pContainer.getItem(index).getItem() instanceof HunyePing) && index == 1){
+                    if(index == 1){
+                        if((item.getItem() instanceof HunyePing) &&
+                                (item1.getItem() instanceof HunyePing)){
+
+                        }else {
+                            return false;
+                        }
 
                     }else {
 
@@ -52,7 +65,7 @@ public class PotRecipe implements Recipe<SimpleContainer> {
 
 
             }
-            index++;
+                index++;
         }
 
 

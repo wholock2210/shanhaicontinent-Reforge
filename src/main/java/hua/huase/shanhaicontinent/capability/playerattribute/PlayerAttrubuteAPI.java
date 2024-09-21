@@ -129,7 +129,7 @@ public interface PlayerAttrubuteAPI {
             }
             if (playerAttributeCapability.getWuhunList() != null) {
                 for (MonsterAttributeCapability monsterAttributeCapability : playerAttributeCapability.getWuhunList()) {
-                    value += monsterAttributeCapability.getWufang() * 0.1;
+                    value += monsterAttributeCapability.getWufang() * 0.15;
                 }
             }
         }

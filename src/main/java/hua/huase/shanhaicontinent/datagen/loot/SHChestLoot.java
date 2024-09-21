@@ -61,21 +61,21 @@ public class SHChestLoot extends VanillaChestLoot {
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))));
     }
 
-    private static LootPool.Builder danyao = LootPool.lootPool().setRolls(UniformGenerator.between(2.0F, 4.0F))
-            .add(LootItem.lootTableItem(ItemInit.danyao_jiuhua.get())       .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_huanyuandan.get())  .setWeight(30).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_fanmindan.get())    .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_heqidan.get())      .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_zengqidan.get())    .setWeight(30).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_qihundan.get())     .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_jvlingdan.get())    .setWeight(18).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 9.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_xvanyuandan.get())  .setWeight(16).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 8.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_yanghundan.get())   .setWeight(14).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 7.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_lingbidan.get())    .setWeight(12).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 6.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_haoyuan.get())      .setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_xihundan.get())     .setWeight( 8).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_huangjidan.get())   .setWeight( 6).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danyao_lushendan.get())    .setWeight( 4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))));
+    private static LootPool.Builder danyao = LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+            .add(LootItem.lootTableItem(ItemInit.danyao_jiuhua.get())       .setWeight(100).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_huanyuandan.get())  .setWeight(30).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_fanmindan.get())    .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_heqidan.get())      .setWeight(30).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_zengqidan.get())    .setWeight( 16).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_qihundan.get())     .setWeight( 8).apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_jvlingdan.get())    .setWeight( 8).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_xvanyuandan.get())  .setWeight( 4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_yanghundan.get())   .setWeight( 4).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_lingbidan.get())    .setWeight( 3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_haoyuan.get())      .setWeight( 3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_xihundan.get())     .setWeight( 3).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_huangjidan.get())   .setWeight( 2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danyao_lushendan.get())    .setWeight( 1).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))));
 
 
     private static LootPool.Builder danfang = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
@@ -109,7 +109,7 @@ public class SHChestLoot extends VanillaChestLoot {
             .add(LootItem.lootTableItem(ItemInit.zhushamei_seed.get())           .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
             .add(LootItem.lootTableItem(ItemInit.bianhua_seed.get())             .setWeight(50).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))));
 
-    private static LootPool.Builder fruit = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 2.0F))
+    private static LootPool.Builder fruit = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
             .add(LootItem.lootTableItem(ItemInit.baisuilan_fruit.get())          .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))))
             .add(LootItem.lootTableItem(ItemInit.fengxinzi_fruit.get())          .setWeight(70).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))))
             .add(LootItem.lootTableItem(ItemInit.hanxiaohua_fruit.get())         .setWeight(50).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))))
@@ -125,15 +125,22 @@ public class SHChestLoot extends VanillaChestLoot {
             .add(LootItem.lootTableItem(ItemInit.bianhua_fruit.get())            .setWeight(50).apply(SetItemCountFunction.setCount(UniformGenerator.between(5.0F, 10.0F))));
 
     private static LootPool.Builder oreitem = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
-            .add(LootItem.lootTableItem(ItemInit.itemmingtie     .get())          .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.itemheijin      .get())          .setWeight(40).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.itemlanlingjin  .get())          .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.itemlanhaizuan  .get())          .setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.itemcixuexianjin.get())          .setWeight(5 ).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))))
-            .add(LootItem.lootTableItem(ItemInit.itemkongjianshi .get())          .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 10.0F))));
+            .add(LootItem.lootTableItem(ItemInit.itemmingtie     .get())          .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))))
+            .add(LootItem.lootTableItem(ItemInit.itemheijin      .get())          .setWeight(40).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))))
+            .add(LootItem.lootTableItem(ItemInit.itemlanlingjin  .get())          .setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))))
+            .add(LootItem.lootTableItem(ItemInit.itemlanhaizuan  .get())          .setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))))
+            .add(LootItem.lootTableItem(ItemInit.itemcixuexianjin.get())          .setWeight(5 ).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))))
+            .add(LootItem.lootTableItem(ItemInit.itemkongjianshi .get())          .setWeight(90).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 6.0F))));
 
 
     private static LootPool.Builder armorandtool = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping0     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping1     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping2     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping3     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping4     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping5     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.hunyeping6     .get()).setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.mingtie_head     .get()).setWeight(20).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.mingtie_chest    .get()).setWeight(20).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.mingtie_feet     .get()).setWeight(20).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
