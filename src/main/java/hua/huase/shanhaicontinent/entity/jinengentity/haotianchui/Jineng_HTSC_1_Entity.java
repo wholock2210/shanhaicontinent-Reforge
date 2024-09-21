@@ -81,7 +81,7 @@ public class Jineng_HTSC_1_Entity extends ThrowableItemProjectile {
     public boolean isExploade = false;
     protected void explode() {
         if (!this.level().isClientSide) {
-            this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 5.0F, isExploade? Level.ExplosionInteraction.MOB:Level.ExplosionInteraction.NONE);
+            this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 2.0F, isExploade? Level.ExplosionInteraction.MOB:Level.ExplosionInteraction.NONE);
         }else {
             this.level().addParticle(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5D, this.getZ(), 0.0D, 0.0D, 0.0D);
         }
