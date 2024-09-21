@@ -211,12 +211,19 @@ dependencies {
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 //显示mod
-//    runtimeOnly fg.deobf("curse.maven:Neat-238372:4580940")
+    runtimeOnly fg.deobf("curse.maven:Neat-238372:4580940")
 //    compileOnly fg.deobf("curse.maven:TslatEntityStatus (TES)-830420:4979147")
-    runtimeOnly fg.deobf("curse.maven:TslatEntityStatus-830420:4979147")
+//    runtimeOnly fg.deobf("curse.maven:TslatEntityStatus-830420:4979147")
 //一键整理
 //    runtimeOnly fg.deobf("curse.maven:inventory-profiles-next-495267:5209064")
+
+
+//暮色森林
+    compileOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
+    runtimeOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+//    维度工具
 //    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository

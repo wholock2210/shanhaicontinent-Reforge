@@ -1,4 +1,4 @@
-package hua.huase.shanhaicontinent.compat;
+package hua.huase.shanhaicontinent.compat.jei;
 
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.init.BlockInit;

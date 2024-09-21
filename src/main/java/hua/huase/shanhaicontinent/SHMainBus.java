@@ -17,6 +17,8 @@ import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.Bindings;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -35,6 +37,7 @@ public class SHMainBus {
     public static final String MOD_ID = "shanhaicontinent";
     public static final Random random = new Random();
 
+    public static boolean twilightforest_compat;
 
     public static final ResourceLocation HUNHUAN = new ResourceLocation(SHMainBus.MOD_ID, "textures/gui/hunhuan.png");
     public static final ResourceLocation TEXT = new ResourceLocation(SHMainBus.MOD_ID, "textures/entity/hunhe.png");
@@ -71,6 +74,10 @@ public class SHMainBus {
         NetworkHandler.register();
 
         changeAttributesIO();
+
+//联动
+        twilightforest_compat = ModList.get().isLoaded("twilightforest");
+
     }
 
 

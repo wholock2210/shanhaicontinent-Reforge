@@ -1,40 +1,51 @@
 package hua.huase.shanhaicontinent.capability.monsterattribute;
 
 import hua.huase.shanhaicontinent.SHMainBus;
-import hua.huase.shanhaicontinent.capability.itemattribute.ItemAttributeCapability;
-import hua.huase.shanhaicontinent.capability.itemattribute.ItemAttributeCapabilityProvider;
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
+import hua.huase.shanhaicontinent.compat.twilightforest.TwilightforestAPI;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.ItemStackHandler;
 
 public interface MonsterCapabilityAPI {
     public static MonsterAttributeCapability genMonsterCapability(Entity entity){
+        RandomSource random = entity.level().random;
         int index = 0;
+        if(SHMainBus.twilightforest_compat){
+            index = TwilightforestAPI.getNianxian(entity,random);
+        } else if (true) {
+            index = genLevel(entity,random);
+        }
+//        index=genLevel(entity);
+
+        return new MonsterAttributeCapability(index);
+    }
+
+    public static int genLevel(Entity entity, RandomSource random){
+
+        int index = 0;
+
         if(entity instanceof Mob && entity instanceof Enemy){
             ResourceKey<Level> dimension = entity.level().dimension();
             if(dimension == Level.OVERWORLD){
-                int i = SHMainBus.random.nextInt(3) + 1;
-                index = SHMainBus.random.nextInt((int) Math.pow(14,i));
+//                1,331
+                int i = random.nextInt(3) + 1;
+                index = random.nextInt((int) Math.pow(14,i));
 
             }else if(dimension == Level.NETHER){
-                int i = SHMainBus.random.nextInt(4) + 1;
-                index = SHMainBus.random.nextInt((int) Math.pow(20,i));
+//                160,000+100
+                int i = random.nextInt(4) + 1;
+                index = random.nextInt((int) Math.pow(20,i))+100;
             }else if(dimension == Level.END){
-                int i = SHMainBus.random.nextInt(6) + 1;
-                index = SHMainBus.random.nextInt((int) Math.pow(11,i));
+//             531,441+100
+                int i = random.nextInt(6) + 1;
+                index = Math.min(random.nextInt((int) Math.pow(9,i)),1000000)+100;
             }else {
-                int i = SHMainBus.random.nextInt(7) + 1;
-                index = Math.min(SHMainBus.random.nextInt((int) Math.pow(8,i)),1000000);
+//             531,441
+//                int i = SHMainBus.random.nextInt(6) + 1;
+//                index = Math.min(SHMainBus.random.nextInt((int) Math.pow(9,i)),1000000);
             }
 
 
@@ -42,14 +53,11 @@ public interface MonsterCapabilityAPI {
                 index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
             }
         }else {
-             index = SHMainBus.random.nextInt(100+1);
+            index = random.nextInt(10+1);
         }
-
-
-        return new MonsterAttributeCapability(index);
+        return index;
     }
-
-    private static int genOverworld(Entity entity){
+    public static int genjvli(Entity entity){
 
 //        entity.level().getSharedSpawnPos()
         int index = 0;

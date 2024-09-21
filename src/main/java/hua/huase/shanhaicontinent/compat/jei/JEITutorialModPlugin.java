@@ -1,4 +1,4 @@
-package hua.huase.shanhaicontinent.compat;
+package hua.huase.shanhaicontinent.compat.jei;
 
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.init.BlockInit;
@@ -6,7 +6,6 @@ import hua.huase.shanhaicontinent.recipe.PotRecipe;
 import hua.huase.shanhaicontinent.screen.PotScreen;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
-import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
