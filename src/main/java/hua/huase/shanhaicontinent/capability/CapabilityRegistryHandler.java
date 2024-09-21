@@ -151,7 +151,7 @@ public class CapabilityRegistryHandler{
                         capability.deserializeNBT(compoundTag);
                     });
 
-                    SPacketEntityAttribute.monsterHashMapCapability.remove(entity.getId());
+//                    SPacketEntityAttribute.monsterHashMapCapability.remove(entity.getId());
                 }
             }
         }

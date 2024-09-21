@@ -21,7 +21,7 @@ public class PWEntityMountEvent {
     public static void entityMountEvent(EntityMountEvent event){
         Entity entityMounting = event.getEntityMounting();
         Entity entityBeingMounted = event.getEntityBeingMounted();
-
+//禁止怪物上船
         entityMounting.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
             event.setCanceled(true);
         });

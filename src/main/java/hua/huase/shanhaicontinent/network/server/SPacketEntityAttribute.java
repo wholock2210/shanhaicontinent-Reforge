@@ -19,10 +19,12 @@
 
 package hua.huase.shanhaicontinent.network.server;
 
+import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCapabilityProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.HashMap;
@@ -51,9 +53,16 @@ public class SPacketEntityAttribute {
   public static void handle(SPacketEntityAttribute msg, Supplier<NetworkEvent.Context> ctx) {
     ctx.get().enqueueWork(() -> {
       ClientLevel world = Minecraft.getInstance().level;
-
       if (world != null) {
-        monsterHashMapCapability.put(msg.entityId,msg.nbt);
+        Entity entity = world.getEntity(msg.entityId);
+        if(entity!=null){
+          entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
+            capability.deserializeNBT(msg.nbt);
+          });
+        }else {
+          monsterHashMapCapability.put(msg.entityId,msg.nbt);
+        }
+
       }
     });
     ctx.get().setPacketHandled(true);
