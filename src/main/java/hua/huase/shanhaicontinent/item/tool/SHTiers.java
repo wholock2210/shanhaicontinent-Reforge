@@ -14,16 +14,16 @@ public enum SHTiers implements Tier {
     mingtie(4, 1800, 12.0F, 2.0F, 80, () -> {
         return Ingredient.of(ItemInit.itemmingtie.get());
     }),
-    heijin(5, 2400, 14.0F, 2.0F, 22, () -> {
+    heijin(5, 2400, 14.0F, 2.0F, 32, () -> {
         return Ingredient.of(ItemInit.itemheijin.get());
     }),
-    lanlingjin(6, 3000, 16.0F, 2.0F, 22, () -> {
+    lanlingjin(6, 4800, 18.0F, 2.0F, 32, () -> {
         return Ingredient.of(ItemInit.itemlanlingjin.get());
     }),
-    lanhaizuan(7, 3800, 18.0F, 3.0F, 22, () -> {
+    lanhaizuan(7, 9600, 24.0F, 3.0F, 32, () -> {
         return Ingredient.of(ItemInit.itemlanhaizuan.get());
     }),
-    cixuexianjin(8, 5000, 22.0F, 3.0F, 22, () -> {
+    cixuexianjin(99, 19800, 32.0F, 3.0F, 32, () -> {
         return Ingredient.of(ItemInit.itemcixuexianjin.get());
     });
 

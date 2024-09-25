@@ -28,19 +28,43 @@ public class BlockInit {
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("text_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
 
 
-    public static final RegistryObject<Block> blockmingtieore      = registerBlock("blockmingtieore",       () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockheijinore       = registerBlock("blockheijinore",        () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(40.0F, 1600.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blocklanlingjinore   = registerBlock("blocklanlingjinore",    () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(50.0F, 2000.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blocklanhaizuanore   = registerBlock("blocklanhaizuanore",    () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(60.0F, 2400.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockcixuexianjinore = registerBlock("blockcixuexianjinore",  () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(70.0F, 2800.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockkongjianshiore  = registerBlock("blockkongjianshiore",   () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(80.0F, 3200.0F).sound(SoundType.AMETHYST)));
+    public static final RegistryObject<Block> blockkongjianshiore  = registerBlock("blockkongjianshiore",       () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(80.0F, 3200.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 2;
+   })));
+    public static final RegistryObject<Block> blockmingtieore      = registerBlock("blockmingtieore",           () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 3;
+   })));
+    public static final RegistryObject<Block> blockheijinore       = registerFireBlock("blockheijinore",        () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(40.0F, 1600.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 4;
+   })));
+    public static final RegistryObject<Block> blocklanlingjinore   = registerFireBlock("blocklanlingjinore",    () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(50.0F, 2000.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 6;
+   })));
+    public static final RegistryObject<Block> blocklanhaizuanore   = registerFireBlock("blocklanhaizuanore",    () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(60.0F, 2400.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 9;
+   })));
+    public static final RegistryObject<Block> blockcixuexianjinore = registerFireBlock("blockcixuexianjinore",  () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(70.0F, 2800.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 12;
+   })));
 
-    public static final RegistryObject<Block> blockkongjianshi_block   = registerBlock("blockkongjianshi_block",        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockmingtie_block       = registerBlock("blockmingtie_block",            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(40.0F, 1600.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockheijin_block        = registerBlock("blockheijin_block",             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(50.0F, 2000.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blocklanlingjin_block    = registerBlock("blocklanlingjin_block",         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(60.0F, 2400.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blocklanhaizuan_block    = registerBlock("blocklanhaizuan_block",         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(70.0F, 2800.0F).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> blockcixuexianjin_block  = registerBlock("blockcixuexianjin_block",       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(80.0F, 3200.0F).sound(SoundType.AMETHYST)));
+    public static final RegistryObject<Block> blockkongjianshi_block   = registerBlock("blockkongjianshi_block",            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 2;
+   })));
+    public static final RegistryObject<Block> blockmingtie_block       = registerBlock("blockmingtie_block",                () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(40.0F, 1600.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 3;
+   })));
+    public static final RegistryObject<Block> blockheijin_block        = registerFireBlock("blockheijin_block",             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(50.0F, 2000.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 4;
+   })));
+    public static final RegistryObject<Block> blocklanlingjin_block    = registerFireBlock("blocklanlingjin_block",         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(60.0F, 2400.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 6;
+   })));
+    public static final RegistryObject<Block> blocklanhaizuan_block    = registerFireBlock("blocklanhaizuan_block",         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(70.0F, 2800.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 9;
+   })));
+    public static final RegistryObject<Block> blockcixuexianjin_block  = registerFireBlock("blockcixuexianjin_block",       () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(80.0F, 3200.0F).sound(SoundType.AMETHYST).lightLevel((p_152663_) -> {
+      return 12;
+   })));
 
     public static ArrayList<RegistryObject<Block>> ORELIST = new ArrayList<>();
     static {
@@ -101,6 +125,17 @@ public class BlockInit {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
+    }
+
+
+    private static <T extends Block> RegistryObject<T> registerFireBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerFireBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerFireBlockItem(String name, RegistryObject<T> block) {
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().fireResistant()));
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {

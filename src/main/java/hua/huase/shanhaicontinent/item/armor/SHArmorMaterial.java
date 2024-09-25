@@ -18,21 +18,21 @@ public enum SHArmorMaterial implements ArmorMaterial {
 		map.put(ArmorItem.Type.LEGGINGS, 6);
 		map.put(ArmorItem.Type.CHESTPLATE, 8);
 		map.put(ArmorItem.Type.HELMET, 3);
-	}), 26, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemmingtie.get())),
+	}), 56, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemmingtie.get())),
 
 	heijin("heijin", 200, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
 		map.put(ArmorItem.Type.BOOTS, 4);
 		map.put(ArmorItem.Type.LEGGINGS, 7);
 		map.put(ArmorItem.Type.CHESTPLATE, 8);
 		map.put(ArmorItem.Type.HELMET, 3);
-	}), 22, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemheijin.get())),
+	}), 32, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemheijin.get())),
 
 	lanlingjin("lanlingjin", 400, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
 		map.put(ArmorItem.Type.BOOTS, 4);
 		map.put(ArmorItem.Type.LEGGINGS, 7);
 		map.put(ArmorItem.Type.CHESTPLATE, 9);
 		map.put(ArmorItem.Type.HELMET, 4);
-	}), 18, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemlanlingjin.get())),
+	}), 28, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemlanlingjin.get())),
 
 	lanhaizuan("lanhaizuan", 800, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
 		map.put(ArmorItem.Type.BOOTS, 4);
