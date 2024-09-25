@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.capability.monsterattribute;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.compat.sophisticatedbackpacks.SophisticatedbackpacksAPI;
 import hua.huase.shanhaicontinent.compat.twilightforest.TwilightforestAPI;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
@@ -43,14 +44,18 @@ public interface MonsterCapabilityAPI {
                 int i = random.nextInt(6) + 1;
                 index = Math.min(random.nextInt((int) Math.pow(9,i)),1000000)+100;
             }else {
-//             531,441
-//                int i = SHMainBus.random.nextInt(6) + 1;
-//                index = Math.min(SHMainBus.random.nextInt((int) Math.pow(9,i)),1000000);
+//             531,441+100
+                int i = SHMainBus.random.nextInt(6) + 1;
+                index = Math.min(SHMainBus.random.nextInt((int) Math.pow(9,i)),1000000)+100;
             }
 
 
             if(((Mob) entity).getMaxHealth() >60){
-                index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
+                if(SHMainBus.twilightforest_compat){
+                    index = SophisticatedbackpacksAPI.getNianxian(entity,random,index);
+                }else {
+                    index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
+                }
             }
         }else {
             index = random.nextInt(10+1);

@@ -37,7 +37,10 @@ public class SHMainBus {
     public static final String MOD_ID = "shanhaicontinent";
     public static final Random random = new Random();
 
+//    暮色深林
     public static boolean twilightforest_compat;
+//    暮色深林
+    public static boolean sophisticated_backpacks;
 
     public static final ResourceLocation HUNHUAN = new ResourceLocation(SHMainBus.MOD_ID, "textures/gui/hunhuan.png");
     public static final ResourceLocation TEXT = new ResourceLocation(SHMainBus.MOD_ID, "textures/entity/hunhe.png");
@@ -77,6 +80,9 @@ public class SHMainBus {
 
 //联动
         twilightforest_compat = ModList.get().isLoaded("twilightforest");
+
+//联动
+        sophisticated_backpacks = ModList.get().isLoaded("sophisticatedbackpacks");
 
     }
 

@@ -224,9 +224,11 @@ dependencies {
 //冰火传说
 //    compileOnly fg.deobf("curse.maven:ice-and-fire-dragons-264231:5633453")
 //    runtimeOnly fg.deobf("curse.maven:ice-and-fire-dragons-264231:5633453")
+//精妙背包
+    compileOnly fg.deobf("curse.maven:sophisticated-backpacks-422301:5753613")
+//    runtimeOnly fg.deobf("curse.maven:sophisticated-backpacks-422301:5753613")
 
-
-
+//mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 //    维度工具
 //    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
@@ -239,6 +241,7 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+//    compileOnly files('/lips')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
