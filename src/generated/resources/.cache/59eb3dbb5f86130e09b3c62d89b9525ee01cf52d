@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-20T09:18:52.1749298	Loot Tables
+// 1.20.1	2024-09-23T06:07:26.364355	Loot Tables
 208e4853b84caa15a56fe20a67fb7aa8f89c29f7 data/shanhaicontinent/loot_tables/blocks/baisuilan.json
 524cac44d01903a6e974926a5f419abfee097b20 data/shanhaicontinent/loot_tables/blocks/bianhua.json
 003253abf55c2da27b90abe6fa443ebde9e81c06 data/shanhaicontinent/loot_tables/blocks/blockcixuexianjinore.json
@@ -27,4 +27,4 @@ b2ce006fe1b9903f1ee46eb57699282b37595f41 data/shanhaicontinent/loot_tables/block
 1b97bce5f4fe4e80d5e9b521b3e0b0b65bd984b0 data/shanhaicontinent/loot_tables/blocks/xunyicao.json
 48c757d015a934df3d7944ea36906e3623b32429 data/shanhaicontinent/loot_tables/blocks/yueguanghua.json
 733feceba5e846df5a55345ad8e3ec91f97341c5 data/shanhaicontinent/loot_tables/blocks/zhushamei.json
-778c805d18b28d23d7c2c7cd42a4ad078535fe86 data/shanhaicontinent/loot_tables/chests/gufengxiaowu0.json
+75eea6bff47217675dde1163b606b0648a640753 data/shanhaicontinent/loot_tables/chests/gufengxiaowu0.json

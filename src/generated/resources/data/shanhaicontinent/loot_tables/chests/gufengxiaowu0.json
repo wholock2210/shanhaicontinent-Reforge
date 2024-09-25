@@ -11,14 +11,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 3.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "shanhaicontinent:danyao_jiuhua",
-          "weight": 20
+          "weight": 100
         },
         {
           "type": "minecraft:item",
@@ -27,8 +27,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 5.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
@@ -43,8 +43,8 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 3.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
@@ -59,29 +59,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 5.0
+                "max": 5.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "shanhaicontinent:danyao_heqidan",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "shanhaicontinent:danyao_zengqidan",
           "weight": 30
         },
         {
@@ -91,45 +75,13 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "shanhaicontinent:danyao_qihundan",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 9.0,
+                "max": 5.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "shanhaicontinent:danyao_jvlingdan",
-          "weight": 18
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 8.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "shanhaicontinent:danyao_xvanyuandan",
+          "name": "shanhaicontinent:danyao_zengqidan",
           "weight": 16
         },
         {
@@ -139,14 +91,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 7.0,
-                "min": 1.0
+                "max": 5.0,
+                "min": 3.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "shanhaicontinent:danyao_yanghundan",
-          "weight": 14
+          "name": "shanhaicontinent:danyao_qihundan",
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -155,14 +107,62 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 6.0,
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:danyao_jvlingdan",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:danyao_xvanyuandan",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:danyao_yanghundan",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "shanhaicontinent:danyao_lingbidan",
-          "weight": 12
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -178,7 +178,7 @@
             }
           ],
           "name": "shanhaicontinent:danyao_haoyuan",
-          "weight": 10
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -194,7 +194,7 @@
             }
           ],
           "name": "shanhaicontinent:danyao_xihundan",
-          "weight": 8
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -210,7 +210,7 @@
             }
           ],
           "name": "shanhaicontinent:danyao_huangjidan",
-          "weight": 6
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -225,14 +225,13 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "shanhaicontinent:danyao_lushendan",
-          "weight": 4
+          "name": "shanhaicontinent:danyao_lushendan"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 4.0,
-        "min": 2.0
+        "max": 3.0,
+        "min": 1.0
       }
     },
     {
@@ -845,7 +844,7 @@
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 2.0,
+        "max": 1.0,
         "min": 0.0
       }
     },
@@ -859,7 +858,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -875,7 +874,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -891,7 +890,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -907,7 +906,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -923,7 +922,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -939,7 +938,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 10.0,
+                "max": 6.0,
                 "min": 0.0
               },
               "function": "minecraft:set_count"
@@ -958,6 +957,83 @@
     {
       "bonus_rolls": 0.0,
       "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping0"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping1"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping2"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping3"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping4"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping5"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "shanhaicontinent:hunyeping6"
+        },
         {
           "type": "minecraft:item",
           "functions": [

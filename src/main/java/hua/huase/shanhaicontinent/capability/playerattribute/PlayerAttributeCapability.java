@@ -30,7 +30,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
     ItemStackHandler boneslot = new ItemStackHandler(7);
     private int zhuanshengshu = 0;
 
-    public static HashSet<String> wuhunListsnameall= new HashSet<>();
+    public static ArrayList<String> wuhunListsnameall= new ArrayList<>();
 
     static {
 //        wuhunListsnameall.add("jingubang");
@@ -39,6 +39,10 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
         wuhunListsnameall.add(WuHunName.jingubang);
         wuhunListsnameall.add(WuHunName.huang);
         wuhunListsnameall.add(WuHunName.haotianchui);
+
+
+        //排序
+        Collections.sort(wuhunListsnameall);
     }
 
 

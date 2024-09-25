@@ -176,20 +176,20 @@ public interface PlayerHunHuanAPI {
     static void addTupoAttibute(int dengji, PlayerAttributeCapability capability) {
         int zhuanshengshu = capability.getZhuanshengshu();
 //        50000
-        capability.setMaxjingshenli( (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu));
+        capability.setMaxjingshenli( (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu*10));
 //        100000
-        capability.setMaxshengming( (capability.getMaxshengming()+dengji*1f+zhuanshengshu));
+        capability.setMaxshengming( (capability.getMaxshengming()+dengji*1f+zhuanshengshu*10));
 
 //        26000
 //        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*5f));
-        capability.setMaxjingyan( (capability.getMaxjingyan()+dengji*1f+zhuanshengshu));
+        capability.setMaxjingyan( (capability.getMaxjingyan()+dengji*1f+zhuanshengshu*5));
 //        25000
-        capability.setWugong((int) (capability.getWugong()+dengji*1.2f+zhuanshengshu));
-        capability.setWufang((int) (capability.getWufang()+dengji*0.8f+zhuanshengshu));
+        capability.setWugong((int) (capability.getWugong()+dengji*1.2f+zhuanshengshu*2));
+        capability.setWufang((int) (capability.getWufang()+dengji*0.8f+zhuanshengshu*2));
 //5050
         capability.setWuchuan((int) (capability.getWuchuan()+dengji*1f+zhuanshengshu));
         capability.setZhenshang((int) (capability.getZhenshang()+dengji*0.2f+zhuanshengshu));
-        capability.setShengminghuifu((int) (capability.getShengminghuifu()+dengji*0.2f));
+        capability.setShengminghuifu((int) (capability.getShengminghuifu()+dengji*0.1f));
 
     }
 
@@ -397,7 +397,7 @@ public interface PlayerHunHuanAPI {
 
             newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/20));
             newplayerCapability.setJingshenli(0);
-            newplayerCapability.setZhuanshengshu(newplayerCapability.getZhuanshengshu()+1);
+            newplayerCapability.setZhuanshengshu(newplayerCapability.getZhuanshengshu()+oldItemCapability.getZhuanshengshu()+1);
             player.setHealth(newplayerCapability.getMaxshengming());
 
         }
