@@ -5,10 +5,13 @@ import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI;
 import hua.huase.shanhaicontinent.network.SynsAPI;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.ServerStatsCounter;
 import net.minecraft.stats.Stats;
+import net.minecraft.stats.StatsCounter;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -55,6 +58,9 @@ public class DanYaoItem extends Item {
         if(livingEntity instanceof ServerPlayer serverPlayer){
             ServerStatsCounter stats = serverPlayer.getStats();
              i = stats.getValue(Stats.ITEM_USED.get(itemStack.getItem()));
+
+//            stats.setValue(serverPlayer,Stats.ITEM_USED.get(itemStack.getItem()),99);
+
              if(this.getMaxused()<=0 || i<this.getMaxused()){
                  serverPlayer.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
                  addDanyaoAttribute(itemStack,level,livingEntity);
@@ -384,6 +390,20 @@ public class DanYaoItem extends Item {
             list.add(Component.translatable("获得精神力", (int)this.jingshenlibaifenbi+"%").withStyle(ChatFormatting.YELLOW));
         }
 
+
+        if(this.maxused >0 ){
+            list.add(Component.translatable("最大使用次数",this.maxused).withStyle(ChatFormatting.GRAY));
+        }
     }
 
+
+//    弃用
+    public void playerAppendHoverText(ItemStack itemStack, Player player, List<Component> toolTip) {
+        if(this.maxused >0 && player instanceof LocalPlayer localPlayer){
+            StatsCounter stats1 = localPlayer.getStats();
+//            int value = stats1.getValue(Stats.ITEM_USED.get(itemStack.getItem()));
+            int value = stats1.getValue(Stats.ITEM_USED,itemStack.getItem());
+            toolTip.add(Component.translatable("最大使用次数", value,this.maxused).withStyle(ChatFormatting.GRAY));
+        }
+    }
 }

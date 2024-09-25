@@ -44,6 +44,7 @@ public class ModEnLanguageProvider extends LanguageProvider {
         this.add("获得精神力", "spiritualPower：+%s");
         this.add("获得最大精神力", "maximumMentalPower：+%s");
         this.add("体力", "physicalStrength：%s/%s");
+        this.add("最大使用次数", "used：%s");
 
         this.add("突破成功率", "breakthroughSuccessRate：+%s");
         this.add("能量", "energy：%s/%s");
@@ -361,6 +362,9 @@ public class ModEnLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danyao_fanmindan           .get(),"§1《§breturningLifePill§1》");
         this.add(ItemInit.danyao_heqidan             .get(),"§1《§bheqiDan§1》");
         this.add(ItemInit.danyao_zengqidan           .get(),"§1《§bqiBoostingPill§1》");
+        this.add(ItemInit.danyao_yishendan              .get(),"§7《§bYiShenDan§7");
+        this.add(ItemInit.danyao_xisuidan               .get(),"§7《§bXiShuiDan§7");
+        this.add(ItemInit.danyao_longlidan              .get(),"§7《§bLongLiDan§7");
         this.add(ItemInit.danfang_qihundan      .get(),"§adanFang：§f《§aqiSoulPill§f》*Ⅰ阶");
         this.add(ItemInit.danfang_jvlingdan     .get(),"§bdanFang：§f《§bjulingPill§f》*Ⅱ阶");
         this.add(ItemInit.danfang_xvanyuandan   .get(),"§cdanFang：§f《§cxuanyuanDan§f》*Ⅲ阶");
@@ -375,6 +379,9 @@ public class ModEnLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danfang_fanmindan         .get(),"§4danFang：§1《§breturningLifePill§1》***");
         this.add(ItemInit.danfang_heqidan           .get(),"§4danFang：§1《§bheqiDan§1》***");
         this.add(ItemInit.danfang_zengqidan         .get(),"§4danFang：§1《§bqiBoostingPill§1》***");
+        this.add(ItemInit.danfang_yishendan         .get(),"§4danFang：§7《§bYiShenDan§7》***");
+        this.add(ItemInit.danfang_xisuidan          .get(),"§4danFang：§7《§bXiSuiDan§7》***");
+        this.add(ItemInit.danfang_longlidan         .get(),"§4danFang：§7《§bLongLiDan§7》***");
         this.add(ItemInit.headbone              .get(),"§cskull §f§k****** §e《ancientMysteriousBones》");
         this.add(ItemInit.exoskeletonsoulbone.get(),"§cextrinsicBone §f§k****** §e《ancientMysteriousBones》");
         this.add(ItemInit.lefthandbone          .get(),"§cleftArmBone §f§k****** §e《ancientMysteriousBones》");

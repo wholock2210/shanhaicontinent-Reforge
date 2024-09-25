@@ -164,6 +164,13 @@ public class ItemInit {
     public static final RegistryObject<Item> danyao_heqidan          = ITEMS.register("danyao_heqidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenli(80));
     public static final RegistryObject<Item> danyao_zengqidan          = ITEMS.register("danyao_zengqidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenlibaifenbi(5));
 
+
+
+
+    public static final RegistryObject<Item> danyao_yishendan          = ITEMS.register("danyao_yishendan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxjingshenli(300).setMaxused(10));
+    public static final RegistryObject<Item> danyao_xisuidan          = ITEMS.register("danyao_xisuidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxshengming(200).setKangbao(3).setWufang(100).setMaxused(10));
+    public static final RegistryObject<Item> danyao_longlidan          = ITEMS.register("danyao_longlidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWugong(66).setWuchuan(10).setBaojishanghai(2).setBaojilv(2).setMaxused(10));
+
     public static ArrayList<RegistryObject<Item>> DANYAOLIST = new ArrayList<>();
     static {
         DANYAOLIST.add(danyao_qihundan);
@@ -180,6 +187,10 @@ public class ItemInit {
         DANYAOLIST.add(danyao_fanmindan);
         DANYAOLIST.add(danyao_heqidan);
         DANYAOLIST.add(danyao_zengqidan);
+
+        DANYAOLIST.add(danyao_yishendan);
+        DANYAOLIST.add(danyao_xisuidan);
+        DANYAOLIST.add(danyao_longlidan);
     }
 
     public static final RegistryObject<Item> danfang_qihundan       = ITEMS.register("danfang_qihundan", () -> new Item(new Item.Properties()){
@@ -259,6 +270,21 @@ public class ItemInit {
             list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
         }
     });
+    public static final RegistryObject<Item> danfang_yishendan         = ITEMS.register("danfang_yishendan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_xisuidan         = ITEMS.register("danfang_xisuidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
+    public static final RegistryObject<Item> danfang_longlidan         = ITEMS.register("danfang_longlidan", () -> new Item(new Item.Properties()){
+        public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+            list.add(Component.translatable("击杀《古风小屋》中的魂民概率掉落").withStyle(ChatFormatting.GRAY));
+        }
+    });
 
 
     public static ArrayList<RegistryObject<Item>> DANFANGLIST = new ArrayList<>();
@@ -277,6 +303,9 @@ public class ItemInit {
         DANFANGLIST.add(danfang_fanmindan);
         DANFANGLIST.add(danfang_heqidan);
         DANFANGLIST.add(danfang_zengqidan);
+        DANFANGLIST.add(danfang_yishendan);
+        DANFANGLIST.add(danfang_xisuidan);
+        DANFANGLIST.add(danfang_longlidan);
     }
 
 

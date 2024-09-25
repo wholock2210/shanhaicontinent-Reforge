@@ -100,6 +100,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         daoyaohecheng(pWriter,ItemInit.danfang_fanmindan   ,ItemInit.yueguanghua_fruit   ,ItemInit.danyao_fanmindan        ,10,3);
         daoyaohecheng(pWriter,ItemInit.danfang_heqidan     ,ItemInit.zhushamei_fruit     ,ItemInit.danyao_heqidan          ,10,3);
         daoyaohecheng(pWriter,ItemInit.danfang_zengqidan   ,ItemInit.bianhua_fruit       ,ItemInit.danyao_zengqidan        ,10,3);
+
+
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    ItemInit.danfang_yishendan.get())
+                        .setRANLIAO(    ItemInit.hunyeping0.get())
+                        .setJIN(        ItemInit.danyao_jiuhua.get())
+                        .setMU(         ItemInit.danyao_jiuhua.get())
+                        .setSHUI(       ItemInit.danyao_jiuhua.get())
+                        .setHUO(        ItemInit.danyao_jiuhua.get())
+                        .setTU(         ItemInit.wangyoucao_fruit.get())
+                        .setJEIGUO(     ItemInit.danyao_yishendan.get())
+                        .setNengliang(100)
+                        .setNum(1)
+        );
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    ItemInit.danfang_xisuidan.get())
+                        .setRANLIAO(    ItemInit.hunyeping0.get())
+                        .setJIN(        ItemInit.danyao_fanmindan.get())
+                        .setMU(         ItemInit.danyao_fanmindan.get())
+                        .setSHUI(       ItemInit.danyao_fanmindan.get())
+                        .setHUO(        ItemInit.danyao_fanmindan.get())
+                        .setTU(         ItemInit.bianhua_fruit.get())
+                        .setJEIGUO(     ItemInit.danyao_xisuidan.get())
+                        .setNengliang(100)
+                        .setNum(1)
+        );
+        pWriter.accept(
+                new SHFinishedRecipe()
+                        .setPEIFANG(    ItemInit.danfang_longlidan.get())
+                        .setRANLIAO(    ItemInit.hunyeping0.get())
+                        .setJIN(        ItemInit.danyao_huanyuandan.get())
+                        .setMU(         ItemInit.danyao_fanmindan  .get())
+                        .setSHUI(       ItemInit.danyao_heqidan    .get())
+                        .setHUO(        ItemInit.danyao_zengqidan  .get())
+                        .setTU(         ItemInit.xiwu_fruit.get())
+                        .setJEIGUO(     ItemInit.danyao_longlidan.get())
+                        .setNengliang(100)
+                        .setNum(1)
+        );
+
 //九花
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.baisuilan_seed       ,ItemInit.danyao_jiuhua    ,10,3);
         daoyaohecheng(pWriter,ItemInit.danfang_jiuhua  ,ItemInit.fengxinzi_seed       ,ItemInit.danyao_jiuhua    ,20,4);

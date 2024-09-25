@@ -8,7 +8,9 @@ import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI;
 import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
 import hua.huase.shanhaicontinent.init.AdvenceInit;
+import hua.huase.shanhaicontinent.init.ItemInit;
 import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
+import hua.huase.shanhaicontinent.item.DanYaoItem;
 import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
 import hua.huase.shanhaicontinent.network.SynsAPI;
 import hua.huase.shanhaicontinent.potion.PotionAnimation;
@@ -17,18 +19,22 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.ServerStatsCounter;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.event.entity.player.SleepingTimeCheckEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -81,12 +87,28 @@ public class PWSleepingTimeCheckEvent {
 
             AdvenceInit.menghuiwangutrigger.trigger(entityPlayer);
 
+//            清除丹药使用次数
+            clearUsedNum(entityPlayer);
+
+
             PlayerAttributeCapability newplayerAttributeCapability = new PlayerAttributeCapability();
             PlayerHunHuanAPI.zhuansheng(newplayerAttributeCapability,capability,entityPlayer);
             capability.deserializeNBT(newplayerAttributeCapability.serializeNBT());
 
             SynsAPI.synsPlayerAttribute(entityPlayer);
         });
+
+    }
+
+    private static void clearUsedNum(ServerPlayer serverPlayer) {
+
+        ServerStatsCounter stats = serverPlayer.getStats();
+        for (RegistryObject<Item> itemRegistryObject : ItemInit.DANYAOLIST) {
+            if(itemRegistryObject.get() instanceof DanYaoItem danYaoItem && danYaoItem.getMaxused()>0){
+                stats.setValue(serverPlayer,Stats.ITEM_USED.get(danYaoItem),0);
+            }
+        }
+
 
     }
 

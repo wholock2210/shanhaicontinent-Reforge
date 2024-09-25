@@ -41,6 +41,10 @@ public class HunminEntity extends ZombieVillager {
         if(random.nextInt(20)==0) {
             Entity entity = damageSource.getEntity();
             if(entity !=null && entity instanceof Player player){
+                if(random.nextInt(5)==0) {
+                    dropitem(DANFANGLIST.get(DANFANGLIST.size()-1-random.nextInt(7)).get());
+                    return;
+                }
                 if(random.nextInt(10)==0) {
                     dropitem(DANFANGLIST.get(0).get());
                     return;

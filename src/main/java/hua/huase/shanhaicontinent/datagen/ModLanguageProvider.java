@@ -44,6 +44,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("获得精神力", "精神力：+%s");
         this.add("获得最大精神力", "最大精神力：+%s");
         this.add("体力", "体力：%s/%s");
+        this.add("最大使用次数", "最大使用次数：%s");
 
         this.add("突破成功率", "突破成功率：+%s");
         this.add("能量", "能量：%s/%s");
@@ -154,7 +155,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 "§6古风小屋：§0会固定刷新魂民，参考守卫者的刷新机制\n" +
                 "§6魂民：§0会掉落丹药和单方，玩家等级越高，掉落的单方等级越高\n" +
                 "§6魂液瓶：§0右键可收集魂核的能量，右键耕地可转化为魂土，魂土能够种植草药\n" +
-                "§6转生：§0满级后获得梦回万古debuff后再通过床睡觉完成转生，转生后等级属性回归0级，返还武魂果实，保留本体百分之二十属性\n" +
+                "§6转生：§0满级后获得梦回万古debuff后再通过床睡觉完成转生，转生后等级属性回归0级，返还武魂果实,重置丹药使用次数，保留本体百分之二十属性\n" +
                 "§6魂兽分布：§0主世界千年内，下界万年内，末地百万年内\n" +
                 "§6矿物分布：§0虽然所有矿物在主世界都有刷新，但一些稀有矿物在下届或末地的会有刷新\n" +
                 "§6联动：§0所有配方都在jei物品管理器（mod）中可以查询，对暮色的怪的年限做了适配\n" +
@@ -361,6 +362,9 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danyao_fanmindan           .get(),"§1《§b返命丹§1》");
         this.add(ItemInit.danyao_heqidan             .get(),"§1《§b合气丹§1》");
         this.add(ItemInit.danyao_zengqidan           .get(),"§1《§b增气丹§1》");
+        this.add(ItemInit.danyao_yishendan              .get(),"§7《§b益神丹§7");
+        this.add(ItemInit.danyao_xisuidan               .get(),"§7《§b洗髓丹§7");
+        this.add(ItemInit.danyao_longlidan              .get(),"§7《§b龙力丹§7");
         this.add(ItemInit.danfang_qihundan      .get(),"§a丹方：§f《§a气魂丹§f》*Ⅰ阶");
         this.add(ItemInit.danfang_jvlingdan     .get(),"§b丹方：§f《§b聚灵丹§f》*Ⅱ阶");
         this.add(ItemInit.danfang_xvanyuandan   .get(),"§c丹方：§f《§c玄元丹§f》*Ⅲ阶");
@@ -375,6 +379,9 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.danfang_fanmindan         .get(),"§4丹方：§1《§b返命丹§1》***");
         this.add(ItemInit.danfang_heqidan           .get(),"§4丹方：§1《§b合气丹§1》***");
         this.add(ItemInit.danfang_zengqidan         .get(),"§4丹方：§1《§b增气丹§1》***");
+        this.add(ItemInit.danfang_yishendan         .get(),"§4丹方：§7《§b益神丹§7》***");
+        this.add(ItemInit.danfang_xisuidan          .get(),"§4丹方：§7《§b洗髓丹§7》***");
+        this.add(ItemInit.danfang_longlidan         .get(),"§4丹方：§7《§b龙力丹§7》***");
         this.add(ItemInit.headbone              .get(),"§c头骨 §f§k****** §e《上古神秘骨》");
         this.add(ItemInit.exoskeletonsoulbone.get(),"§c外附骨 §f§k****** §e《上古神秘骨》");
         this.add(ItemInit.lefthandbone          .get(),"§c左臂骨 §f§k****** §e《上古神秘骨》");
