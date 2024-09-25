@@ -398,6 +398,9 @@ public interface PlayerHunHuanAPI {
             newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/20));
             newplayerCapability.setJingshenli(0);
             newplayerCapability.setZhuanshengshu(newplayerCapability.getZhuanshengshu()+oldItemCapability.getZhuanshengshu()+1);
+//            魂骨蓸
+            newplayerCapability.getBoneslot().deserializeNBT(oldItemCapability.getBoneslot().serializeNBT());
+
             player.setHealth(newplayerCapability.getMaxshengming());
 
         }
