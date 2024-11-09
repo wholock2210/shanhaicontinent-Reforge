@@ -139,7 +139,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("上古神王附体", "上古神王附体");
 
 //玩法介绍
-        this.add("玩法介绍主题", "山海大陆1.20.1_3.1基础玩法介绍");
+        this.add("玩法介绍主题", "山海大陆1.20.1_4.0基础玩法介绍");
         this.add("玩法介绍1页",
                 "§6基础操作：§0\n" +
                 "§6O键：§0打开属性界面。\n" +
@@ -159,7 +159,9 @@ public class ModLanguageProvider extends LanguageProvider {
                 "§6魂兽分布：§0主世界千年内，下界万年内，末地百万年内\n" +
                 "§6矿物分布：§0虽然所有矿物在主世界都有刷新，但一些稀有矿物在下届或末地的会有刷新\n" +
                 "§6联动：§0所有配方都在jei物品管理器（mod）中可以查询，对暮色的怪的年限做了适配\n" +
-                "§6测试物品：§0/give @p shanhaicontinent:textitem1，服用后获得满魂环，仅测试使用");
+                "§6测试物品：§0/give @p shanhaicontinent:textitem1，服用后获得满魂环，仅测试使用\n" +
+                "§d更新内容：§0新增加3种丹药及单方，新增修改玩家数据作弊指令：/shanhaicontinent attribute @p [属性名] [值] "
+                );
 
 
 //方块

@@ -139,7 +139,7 @@ public class ModEnLanguageProvider extends LanguageProvider {
         this.add("上古神王附体", "thePossessionOfTheAncientDivineKing");
 
 //玩法介绍
-        this.add("玩法介绍主题", "Shanhai Continent 1.20.1_3.1 Basic Gameplay Introduction");
+        this.add("玩法介绍主题", "Shanhai Continent 1.20.1_4.0 Basic Gameplay Introduction");
         this.add("玩法介绍1页",
                 "§6basicOperations：§0\n" +
                 "§6Okey：§0openTheAttributeInterface。\n" +

@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent;
 
 import com.mojang.serialization.Codec;
+import hua.huase.shanhaicontinent.command.SHCommand;
 import hua.huase.shanhaicontinent.init.*;
 import hua.huase.shanhaicontinent.init.ModelBlockEntitiesinit;
 import hua.huase.shanhaicontinent.capability.CapabilityRegistryHandler;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.Bindings;
 import net.minecraftforge.fml.ModList;
@@ -25,6 +27,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
+import twilightforest.command.TFCommand;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -54,6 +57,8 @@ public class SHMainBus {
 
 
 
+//指令
+        MinecraftForge.EVENT_BUS.addListener(this::registerCommands);
 
         BlockInit.register(modEventBus);
         ItemInit.register(modEventBus);
@@ -86,6 +91,10 @@ public class SHMainBus {
 
     }
 
+
+    public void registerCommands(RegisterCommandsEvent event) {
+        SHCommand.register(event.getDispatcher());
+    }
 
 
 //    某创造栏里加某物品
