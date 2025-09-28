@@ -33,7 +33,7 @@ public class MainMenuModifier {
             Component.literal("因为制作mod消耗的精力与收益不成正比 不得已而为之请见谅。").withStyle(ChatFormatting.RED)
     );
 
-    @SubscribeEvent
+//    @SubscribeEvent
     public static void onGuiInit(ScreenEvent.Init.Post event) {
         if (!(event.getScreen() instanceof TitleScreen)) return;
 
