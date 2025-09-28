@@ -22,6 +22,8 @@ public class ModelBlockEntitiesinit {
                     BlockEntityType.Builder.of(PotBlockEntity::new,
                             BlockInit.POT_BLOCK.get()).build(null));
 
+
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -80,6 +80,16 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new SHStructureTagGenerator(packOutput, lookupProvider1, existingFileHelper));
 
+
+        //111111111111111111111111111111111111111111111111111111111
+
+        generator.addProvider(event.includeServer(),new ModWorldGenProvider(packOutput,lookupProvider));
+
+
+        //11111111111111111111111111111111111111111111
+
+
+
 //        generator.addProvider(event.includeServer(), new ModGlobalLootModifiersProvider(packOutput));
 
 //        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));

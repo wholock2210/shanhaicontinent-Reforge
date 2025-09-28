@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:zhaohuanshi"
+    },
+    "title": {
+      "translate": "advancements.zhaohuanshi.title"
+    },
+    "description": {
+      "translate": "advancements.zhaohuanshi.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "mowu_jinghua": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:zhaohuanshi"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/mowu_jianghua"
+}

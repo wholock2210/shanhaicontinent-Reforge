@@ -1,9 +1,8 @@
 package hua.huase.shanhaicontinent.item.tool;
 
 import hua.huase.shanhaicontinent.init.ItemInit;
-import net.minecraft.tags.ItemTags;
+import hua.huase.shanhaicontinent.register.ModItems;
 import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
@@ -25,6 +24,9 @@ public enum SHTiers implements Tier {
     }),
     cixuexianjin(99, 19800, 32.0F, 3.0F, 32, () -> {
         return Ingredient.of(ItemInit.itemcixuexianjin.get());
+    }),
+    xuanbing(199, 32763, 64.0F, 4.0F, 32, () -> {
+        return Ingredient.of(ModItems.XUANBING_STONE.get());
     });
 
     private final int level;

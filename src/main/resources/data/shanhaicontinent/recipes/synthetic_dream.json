@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "shanhaicontinent:synthetic_dream_music"
+    }
+  ],
+  "result": {
+    "item": "shanhaicontinent:synthetic_dream",
+    "count": 1
+  }
+}

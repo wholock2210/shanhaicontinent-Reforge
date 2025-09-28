@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_500",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§c§l极度的膨胀！拥有+1000的超神器！",
+    "description": "§c强化成功率已经无法阻挡你的脚步了！",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_1000": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 1000
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

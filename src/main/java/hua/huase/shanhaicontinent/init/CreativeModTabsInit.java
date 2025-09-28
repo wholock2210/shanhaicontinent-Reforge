@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.init;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.register.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -38,22 +39,16 @@ public class CreativeModTabsInit {
                         pOutput.accept(ItemInit.trunkbone.get());
                         pOutput.accept(ItemInit.exoskeletonsoulbone.get());
 
-
-
 //                        pOutput.accept(ItemInit.BOLT.get());
 //                        pOutput.accept(ItemInit.RHINO_SPANW_EGG.get());
 
-
                         pOutput.accept(BlockInit.SAPPHIRE_BLOCK.get());
                         pOutput.accept(BlockInit.POT_BLOCK.get());
-
                         pOutput.accept(BlockInit.SOUL_BLOCK.get());
-
                         pOutput.accept(ItemInit.wanfajieshao.get());
                         for (RegistryObject<Item> itemRegistryObject : ItemInit.hunyepinglist) {
                             pOutput.accept(itemRegistryObject.get());
                         }
-
                         pOutput.accept(ItemInit.guoshi_huang.get());
                         pOutput.accept(ItemInit.guoshi_jingubang.get());
                         pOutput.accept(ItemInit.guoshi_haotianchui.get());

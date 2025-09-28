@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:luocha_suipian"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:luocha_zhitong",
+    "count": 1
+  }
+}

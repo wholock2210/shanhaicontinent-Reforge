@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "shanhaicontinent:shenjie",
+  "features": "shanhaicontinent:xuanbing_block",
+  "step": "underground_ores"
+}

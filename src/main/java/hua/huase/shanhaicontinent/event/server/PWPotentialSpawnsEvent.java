@@ -1,17 +1,10 @@
 package hua.huase.shanhaicontinent.event.server;
 
-import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.init.EntityInit;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.level.LevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
-import java.util.Random;
-
-import static hua.huase.shanhaicontinent.SHMainBus.random;
 
 //@Mod.EventBusSubscriber(modid = SHMainBus.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class PWPotentialSpawnsEvent {
@@ -23,6 +16,4 @@ public class PWPotentialSpawnsEvent {
         event.addSpawnerData(spawnerData);
 
     }
-
-
 }

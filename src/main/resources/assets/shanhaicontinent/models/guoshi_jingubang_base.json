@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "shanhaicontinent:item/jineng_jgb_0",
 		"1": "shanhaicontinent:item/sucai/huan",
-		"particle": "shanhaicontinent:item/jgb/jineng_jgb_0"
+		"particle": "shanhaicontinent:item/jineng_jgb_0"
 	},
 	"elements": [
 		{

@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_10",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§e登堂入室",
+    "description": "将神器强化至+21(21级后成功率将锁定在8%)",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_21": {
+     "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 21
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

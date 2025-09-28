@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "Y": {
+      "item": "shanhaicontinent:blockmingtie_block"
+    },
+    "Z": {
+      "item": "shanhaicontinent:decomposition_gossip"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:first_decomposition_gossip",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:tianshi_suipian"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:tianshi_zhiguan",
+    "count": 1
+  }
+}

@@ -31,8 +31,6 @@ public class JvxiangeStructure extends Structure  {
         super(structureSettings);
     }
 
-
-
     public StructureStart generate(RegistryAccess registryAccess, ChunkGenerator chunkGenerator, BiomeSource biomeSource, RandomState randomState, StructureTemplateManager structureTemplateManager, long l, ChunkPos chunkPos, int i, LevelHeightAccessor levelHeightAccessor, Predicate<Holder<Biome>> holderPredicate) {
    
         return super.generate( registryAccess,  chunkGenerator,  biomeSource,  randomState,  structureTemplateManager,  l,  chunkPos,  i,  levelHeightAccessor,  holderPredicate);
@@ -59,6 +57,4 @@ public class JvxiangeStructure extends Structure  {
     public StructureType<?> type() {
         return SHStructureTypes.jvxiange.get();
     }
-
-
 }

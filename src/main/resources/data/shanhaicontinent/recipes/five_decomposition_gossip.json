@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "ACA",
+    "AEA"
+  ],
+  "key": {
+    "A": {
+      "item": "shanhaicontinent:blocklanhaizuan_block"
+    },
+    "B": {
+      "item": "shanhaicontinent:blockcixuexianjin_block"
+    },
+    "C": {
+      "item": "shanhaicontinent:four_decomposition_gossip"
+    },
+    "E": {
+      "item": "shanhaicontinent:blockkongjianshi_block"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:five_decomposition_gossip",
+    "count": 1
+  }
+}

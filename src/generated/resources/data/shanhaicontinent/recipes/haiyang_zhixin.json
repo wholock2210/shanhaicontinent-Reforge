@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:haiyang_suipian"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:haiyang_zhixin",
+    "count": 1
+  }
+}

@@ -1,11 +1,7 @@
 package hua.huase.shanhaicontinent.item.jineng.jinggubang;
 
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
-import hua.huase.shanhaicontinent.entity.jinengentity.jinggubang.JiNengFSHYEntity;
-import hua.huase.shanhaicontinent.init.EntityInit;
-import hua.huase.shanhaicontinent.item.ItemAttribute;
 import hua.huase.shanhaicontinent.item.jineng.Jineng;
-import hua.huase.shanhaicontinent.item.jineng.WuqiAttribute;
 import hua.huase.shanhaicontinent.item.jineng.WuqiBase;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -32,7 +28,7 @@ public class Jineng_JGB_0 extends WuqiBase {
     public float getWugong(Player player, ItemStack itemStack, float value, EquipmentSlot offhand) {
         if(offhand == EquipmentSlot.MAINHAND){
             float dengji = PlayerAttrubuteAPI.getDengji(player);
-            value += value*0.1f*(dengji+1)/10;
+            value += value*0.08f*(dengji+1)/10;
         }
 
         return value;
@@ -66,10 +62,9 @@ public class Jineng_JGB_0 extends WuqiBase {
     }
 
 
-
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);
 
-        list.add(Component.translatable("《万破》：每10级增加10%的物攻").withStyle(ChatFormatting.GREEN));
+        list.add(Component.translatable("《万破》：每10级增加8%的物攻").withStyle(ChatFormatting.GREEN));
     }
 }

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "shanhaicontinent:zixiaoxianjin_block"
+    }
+  ],
+  "result": {
+    "item": "shanhaicontinent:zixiaoxianjin_ingot",
+    "count": 9
+  }
+}

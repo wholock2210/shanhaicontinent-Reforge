@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:heart_of_ice"
+    },
+    "title": {
+      "translate": "advancement.shanhaicontinent.summon_frost_prison.title",
+      "bold": true
+    },
+    "description": {
+      "translate": "advancement.shanhaicontinent.summon_frost_prison.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/netherrack.png"
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/heart_of_ice",
+  "criteria": {
+    "summon_frost_prison": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 500,
+    "function": "shanhaicontinent:rewards/summon_frost_prison"
+  }
+}

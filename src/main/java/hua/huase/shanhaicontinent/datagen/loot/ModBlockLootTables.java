@@ -3,6 +3,7 @@ package hua.huase.shanhaicontinent.datagen.loot;
 import hua.huase.shanhaicontinent.block.entityblock.flowerblock.SHFlowerBlock;
 import hua.huase.shanhaicontinent.init.BlockInit;
 import hua.huase.shanhaicontinent.init.ItemInit;
+import hua.huase.shanhaicontinent.register.ModBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.network.chat.Component;
@@ -61,6 +62,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropFlower(BlockInit.zhushamei.get(),ItemInit.zhushamei_fruit.get(),ItemInit.zhushamei_seed.get());
         this.dropFlower(BlockInit.bianhua.get(),ItemInit.bianhua_fruit.get(),ItemInit.bianhua_seed.get());
 
+        this.dropSelf(ModBlock.SHENJIESHUSHUMIAO_SAPLING.get());
 
 
 

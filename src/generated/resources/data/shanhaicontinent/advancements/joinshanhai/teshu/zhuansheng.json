@@ -10,7 +10,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "red",
-      "translate": "在有《梦回万古》时睡觉，并精神力超过3000时可以转生，属性重回0级，并移除魂环和武魂，返还武魂果实"
+      "translate": "在有《梦回万古》buff时睡觉，并精神力超过3000时可以转生，属性重回0级，并移除魂环和武魂，返还武魂果实"
     },
     "frame": "challenge",
     "hidden": false,

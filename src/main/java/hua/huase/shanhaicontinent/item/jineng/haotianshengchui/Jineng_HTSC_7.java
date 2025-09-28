@@ -3,6 +3,7 @@ package hua.huase.shanhaicontinent.item.jineng.haotianshengchui;
 import hua.huase.shanhaicontinent.entity.jinengentity.haotianchui.Jineng_HTSC_4_Entity;
 import hua.huase.shanhaicontinent.entity.jinengentity.haotianchui.Jineng_HTSC_7_Entity;
 import hua.huase.shanhaicontinent.init.EntityInit;
+import hua.huase.shanhaicontinent.init.ModConfig;
 import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
 import hua.huase.shanhaicontinent.item.jineng.JinengBase;
 import net.minecraft.ChatFormatting;
@@ -20,43 +21,37 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class Jineng_HTSC_7 extends JinengBase{
+public class Jineng_HTSC_7 extends JinengBase {
     public Jineng_HTSC_7(Properties properties) {
         super(properties);
     }
 
-
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        if(!this.isBelongToPlayer(player,itemstack))return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
-        level.playSound((Player)null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
-        player.getCooldowns().addCooldown(this, (int) (160-Math.log10(this.getNianxian(player, itemstack))*13));
+        if (!this.isBelongToPlayer(player, itemstack)) return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
+        level.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDER_PEARL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+        player.getCooldowns().addCooldown(this, (int) (160 - Math.log10(this.getNianxian(player, itemstack)) * 13));
+        boolean canBreakBlocks = ModConfig.canBreakBlocks.get();
         if (!level.isClientSide) {
-
             Jineng_HTSC_7_Entity entity = new Jineng_HTSC_7_Entity(EntityInit.jinenghtsc7.get(), level);
             entity.setOwner(player);
-            entity.setPos(player.getX(),player.getY()+3,player.getZ());
+            entity.setPos(player.getX(), player.getY() + 3, player.getZ());
             entity.setItem(itemstack);
             entity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3F, 0.0F);
-            entity.isExploade = player.isShiftKeyDown();
+
+            if (canBreakBlocks && player.isShiftKeyDown()) {
+                entity.isExploade = true;
+            } else {
+                entity.isExploade = false;
+            }
             level.addFreshEntity(entity);
-
         }
-
-
-//        player.awardStat(Stats.ITEM_USED.get(this));
-//        if (!player.getAbilities().instabuild) {
-//            itemstack.shrink(1);
-//        }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
 
-
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);
         list.add(Component.translatable("将全身魂力集中于一点迅速发出").withStyle(ChatFormatting.GREEN));
-        list.add(Component.translatable("蹲下释放可破环地形").withStyle(ChatFormatting.GRAY));
-
     }
 }

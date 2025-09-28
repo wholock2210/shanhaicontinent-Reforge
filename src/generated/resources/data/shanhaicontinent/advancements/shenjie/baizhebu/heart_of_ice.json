@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:heart_of_ice"
+    },
+    "title": {
+      "translate": "advancements.heart_of_ice.title"
+    },
+    "description": {
+      "translate": "advancements.heart_of_ice.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "heart_of_ice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:heart_of_ice"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/tyrant_heart"
+}

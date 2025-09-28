@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:tianshi_suipian"
+    },
+    "title": {
+      "translate": "advancements.tianshi_suipian.title"
+    },
+    "description": {
+      "translate": "advancements.tianshi_suipian.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "tianshi_suipian": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:tianshi_suipian"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/huoqushenwei_tianshishen"
+}

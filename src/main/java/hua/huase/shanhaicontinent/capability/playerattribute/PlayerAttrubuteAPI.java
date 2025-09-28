@@ -70,6 +70,14 @@ public interface PlayerAttrubuteAPI {
                 }
             }
         }
+        ItemStack offhandItem = player.getOffhandItem();
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getMaxShengming(player, offhandItem, value, EquipmentSlot.OFFHAND);
+        }
+        ItemStack mainHandItem = player.getMainHandItem();
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getMaxShengming(player, mainHandItem, value, EquipmentSlot.MAINHAND);
+        }
         return value;
     }
 
@@ -98,12 +106,12 @@ public interface PlayerAttrubuteAPI {
         }
 
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getWugong(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getWugong(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getWugong(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getWugong(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
 
 
@@ -135,14 +143,13 @@ public interface PlayerAttrubuteAPI {
         }
 
 
-
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getWufang(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getWufang(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getWufang(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getWufang(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
 
         return value;
@@ -169,12 +176,12 @@ public interface PlayerAttrubuteAPI {
 
 
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getBaojishanghai(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getBaojishanghai(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getBaojishanghai(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getBaojishanghai(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -198,12 +205,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getBaojilv(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getBaojilv(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getBaojilv(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getBaojilv(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -227,12 +234,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getZhenshang(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getZhenshang(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getZhenshang(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getZhenshang(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -256,12 +263,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getWuchuan(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getWuchuan(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getWuchuan(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getWuchuan(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -285,12 +292,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getKangbao(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getKangbao(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getKangbao(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getKangbao(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -314,12 +321,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getXixue(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getXixue(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getXixue(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getXixue(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -343,12 +350,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getMinghzong(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getMinghzong(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getMinghzong(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getMinghzong(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -372,12 +379,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getShanbi(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getShanbi(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getShanbi(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getShanbi(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }
@@ -401,12 +408,12 @@ public interface PlayerAttrubuteAPI {
             }
         }
         ItemStack offhandItem = player.getOffhandItem();
-        if(offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,offhandItem)){
-            value = wuqiAttribute.getShengminghuifu(player,offhandItem,value, EquipmentSlot.OFFHAND);
+        if (offhandItem.getItem() instanceof WuqiAttribute wuqiAttribute && offhandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, offhandItem)) {
+            value = wuqiAttribute.getShengminghuifu(player, offhandItem, value, EquipmentSlot.OFFHAND);
         }
         ItemStack mainHandItem = player.getMainHandItem();
-        if(mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player,mainHandItem)){
-            value = wuqiAttribute.getShengminghuifu(player,mainHandItem,value, EquipmentSlot.MAINHAND);
+        if (mainHandItem.getItem() instanceof WuqiAttribute wuqiAttribute && mainHandItem.getItem() instanceof Jineng jineng && jineng.isBelongToPlayer(player, mainHandItem)) {
+            value = wuqiAttribute.getShengminghuifu(player, mainHandItem, value, EquipmentSlot.MAINHAND);
         }
         return value;
     }

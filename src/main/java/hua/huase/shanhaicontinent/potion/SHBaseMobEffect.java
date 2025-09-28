@@ -1,6 +1,8 @@
 
 package hua.huase.shanhaicontinent.potion;
 
+import hua.huase.shanhaicontinent.register.ModItems;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
 
 import net.minecraft.world.entity.LivingEntity;

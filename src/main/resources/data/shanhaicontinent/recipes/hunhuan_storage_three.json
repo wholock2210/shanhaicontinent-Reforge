@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:itemlanhaizuan"
+    },
+    "Y": {
+      "item": "shanhaicontinent:itemkongjianshi"
+    },
+    "Z": {
+      "item": "shanhaicontinent:hunhuan_storage_two"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:hunhuan_storage_three",
+    "count": 1
+  }
+}

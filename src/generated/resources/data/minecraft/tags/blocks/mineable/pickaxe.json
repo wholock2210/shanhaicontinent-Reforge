@@ -12,6 +12,13 @@
     "shanhaicontinent:blocklanhaizuan_block",
     "shanhaicontinent:blockcixuexianjin_block",
     "shanhaicontinent:blockkongjianshi_block",
-    "shanhaicontinent:pot_block"
+    "shanhaicontinent:pot_block",
+    "shanhaicontinent:xuanbing_block",
+    "shanhaicontinent:xuanbingblock",
+    "shanhaicontinent:cixue_ore",
+    "shanhaicontinent:hanjing_glass",
+    "shanhaicontinent:zixiaoxianjin",
+    "shanhaicontinent:hungu_fenjie",
+    "shanhaicontinent:zixiaoxianjin_block"
   ]
 }

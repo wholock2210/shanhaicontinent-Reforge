@@ -1,6 +1,5 @@
 package hua.huase.shanhaicontinent.capability.monsterattribute;
 
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.capabilities.*;
@@ -26,10 +25,6 @@ public class MonsterAttributeCapabilityProvider<T extends MonsterAttributeCapabi
         }
         return capability;
     }
-
-
-
-
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {

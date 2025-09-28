@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.datagen.loot;
 
 import hua.huase.shanhaicontinent.init.ItemInit;
+import hua.huase.shanhaicontinent.register.ModItems;
 import hua.huase.shanhaicontinent.world.lootables.SHLootTables;
 import net.minecraft.data.loot.packs.VanillaChestLoot;
 import net.minecraft.network.chat.Component;
@@ -98,8 +99,10 @@ public class SHChestLoot extends VanillaChestLoot {
             .add(LootItem.lootTableItem(ItemInit.danfang_heqidan.get())             .setWeight(90).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.danfang_zengqidan.get())           .setWeight(50).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.danfang_yishendan.get())           .setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
-            .add(LootItem.lootTableItem(ItemInit.danfang_xisuidan.get())           .setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ItemInit.danfang_xisuidan.get())            .setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             .add(LootItem.lootTableItem(ItemInit.danfang_longlidan.get())           .setWeight(5).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ModItems.danfang_zixiao.get())              .setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+            .add(LootItem.lootTableItem(ModItems.danfang_fengming.get())            .setWeight(1).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
             ;
 
     private static LootPool.Builder seed = LootPool.lootPool().setRolls(UniformGenerator.between(0.0F, 1.0F))

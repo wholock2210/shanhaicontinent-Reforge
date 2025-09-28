@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_40",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§c强化+50级",
+    "description": "恐怖的数值！将神器强化至+50",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_50": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 50
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

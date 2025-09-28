@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:shenjie/shenjiedengji/tupo_130",
+  "criteria": {
+    "changedengji_140": {
+      "conditions": {
+        "dengji": 140
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到140级"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_zhuji"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_red",
+      "translate": "三级神祇"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_140"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "shanhaicontinent:block/grasssj_block2",
+    "up": "shanhaicontinent:block/grasssj_block1",
+    "north": "shanhaicontinent:block/grasssj_block",
+    "east": "shanhaicontinent:block/grasssj_block",
+    "south": "shanhaicontinent:block/grasssj_block",
+    "west": "shanhaicontinent:block/grasssj_block",
+    "particle": "shanhaicontinent:block/grasssj_block2"
+  },
+  "render_type": "solid"
+}

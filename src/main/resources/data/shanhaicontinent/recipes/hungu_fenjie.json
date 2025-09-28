@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:blast_furnace"
+    },
+    "B": {
+      "item": "minecraft:cartography_table"
+    },
+    "C": {
+      "item": "minecraft:brewing_stand"
+    },
+    "D": {
+      "item": "minecraft:fletching_table"
+    },
+    "E": {
+      "item": "shanhaicontinent:blockcixuexianjin_block"
+    },
+    "F": {
+      "item": "minecraft:cauldron"
+    },
+    "G": {
+      "item": "minecraft:lectern"
+    },
+    "H": {
+      "item": "minecraft:stonecutter"
+    },
+    "I": {
+      "item": "minecraft:smithing_table"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:hungu_fenjie",
+    "count": 1
+  }
+}

@@ -1,6 +1,7 @@
 package hua.huase.shanhaicontinent.capability.monsterattribute;
 
 import hua.huase.shanhaicontinent.SHMainBus;
+import hua.huase.shanhaicontinent.compat.cataclysm.CataclysmAPI;
 import hua.huase.shanhaicontinent.compat.sophisticatedbackpacks.SophisticatedbackpacksAPI;
 import hua.huase.shanhaicontinent.compat.twilightforest.TwilightforestAPI;
 import net.minecraft.resources.ResourceKey;
@@ -14,12 +15,13 @@ public interface MonsterCapabilityAPI {
     public static MonsterAttributeCapability genMonsterCapability(Entity entity){
         RandomSource random = entity.level().random;
         int index = 0;
-        if(SHMainBus.twilightforest_compat){
-            index = TwilightforestAPI.getNianxian(entity,random);
-        } else if (true) {
-            index = genLevel(entity,random);
+        if(SHMainBus.LEndersCataclysm) {
+            index = CataclysmAPI.getNianxian(entity, random);
+        } else if(SHMainBus.twilightforest_compat) {
+            index = TwilightforestAPI.getNianxian(entity, random);
+        } else {
+            index = genLevel(entity, random);
         }
-//        index=genLevel(entity);
 
         return new MonsterAttributeCapability(index);
     }
@@ -33,7 +35,7 @@ public interface MonsterCapabilityAPI {
             if(dimension == Level.OVERWORLD){
 //                1,331
                 int i = random.nextInt(3) + 1;
-                index = random.nextInt((int) Math.pow(14,i));
+                index = random.nextInt((int) Math.pow(16,i));
 
             }else if(dimension == Level.NETHER){
 //                160,000+100
@@ -49,10 +51,11 @@ public interface MonsterCapabilityAPI {
                 index = Math.min(SHMainBus.random.nextInt((int) Math.pow(9,i)),1000000)+100;
             }
 
-
             if(((Mob) entity).getMaxHealth() >60){
-                if(SHMainBus.twilightforest_compat){
-                    index = SophisticatedbackpacksAPI.getNianxian(entity,random,index);
+                if(SHMainBus.twilightforest_compat) {
+                    index = SophisticatedbackpacksAPI.getNianxian(entity, random, index);
+                }else if (SHMainBus.LEndersCataclysm) {
+                    index = SophisticatedbackpacksAPI.getNianxian(entity, random, index);
                 }else {
                     index = (int) (1+1000000*Math.log10(((Mob) entity).getMaxHealth()));
                 }

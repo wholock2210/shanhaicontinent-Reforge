@@ -3,8 +3,7 @@ package hua.huase.shanhaicontinent.capability;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.util.INBTSerializable;
 
-public class
-CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
+public class CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
 
 /*基础属性
 生命          最大生命
@@ -30,6 +29,9 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
     private float shengminghuifu;
     private float mingzhong;
     private float shanbi;
+    private float zidingyi;
+
+
     public CapabilityAttributeBase(){
         this.shengming = 20;
         this.maxshengming = 20;
@@ -44,9 +46,10 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
         this.shengminghuifu = 1;
         this.mingzhong = 1;
         this.shanbi = 1;
+        this.zidingyi = 0;
     }
 
-    public CapabilityAttributeBase(float shengming, float maxshengming, float wugong, float wufang, float baojishanghai, float baojilv, float zhenshang, float wuchuan, float kangbao, float xixue, float shengminghuifu, float mingzhong, float shanbi) {
+    public CapabilityAttributeBase(float shengming, float maxshengming, float wugong, float wufang, float baojishanghai, float baojilv, float zhenshang, float wuchuan, float kangbao, float xixue, float shengminghuifu, float mingzhong, float shanbi,float shenwei) {
         this.shengming = shengming;
         this.maxshengming = maxshengming;
         this.wugong = wugong;
@@ -60,11 +63,11 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
         this.shengminghuifu = shengminghuifu;
         this.mingzhong = mingzhong;
         this.shanbi = shanbi;
+        this.zidingyi = zidingyi;
     }
 
     @Override
     public CompoundTag serializeNBT() {
-
         CompoundTag nbt = new CompoundTag();
         nbt.putFloat("wugong",wugong);
         nbt.putFloat("baojishanghai",baojishanghai);
@@ -79,6 +82,8 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
         nbt.putFloat("shanbi",shanbi);
         nbt.putFloat("wuchuan",wuchuan);
         nbt.putFloat("kangbao",kangbao);
+        nbt.putFloat("zidingyi",zidingyi);
+
         return nbt;
     }
 
@@ -97,7 +102,7 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
         this.shanbi=nbt.getFloat("shanbi");
         this.wuchuan=nbt.getFloat("wuchuan");
         this.kangbao=nbt.getFloat("kangbao");
-
+        this.kangbao=nbt.getFloat("zidingyi");
     }
 
     public float getShengming() {
@@ -203,4 +208,12 @@ CapabilityAttributeBase implements INBTSerializable<CompoundTag> {
     public void setShanbi(float shanbi) {
         this.shanbi = shanbi;
     }
+    public float getZidingyi() {
+        return shanbi;
+    }
+
+    public void setZidingyi(float shanbi) {
+        this.shanbi = shanbi;
+    }
+
 }

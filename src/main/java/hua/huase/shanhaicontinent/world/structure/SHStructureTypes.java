@@ -24,5 +24,4 @@ public class SHStructureTypes {
     private static <P extends Structure> RegistryObject<StructureType<P>> registerType(String name, Supplier<StructureType<P>> factory) {
         return STRUCTURE_TYPES.register(name, factory);
     }
-
 }

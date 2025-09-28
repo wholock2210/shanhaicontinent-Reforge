@@ -1,11 +1,8 @@
 package hua.huase.shanhaicontinent.command;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.network.SynsAPI;
 import net.minecraft.ChatFormatting;
@@ -13,9 +10,10 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.common.util.LazyOptional;
-import twilightforest.capabilities.CapabilityList;
+
+import static hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI.tupoDengji;
 
 public class ChangeAttributeCommand {
 	public static LiteralArgumentBuilder<CommandSourceStack> register() {
@@ -86,6 +84,15 @@ public class ChangeAttributeCommand {
 						.then(Commands.argument("amount", IntegerArgumentType.integer())
 								.executes(ctx -> setZhuanshengshu(EntityArgument.getEntity(ctx, "target"), IntegerArgumentType.getInteger(ctx, "amount")))
 						))
+						.then(Commands.literal("setJingyan")
+								.then(Commands.argument("amount", IntegerArgumentType.integer())
+										.executes(ctx -> setZhuanshengshu(EntityArgument.getEntity(ctx, "target"), IntegerArgumentType.getInteger(ctx, "amount")))
+								))
+						.then(Commands.literal("addJingyan")  // 新增：增加经验值
+								.then(Commands.argument("amount", IntegerArgumentType.integer())
+										.executes(ctx -> addJingyan(EntityArgument.getEntity(ctx, "target"), IntegerArgumentType.getInteger(ctx, "amount")))
+								)
+						)
 				);
 	}
 
@@ -98,7 +105,24 @@ public class ChangeAttributeCommand {
 		return Command.SINGLE_SUCCESS;
 	}
 
-	private static int setJingshenli(Entity player, int num) {
+	private static int addJingyan(Entity player, int amount) {
+		if (!(player instanceof ServerPlayer)) {
+			return 0;
+		}
+		ServerPlayer serverPlayer = (ServerPlayer) player;
+		serverPlayer.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
+			capability.setJingyan(capability.getJingyan() + amount);
+			serverPlayer.sendSystemMessage(Component.literal("获得经验：" + amount)
+					.withStyle(ChatFormatting.YELLOW));
+			if (capability.getJingyan() >= capability.getMaxjingyan()) {
+				tupoDengji(serverPlayer, capability);
+			}
+			SynsAPI.synsPlayerAttribute(serverPlayer);
+		});
+		return Command.SINGLE_SUCCESS;
+	}
+
+	public static int setJingshenli(Entity player, int num) {
 		player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
 			capability.setJingshenli(Math.max(0,num));
 			player.sendSystemMessage(Component.translatable("精神力",num,num).withStyle(ChatFormatting.YELLOW));
@@ -106,7 +130,16 @@ public class ChangeAttributeCommand {
 		SynsAPI.synsPlayerAttribute(player);
 		return Command.SINGLE_SUCCESS;
 	}
-	private static int setMaxjingshenli(Entity player, int num) {
+
+	public static int setJingyan(Entity player, int num) {
+		player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
+			capability.setJingyan(Math.max(0,num));
+		});
+		SynsAPI.synsPlayerAttribute(player);
+		return Command.SINGLE_SUCCESS;
+	}
+
+	public static int setMaxjingshenli(Entity player, int num) {
 		player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
 			capability.setMaxjingshenli(Math.max(0,num));
 			player.sendSystemMessage(Component.translatable("获得最大精神力",num).withStyle(ChatFormatting.YELLOW));

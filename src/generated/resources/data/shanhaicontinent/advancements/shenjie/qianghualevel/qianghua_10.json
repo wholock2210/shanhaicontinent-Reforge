@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_1",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§2初窥门径",
+    "description": "将神器强化至+10",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_10": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 10
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

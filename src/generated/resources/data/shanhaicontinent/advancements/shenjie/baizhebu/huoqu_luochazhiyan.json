@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:luocha_zhitong"
+    },
+    "title": {
+      "translate": "advancements.luocha_zhitong.title"
+    },
+    "description": {
+      "translate": "advancements.luocha_zhitong.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "luocha_zhitong": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:luocha_zhitong"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/huoqu_luochasuipian"
+}

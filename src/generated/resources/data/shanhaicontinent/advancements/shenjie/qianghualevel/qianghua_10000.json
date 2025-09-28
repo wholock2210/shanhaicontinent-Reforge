@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_1000",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§c§l当前数值：§k1111111",
+    "description": "§c§l强化到+10000！§c本等级的神器已经是游戏数值上限了！",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_10000": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 10000
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100000
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/qianghualevel/qianghua_50",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§c§l初入门径？",
+    "description": "§c将神器强化至+100",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_100": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 100
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

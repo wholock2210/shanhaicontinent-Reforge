@@ -139,7 +139,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add("上古神王附体", "上古神王附体");
 
 //玩法介绍
-        this.add("玩法介绍主题", "山海大陆1.20.1_4.0基础玩法介绍");
+        this.add("玩法介绍主题", "山海大陆1.20.1_4.7基础玩法介绍");
         this.add("玩法介绍1页",
                 "§6基础操作：§0\n" +
                 "§6O键：§0打开属性界面。\n" +

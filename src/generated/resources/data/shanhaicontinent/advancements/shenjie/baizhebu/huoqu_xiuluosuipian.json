@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:xiuluo_suipian"
+    },
+    "title": {
+      "translate": "advancements.xiuluo_suipian.title"
+    },
+    "description": {
+      "translate": "advancements.xiuluo_suipian.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "xiuluo_suipian": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:xiuluo_suipian"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/huoqushenwei_xiuluoshen"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:danfang_jiuhua"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:danfang_yaochen",
+    "count": 1
+  }
+}

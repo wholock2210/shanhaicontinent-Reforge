@@ -2,6 +2,8 @@ package hua.huase.shanhaicontinent.datagen;
 
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.init.ItemInit;
+import hua.huase.shanhaicontinent.register.ModBlock;
+import hua.huase.shanhaicontinent.register.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -178,6 +180,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 //
 //        simpleItem(ModItems.DICE);
 //        saplingItem(ModBlocks.PINE_SAPLING);
+
+        saplingItem(ModBlock.SHENJIESHUSHUMIAO_SAPLING);
     }
 
     // Shoutout to El_Redstoniano for making this

@@ -1,8 +1,6 @@
 package hua.huase.shanhaicontinent.block.entityblock.flowerblock;
 
-import hua.huase.shanhaicontinent.init.BlockInit;
-import hua.huase.shanhaicontinent.init.ItemInit;
-import hua.huase.shanhaicontinent.init.SHModMobEffectsinit;
+import hua.huase.shanhaicontinent.init.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -27,23 +25,38 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class SHFlowerBlock extends CropBlock {
     public static final int MAX_AGE = 3;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
-    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
+    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
+    };
+
+    private static final ForgeConfigSpec.BooleanValue SLOW_GROWTH = ModConfig.slowGrowth;
+    private static final List<Supplier<Fluid>> ACCELERATOR_FLUIDS = List.of(
+            () -> ShanhaicontinentModFluids.COLDICE.get(),
+            () -> ShanhaicontinentModFluids.HOTYANGQUAN.get()
+    );
 
     public SHFlowerBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
-//获取渲染箱
+    //获取渲染箱
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return SHAPE_BY_AGE[this.getAge(blockState)];
     }
@@ -78,16 +91,72 @@ public class SHFlowerBlock extends CropBlock {
         return !this.isMaxAge(blockState);
     }
 
-    public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (!serverLevel.isAreaLoaded(blockPos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (serverLevel.getRawBrightness(blockPos, 0) >= 9) {
-            int i = this.getAge(blockState);
-            if (i < this.getMaxAge()) {
-                serverLevel.setBlock(blockPos, this.getStateForAge(i + 1), 2);
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!level.isAreaLoaded(pos, 1)) return;
+
+        if (SLOW_GROWTH.get()) {
+            handleSlowGrowthMode(state, level, pos, random);
+        } else {
+            handleOriginalGrowth(state, level, pos);
+        }
+    }
+
+    private void handleSlowGrowthMode(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (level.getRawBrightness(pos, 0) >= 9) {
+            // 基础生长概率 (原版的5%)
+            float baseChance = 0.05F * getModifiedGrowthSpeed(this, level, pos);
+            if (random.nextFloat() < baseChance) {
+                growPlant(state, level, pos);
             }
-            additionalAttributes(blockState,serverLevel,blockPos,randomSource);
+        }
+    }
+
+    private static float getModifiedGrowthSpeed(Block block, BlockGetter level, BlockPos pos) {
+        if (!SLOW_GROWTH.get()) {
+            return 1.0F; // 原版模式不应用加速
         }
 
+        float speedMultiplier = 1.0F;
+        boolean foundFluid = false;
+
+        // 检查周围20格内的流体方块
+        for (BlockPos checkPos : BlockPos.withinManhattan(pos, 20, 3, 20)) {
+            if (level.getBlockState(checkPos).getFluidState().getType() instanceof FlowingFluid fluid) {
+                if (isAcceleratorFluid(fluid)) {
+                    float distance = (float) Math.sqrt(pos.distSqr(checkPos));
+                    speedMultiplier += getBoostByDistance(distance);
+                    foundFluid = true;
+                }
+            }
+        }
+
+        return foundFluid ? speedMultiplier : 1.0F;
+    }
+
+    private static boolean isAcceleratorFluid(Fluid fluid) {
+        return ACCELERATOR_FLUIDS.stream().anyMatch(s -> s.get() == fluid);
+    }
+
+    private static float getBoostByDistance(float distance) {
+        if (distance <= 5) return 0.6F;  // +120%
+        if (distance <= 10) return 0.4F; // +60%
+        if (distance <= 20) return 0.3F; // +20%
+        return 0.0F;
+    }
+
+    private void handleOriginalGrowth(BlockState state, ServerLevel level, BlockPos pos) {
+        if (level.getRawBrightness(pos, 0) >= 9) {
+            growPlant(state, level, pos);
+        }
+    }
+
+    private void growPlant(BlockState state, ServerLevel level, BlockPos pos) {
+        int age = getAge(state);
+        if (age < getMaxAge()) {
+            level.setBlock(pos, getStateForAge(age + 1), 2);
+            additionalAttributes(state, level, pos, level.random);
+        }
     }
 
     private void additionalAttributes(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
@@ -157,8 +226,10 @@ public class SHFlowerBlock extends CropBlock {
         return f;
     }
 
-    public boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        return (levelReader.getRawBrightness(blockPos, 0) >= 8 || levelReader.canSeeSky(blockPos)) && levelReader.getBlockState(blockPos.below()).is(BlockInit.SOUL_BLOCK.get()) && super.canSurvive(blockState, levelReader, blockPos);
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        return (level.getRawBrightness(pos, 0) >= 8 || level.canSeeSky(pos))
+                && super.canSurvive(state, level, pos);
     }
 
     public void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity) {

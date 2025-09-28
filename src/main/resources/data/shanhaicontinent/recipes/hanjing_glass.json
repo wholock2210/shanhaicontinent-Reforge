@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:blockkongjianshi_block"
+    },
+    "Y": {
+      "item": "minecraft:obsidian"
+    },
+    "Z": {
+      "item": "shanhaicontinent:blockcixuexianjin_block"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:hanjing_glass",
+    "count": 1
+  }
+}

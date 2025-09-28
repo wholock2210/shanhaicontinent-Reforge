@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "DED",
+    "ABC"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:white_stained_glass_pane"
+    },
+    "B": {
+      "item": "shanhaicontinent:itemmingtie"
+    },
+    "C": {
+      "item": "minecraft:black_stained_glass_pane"
+    },
+    "D": {
+      "item": "shanhaicontinent:itemheijin"
+    },
+    "E": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:decomposition_gossip",
+    "count": 1
+  }
+}

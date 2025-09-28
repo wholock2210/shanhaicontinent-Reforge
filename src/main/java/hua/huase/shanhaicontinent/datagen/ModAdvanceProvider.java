@@ -22,8 +22,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
     public void generate(HolderLookup.Provider p_256214_, Consumer<Advancement> p_250851_) {
         Advancement root = Advancement.Builder.advancement()
                 .display(BlockInit.POT_BLOCK.get()
-                        , Component.translatable("魂士").withStyle(ChatFormatting.GOLD)
-                        , Component.translatable("第一次升级,踏上修行路").withStyle(ChatFormatting.DARK_GREEN),
+                        , Component.literal("魂士").withStyle(ChatFormatting.GOLD)
+                        , Component.literal("第一次升级,踏上修行路").withStyle(ChatFormatting.DARK_GREEN),
 //                        new ResourceLocation(SHMainBus.MOD_ID,"textures/block/soul_block.png"),
                         new ResourceLocation("textures/block/diamond_block.png"),
                         FrameType.GOAL, true, true, false)
@@ -33,8 +33,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement juexingwuhun1 = Advancement.Builder.advancement().parent(root)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("觉醒武魂").withStyle(ChatFormatting.GREEN)
-                        ,Component.translatable("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("觉醒武魂").withStyle(ChatFormatting.GREEN)
+                        ,Component.literal("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("juexingwuhun1", JuexingwuhunTrigger.TriggerInstance.createInstance(1))
@@ -44,8 +44,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement juexingwuhun2 = Advancement.Builder.advancement().parent(juexingwuhun1)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("觉醒双生武魂").withStyle(ChatFormatting.DARK_PURPLE)
-                        ,Component.translatable("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("觉醒双生武魂").withStyle(ChatFormatting.DARK_PURPLE)
+                        ,Component.literal("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("juexingwuhun2", JuexingwuhunTrigger.TriggerInstance.createInstance(2))
@@ -55,8 +55,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement juexingwuhun3 = Advancement.Builder.advancement().parent(juexingwuhun2)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("觉醒三生武魂").withStyle(ChatFormatting.DARK_RED)
-                        ,Component.translatable("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("觉醒三生武魂").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("觉醒武魂后并开启才能吸收魂环哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("juexingwuhun3", JuexingwuhunTrigger.TriggerInstance.createInstance(3))
@@ -66,8 +66,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan1 = Advancement.Builder.advancement().parent(root)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收魂环").withStyle(ChatFormatting.WHITE)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收魂环").withStyle(ChatFormatting.WHITE)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan1", XishouhunhuanTrigger.TriggerInstance.createInstance(1))
@@ -75,8 +75,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan100 = Advancement.Builder.advancement().parent(xishouhunhuan1)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收百年魂环").withStyle(ChatFormatting.YELLOW)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收百年魂环").withStyle(ChatFormatting.YELLOW)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan100", XishouhunhuanTrigger.TriggerInstance.createInstance(100))
@@ -85,8 +85,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan1000 = Advancement.Builder.advancement().parent(xishouhunhuan100)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收千年魂环").withStyle(ChatFormatting.DARK_PURPLE)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收千年魂环").withStyle(ChatFormatting.DARK_PURPLE)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan1000", XishouhunhuanTrigger.TriggerInstance.createInstance(1000))
@@ -95,8 +95,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan10000 = Advancement.Builder.advancement().parent(xishouhunhuan1000)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收万年魂环").withStyle(ChatFormatting.BLACK)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收万年魂环").withStyle(ChatFormatting.BLACK)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan10000", XishouhunhuanTrigger.TriggerInstance.createInstance(10000))
@@ -105,8 +105,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan100000 = Advancement.Builder.advancement().parent(xishouhunhuan10000)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收十万年魂环").withStyle(ChatFormatting.RED)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收十万年魂环").withStyle(ChatFormatting.RED)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan100000", XishouhunhuanTrigger.TriggerInstance.createInstance(100000))
@@ -115,19 +115,18 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement xishouhunhuan1000000 = Advancement.Builder.advancement().parent(xishouhunhuan100000)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("吸收百万年魂环").withStyle(ChatFormatting.DARK_RED)
-                        ,Component.translatable("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("吸收百万年魂环").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("拥有魂环后才能召唤技能哦？？？？").withStyle(ChatFormatting.GRAY)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("xishouhunhuan1000000", XishouhunhuanTrigger.TriggerInstance.createInstance(1000000))
                 .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/xishouhunhuan/xishouhunhuan1000000");
 
 
-
         Advancement hunyeping = Advancement.Builder.advancement().parent(root)
                 .display(ItemInit.hunyeping0.get()
-                        ,Component.translatable("获得魂液瓶").withStyle(ChatFormatting.DARK_GREEN)
-                        ,Component.translatable("能够装精纯的能量").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("获得魂液瓶").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("能够装精纯的能量").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.TASK, true, true, false)
                 .addCriterion("hunyeping", InventoryChangeTrigger.TriggerInstance.hasItems(
@@ -137,15 +136,17 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
                         ItemInit.hunyeping3.get(),
                         ItemInit.hunyeping4.get(),
                         ItemInit.hunyeping5.get(),
-                        ItemInit.hunyeping6.get()
+                        ItemInit.hunyeping6.get(),
+                        ItemInit.hunyeping7.get(),
+                        ItemInit.hunyeping8.get()
                 ))
                 .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/huodeitem/hunyeping");
 
 
         Advancement zhaohualu = Advancement.Builder.advancement().parent(root)
                 .display(BlockInit.POT_BLOCK.get()
-                        ,Component.translatable("造化炉").withStyle(ChatFormatting.YELLOW)
-                        ,Component.translatable("可生万物，炼制丹药").withStyle(ChatFormatting.LIGHT_PURPLE)
+                        ,Component.literal("造化炉").withStyle(ChatFormatting.YELLOW)
+                        ,Component.literal("可生万物，炼制丹药").withStyle(ChatFormatting.LIGHT_PURPLE)
                         ,(ResourceLocation)null
                         ,FrameType.TASK, true, true, false)
                 .addCriterion("zhaohualu", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.POT_BLOCK.get()))
@@ -155,8 +156,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement bianhua = Advancement.Builder.advancement().parent(root)
                 .display(ItemInit.bianhua_seed.get()
-                        ,Component.translatable("彼岸花").withStyle(ChatFormatting.DARK_PURPLE)
-                        ,Component.translatable("生长时可为附近玩家提供《梦回万古debuff》").withStyle(ChatFormatting.LIGHT_PURPLE)
+                        ,Component.literal("彼岸花").withStyle(ChatFormatting.DARK_PURPLE)
+                        ,Component.literal("生长时可为附近玩家提供《梦回万古debuff》").withStyle(ChatFormatting.LIGHT_PURPLE)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("TASK", InventoryChangeTrigger.TriggerInstance.hasItems(ItemInit.bianhua_seed.get(),ItemInit.bianhua_fruit.get()))
@@ -165,8 +166,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement menghuiwangu = Advancement.Builder.advancement().parent(bianhua)
                 .display(ItemInit.bianhua_fruit.get()
-                        ,Component.translatable("梦回万古").withStyle(ChatFormatting.DARK_PURPLE)
-                        ,Component.translatable("获得《梦回万古debuff》").withStyle(ChatFormatting.DARK_AQUA)
+                        ,Component.literal("梦回万古").withStyle(ChatFormatting.DARK_PURPLE)
+                        ,Component.literal("获得《梦回万古debuff》").withStyle(ChatFormatting.DARK_AQUA)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("TASK", EffectsChangedTrigger.TriggerInstance.hasEffects(MobEffectsPredicate.effects().and(SHModMobEffectsinit.zhiwu_bianhua.get())))
@@ -176,8 +177,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement zhuansheng = Advancement.Builder.advancement().parent(menghuiwangu)
                 .display(ItemInit.TEXTITEM.get()
-                        ,Component.translatable("转生").withStyle(ChatFormatting.DARK_RED)
-                        ,Component.translatable("在有《梦回万古》时睡觉，并精神力超过3000时可以转生，属性重回0级，并移除魂环和武魂，返还武魂果实").withStyle(ChatFormatting.RED)
+                        ,Component.literal("转生").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("在有《梦回万古》时睡觉，并精神力超过3000时可以转生，属性重回0级，并移除魂环和武魂，返还武魂果实").withStyle(ChatFormatting.RED)
                         ,(ResourceLocation)null
                         ,FrameType.CHALLENGE, true, true, false)
                 .addCriterion("zhuansheng", MenghuiwanguTrigger.TriggerInstance.createInstance())
@@ -187,8 +188,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng10 = Advancement.Builder.advancement().parent(root)
                 .display(ItemInit.danyao_qihundan.get()
-                        ,Component.translatable("魂师").withStyle(ChatFormatting.DARK_GRAY)
-                        ,Component.translatable("成功突破到10级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂师").withStyle(ChatFormatting.DARK_GRAY)
+                        ,Component.literal("成功突破到10级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_10", ChangeDengjiTrigger.TriggerInstance.createInstance(10))
@@ -196,8 +197,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng20 = Advancement.Builder.advancement().parent(changedeng10)
                 .display(ItemInit.danyao_jvlingdan.get()
-                        ,Component.translatable("大魂师").withStyle(ChatFormatting.GRAY)
-                        ,Component.translatable("成功突破到20级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("大魂师").withStyle(ChatFormatting.GRAY)
+                        ,Component.literal("成功突破到20级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_20", ChangeDengjiTrigger.TriggerInstance.createInstance(20))
@@ -206,8 +207,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng30 = Advancement.Builder.advancement().parent(changedeng20)
                 .display(ItemInit.danyao_xvanyuandan.get()
-                        ,Component.translatable("魂尊").withStyle(ChatFormatting.DARK_PURPLE)
-                        ,Component.translatable("成功突破到30级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂尊").withStyle(ChatFormatting.DARK_PURPLE)
+                        ,Component.literal("成功突破到30级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_30", ChangeDengjiTrigger.TriggerInstance.createInstance(30))
@@ -216,8 +217,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng40 = Advancement.Builder.advancement().parent(changedeng30)
                 .display(ItemInit.danyao_yanghundan.get()
-                        ,Component.translatable("魂宗").withStyle(ChatFormatting.LIGHT_PURPLE)
-                        ,Component.translatable("成功突破到40级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂宗").withStyle(ChatFormatting.LIGHT_PURPLE)
+                        ,Component.literal("成功突破到40级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_40", ChangeDengjiTrigger.TriggerInstance.createInstance(40))
@@ -226,8 +227,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng50 = Advancement.Builder.advancement().parent(changedeng40)
                 .display(ItemInit.danyao_lingbidan.get()
-                        ,Component.translatable("魂王").withStyle(ChatFormatting.BLUE)
-                        ,Component.translatable("成功突破到50级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂王").withStyle(ChatFormatting.BLUE)
+                        ,Component.literal("成功突破到50级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_50", ChangeDengjiTrigger.TriggerInstance.createInstance(50))
@@ -236,8 +237,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng60 = Advancement.Builder.advancement().parent(changedeng50)
                 .display(ItemInit.danyao_haoyuan.get()
-                        ,Component.translatable("魂帝").withStyle(ChatFormatting.DARK_BLUE)
-                        ,Component.translatable("成功突破到60级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂帝").withStyle(ChatFormatting.DARK_BLUE)
+                        ,Component.literal("成功突破到60级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_60", ChangeDengjiTrigger.TriggerInstance.createInstance(60))
@@ -246,8 +247,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng70 = Advancement.Builder.advancement().parent(changedeng60)
                 .display(ItemInit.danyao_xihundan.get()
-                        ,Component.translatable("魂圣").withStyle(ChatFormatting.YELLOW)
-                        ,Component.translatable("成功突破到70级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("魂圣").withStyle(ChatFormatting.YELLOW)
+                        ,Component.literal("成功突破到70级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_70", ChangeDengjiTrigger.TriggerInstance.createInstance(70))
@@ -256,8 +257,8 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng80 = Advancement.Builder.advancement().parent(changedeng70)
                 .display(ItemInit.danyao_huangjidan.get()
-                        ,Component.translatable("斗罗").withStyle(ChatFormatting.RED)
-                        ,Component.translatable("成功突破到80级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("斗罗").withStyle(ChatFormatting.RED)
+                        ,Component.literal("成功突破到80级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_80", ChangeDengjiTrigger.TriggerInstance.createInstance(80))
@@ -266,40 +267,46 @@ public class ModAdvanceProvider implements AdvancementSubProvider {
 
         Advancement changedeng90 = Advancement.Builder.advancement().parent(changedeng80)
                 .display(ItemInit.danyao_lushendan.get()
-                        ,Component.translatable("封号斗罗").withStyle(ChatFormatting.DARK_RED)
-                        ,Component.translatable("成功突破到90级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("封号斗罗").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("成功突破到90级").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_90", ChangeDengjiTrigger.TriggerInstance.createInstance(90))
                 .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/changedengji/tupo_90");
 
-
         Advancement changedeng99 = Advancement.Builder.advancement().parent(changedeng90)
                 .display(ItemInit.danyao_jiuhua.get()
-                        ,Component.translatable("九九至尊").withStyle(ChatFormatting.DARK_RED)
-                        ,Component.translatable("天地压制").withStyle(ChatFormatting.DARK_GREEN)
+                        ,Component.literal("新开始？").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("寻找主世界生成的登神台进行封神").withStyle(ChatFormatting.DARK_GREEN)
                         ,(ResourceLocation)null
                         ,FrameType.GOAL, true, true, false)
                 .addCriterion("changedengji_99", ChangeDengjiTrigger.TriggerInstance.createInstance(99))
                 .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/changedengji/tupo_99");
 
+        Advancement changedeng100 = Advancement.Builder.advancement().parent(changedeng99)
+                .display(ItemInit.danyao_jiuhua.get()
+                        ,Component.literal("半神").withStyle(ChatFormatting.DARK_RED)
+                        ,Component.literal("成功封神突破到100级").withStyle(ChatFormatting.DARK_GREEN)
+                        ,(ResourceLocation)null
+                        ,FrameType.GOAL, true, true, false)
+                .addCriterion("changedengji_100", ChangeDengjiTrigger.TriggerInstance.createInstance(100))
+                .save(p_250851_, SHMainBus.MOD_ID+":joinshanhai/changedengji/tupo_100");
 
 
 
-
-//        Advancement advancement1 = Advancement.Builder.advancement().parent(advancement).display(Blocks.END_STONE, Component.translatable("advancements.end.root.title"), Component.translatable("advancements.end.root.description"), new ResourceLocation("textures/gui/advancements/backgrounds/end.png"), FrameType.TASK, false, false, false).addCriterion("hahahah", ChangeDengjiTrigger.TriggerInstance.createInstance(1)).save(p_250851_, "joinshanhai/root");
+//        Advancement advancement1 = Advancement.Builder.advancement().parent(advancement).display(Blocks.END_STONE, Component.literal("advancements.end.root.title"), Component.literal("advancements.end.root.description"), new ResourceLocation("textures/gui/advancements/backgrounds/end.png"), FrameType.TASK, false, false, false).addCriterion("hahahah", ChangeDengjiTrigger.TriggerInstance.createInstance(1)).save(p_250851_, "joinshanhai/root");
 
 
         /*
-        Advancement advancement = Advancement.Builder.advancement().display(Blocks.END_STONE, Component.translatable("advancements.end.root.title"), Component.translatable("advancements.end.root.description"), new ResourceLocation("textures/gui/advancements/backgrounds/end.png"), FrameType.TASK, false, false, false).addCriterion("entered_end", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.END)).save(p_250851_, "end/root");
-        Advancement advancement1 = Advancement.Builder.advancement().parent(advancement).display(Blocks.DRAGON_HEAD, Component.translatable("advancements.end.kill_dragon.title"), Component.translatable("advancements.end.kill_dragon.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("killed_dragon", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityType.ENDER_DRAGON))).save(p_250851_, "end/kill_dragon");
-        Advancement advancement2 = Advancement.Builder.advancement().parent(advancement1).display(Items.ENDER_PEARL, Component.translatable("advancements.end.enter_end_gateway.title"), Component.translatable("advancements.end.enter_end_gateway.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("entered_end_gateway", EnterBlockTrigger.TriggerInstance.entersBlock(Blocks.END_GATEWAY)).save(p_250851_, "end/enter_end_gateway");
-        Advancement.Builder.advancement().parent(advancement1).display(Items.END_CRYSTAL, Component.translatable("advancements.end.respawn_dragon.title"), Component.translatable("advancements.end.respawn_dragon.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("summoned_dragon", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.ENDER_DRAGON))).save(p_250851_, "end/respawn_dragon");
-        Advancement advancement3 = Advancement.Builder.advancement().parent(advancement2).display(Blocks.PURPUR_BLOCK, Component.translatable("advancements.end.find_end_city.title"), Component.translatable("advancements.end.find_end_city.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("in_city", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(BuiltinStructures.END_CITY))).save(p_250851_, "end/find_end_city");
-        Advancement.Builder.advancement().parent(advancement1).display(Items.DRAGON_BREATH, Component.translatable("advancements.end.dragon_breath.title"), Component.translatable("advancements.end.dragon_breath.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("dragon_breath", InventoryChangeTrigger.TriggerInstance.hasItems(Items.DRAGON_BREATH)).save(p_250851_, "end/dragon_breath");
-        Advancement.Builder.advancement().parent(advancement3).display(Items.SHULKER_SHELL, Component.translatable("advancements.end.levitate.title"), Component.translatable("advancements.end.levitate.description"), (ResourceLocation)null, FrameType.CHALLENGE, true, true, false).rewards(AdvancementRewards.Builder.experience(50)).addCriterion("levitated", LevitationTrigger.TriggerInstance.levitated(DistancePredicate.vertical(MinMaxBounds.Doubles.atLeast(50.0D)))).save(p_250851_, "end/levitate");
-        Advancement.Builder.advancement().parent(advancement3).display(Items.ELYTRA, Component.translatable("advancements.end.elytra.title"), Component.translatable("advancements.end.elytra.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("elytra", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ELYTRA)).save(p_250851_, "end/elytra");
-        Advancement.Builder.advancement().parent(advancement1).display(Blocks.DRAGON_EGG, Component.translatable("advancements.end.dragon_egg.title"), Component.translatable("advancements.end.dragon_egg.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("dragon_egg", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.DRAGON_EGG)).save(p_250851_, "end/dragon_egg");
+        Advancement advancement = Advancement.Builder.advancement().display(Blocks.END_STONE, Component.literal("advancements.end.root.title"), Component.literal("advancements.end.root.description"), new ResourceLocation("textures/gui/advancements/backgrounds/end.png"), FrameType.TASK, false, false, false).addCriterion("entered_end", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.END)).save(p_250851_, "end/root");
+        Advancement advancement1 = Advancement.Builder.advancement().parent(advancement).display(Blocks.DRAGON_HEAD, Component.literal("advancements.end.kill_dragon.title"), Component.literal("advancements.end.kill_dragon.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("killed_dragon", KilledTrigger.TriggerInstance.playerKilledEntity(EntityPredicate.Builder.entity().of(EntityType.ENDER_DRAGON))).save(p_250851_, "end/kill_dragon");
+        Advancement advancement2 = Advancement.Builder.advancement().parent(advancement1).display(Items.ENDER_PEARL, Component.literal("advancements.end.enter_end_gateway.title"), Component.literal("advancements.end.enter_end_gateway.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("entered_end_gateway", EnterBlockTrigger.TriggerInstance.entersBlock(Blocks.END_GATEWAY)).save(p_250851_, "end/enter_end_gateway");
+        Advancement.Builder.advancement().parent(advancement1).display(Items.END_CRYSTAL, Component.literal("advancements.end.respawn_dragon.title"), Component.literal("advancements.end.respawn_dragon.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("summoned_dragon", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(EntityType.ENDER_DRAGON))).save(p_250851_, "end/respawn_dragon");
+        Advancement advancement3 = Advancement.Builder.advancement().parent(advancement2).display(Blocks.PURPUR_BLOCK, Component.literal("advancements.end.find_end_city.title"), Component.literal("advancements.end.find_end_city.description"), (ResourceLocation)null, FrameType.TASK, true, true, false).addCriterion("in_city", PlayerTrigger.TriggerInstance.located(LocationPredicate.inStructure(BuiltinStructures.END_CITY))).save(p_250851_, "end/find_end_city");
+        Advancement.Builder.advancement().parent(advancement1).display(Items.DRAGON_BREATH, Component.literal("advancements.end.dragon_breath.title"), Component.literal("advancements.end.dragon_breath.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("dragon_breath", InventoryChangeTrigger.TriggerInstance.hasItems(Items.DRAGON_BREATH)).save(p_250851_, "end/dragon_breath");
+        Advancement.Builder.advancement().parent(advancement3).display(Items.SHULKER_SHELL, Component.literal("advancements.end.levitate.title"), Component.literal("advancements.end.levitate.description"), (ResourceLocation)null, FrameType.CHALLENGE, true, true, false).rewards(AdvancementRewards.Builder.experience(50)).addCriterion("levitated", LevitationTrigger.TriggerInstance.levitated(DistancePredicate.vertical(MinMaxBounds.Doubles.atLeast(50.0D)))).save(p_250851_, "end/levitate");
+        Advancement.Builder.advancement().parent(advancement3).display(Items.ELYTRA, Component.literal("advancements.end.elytra.title"), Component.literal("advancements.end.elytra.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("elytra", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ELYTRA)).save(p_250851_, "end/elytra");
+        Advancement.Builder.advancement().parent(advancement1).display(Blocks.DRAGON_EGG, Component.literal("advancements.end.dragon_egg.title"), Component.literal("advancements.end.dragon_egg.description"), (ResourceLocation)null, FrameType.GOAL, true, true, false).addCriterion("dragon_egg", InventoryChangeTrigger.TriggerInstance.hasItems(Blocks.DRAGON_EGG)).save(p_250851_, "end/dragon_egg");
 
         */
     }

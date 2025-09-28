@@ -48,7 +48,6 @@ public class GufengxiaowuPiecees {
       return SHPiece;
    }
 
-
    public static class SHPiece extends TemplateStructurePiece {
       public SHPiece(StructureTemplateManager structureTemplateManager, String s, BlockPos blockPos, Rotation rotation, boolean b) {
          super(StructurePieceType.END_CITY_PIECE, 0, structureTemplateManager, makeResourceLocation(s), s, makeSettings(b, rotation), blockPos);

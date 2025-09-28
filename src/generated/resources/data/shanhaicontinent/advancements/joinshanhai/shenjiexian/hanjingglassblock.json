@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:hanjing_glass"
+    },
+    "title": {
+      "translate": "advancements.hanjing_glass.title"
+    },
+    "description": {
+      "translate": "advancements.hanjing_glass.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hanjingglassblock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:hanjing_glass"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:joinshanhai/root"
+}

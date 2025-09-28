@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "shanhaicontinent:block/sunset_leave"
+  }
+}

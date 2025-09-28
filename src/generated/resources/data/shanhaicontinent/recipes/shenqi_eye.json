@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "*#*",
+    "#@#",
+    "*Z*"
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "@": {
+      "item": "minecraft:ender_eye"
+    },
+    "*": {
+      "item": "minecraft:anvil"
+    },
+    "Z": {
+      "item": "shanhaicontinent:zixiaoxianjin_ingot"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:shenqi_eye",
+    "count": 1
+  }
+}

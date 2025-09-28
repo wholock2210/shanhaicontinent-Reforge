@@ -108,6 +108,7 @@ public interface AttrubuteAPI {
         }
         return value;
     }
+
     static float getWufang(Entity entity){
         float value = 0;
         if(entity instanceof Player player){
@@ -152,6 +153,7 @@ public interface AttrubuteAPI {
 
         return value;
     }
+
     static float getBaojishanghai(Entity entity){
         float value = 0;
         if(entity instanceof Player player){

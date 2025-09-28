@@ -20,14 +20,12 @@
 package hua.huase.shanhaicontinent.network.client;
 
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
+import hua.huase.shanhaicontinent.event.client.PWRenderPlayerEvent;
 import hua.huase.shanhaicontinent.network.SynsAPI;
-import hua.huase.shanhaicontinent.screen.PlayerAttrubuteContainerMenu;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket;
-import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
@@ -47,16 +45,24 @@ public class CPacketQiehuanWuhun {
       sender.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
         int hunhuankuaiguan = capability.getHunhuankuaiguan();
         int size = capability.getWuhunListsname().size();
-        if(hunhuankuaiguan<size-1){
+
+        if(hunhuankuaiguan < size-1){
           capability.setHunhuankuaiguan(++hunhuankuaiguan);
-          sender.connection.send(new ClientboundSetActionBarTextPacket(Component.translatable("武魂已开启",capability.getWuhunListsname().get(hunhuankuaiguan))));
-        }else {
+          sender.connection.send(new ClientboundSetActionBarTextPacket(
+                  Component.translatable("武魂已开启", capability.getWuhunListsname().get(hunhuankuaiguan))));
+
+          // 开启时发送动画包
+          PWRenderPlayerEvent.startOpenAnimation(sender);
+        } else {
           capability.setHunhuankuaiguan(-1);
-          sender.connection.send(new ClientboundSetActionBarTextPacket(Component.translatable("武魂已关闭")));
+          sender.connection.send(new ClientboundSetActionBarTextPacket(
+                  Component.translatable("武魂已关闭")));
+
+          // 关闭时发送关闭通知包
+          PWRenderPlayerEvent.sendCloseNotification(sender);
         }
         SynsAPI.synsPlayerAttribute(sender);
       });
-
     });
     ctx.get().setPacketHandled(true);
   }

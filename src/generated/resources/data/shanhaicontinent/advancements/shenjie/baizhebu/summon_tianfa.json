@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:zhaohuanshi"
+    },
+    "title": {
+      "translate": "advancement.shanhaicontinent.summon_tianfa.title",
+      "bold": true,
+      "color": "dark_red"
+    },
+    "description": {
+      "translate": "advancement.shanhaicontinent.summon_tianfa.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/netherrack.png"
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/zhaohuanshi",
+  "criteria": {
+    "summon_tianfa": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 500,
+    "function": "shanhaicontinent:rewards/summon_tianfa"
+  }
+}

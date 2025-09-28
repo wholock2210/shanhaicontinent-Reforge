@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "experience": 5.0,
+  "cookingtime": 250,
+  "ingredient": {
+    "item": "shanhaicontinent:blocklanlingjinore"
+  },
+  "result": "shanhaicontinent:itemlanlingjin"
+}

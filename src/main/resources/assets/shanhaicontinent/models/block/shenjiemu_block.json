@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "shanhaicontinent:block/shenjiemu1_block",
+    "up": "shanhaicontinent:block/shenjiemu1_block",
+    "north": "shanhaicontinent:block/shenjiemu_block",
+    "east": "shanhaicontinent:block/shenjiemu_block",
+    "south": "shanhaicontinent:block/shenjiemu_block",
+    "west": "shanhaicontinent:block/shenjiemu_block",
+    "particle": "shanhaicontinent:block/shenjiemu_block"
+  },
+  "render_type": "solid"
+}

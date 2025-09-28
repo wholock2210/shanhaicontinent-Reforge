@@ -64,7 +64,9 @@ public class HunheRender extends EntityRenderer<HunheEntity> {
         190.8683319772223
 */
     private void renderColor(float value) {
-        if(value>=170){
+        if (value>=200){
+            RenderSystem.setShaderColor(1.0f, 0.0f, 1.0f, 1.0f);
+        }else if(value>=170){
             RenderSystem.setShaderColor(1.0f, 0.1f, 0.1f,0.2f);
         }else if(value>=130){
             RenderSystem.setShaderColor(0.0f, 1.0f, 1.0f,0.2f);
@@ -93,77 +95,6 @@ public class HunheRender extends EntityRenderer<HunheEntity> {
 
     }
 
-
-    private void renderSquare(BufferBuilder bufferbuilder, Matrix4f matrix4f, PoseStack poseStack, float size) {
-//        matrix4f.rotate((float)Math.PI*0.01f*(entity.level().getGameTime()+partialTick), 0.0F, 1.0F, 0.0F);
-//        matrix4f.scale(1,2.0f,1);
-//        matrix4f.rotate((float)Math.PI*0.25f, 1.0F, 0.0F, 1.0F);
-//        matrix4f.rotate((float)Math.PI*0.25f, 1.0F, 0.0F, 0.0F);
-
-
-
-
-
-
-
-//        bufferbuilder.vertex(matrix4f, (float)0-size, size, (float)0-size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, size, (float)0-size).uv(0, 0).endVertex();
-//
-//        bufferbuilder.vertex(matrix4f, (float)0-size, -size, (float)0-size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, -size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, -size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, -size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, -size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, -size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, -size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, -size, (float)0-size).uv(0, 0).endVertex();
-//
-//
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0-size, size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0+size, size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0+size, size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0-size, size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0-size, size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0+size, size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0+size, size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0-size, size).uv(0, 0).endVertex();
-//
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0-size, -size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0+size, -size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0+size, -size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0-size, -size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0-size, -size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0+size, (float)0+size, -size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0+size, -size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, (float)0-size, (float)0-size, -size).uv(0, 0).endVertex();
-//
-//
-//        bufferbuilder.vertex(matrix4f, size, (float)0-size, (float)0-size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0-size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0+size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0+size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0+size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0+size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0-size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, size, (float)0-size, (float)0-size).uv(0, 0).endVertex();
-//
-//        bufferbuilder.vertex(matrix4f, -size, (float)0-size, (float)0-size).uv(0, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0-size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0+size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0+size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0+size, (float)0-size).uv(1, 0).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0+size, (float)0+size).uv(1, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0-size, (float)0+size).uv(0, 1).endVertex();
-//        bufferbuilder.vertex(matrix4f, -size, (float)0-size, (float)0-size).uv(0, 0).endVertex();
-
-
-    }
 
     @Override
     public ResourceLocation getTextureLocation(HunheEntity p_114482_) {

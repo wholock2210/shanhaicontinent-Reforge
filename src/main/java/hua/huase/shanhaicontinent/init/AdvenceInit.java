@@ -13,6 +13,7 @@ public class AdvenceInit {
     public static final MenghuiwanguTrigger menghuiwangutrigger = CriteriaTriggers.register(new MenghuiwanguTrigger());
     public static final XishouhunhuanTrigger xishouhunhuantrigger = CriteriaTriggers.register(new XishouhunhuanTrigger());
     public static final JuexingwuhunTrigger juexingwuhuntrigger = CriteriaTriggers.register(new JuexingwuhunTrigger());
+    public static final WeaponStrengthenTrigger WeaponStrengthenTrigger = CriteriaTriggers.register(new WeaponStrengthenTrigger());
 //
 //    public static void register(){
 //        System.out.println("Advence invalid scussed");

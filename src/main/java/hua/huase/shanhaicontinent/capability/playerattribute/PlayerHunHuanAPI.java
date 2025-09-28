@@ -4,7 +4,9 @@ import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCa
 import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCapabilityProvider;
 import hua.huase.shanhaicontinent.entity.hunhuan.HunhuanEntity;
 import hua.huase.shanhaicontinent.init.AdvenceInit;
+import hua.huase.shanhaicontinent.init.ModConfig;
 import hua.huase.shanhaicontinent.network.SynsAPI;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
@@ -14,10 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static hua.huase.shanhaicontinent.SHMainBus.random;
 import static hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapability.wuhunListsnameall;
@@ -52,6 +51,7 @@ public interface PlayerHunHuanAPI {
             }
         }
     }
+
     static void juexingShuangsheng(Player player) {
         LazyOptional<PlayerAttributeCapability> capability1 = player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY);
         if(capability1.isPresent()){
@@ -61,8 +61,6 @@ public interface PlayerHunHuanAPI {
             addWuHun(player,s);
         }
     }
-
-
 
     static void addWuHun(Player player,String name) {
 
@@ -77,22 +75,17 @@ public interface PlayerHunHuanAPI {
                 capability.setHunhuankuaiguan(capability.getMonsterCapabilityLists().size()-1);
                 player.sendSystemMessage(Component.translatable("成功觉醒武魂",name));
                 ((ServerPlayer)player).connection.send(new ClientboundSetTitleTextPacket(Component.translatable("成功觉醒武魂",name)));
-
-
                 AdvenceInit.juexingwuhuntrigger.trigger((ServerPlayer) player, capability.getWuhunListsname().size());
-
                 SynsAPI.synsPlayerAttribute(player);
             }else {
-
-                player.sendSystemMessage(Component.translatable("觉醒失败，已拥有该武魂"));
-                ((ServerPlayer)player).connection.send(new ClientboundSetTitleTextPacket(Component.translatable("觉醒失败，已拥有该武魂")));
+                player.sendSystemMessage(Component.literal("觉醒失败，已拥有该武魂").withStyle(ChatFormatting.RED));
+                ((ServerPlayer)player).connection.send(new ClientboundSetTitleTextPacket(Component.literal("觉醒失败，已拥有该武魂").withStyle(ChatFormatting.RED)));
             }
         }
     }
 //50000
 //    年限计算精神力消耗
 //     （2*年限* （log10(年限)*10+10） * （log10(年限)*10+10）)/（log10(年限)*log(年限)）
-
     /*
     1.20.1版精神力消耗对照表
 年限     精神力
@@ -111,38 +104,53 @@ public interface PlayerHunHuanAPI {
 1310720 70047
 2621440 12726
            */
-    static void xishouHunhuan(Player player, HunhuanEntity entity){
-
-        entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
-
+    static boolean xishouHunhuan(Player player, HunhuanEntity entity) {
+        boolean absorbed = false;
+        if (entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).isPresent()) {
+            MonsterAttributeCapability capability = entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).resolve().get();
             double v1 = Math.log10(capability.getNianxian());
             double v = v1 * 10 + 10;
-
-            player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability1 -> {
-                float jingshenli = (float) ((capability.getNianxian() /(v1*v1*0.5))/v);
-                capability1.setJingshenli(capability1.getJingshenli()-jingshenli);
-                ((ServerPlayer)player).connection.send(new ClientboundSetActionBarTextPacket(Component.translatable("正在吸收魂环",(int)jingshenli)));
-
-            });
-
-            if(entity.getExistenceTime()>=v){
-                addHunhuan(player,entity);
-                entity.discard();
+            if (!capability.isShenci()) {
+                player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability1 -> {
+                    float jingshenli = (float) ((capability.getNianxian() / (v1 * v1 * 0.5)) / v);
+                    capability1.setJingshenli(capability1.getJingshenli() - jingshenli);
+                });
             }
-        });
+            if (entity.getExistenceTime() >= v) {
+                addHunhuan(player, entity);
+                entity.discard();
+                absorbed = true;
+            }
+        }
+        return absorbed;
     }
 
     static void addHunhuan(Player player, HunhuanEntity entity) {
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
-            entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(capability1 -> {
-                if(capability.getWuhunList() == null){
+            entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(monsterCap -> {
+                List<String> wuhunNames = capability.getWuhunListsname();
+                if (wuhunNames == null || wuhunNames.isEmpty()) {
                     player.sendSystemMessage(Component.translatable("未开启或觉醒武魂"));
                     return;
                 }
-                capability.getWuhunList().add(capability1);
-
-                AdvenceInit.xishouhunhuantrigger.trigger((ServerPlayer) player, capability1.getNianxian());
-                player.sendSystemMessage(Component.translatable("成功吸收魂环",capability1.getNianxian()));
+                int activeIndex = capability.getHunhuankuaiguan();
+                if (activeIndex < 0 || activeIndex >= wuhunNames.size()) {
+                    activeIndex = wuhunNames.size() - 1;
+                    capability.setHunhuankuaiguan(activeIndex);
+                }
+                String activeName = wuhunNames.get(activeIndex);
+                Map<String, List<MonsterAttributeCapability>> map = capability.getMonsterCapabilityLists();
+                if (map == null) {
+                    map = new HashMap<>();
+                }
+                List<MonsterAttributeCapability> listForActive = map.get(activeName);
+                if (listForActive == null) {
+                    listForActive = new ArrayList<>();
+                    map.put(activeName, listForActive);
+                }
+                listForActive.add(monsterCap);
+                AdvenceInit.xishouhunhuantrigger.trigger((ServerPlayer) player, monsterCap.getNianxian());
+                player.sendSystemMessage(Component.translatable("成功吸收魂环", monsterCap.getNianxian()));
                 SynsAPI.synsPlayerAttribute(player);
             });
         });
@@ -150,47 +158,54 @@ public interface PlayerHunHuanAPI {
 
     static void tupoDengji(ServerPlayer serverPlayer, @NotNull PlayerAttributeCapability capability) {
         if (isTupoDengji(serverPlayer,capability)){
-
             if(isTupoChenggong(serverPlayer,capability)){
                 capability.setDengji(capability.getDengji()+1);
                 capability.setJingyan(0);
                 capability.setTupochenggonggailv(5);
                 addTupoAttibute(capability.getDengji(),capability);
-
                 AdvenceInit.changedengjitrigger.trigger(serverPlayer,capability.getDengji());
-
                 serverPlayer.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("突破成功",capability.getDengji())));
                 if(capability.getDengji()==1){
                     addWuHun(serverPlayer);
                 }
-
             }else {
                 capability.setJingyan(capability.getMaxjingyan()/2);
-                capability.setTupochenggonggailv(capability.getTupochenggonggailv()+5);
+                capability.setTupochenggonggailv(capability.getTupochenggonggailv()+1);
                 serverPlayer.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("突破失败")));
             }
             SynsAPI.synsPlayerAttribute(serverPlayer);
         }
     }
 
+    //玩家升级后加入的属性
     static void addTupoAttibute(int dengji, PlayerAttributeCapability capability) {
         int zhuanshengshu = capability.getZhuanshengshu();
-//        50000
-        capability.setMaxjingshenli( (capability.getMaxjingshenli()+dengji*5f+zhuanshengshu*10));
-//        100000
-        capability.setMaxshengming( (capability.getMaxshengming()+dengji*1f+zhuanshengshu*10));
-
-//        26000
-//        capability.setMaxjingyan((int) (capability.getMaxjingyan()+dengji*5f));
-        capability.setMaxjingyan( (capability.getMaxjingyan()+dengji*1f+zhuanshengshu*5));
-//        25000
-        capability.setWugong((int) (capability.getWugong()+dengji*1.2f+zhuanshengshu*2));
-        capability.setWufang((int) (capability.getWufang()+dengji*0.8f+zhuanshengshu*2));
-//5050
-        capability.setWuchuan((int) (capability.getWuchuan()+dengji*1f+zhuanshengshu));
-        capability.setZhenshang((int) (capability.getZhenshang()+dengji*0.2f+zhuanshengshu));
-        capability.setShengminghuifu((int) (capability.getShengminghuifu()+dengji*0.1f));
-
+        // 精神力上限（削弱10%）
+        capability.setMaxjingshenli(capability.getMaxjingshenli() + (dengji * 2f + zhuanshengshu * 5) * 0.9f);
+        // 生命上限（削弱10%）
+        capability.setMaxshengming(capability.getMaxshengming() + (dengji * 0.6f + zhuanshengshu * 5) * 0.9f);
+        // 经验上限（不削弱）
+        double currentLevel = capability.getDengji();
+        float jingyanMultiplier = ModConfig.jingyanbalance.get() ? 5f : 1f;
+        float baseJingyan = dengji * jingyanMultiplier + zhuanshengshu * 8;
+        float finalJingyan;
+        if (currentLevel <= 100) {
+            finalJingyan = baseJingyan;
+        } else {
+            float growthFactor = calculate199GrowthFactor(currentLevel, capability);
+            finalJingyan = baseJingyan * growthFactor;
+        }
+        capability.setMaxjingyan((int)(capability.getMaxjingyan() + finalJingyan));
+        // 攻击力（削弱10%）
+        capability.setWugong((int)(capability.getWugong() + (dengji * 0.5f + zhuanshengshu * 2) * 0.9f));
+        // 防御力（削弱10%）
+        capability.setWufang((int)(capability.getWufang() + (dengji * 0.3f + zhuanshengshu * 2) * 0.9f));
+        // 穿透（削弱10%）
+        capability.setWuchuan((int)(capability.getWuchuan() + (dengji * 0.8f + zhuanshengshu) * 0.9f));
+        // 真实伤害（削弱10%）
+        capability.setZhenshang((int)(capability.getZhenshang() + (dengji * 0.2f + zhuanshengshu) * 0.9f));
+        // 生命恢复（削弱10%）
+        capability.setShengminghuifu((int)(capability.getShengminghuifu() + dengji * 0.1f * 0.9f));
     }
 
     static boolean isTupoChenggong(ServerPlayer serverPlayer, PlayerAttributeCapability capability) {
@@ -199,46 +214,76 @@ public interface PlayerHunHuanAPI {
         return v>=i;
     }
 
-    static boolean isTupoDengji(ServerPlayer serverPlayer, @NotNull PlayerAttributeCapability capability) {
+    private static float calculate199GrowthFactor(double currentLevel,PlayerAttributeCapability capability) {
+        int zhuanshengshu = capability.getZhuanshengshu();
+        float base = 1.5f;
+        float levelBonus = (float)(currentLevel - 100) * 0.020f;
+        return Math.min(base + levelBonus + zhuanshengshu * 10, 3.0f);
+    }
 
-
-        if(capability.getDengji()>= 100){
-            serverPlayer.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("已经满级")));
+    static boolean isTupoDengji(ServerPlayer player, @NotNull PlayerAttributeCapability cap) {
+        int level = cap.getDengji();
+        if (level >= 199) {
+            player.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("已经满级")));
             return false;
         }
-
-
-        int index = 0;
-        for (Map.Entry<String, List<MonsterAttributeCapability>> stringListEntry : capability.getMonsterCapabilityLists().entrySet()) {
-            int size = stringListEntry.getValue().size();
-            index = size>=index? size:index;
-        }
-
-        if(capability.getDengji()>= index*10+15){
-            serverPlayer.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("不能突破")));
+        if (level == 99) {
+            player.connection.send(new ClientboundSetTitleTextPacket(Component.literal("已经满级，请封神后再突破").withStyle(ChatFormatting.RED)));
             return false;
         }
-
+        if (level >= 100 && level < 199) {
+            int rings = getMaxRings(cap);
+            int required = level / 10;
+            if (rings < required) {
+                player.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("不能突破")));
+                return false;
+            }
+            return true;
+        }
+        int rings = getMaxRings(cap);
+        if (level >= rings * 10 + 10) {
+            player.connection.send(new ClientboundSetTitleTextPacket(Component.translatable("不能突破")));
+            return false;
+        }
         return true;
+    }
+
+    private static int getMaxRings(PlayerAttributeCapability cap) {
+        int max = 0;
+        Map<String, List<MonsterAttributeCapability>> map = cap.getMonsterCapabilityLists();
+        if (map == null || map.isEmpty()) return 0;
+        for (List<MonsterAttributeCapability> list : map.values()) {
+            if (list != null && list.size() > max) max = list.size();
+        }
+        return max;
     }
 
     static boolean isXishouHunhuan(ServerPlayer player, HunhuanEntity hunhuanEntity) {
         LazyOptional<PlayerAttributeCapability> capability1 = player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY);
         if(capability1.isPresent()){
             PlayerAttributeCapability capability = capability1.orElseThrow(RuntimeException::new);
-
-
-            List<MonsterAttributeCapability> wuhunList = capability.getWuhunList();
-            if(wuhunList == null){
+            int playerLevel = capability.getDengji();
+            // 检查是否已觉醒至少一个武魂
+            List<String> wuhunNames = capability.getWuhunListsname();
+            if(wuhunNames == null || wuhunNames.isEmpty()){
                 player.sendSystemMessage(Component.translatable("未开启或觉醒武魂"));
                 return false;
             }
-            int size = wuhunList.size();
-            if(capability.getDengji()+0>= size*10 && size<9){
-                return true;
-            }else {
-                player.sendSystemMessage(Component.translatable("等级不够"));
+            // 等级检查：必须是阶段等级（10 的倍数，10~190 或者 199）
+            if(!((playerLevel % 10 == 0 && playerLevel >= 10 && playerLevel <= 190) || playerLevel == 199)) {
+                player.sendSystemMessage(Component.translatable("阶段等级").withStyle(ChatFormatting.RED));
+                return false;
             }
+            // 获取当前魂环数量
+            int currentRings = getMaxRings(capability);
+            // 计算理论上可拥有的最大魂环数
+            int allowedRings = (playerLevel == 199) ? 20 : playerLevel / 10;
+            // 如果魂环数量已经达到上限，则不能再吸收
+            if (currentRings >= allowedRings) {
+                player.sendSystemMessage(Component.translatable("等级不够").withStyle(ChatFormatting.RED));
+                return false;
+            }
+            return true;
         }
         return false;
     }
@@ -246,7 +291,6 @@ public interface PlayerHunHuanAPI {
     static void addJingyan(ServerPlayer player, float value) {
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
             capability.setJingyan(capability.getJingyan()+value);
-
             if(capability.getJingyan()>=capability.getMaxjingyan()){
                 tupoDengji(player,capability);
             }
@@ -357,8 +401,6 @@ public interface PlayerHunHuanAPI {
 
     }
 
-
-
     static void addManHunhuanT(Player player) {
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
                 if(capability.getWuhunList() == null){
@@ -377,33 +419,39 @@ public interface PlayerHunHuanAPI {
         });
     }
 
-
-
     static void zhuansheng(PlayerAttributeCapability newplayerCapability, PlayerAttributeCapability oldItemCapability, ServerPlayer player) {
-
         if(newplayerCapability!=null&&oldItemCapability!=null){
             newplayerCapability.setWugong(newplayerCapability.getWugong()+oldItemCapability.getWugong()/20);
-//            newplayerCapability.setBaojishanghai(newplayerCapability.getBaojishanghai()+oldItemCapability.getBaojishanghai()/10);
-//            newplayerCapability.setBaojilv(newplayerCapability.getBaojilv()+oldItemCapability.getBaojilv()/10);
             newplayerCapability.setZhenshang(newplayerCapability.getZhenshang()+oldItemCapability.getZhenshang()/20);
-//            newplayerCapability.setXixue(newplayerCapability.getXixue()+oldItemCapability.getXixue()/10);
             newplayerCapability.setWufang(newplayerCapability.getWufang()+oldItemCapability.getWufang()/20);
             newplayerCapability.setMaxshengming(newplayerCapability.getMaxshengming()+oldItemCapability.getMaxshengming()/20);
             newplayerCapability.setShengminghuifu(newplayerCapability.getShengminghuifu()+oldItemCapability.getShengminghuifu()/20);
-//            newplayerCapability.setMingzhong(newplayerCapability.getMingzhong()+oldItemCapability.getMingzhong()/10);
-//            newplayerCapability.setShanbi(newplayerCapability.getShanbi()+oldItemCapability.getShanbi()/10);
             newplayerCapability.setWuchuan(newplayerCapability.getWuchuan()+oldItemCapability.getWuchuan()/20);
             newplayerCapability.setKangbao(newplayerCapability.getKangbao()+oldItemCapability.getKangbao()/20);
-
             newplayerCapability.setMaxjingshenli((int) (newplayerCapability.getMaxjingshenli()+oldItemCapability.getMaxjingshenli()/20));
             newplayerCapability.setJingshenli(0);
             newplayerCapability.setZhuanshengshu(newplayerCapability.getZhuanshengshu()+oldItemCapability.getZhuanshengshu()+1);
 //            魂骨蓸
             newplayerCapability.getBoneslot().deserializeNBT(oldItemCapability.getBoneslot().serializeNBT());
-
             player.setHealth(newplayerCapability.getMaxshengming());
-
         }
-
     }
+
+    // 强制吸收魂环方法
+   static boolean forceXishouHunhuan(Player player, HunhuanEntity entity) {
+        boolean absorbed = false;
+        if (entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).isPresent()) {
+            MonsterAttributeCapability capability = entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).resolve().get();
+            double v1 = Math.log10(capability.getNianxian());
+            double v = v1 * 10 + 10;
+
+            if (entity.getExistenceTime() >= v) {
+                addHunhuan(player, entity);
+                entity.discard();
+                absorbed = true;
+            }
+        }
+        return absorbed;
+    }
+
 }

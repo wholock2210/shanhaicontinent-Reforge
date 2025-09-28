@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "shanhaicontinent:textures/block/grasssj_block1.png",
+    "icon": {
+      "item": "shanhaicontinent:grasssj_block"
+    },
+    "title": {
+      "translate": "advancements.newword.title"
+    },
+    "description": {
+      "translate": "advancements.newword.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "newword_0": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "shanhaicontinent:shenjieworld"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 300
+  }
+}

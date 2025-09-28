@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " #I",
+    " n#",
+    "n  "
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:xuanbingblock"
+    },
+    "I": {
+      "item": "shanhaicontinent:zixiaoxianjin_ingot"
+    },
+    "n": {
+      "item": "cataclysm:witherite_ingot"
+    }
+  },
+  "result": {
+    "item": "cataclysm:meat_shredder",
+    "count": 1
+  }
+}

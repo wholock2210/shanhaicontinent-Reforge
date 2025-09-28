@@ -12,7 +12,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "dark_green",
-      "translate": "天地压制"
+      "translate": "寻找主世界生成的登神台进行封神"
     },
     "frame": "goal",
     "hidden": false,
@@ -22,7 +22,7 @@
     "show_toast": true,
     "title": {
       "color": "dark_red",
-      "translate": "九九至尊"
+      "translate": "新开始？"
     }
   },
   "requirements": [

@@ -104,27 +104,41 @@ public class ItemAttributeCapability extends CapabilityAttributeBase implements 
             super.setXixue((l/4));
             super.setMingzhong(l);
             super.setShanbi(l);
-        }else if(nianxian>=1000000){
+        } else if(nianxian<10000000){
 
-            float g = (3750 + (float) nianxian / 300 + random.nextInt(6750))*0.1f;
-            float l= 6 + nianxian / 1000000f ;
+            float g = (7750 + (float) nianxian / 700 + random.nextInt(13750))*0.1f;
+            float l= 7 + nianxian / 10000000f ;
 
             super.setWugong(g);
-            super.setWufang(g/3);
-            super.setWuchuan(g/3);
-            super.setZhenshang(g/10);
-            super.setMaxshengming(10*g);
-            super.setShengming(10*g);
+            super.setWufang(g/4);
+            super.setWuchuan(g/4);
+            super.setZhenshang(g/13);
+            super.setMaxshengming(13*g);
+            super.setShengming(13*g);
             super.setBaojilv(l);
-            super.setBaojishanghai(5*l);
-            super.setKangbao(3*l);
-            super.setXixue((l/4));
+            super.setBaojishanghai(6*l);
+            super.setKangbao(4*l);
+            super.setXixue((l/5));
+            super.setMingzhong(l);
+            super.setShanbi(l);
+        }else if(nianxian>=10000000){
+
+            float g = (7750 + (float) nianxian / 700 + random.nextInt(17750))*0.1f;
+            float l= 8 + nianxian / 10000000f ;
+
+            super.setWugong(g);
+            super.setWufang(g/4);
+            super.setWuchuan(g/4);
+            super.setZhenshang(g/13);
+            super.setMaxshengming(13*g);
+            super.setShengming(13*g);
+            super.setBaojilv(l);
+            super.setBaojishanghai(6*l);
+            super.setKangbao(4*l);
+            super.setXixue((l/5));
             super.setMingzhong(l);
             super.setShanbi(l);
         }
-
-
-
     }
 
 

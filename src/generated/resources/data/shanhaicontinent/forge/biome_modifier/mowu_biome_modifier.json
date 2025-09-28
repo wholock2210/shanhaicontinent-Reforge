@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "shanhaicontinent:shenjie",
+  "spawners": {
+    "type": "shanhaicontinent:mowu",
+    "weight": 30,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

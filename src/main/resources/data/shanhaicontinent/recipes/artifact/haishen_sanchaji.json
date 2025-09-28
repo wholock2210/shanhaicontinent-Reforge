@@ -1,0 +1,28 @@
+{
+  "type": "shanhaicontinent:artifact",
+  "token": {
+    "item": "shanhaicontinent:lingpai_haishen"
+  },
+  "materials": [
+    {
+      "item": "shanhaicontinent:haiyang_zhixin",
+      "count": 1
+    },
+    {
+      "item": "shanhaicontinent:xuanbing_stone",
+      "count": 64
+    },
+    {
+      "item": "shanhaicontinent:mowu_jinghua",
+      "count": 64
+    },
+    {
+      "item": "shanhaicontinent:zixiaoxianjin_ingot",
+      "count": 20
+    }
+  ],
+  "output": {
+    "item": "shanhaicontinent:haishen_sanchaji",
+    "count": 1
+  }
+}

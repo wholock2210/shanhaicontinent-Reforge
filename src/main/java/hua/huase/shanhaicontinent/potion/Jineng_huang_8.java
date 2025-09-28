@@ -37,7 +37,6 @@ public class Jineng_huang_8 extends SHBaseMobEffect  implements PotionAnimation{
 		return 66;
 	}
 
-
 	@Override
 	public float getShengminghuifu(LivingEntity livingEntity, Map.Entry<MobEffect, MobEffectInstance> mobEffectMobEffectInstanceEntry, float value) {
 		return value+66;

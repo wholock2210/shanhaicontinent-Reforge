@@ -34,6 +34,10 @@ public class WanfajieshaoScreen extends Screen {
         this.imageHeight = 216;
     }
 
+    @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
@@ -84,7 +88,7 @@ public class WanfajieshaoScreen extends Screen {
                     "转生：精神力超过3000后再通过床睡觉完成转生，转生后等级属性回归0级，返还武魂果实\n" +
                     "魂兽分布：主世界距离越远，刷新的年限越高，\n" +
                     "造化炉：没有单方可以直接将魂草炼制成精华，放入单方按要求可炼制丹药，\n" +
-                    "测试物品：/give @p shanhaicontinent:textitem1，服用后获得满魂环，仅测试使用");
+                    "神界介绍:通过神视之瞳找到登神台建筑，满级后即可右键登神台进行封神");
 
 
     MutableComponent translatable3 = Component.translatable(

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "shanhaicontinent:shenqiduanzao",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 400,
+    "separation": 80,
+    "salt": 1162232565
+  }
+}

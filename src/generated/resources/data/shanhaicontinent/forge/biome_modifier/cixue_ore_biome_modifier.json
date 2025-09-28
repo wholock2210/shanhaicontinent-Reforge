@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "shanhaicontinent:shenjie",
+  "features": "shanhaicontinent:cixue_ore",
+  "step": "underground_ores"
+}

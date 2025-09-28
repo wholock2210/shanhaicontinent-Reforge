@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:xuanbingblock"
+    },
+    "Y": {
+      "item": "shanhaicontinent:mowu_jinghua"
+    },
+    "Z": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:zhaohuanshi",
+    "count": 1
+  }
+}

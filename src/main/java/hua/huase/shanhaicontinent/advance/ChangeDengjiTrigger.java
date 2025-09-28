@@ -3,12 +3,9 @@ package hua.huase.shanhaicontinent.advance;
 import com.google.gson.JsonObject;
 import hua.huase.shanhaicontinent.SHMainBus;
 import net.minecraft.advancements.critereon.*;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 

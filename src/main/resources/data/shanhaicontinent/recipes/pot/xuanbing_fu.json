@@ -1,0 +1,33 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "JEIGUO": {
+      "item": "shanhaicontinent:xuanbing_fu"
+    },
+    "JIN": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "MU": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "PEIFANG": {
+      "item": "shanhaicontinent:cixuexianjin_axe"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping0"
+    },
+    "SHUI": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "TU": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    }
+  },
+  "nengliang": 2100,
+  "result": {
+    "item": "shanhaicontinent:xuanbing_fu"
+  }
+}

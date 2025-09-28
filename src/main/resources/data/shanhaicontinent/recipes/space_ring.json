@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "YXY"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "minecraft:gold_ingot"
+    },
+    "Z": {
+      "item": "shanhaicontinent:itemkongjianshi"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:space_ring",
+    "count": 1
+  }
+}

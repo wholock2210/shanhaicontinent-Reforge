@@ -1,0 +1,25 @@
+{
+  "parent": "shanhaicontinent:shenjie/newword",
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:strengthening_stone"
+    },
+    "title": "§a开启强化之路",
+    "description": "首次将神器强化至+1",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strengthen_level_1": {
+      "trigger": "shanhaicontinent:weapon_strengthen",
+      "conditions": {
+        "level": 1
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

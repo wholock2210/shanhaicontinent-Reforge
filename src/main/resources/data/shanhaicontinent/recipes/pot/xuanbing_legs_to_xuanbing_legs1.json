@@ -1,0 +1,23 @@
+{
+  "type": "shanhaicontinent:pot_recipe",
+  "key": {
+    "HUO": [],
+    "JEIGUO": {
+      "item": "shanhaicontinent:xuanbing_legs"
+    },
+    "JIN": [],
+    "MU": [],
+    "PEIFANG": {
+      "item": "shanhaicontinent:xuanbing_legs"
+    },
+    "RANLIAO": {
+      "item": "shanhaicontinent:hunyeping0"
+    },
+    "SHUI": [],
+    "TU": []
+  },
+  "nengliang": 120,
+  "result": {
+    "item": "shanhaicontinent:xuanbing_legs"
+  }
+}

@@ -83,11 +83,12 @@ public class JinengItemRender extends EntityRenderer<JinengItemEntity> {
 
 
     private static void renderHunhuanColor(Matrix4f matrix4f, int nianxian, float partialTick) {
-        if(nianxian>=1000000){
+        if (nianxian>=10000000) {
+            RenderSystem.setShaderColor(0.0f, 0.0f, 1.0f, 1.0f);
+        }else if(nianxian>=1000000){
             RenderSystem.setShaderColor(1.0f, 0.6f, 0.1f,0.8f);
         }else if(nianxian>=100000){
             RenderSystem.setShaderColor(1.0f, 0, 0,0.6f);
-
         }else if(nianxian>=10000){
             RenderSystem.setShaderColor(0, 0f, 0,0.6f);
         }else if(nianxian>=1000){

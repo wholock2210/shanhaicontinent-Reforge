@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:xiuluo_zhiyin"
+    },
+    "title": {
+      "translate": "advancements.xiuluo_zhiyin.title"
+    },
+    "description": {
+      "translate": "advancements.xiuluo_zhiyin.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "xiuluo_zhiyin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:xiuluo_zhiyin"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/huoqu_xiuluosuipian"
+}

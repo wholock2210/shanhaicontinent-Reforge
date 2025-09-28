@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "*#*",
+    "#@#",
+    "*#*"
+  ],
+  "key": {
+    "#": {
+      "item": "shanhaicontinent:mowu_jinghua"
+    },
+    "@": {
+      "item": "shanhaicontinent:tyrant_heart"
+    },
+    "*": {
+      "item": "shanhaicontinent:xuanbingblock"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:heart_of_ice",
+    "count": 1
+  }
+}

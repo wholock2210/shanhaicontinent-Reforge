@@ -120,14 +120,13 @@ public class CapabilityRegistryHandler{
                         float maxshengming = playerCapability.getMaxshengming();
                         entity.getAttribute(Attributes.MAX_HEALTH).setBaseValue(maxshengming);
                         entity.setHealth(maxshengming);
-
-
                     }
-
                     if(entity.getCustomName() == null){
                         int nianxian = playerCapability.getNianxian();
-                        if(nianxian>=1000000){
-                            entity.setCustomName(Component.translatable(entity.getDisplayName().getString()+"-----------"+"§4"+nianxian+"年"));
+                        if (nianxian>=10000000) {
+                            entity.setCustomName(Component.translatable(entity.getDisplayName().getString()+"-----------"+"§c§l"+nianxian+"年"));
+                        }else if (nianxian>=1000000){
+                            entity.setCustomName(Component.translatable(entity.getDisplayName().getString()+"-----------"+"§c"+nianxian+"年"));
                         }else if(nianxian>=100000){
                             entity.setCustomName(Component.translatable(entity.getDisplayName().getString()+"-----------"+"§c"+nianxian+"年"));
                         }else if(nianxian>=10000){
@@ -140,9 +139,7 @@ public class CapabilityRegistryHandler{
                             entity.setCustomName(Component.translatable(entity.getDisplayName().getString()+"-----------"+"§f"+nianxian+"年"));
                         }
                     }
-
                     SynsAPI.synsEntityAttribute(entity);
-
                 });
             }else {
                 CompoundTag compoundTag = SPacketEntityAttribute.monsterHashMapCapability.get(entity.getId());
@@ -150,8 +147,6 @@ public class CapabilityRegistryHandler{
                     entity.getCapability(MonsterAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
                         capability.deserializeNBT(compoundTag);
                     });
-
-//                    SPacketEntityAttribute.monsterHashMapCapability.remove(entity.getId());
                 }
             }
         }
@@ -188,16 +183,6 @@ public class CapabilityRegistryHandler{
                 });
             });
             event.getOriginal().invalidateCaps();
-
-
-
-//            if(event.isWasDeath()){
-//            }
-
-
         }
-
-
-
     }
 }

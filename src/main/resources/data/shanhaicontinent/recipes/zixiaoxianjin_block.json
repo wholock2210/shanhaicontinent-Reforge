@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:zixiaoxianjin_ingot"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:zixiaoxianjin_block",
+    "count": 1
+  }
+}

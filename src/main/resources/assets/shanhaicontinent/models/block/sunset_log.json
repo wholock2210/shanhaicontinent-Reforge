@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "shanhaicontinent:block/sunset_log1",
+    "up": "shanhaicontinent:block/sunset_log1",
+    "north": "shanhaicontinent:block/sunset_log",
+    "east": "shanhaicontinent:block/sunset_log",
+    "south": "shanhaicontinent:block/sunset_log",
+    "west": "shanhaicontinent:block/sunset_log",
+    "particle": "shanhaicontinent:block/sunset_log"
+  },
+  "render_type": "solid"
+}

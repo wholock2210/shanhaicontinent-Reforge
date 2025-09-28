@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABA",
+    "DED",
+    "ABA"
+  ],
+  "key": {
+    "A": {
+      "item": "shanhaicontinent:blocklanlingjin_block"
+    },
+    "B": {
+      "item": "shanhaicontinent:itemlanhaizuan"
+    },
+    "D": {
+      "item": "shanhaicontinent:blockheijin_block"
+    },
+    "E": {
+      "item": "shanhaicontinent:two_decomposition_gossip"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:three_decomposition_gossip",
+    "count": 1
+  }
+}

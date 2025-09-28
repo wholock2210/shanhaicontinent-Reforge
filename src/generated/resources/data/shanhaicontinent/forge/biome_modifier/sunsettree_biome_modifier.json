@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "shanhaicontinent:test_biome",
+  "features": "shanhaicontinent:sunsettree",
+  "step": "vegetal_decoration"
+}

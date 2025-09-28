@@ -21,6 +21,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class Jineng_Huang_0 extends WuqiBase {
+
     public Jineng_Huang_0(Tier tier, int i, float v, Properties properties) {
         super(tier, i, v, properties);
     }
@@ -107,14 +108,8 @@ public class Jineng_Huang_0 extends WuqiBase {
             }
         }
 
-
-
-
-
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
-
-
 
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);

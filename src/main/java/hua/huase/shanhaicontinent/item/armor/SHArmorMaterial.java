@@ -46,13 +46,14 @@ public enum SHArmorMaterial implements ArmorMaterial {
 		map.put(ArmorItem.Type.LEGGINGS, 8);
 		map.put(ArmorItem.Type.CHESTPLATE, 10);
 		map.put(ArmorItem.Type.HELMET, 5);
-	}), 10, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemcixuexianjin.get()));
+	}), 10, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemcixuexianjin.get())),
 
-
-
-
-
-
+	xuanbing("xuanbing", 4800, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+		map.put(ArmorItem.Type.BOOTS, 8);
+		map.put(ArmorItem.Type.LEGGINGS, 12);
+		map.put(ArmorItem.Type.CHESTPLATE, 15);
+		map.put(ArmorItem.Type.HELMET,8);
+	}), 32, SoundEvents.ARMOR_EQUIP_GENERIC, 3.5F, () -> Ingredient.of(ItemInit.itemxuanbing.get()));
 
 
 	private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

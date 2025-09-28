@@ -1,0 +1,6 @@
+{
+  "exhaustion": 0.2,
+  "message_id": "hot_yangquan",
+  "scaling": "when_caused_by_living_non_player",
+  "effects": "burning"
+}

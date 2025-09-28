@@ -65,13 +65,8 @@ public class PWSleepingTimeCheckEvent {
 
     private static void zhuansheng(ServerPlayer entityPlayer) {
         entityPlayer.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
-            if(capability.getJingshenli()<=3000 && capability.getDengji() <99)return;
-
-
-
-
+            if(capability.getJingshenli()<=5000 && capability.getDengji() <=99)return;
             if(!entityPlayer.hasEffect(SHModMobEffectsinit.zhiwu_bianhua.get())) return;
-
             for (String s : capability.getWuhunListsname()) {
                 ItemStack itemStack = WuhunGuoshiItem.getWuhunguo(s);
                 if(!itemStack.isEmpty()){
@@ -84,13 +79,9 @@ public class PWSleepingTimeCheckEvent {
                      }
                 }
             }
-
             AdvenceInit.menghuiwangutrigger.trigger(entityPlayer);
-
 //            清除丹药使用次数
             clearUsedNum(entityPlayer);
-
-
             PlayerAttributeCapability newplayerAttributeCapability = new PlayerAttributeCapability();
             PlayerHunHuanAPI.zhuansheng(newplayerAttributeCapability,capability,entityPlayer);
             capability.deserializeNBT(newplayerAttributeCapability.serializeNBT());

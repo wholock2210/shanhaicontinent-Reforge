@@ -1,7 +1,6 @@
 package hua.huase.shanhaicontinent.screen;
 
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
-import hua.huase.shanhaicontinent.init.BlockInit;
 import hua.huase.shanhaicontinent.item.BoneItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -17,21 +16,23 @@ import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import static hua.huase.shanhaicontinent.register.ModItems.xiancaolist;
+
 public class PlayerAttrubuteContainerMenu extends AbstractContainerMenu implements MenuProvider {
     public final Player player;
     private final Level level;
     private final ContainerData data;
 
     public PlayerAttrubuteContainerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player, new SimpleContainerData(7));
+        this(pContainerId, inv, inv.player, new SimpleContainerData(8));
     }
     public PlayerAttrubuteContainerMenu(int pContainerId, Inventory inv) {
-        this(pContainerId, inv, inv.player, new SimpleContainerData(7));
+        this(pContainerId, inv, inv.player, new SimpleContainerData(8));
     }
 
     public PlayerAttrubuteContainerMenu(int pContainerId, Inventory inv, Player entity, ContainerData data) {
         super(ModMenuTypes.PLAYER_ATTRUBUTE_MENU.get(), pContainerId);
-        checkContainerSize(inv, 7);
+        checkContainerSize(inv, 8);
         player = ((Player) entity);
         this.level = inv.player.level();
         this.data = data;
@@ -42,18 +43,23 @@ public class PlayerAttrubuteContainerMenu extends AbstractContainerMenu implemen
         addPlayerHotbar(inv);
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
             ItemStackHandler boneslot = capability.getBoneslot();
-            this.addSlot(new SlotBone(boneslot, 0,232-48,-27+45 ));
-            this.addSlot(new SlotBone(boneslot, 1,266-48,-27+57 ));
-            this.addSlot(new SlotBone(boneslot, 2,177-48,-27+78 ));
-            this.addSlot(new SlotBone(boneslot, 3,286-48,-27+78 ));
-            this.addSlot(new SlotBone(boneslot, 4,190-48,-27+102 ));
-            this.addSlot(new SlotBone(boneslot, 5,177-48,-27+127 ));
-            this.addSlot(new SlotBone(boneslot, 6,286-48,-27+127 ));
-
+            //头骨
+            this.addSlot(new SlotBone(boneslot, 0,232-48,-27+54 ));
+            //外附骨
+            this.addSlot(new SlotBone(boneslot, 1,271-48,-27+78 ));
+            //左手骨
+            this.addSlot(new SlotBone(boneslot, 2,191-48,-27+102 ));
+            //右手骨
+            this.addSlot(new SlotBone(boneslot, 3,271-48,-27+102 ));
+            //胸骨
+            this.addSlot(new SlotBone(boneslot, 4,191-48,-27+78 ));
+            //左腿骨
+            this.addSlot(new SlotBone(boneslot, 5,191-48,-27+127 ));
+            //右腿骨
+            this.addSlot(new SlotBone(boneslot, 6,271-48,-27+127 ));
+            //仙草
+            this.addSlot(new SlotXiancao(boneslot, 7,195-48,-27+55 ));
         });
-
-
-
     }
 
 
@@ -73,7 +79,7 @@ public class PlayerAttrubuteContainerMenu extends AbstractContainerMenu implemen
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 8;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -161,4 +167,22 @@ public class PlayerAttrubuteContainerMenu extends AbstractContainerMenu implemen
         }
 
     }
+    private class SlotXiancao extends SlotItemHandler {
+        public SlotXiancao(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
+            super(itemHandler, index, xPosition, yPosition);
+        }
+
+        @Override
+        public boolean mayPlace(@NotNull ItemStack stack) {
+            if (stack.isEmpty())
+                return false;
+
+            // 检查物品是否在仙草列表中
+            return xiancaolist.stream().anyMatch(regObj ->
+                    regObj.get() == stack.getItem()
+            );
+        }
+    }
+
+
 }

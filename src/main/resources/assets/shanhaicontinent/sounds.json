@@ -1,0 +1,20 @@
+{
+  "syntheticdream": {
+    "subtitle": "sounds.synthetic_dream.ogg",
+    "sounds": [
+      {
+        "name": "shanhaicontinent:syntheticdream",
+        "stream": true
+      }
+    ]
+  },
+  "syntheticdream_music": {
+    "subtitle": "sounds.synthetic_dream_music.ogg",
+    "sounds": [
+      {
+        "name": "shanhaicontinent:syntheticdream_music",
+        "stream": true
+      }
+    ]
+  }
+}

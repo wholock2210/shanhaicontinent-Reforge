@@ -1,6 +1,5 @@
 package hua.huase.shanhaicontinent.entity.custom;
 
-import hua.huase.shanhaicontinent.init.EntityInit;
 import hua.huase.shanhaicontinent.entity.ai.RhinoAttackGoal;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

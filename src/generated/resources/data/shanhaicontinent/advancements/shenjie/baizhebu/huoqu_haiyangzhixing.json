@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "shanhaicontinent:haiyang_zhixin"
+    },
+    "title": {
+      "translate": "advancements.haiyang_zhixin.title"
+    },
+    "description": {
+      "translate": "advancements.haiyang_zhixin.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "haiyang_zhixin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "shanhaicontinent:haiyang_zhixin"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "shanhaicontinent:shenjie/baizhebu/huoqu_haishensuipian"
+}

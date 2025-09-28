@@ -2,8 +2,8 @@
 	"credit": "Auther：hause",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "shanhaicontinent:item/hunyeping6",
-		"particle": "shanhaicontinent:item/hunyeping6"
+		"0": "shanhaicontinent:item/hunyeping7",
+		"particle": "shanhaicontinent:item/hunyeping7"
 	},
 	"elements": [
 		{

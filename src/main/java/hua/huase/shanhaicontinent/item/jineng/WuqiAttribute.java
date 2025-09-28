@@ -8,6 +8,8 @@ public interface WuqiAttribute {
 
      float getWugong(Player player, ItemStack itemStack, float value, EquipmentSlot offhand);
 
+     float getMaxShengming(Player player, ItemStack mainHandItem, float value, EquipmentSlot equipmentSlot);
+
      float getWufang(Player player, ItemStack offhandItem, float value, EquipmentSlot equipmentSlot);
 
      float getBaojishanghai(Player player, ItemStack mainHandItem, float value, EquipmentSlot equipmentSlot);

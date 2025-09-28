@@ -1,0 +1,34 @@
+{
+  "parent": "shanhaicontinent:shenjie/shenjiedengji/tupo_190",
+  "criteria": {
+    "changedengji_199": {
+      "conditions": {
+        "dengji": 199
+      },
+      "trigger": "shanhaicontinent:changed_dengji"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "color": "dark_green",
+      "translate": "成功突破到199级"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "shanhaicontinent:danyao_zhuji"
+    },
+    "show_toast": true,
+    "title": {
+      "color": "dark_red",
+      "translate": "神界执法者"
+    }
+  },
+  "requirements": [
+    [
+      "changedengji_199"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

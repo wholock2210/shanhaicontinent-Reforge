@@ -34,13 +34,10 @@ public class PWPlayerTickEvent {
                     player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(maxshengming);
                 }
 
-
                 player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
                     playerUpdateServere(player,capability);
                 });
-
             }
-
 
             player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
                 updatePlayerFly(player,capability);
@@ -51,27 +48,26 @@ public class PWPlayerTickEvent {
     }
 
     private static void updatePlayerFly(Player player, @NotNull PlayerAttributeCapability capability) {
-
-
-        if(!player.isCreative() && !player.isSpectator()){
-
-
-//            if(capability.getDengji()>=25  && PlayerAttrubuteAPI.getJingshenli(player)>200
-            if(PlayerAttrubuteAPI.getMaxjingshenli(player)>3000){
-                player.getAbilities().mayfly=true;
-            }else {
-                player.getAbilities().mayfly=false;
+        if (!player.isCreative() && !player.isSpectator()) {
+            // 检查是否被击落（可以添加一个临时状态标记）
+            if (player.getPersistentData().contains("knocked_down")) {
+                player.getAbilities().mayfly = false;
+                player.getAbilities().flying = false;
+            }
+            else if (PlayerAttrubuteAPI.getMaxjingshenli(player) > 5000) {
+                player.getAbilities().mayfly = true;
+            } else {
+                player.getAbilities().mayfly = false;
             }
 
-
-            if(player.getAbilities().flying && player.level().getGameTime()%10 == 0){
-                capability.setJingshenli(capability.getJingshenli()-30+ (float) capability.getDengji() /5);
+            if (player.getAbilities().flying && player.level().getGameTime() % 10 == 0) {
+                capability.setJingshenli(capability.getJingshenli() - 30 + (float) capability.getDengji() / 5);
             }
-            if(capability.getWuhunName() !=null && player.level().getGameTime()%20 == 0){
-                capability.setJingshenli(capability.getJingshenli()-25- (float) capability.getDengji() /5);
+
+            if (capability.getWuhunName() != null && player.level().getGameTime() % 20 == 0) {
+                capability.setJingshenli(capability.getJingshenli() - 25 - (float) capability.getDengji() / 5);
             }
         }
-
     }
 
     private static void playerUpdateServere(Player player, @NotNull PlayerAttributeCapability capability) {

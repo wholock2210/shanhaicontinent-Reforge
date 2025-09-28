@@ -18,6 +18,7 @@ import hua.huase.shanhaicontinent.entity.mob.hunmin.HunminEntity;
 import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBox;
 import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBoxModel;
 import hua.huase.shanhaicontinent.entity.protectionbox.ProtectionBoxRenderer;
+import hua.huase.shanhaicontinent.register.ModBlock;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -36,7 +37,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class EntityInit {
+    public class EntityInit {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SHMainBus.MOD_ID);
 
@@ -102,9 +103,6 @@ public class EntityInit {
             ENTITY_TYPES.register("jinenghtsc7", () -> EntityType.Builder.of(Jineng_HTSC_7_Entity::new, MobCategory.MISC)
                     .updateInterval(Integer.MAX_VALUE)
                     .sized(8.0f, 8.0f).build("jinenghtsc7"));
-
-
-
 //    mob
 
     public static final RegistryObject<EntityType<HunminEntity>> hunmin =
@@ -163,8 +161,6 @@ public class EntityInit {
             EntityRenderers.register(EntityInit.jinenghtsc1.get(), Jineng_HTSC_1_Render::new);
             EntityRenderers.register(EntityInit.jinenghtsc4.get(), Jineng_HTSC_4_Render::new);
             EntityRenderers.register(EntityInit.jinenghtsc7.get(), Jineng_HTSC_7_Render::new);
-
-
 
 //            Mob
             EntityRenderers.register(EntityInit.hunmin.get(), ZombieVillagerRenderer::new);

@@ -1,0 +1,10 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "particle": "shanhaicontinent:block/jianying_block",
+    "bottom": "shanhaicontinent:block/jianying_block",
+    "top": "shanhaicontinent:block/jianying_block",
+    "side": "shanhaicontinent:block/jianying_block"
+  },
+  "render_type": "solid"
+}

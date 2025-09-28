@@ -3,6 +3,7 @@ package hua.huase.shanhaicontinent.datagen;
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.block.entityblock.flowerblock.SHFlowerBlock;
 import hua.huase.shanhaicontinent.init.BlockInit;
+import hua.huase.shanhaicontinent.register.ModBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;

@@ -1,6 +1,5 @@
 package hua.huase.shanhaicontinent.item.jineng;
 
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -12,6 +11,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
+
 import javax.annotation.Nullable;
 import java.util.List;
 
@@ -20,15 +20,17 @@ public class WuqiBase extends SwordItem implements WuqiAttribute, Jineng {
         super(tier, i, v, properties);
     }
 
-
-
     public boolean canBeDepleted() {
         return false;
     }
 
-
     @Override
     public float getWugong(Player player, ItemStack itemStack, float value, EquipmentSlot offhand) {
+        return value;
+    }
+
+    @Override
+    public float getMaxShengming(Player player, ItemStack itemStack, float value, EquipmentSlot offhand) {
         return value;
     }
 
@@ -108,31 +110,38 @@ public class WuqiBase extends SwordItem implements WuqiAttribute, Jineng {
         CompoundTag orCreateTag = itemStack.getOrCreateTag();
         return orCreateTag.getInt("sh_nianxian");
     }
+
     @Override
     public void setNianxian(Player player, ItemStack itemStack, int nianxian) {
         CompoundTag orCreateTag = itemStack.getOrCreateTag();
-        orCreateTag.putInt("sh_nianxian",nianxian);
+        orCreateTag.putInt("sh_nianxian", nianxian);
     }
 
 
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("拥有者",this.getPlayer(itemStack)).withStyle(ChatFormatting.DARK_GRAY));
-        list.add(Component.translatable("年限",this.getNianxian(null,itemStack)).withStyle(ChatFormatting.AQUA));
 
-        if(itemStack.getOrCreateTag()!=null){
-            byte b= 0;
-            CompoundTag wuhunjineng = (CompoundTag) itemStack.getOrCreateTag().get("wuhunjineng"+b);
-            while (wuhunjineng !=null){
-                ItemStack jineng =ItemStack.of(wuhunjineng);
-                if((!jineng.isEmpty()) && jineng.getItem() instanceof Jineng){
-                    list.add(Component.translatable("武魂技能",jineng.getHoverName().getString(),this.getNianxian(null,jineng)).withStyle(ChatFormatting.YELLOW));
-//                    list.add(Component.translatable(itemStack.getHoverName().getString()).withStyle(ChatFormatting.YELLOW));
-                }
-                ++b;
-                wuhunjineng = (CompoundTag) itemStack.getOrCreateTag().get("wuhunjineng"+b);
-            }
+        String playerName = this.getPlayer(itemStack);
+        if (playerName.isEmpty()) {
+            list.add(Component.literal("拥有者: 未知").withStyle(ChatFormatting.DARK_GRAY));
+        } else {
+            list.add(Component.translatable("拥有者: " + playerName).withStyle(ChatFormatting.DARK_GRAY));
         }
 
+        if (this.getNianxian(null, itemStack) > 0) {
+            list.add(Component.translatable("年限", this.getNianxian(null, itemStack)).withStyle(ChatFormatting.AQUA));
+        }
 
+        if (itemStack.getOrCreateTag() != null) {
+            byte b = 0;
+            CompoundTag wuhunjineng = (CompoundTag) itemStack.getOrCreateTag().get("wuhunjineng" + b);
+            while (wuhunjineng != null) {
+                ItemStack jineng = ItemStack.of(wuhunjineng);
+                if ((!jineng.isEmpty()) && jineng.getItem() instanceof Jineng) {
+                    list.add(Component.translatable("武魂技能", jineng.getHoverName().getString(), this.getNianxian(null, jineng)).withStyle(ChatFormatting.YELLOW));
+                }
+                ++b;
+                wuhunjineng = (CompoundTag) itemStack.getOrCreateTag().get("wuhunjineng" + b);
+            }
+        }
     }
 }

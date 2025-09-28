@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "shanhaicontinent:shenjie",
+  "spawners": {
+    "type": "shanhaicontinent:demon_king",
+    "weight": 0.8,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

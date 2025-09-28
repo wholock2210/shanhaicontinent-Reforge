@@ -209,6 +209,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_shovel      ,80);
         zhuangbeixiufu(pWriter,ItemInit.cixuexianjin_sword       ,80);
 
+        zhuangbeixiufu(pWriter,ItemInit.xuanbing_head,100);
+        zhuangbeixiufu(pWriter,ItemInit.xuanbing_chest,100);
+        zhuangbeixiufu(pWriter,ItemInit.xuanbing_feet,100);
+        zhuangbeixiufu(pWriter,ItemInit.xuanbing_legs,100);
+
 
 //装备合成
 
@@ -263,12 +268,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_shovel   ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_shovel  ,1960);
         zhuangbeihecheng(pWriter,ItemInit.lanhaizuan_sword    ,ItemInit.itemcixuexianjin ,ItemInit.cixuexianjin_sword   ,1960);
 
+        zhuangbeihecheng(pWriter,ItemInit.xuanbing_head ,ItemInit.itemxuanbing,ItemInit.xuanbing_head,2460);
+        zhuangbeihecheng(pWriter,ItemInit.xuanbing_chest ,ItemInit.itemxuanbing,ItemInit.xuanbing_chest,2460);
+        zhuangbeihecheng(pWriter,ItemInit.xuanbing_feet ,ItemInit.itemxuanbing,ItemInit.xuanbing_feet,2460);
+        zhuangbeihecheng(pWriter,ItemInit.xuanbing_legs ,ItemInit.itemxuanbing,ItemInit.xuanbing_feet,2460);
+
 
         pingzishengji(pWriter,ItemInit.hunyeping0     ,ItemInit.itemmingtie            ,ItemInit.hunyeping1       ,0,1);
         pingzishengji(pWriter,ItemInit.hunyeping1     ,ItemInit.itemheijin             ,ItemInit.hunyeping2       ,0,1);
         pingzishengji(pWriter,ItemInit.hunyeping2     ,ItemInit.itemlanlingjin         ,ItemInit.hunyeping3       ,0,1);
         pingzishengji(pWriter,ItemInit.hunyeping3     ,ItemInit.itemlanhaizuan         ,ItemInit.hunyeping4       ,0,1);
         pingzishengji(pWriter,ItemInit.hunyeping4     ,ItemInit.itemcixuexianjin       ,ItemInit.hunyeping5       ,0,1);
+        pingzishengji(pWriter,ItemInit.hunyeping5     ,ItemInit.itemxuanbing           ,ItemInit.hunyeping6       ,0,1);
 
 //
 //        pWriter.accept(

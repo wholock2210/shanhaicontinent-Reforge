@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "YXY",
+    "XZX",
+    "FXF"
+  ],
+  "key": {
+    "X": {
+      "item": "shanhaicontinent:xuanbing_stone"
+    },
+    "Y": {
+      "item": "shanhaicontinent:zixiaoxianjin_ingot"
+    },
+    "Z": {
+      "item": "shanhaicontinent:hunhuan_storage_four"
+    },
+    "F": {
+      "item": "shanhaicontinent:mowu_jinghua"
+    }
+  },
+  "result": {
+    "item": "shanhaicontinent:hunhuan_storage_five",
+    "count": 1
+  }
+}
