@@ -6,10 +6,14 @@ import com.mojang.math.Axis;
 import hua.huase.shanhaicontinent.SHMainBus;
 import hua.huase.shanhaicontinent.capability.monsterattribute.MonsterAttributeCapability;
 import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapabilityProvider;
+import hua.huase.shanhaicontinent.event.api.LeveRenderPlaerEventPostEvent;
 import hua.huase.shanhaicontinent.network.NetworkHandler;
 import hua.huase.shanhaicontinent.network.client.SyncWuhunDataPacket;
 import hua.huase.shanhaicontinent.render.SHRenderApi;
+import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,6 +21,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -47,6 +52,36 @@ public class PWRenderPlayerEvent {
     private static final Map<UUID, List<Integer>> otherPlayerWuhunData = new HashMap<>();
     private static final Map<UUID, Boolean> otherPlayerIsPlayingOpenAnimation = new HashMap<>();
     private static final Map<UUID, Long> otherPlayerAnimationStartTime = new HashMap<>();
+
+
+/**
+ * 注入自定义事件
+ * @see LeveRenderPlaerEventPostEvent
+ */
+    @SubscribeEvent
+    public static void renderPlayerEventPost(RenderLevelStageEvent event) {
+        if (event.getStage() !=RenderLevelStageEvent.Stage.AFTER_ENTITIES )return;
+        LocalPlayer player = Minecraft.getInstance().player;
+        LevelRenderer levelRenderer = event.getLevelRenderer();
+        float renderTick =Minecraft.getInstance().getPartialTick();
+        Camera camera = event.getCamera();
+        PoseStack poseStack = event.getPoseStack();
+        double d0 = Mth.lerp((double)renderTick, player.xOld, player.getX()) - camera.getPosition().x;
+        double d1 = Mth.lerp((double)renderTick, player.yOld, player.getY()) - camera.getPosition().y;
+        double d2 = Mth.lerp((double)renderTick, player.zOld, player.getZ()) - camera.getPosition().z;
+        float f = Mth.lerp(renderTick, player.yRotO, player.getYRot());
+        poseStack.pushPose();
+        poseStack.translate(d0, d1, d2);
+        net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(new LeveRenderPlaerEventPostEvent(player,levelRenderer,event.getPartialTick(),poseStack));
+        poseStack.popPose();
+    }
+
+    @SubscribeEvent
+    public static void renderPlayerEventPost(LeveRenderPlaerEventPostEvent event) {
+
+        renderHunhuan(event.getPlayer(), event.getPartialTick(), event.getPoseStack(),
+                100, 1);
+    }
 
 
     public static void updatePlayerWuhunData(Player player, List<Integer> wuhunNianxianList,

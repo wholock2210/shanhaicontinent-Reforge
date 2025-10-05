@@ -29,7 +29,7 @@ public class ShadersInt {
     @SubscribeEvent
     public static void registerShaders(RegisterShadersEvent event) throws IOException
     {
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), new ResourceLocation("shmapshadertext"), DefaultVertexFormat.POSITION_TEX),
+        event.registerShader(new TimeShader(event.getResourceProvider(), new ResourceLocation("shmapshadertext"), DefaultVertexFormat.POSITION_TEX),
                 (p_172645_) -> {
             shmapshadertext = p_172645_;
         });
