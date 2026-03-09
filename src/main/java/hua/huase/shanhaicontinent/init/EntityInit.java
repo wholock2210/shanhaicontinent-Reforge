@@ -103,8 +103,8 @@ public class EntityInit {
         ENTITY_TYPES.register("jinenghdtl1",
                 () -> EntityType.Builder.<Jineng_HDTL_1_Entity>of(Jineng_HDTL_1_Entity::new, MobCategory.MISC)
                         .updateInterval(Integer.MAX_VALUE)
-                        .sized(1.0f, 1.0f)
-                        .build("jinenghdtl1"));;
+                        .sized(2.4f, 2.4f)
+                        .build("jinenghdtl1"));
         public static final RegistryObject<EntityType<Jineng_HTSC_4_Entity>> jinenghtsc4 = ENTITY_TYPES
                         .register("jinenghtsc4",
                                         () -> EntityType.Builder.of(Jineng_HTSC_4_Entity::new, MobCategory.MISC)

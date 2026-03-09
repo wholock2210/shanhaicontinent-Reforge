@@ -1,7 +1,5 @@
 package hua.huase.shanhaicontinent.entity.jinengentity.hacdiemtula;
 
-import hua.huase.shanhaicontinent.capability.AttrubuteAPI;
-import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttrubuteAPI;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -12,19 +10,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 
 public class Jineng_HDTL_1_Entity extends ThrowableItemProjectile {
     private int Nianxian;
     private int orbitTick = 0;
     private boolean shoot = false;
-    private float angle;
 
-    public Jineng_HDTL_1_Entity(EntityType<? extends Jineng_HDTL_1_Entity> type, Level level, int nianxian,
-            float startAngle) {
+    public Jineng_HDTL_1_Entity(EntityType<? extends Jineng_HDTL_1_Entity> type, Level level, int nianxian) {
         super(type, level);
         this.Nianxian = nianxian;
-        this.angle = startAngle;
     }
 
     public Jineng_HDTL_1_Entity(EntityType<? extends Jineng_HDTL_1_Entity> type, Level level) {
@@ -42,9 +36,8 @@ public class Jineng_HDTL_1_Entity extends ThrowableItemProjectile {
         if (this.getOwner() instanceof ServerPlayer player) {
 
             int nianxian = Nianxian;
-            float level = PlayerAttrubuteAPI.getDengji(player);
 
-            float damage = nianxian * level;
+            float damage = nianxian;
 
             result.getEntity().hurt(this.damageSources().playerAttack(player), damage);
         }
@@ -69,17 +62,8 @@ public void tick() {
 
         orbitTick++;
 
-        // tốc độ quay
-        angle += 8;
-
-        double radius = 2.5;
-
-        double rad = Math.toRadians(angle);
-
-        double x = player.getX() + Math.cos(rad) * radius;
-        double z = player.getZ() + Math.sin(rad) * radius;
-
-        this.setPos(x, player.getY() + 2, z);
+        // Keep hitbox centered above the player before launch.
+        this.setPos(player.getX(), player.getEyeY() + 0.7D, player.getZ());
 
         // sau 10 tick bắn ra
         if (orbitTick > 10) {

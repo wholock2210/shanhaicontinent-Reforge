@@ -1,12 +1,8 @@
 package hua.huase.shanhaicontinent.entity.jinengentity.hacdiemtula;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Axis;
-import hua.huase.shanhaicontinent.SHMainBus;
-import hua.huase.shanhaicontinent.entity.jinengentity.haotianchui.Jineng_HTSC_1_Entity;
 import hua.huase.shanhaicontinent.init.ItemInit;
-import hua.huase.shanhaicontinent.render.SHRenderApi;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -15,7 +11,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 public class Jineng_HDTL_1_Render extends EntityRenderer<Jineng_HDTL_1_Entity> {
 
@@ -36,18 +31,34 @@ public class Jineng_HDTL_1_Render extends EntityRenderer<Jineng_HDTL_1_Entity> {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         pPoseStack.pushPose();
         pPoseStack.translate(0,3,0);
+        
+        // Tính toán vị trí của mỗi kiếm trong vòng tròn (5 kiếm cách nhau 72 độ)
+        int swordIndex = (int)(entity.getId() % 5);
+        float angleOffset = swordIndex * 72f; // 360 / 5 = 72 độ
+        float radius = 1.5f; // Bán kính vòng tròn
+        
+        // Tính toán vị trí X, Z cố định (không quay theo thời gian)
+        float radians = (float) Math.toRadians(angleOffset);
+        float offsetX = (float) Math.sin(radians) * radius;
+        float offsetZ = (float) Math.cos(radians) * radius;
+        
+        // Di chuyển kiếm đến vị trí cố định trong vòng tròn
+        pPoseStack.translate(offsetX, 0, offsetZ);
+        
         Quaternionf quaternionf = Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation();
         pPoseStack.mulPose(quaternionf.rotateXYZ((float) Math.PI, (float) Math.PI, (float) Math.PI));
         pPoseStack.scale(2.0f,2.0f, 2.0f);
+        
+        // Tilt blade tip upward by 45 degrees (positive X fixes reversed tip direction).
+        pPoseStack.mulPose(Axis.XP.rotationDegrees(45));
+        // Xoay kiếm tự quay tại chỗ
         pPoseStack.mulPose(Axis.YP.rotationDegrees(entity.tickCount * 20));
-        pPoseStack.mulPose(Axis.XP.rotationDegrees(180));
 
         itemRenderer.renderStatic(itemStack, ItemDisplayContext.FIXED, i,
                 OverlayTexture.NO_OVERLAY, pPoseStack, multiBufferSource, entity.level(), 1);
         pPoseStack.popPose();
 
-
-    }
+    } 
 
 
     @Override
