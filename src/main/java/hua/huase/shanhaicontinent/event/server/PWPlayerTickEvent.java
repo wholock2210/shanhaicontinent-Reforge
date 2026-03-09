@@ -65,7 +65,7 @@ public class PWPlayerTickEvent {
             }
 
             if (capability.getWuhunName() != null && player.level().getGameTime() % 20 == 0) {
-                capability.setJingshenli(capability.getJingshenli() - 25 - (float) capability.getDengji() / 5);
+                capability.setJingshenli(capability.getJingshenli() - 1);
             }
         }
     }

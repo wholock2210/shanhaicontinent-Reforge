@@ -20,7 +20,7 @@ import org.joml.Quaternionf;
 
 public class Jineng_HTSC_1_Render extends EntityRenderer<Jineng_HTSC_1_Entity> {
 
-    private static ItemStack itemStack = new ItemStack(ItemInit.jineng_hdtl_1.get());
+    private static ItemStack itemStack = new ItemStack(ItemInit.jineng_htsc_1.get());
     public Jineng_HTSC_1_Render(EntityRendererProvider.Context context) {
         super(context);
     }

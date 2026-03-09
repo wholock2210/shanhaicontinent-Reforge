@@ -1,0 +1,25 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.import.gradle.enabled": true,
+    "java.import.gradle.wrapper.enabled": true,
+    "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk",
+    "java.import.gradle.home": null,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "/usr/lib/jvm/java-17-openjdk",
+            "default": true
+        }
+    ],
+    "files.exclude": {
+        "**/.gradle": false,
+        "**/build": false,
+        "**/.settings": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.factorypath": true
+    }
+}

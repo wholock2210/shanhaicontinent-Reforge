@@ -83,6 +83,12 @@ public class PWRenderPlayerEvent {
 
         PoseStack poseStack = event.getPoseStack();
         Player player = event.getPlayer();
+        
+        // Only render rotating hunhuan when animation is complete
+        if (isPlayingOpenAnimation(player)) {
+            return; // Skip rendering while animation is playing
+        }
+        
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
                 int count = 0;
                 if (capability.getWuhunList() != null) {
