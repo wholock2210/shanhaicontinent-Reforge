@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "shanhaicontinent:jineng_hdtl_0_base",
+      "predicate": {}
+    }
+  ],
+  "textures": {
+    "layer0": "shanhaicontinent:item/jineng_hdtl_0"
+  }
+}

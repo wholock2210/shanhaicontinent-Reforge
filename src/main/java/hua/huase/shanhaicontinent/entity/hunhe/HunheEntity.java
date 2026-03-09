@@ -1,6 +1,9 @@
 package hua.huase.shanhaicontinent.entity.hunhe;
 
 import hua.huase.shanhaicontinent.init.EntityInit;
+import hua.huase.shanhaicontinent.capability.playerattribute.PlayerHunHuanAPI;
+import hua.huase.shanhaicontinent.init.AdvenceInit;
+import hua.huase.shanhaicontinent.network.SynsAPI;
 import hua.huase.shanhaicontinent.init.ModConfig;
 import hua.huase.shanhaicontinent.item.Nengliang;
 import net.minecraft.core.BlockPos;
@@ -8,6 +11,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -25,8 +30,12 @@ import static net.minecraft.sounds.SoundEvents.EXPERIENCE_ORB_PICKUP;
     public class HunheEntity extends Entity {
         private Player player;
         private int livetime;
+        private int contactTime = 20;
+        
         private static final EntityDataAccessor<Float> VALUE =
                 SynchedEntityData.defineId(HunheEntity.class, EntityDataSerializers.FLOAT);
+        
+        private static final float EXP_MULTIPLIER = 50.0f; // tăng exp
 
         public HunheEntity(EntityType<?> entityType, Level level) {
             super(entityType, level);
@@ -63,6 +72,39 @@ import static net.minecraft.sounds.SoundEvents.EXPERIENCE_ORB_PICKUP;
             }
             livetime++;
         }
+
+       @Override
+public void playerTouch(Player player) {
+
+    if (player instanceof ServerPlayer serverPlayer) {
+
+        if (player != this.player) {
+            this.player = player;
+            this.contactTime = 20;
+        } else {
+            this.contactTime--;
+        }
+
+        if (this.contactTime <= 0) {
+
+            float finalExp = this.getValue() * EXP_MULTIPLIER;
+
+            PlayerHunHuanAPI.addJingyan(serverPlayer, finalExp);
+
+            AdvenceInit.xishouhunhetrigger.trigger(serverPlayer);
+
+            this.playSound(
+                    SoundEvents.EXPERIENCE_ORB_PICKUP,
+                    1.1F,
+                    (this.random.nextFloat() - this.random.nextFloat()) * 0.35F + 0.9F
+            );
+
+            SynsAPI.synsPlayerAttribute(serverPlayer);
+
+            this.discard();
+        }
+    }
+}
 
         @Override
         public boolean isPickable() {

@@ -35,68 +35,68 @@ public class ModConfig {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
         // 原有配置项...
-        canBreakBlocks = builder.comment("是否允许技能破坏方块(默认为false：不允许破坏方块。开启后还是蹲下释放技能时破坏地形)")
+        canBreakBlocks = builder.comment("Cho phép kỹ năng phá hủy khối (mặc định là false: không cho phép phá hủy khối. Ngay cả khi được bật, kỹ năng vẫn sẽ phá hủy địa hình khi cúi người để sử dụng).")
                 .define("canBreakBlocks", false);
-        danyaoBalance = builder.comment("是否开启丹药平衡(默认为true：削弱丹药属性。false时保持原属性)")
+        danyaoBalance = builder.comment("Bật tính năng cân bằng thuốc (mặc định là true: làm suy yếu thuộc tính của thuốc. False giữ nguyên thuộc tính ban đầu).")
                 .define("danyaoBalance", true);
-        enablebalance = builder.comment("是否开启魂核数值平衡(默认为true：削弱魂核属性。false时保持原属性)")
+        enablebalance = builder.comment("Bật tính năng cân bằng chỉ số Lõi Linh Hồn (mặc định là true: làm suy yếu các thuộc tính của Lõi Linh Hồn. False giữ nguyên các thuộc tính ban đầu).")
                 .define("hunhe_balance", true);
-        hungupingheng = builder.comment("是否开启魂骨爆率平衡(默认为true：增加魂骨爆率。false时保持原爆率)")
+        hungupingheng = builder.comment("Bật tính năng cân bằng tỷ lệ rơi Xương Linh Hồn (mặc định là true: tăng tỷ lệ rơi Xương Linh Hồn. False giữ nguyên tỷ lệ rơi ban đầu).")
                 .define("hungu_balance", true);
-        jingyanbalance = builder.comment("是否开启最大经验数值平衡(默认为true：增加最大经验值。false时保持原属性)")
+        jingyanbalance = builder.comment("Cho phép cân bằng giá trị kinh nghiệm tối đa (mặc định là true: tăng giá trị kinh nghiệm tối đa. False giữ nguyên thuộc tính ban đầu).")
                 .define("jingyan_balance", true);
-        slowGrowth = builder.comment("是否开启草药种子生长平衡(默认为true：开启。false时保持原生长速率)")
+        slowGrowth = builder.comment("Bật hoặc tắt chế độ cân bằng tốc độ tăng trưởng hạt giống thảo mộc (mặc định là true: bật. False: duy trì tốc độ tăng trưởng ban đầu).")
                 .define("slow_growth", true);
-        tickcoldhot = builder.comment("冰火两仪眼刷仙草频率，单位为tick（20 tick = 1 秒）")
+        tickcoldhot = builder.comment("Tần suất mà Nhãn Âm Dương Băng Dương tìm kiếm thảo dược bất tử được đo bằng tích tắc (20 tích tắc = 1 giây).")
                 .defineInRange("tickcoldhot", 36000, 100, Integer.MAX_VALUE);
 
         // 是否启用概率生成
         ENABLE_HUNHUAN_PROBABILITY = builder
-                .comment("是否启用基于年限的魂环概率生成")
+                .comment("Cho phép tạo xác suất nhận Nhẫn Linh Hồn dựa trên độ tuổi?")
                 .define("enableHunhuanProbability", true);
 
         // 各阶段概率配置
         TIER1_PROB = builder
-                .comment("10年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 10 năm")
                 .defineInRange("hunhuanTier1Prob", 0.6, 0.0, 1.0);
         TIER2_PROB = builder
-                .comment("100年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 100 năm")
                 .defineInRange("hunhuanTier2Prob", 0.5, 0.0, 1.0);
         TIER3_PROB = builder
-                .comment("1000年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 1000 năm")
                 .defineInRange("hunhuanTier3Prob", 0.4, 0.0, 1.0);
         TIER4_PROB = builder
-                .comment("10000年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 10.000 năm")
                 .defineInRange("hunhuanTier4Prob", 0.35, 0.0, 1.0);
         TIER5_PROB = builder
-                .comment("100000年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 100.000 năm")
                 .defineInRange("hunhuanTier5Prob", 0.3, 0.0, 1.0);
         TIER6_PROB = builder
-                .comment("1000000年内魂环生成概率")
+                .comment("Xác suất tạo ra Nhẫn Linh Hồn trong vòng 1.000.000 năm")
                 .defineInRange("hunhuanTier6Prob", 0.32, 0.0, 1.0);
         TIER7_PROB = builder
-                .comment("10000000年以上魂环生成概率")
+                .comment("Xác suất tạo ra một Chiếc Nhẫn Linh Hồn có tuổi thọ từ 10.000.000 năm trở lên.")
                 .defineInRange("hunhuanTier7Prob", 0.70, 0.0, 1.0);
 
 
         // 新增爆率配置项
-        builder.push("魂骨爆率配置").comment("这些配置只在魂骨平衡为true时生效(本功能供开发测试用，私自修改导致存档问题不予解决！)");
-        baseDropChance = builder.comment("基础爆率(当魂骨平衡为false时使用)")
+        builder.push("魂骨爆率配置").comment("Các cấu hình này chỉ có hiệu lực khi Soul Bone Balance được đặt thành true (tính năng này chỉ dành cho mục đích phát triển và thử nghiệm; bất kỳ sự cố nào về tệp lưu do sửa đổi trái phép sẽ không được giải quyết!).");
+        baseDropChance = builder.comment("Tỷ lệ rơi đồ cơ bản (được sử dụng khi Soul Bone Balance là false)")
                 .defineInRange("baseDropChance", 1.0/16, 0.0, 1.0);
-        dropChanceTier1 = builder.comment("10-99年魂兽的魂骨爆率")
-                .defineInRange("tier1", 0.001, 0.0, 1.0);
-        dropChanceTier2 = builder.comment("100-999年魂兽的魂骨爆率")
-                .defineInRange("tier2", 0.002, 0.0, 1.0);
-        dropChanceTier3 = builder.comment("1000-9999年魂兽的魂骨爆率")
-                .defineInRange("tier3", 0.004, 0.0, 1.0);
-        dropChanceTier4 = builder.comment("10000-99999年魂兽的魂骨爆率")
-                .defineInRange("tier4", 0.006, 0.0, 1.0);
-        dropChanceTier5 = builder.comment("100000-999999年魂兽的魂骨爆率")
-                .defineInRange("tier5", 0.01, 0.0, 1.0);
-        dropChanceTier6 = builder.comment("1000000-9999999年魂兽的魂骨爆率")
-                .defineInRange("tier6", 0.01, 0.0, 1.0);
-        dropChanceTier7 = builder.comment("10000000年魂兽的魂骨爆率")
-                .defineInRange("tier7", 0.10, 0.0, 1.0);
+        dropChanceTier1 = builder.comment("Tỷ lệ rơi Xương Linh Hồn Quái Thú từ 10 đến 99 năm")
+                .defineInRange("tier1", 0.1, 0.0, 1.0);
+        dropChanceTier2 = builder.comment("Tỷ lệ rơi Xương Linh Hồn của Linh Thú từ 100 đến 999 năm")
+                .defineInRange("tier2", 0.2, 0.0, 1.0);
+        dropChanceTier3 = builder.comment("Tỷ lệ rơi Xương Linh Hồn của Linh Thú trong các năm 1000-9999")
+                .defineInRange("tier3", 0.3, 0.0, 1.0);
+        dropChanceTier4 = builder.comment("Tỷ lệ rơi Xương Linh Hồn của Linh Thú trong khoảng thời gian 10000-99999 năm.")
+                .defineInRange("tier4", 0.4, 0.0, 1.0);
+        dropChanceTier5 = builder.comment("Tỷ lệ rơi Xương Linh Hồn của Linh Thú trong khoảng thời gian 100.000-999.999 năm")
+                .defineInRange("tier5", 0.5, 0.0, 1.0);
+        dropChanceTier6 = builder.comment("Tỷ lệ rơi Xương Linh Hồn của Linh Thú trong các năm 1.000.000-9.999.999")
+                .defineInRange("tier6", 0.6, 0.0, 1.0);
+        dropChanceTier7 = builder.comment("Tỷ lệ rơi xương linh hồn từ quái thú linh hồn 10.000.000 năm tuổi")
+                .defineInRange("tier7", 0.7, 0.0, 1.0);
         builder.pop();
         CONFIG = builder.build();
     }

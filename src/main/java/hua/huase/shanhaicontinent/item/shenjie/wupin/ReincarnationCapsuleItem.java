@@ -48,7 +48,7 @@ public class ReincarnationCapsuleItem extends Item {
                 player.addEffect(new MobEffectInstance(
                         MobEffects.GLOWING, 200, 0, false, false, true));
 
-                player.sendSystemMessage(Component.literal("转生开始！10秒后完成转生，玩家死亡会导致转生中断。").withStyle(ChatFormatting.GOLD));
+                player.sendSystemMessage(Component.literal("Quá trình tái sinh bắt đầu! Quá trình tái sinh sẽ hoàn tất trong 10 giây. Cái chết của người chơi sẽ làm gián đoạn quá trình tái sinh.s。").withStyle(ChatFormatting.GOLD));
             });
         }
         return super.finishUsingItem(stack, level, entity);
@@ -73,7 +73,7 @@ public class ReincarnationCapsuleItem extends Item {
         player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(cap -> {
             if (cap.getReincarnationTimer() > 0) {
                 cap.setReincarnationInterrupted(true);
-                player.sendSystemMessage(Component.literal("转生中断！").withStyle(ChatFormatting.RED));
+                player.sendSystemMessage(Component.literal("Quá trình luân hồi bị gián đoạn!").withStyle(ChatFormatting.RED));
                 player.removeEffect(MobEffects.GLOWING);
             }
         });
@@ -103,7 +103,7 @@ public class ReincarnationCapsuleItem extends Item {
         oldCap.deserializeNBT(newCap.serializeNBT());
         SynsAPI.synsPlayerAttribute(player);
         player.removeEffect(MobEffects.GLOWING);
-        player.sendSystemMessage(Component.literal("转生成功！").withStyle(ChatFormatting.LIGHT_PURPLE));
+        player.sendSystemMessage(Component.literal("Quá trình tái sinh thành công!").withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
     private static void addReincarnationDebuffs(ServerPlayer player) {

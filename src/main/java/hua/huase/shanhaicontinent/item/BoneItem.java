@@ -43,7 +43,7 @@ public class BoneItem extends Item implements ItemAttribute {
         } else {
             int count = itemStack.getOrCreateTag().getInt(ENHANCE_COUNT_KEY);
             ChatFormatting color = count >= MAX_ENHANCE_COUNT ? ChatFormatting.RED : ChatFormatting.GREEN;
-            tooltip.add(Component.literal("强化次数: " + count + "/" + MAX_ENHANCE_COUNT).withStyle(color));
+            tooltip.add(Component.literal("Số lượng cải tiến: " + count + "/" + MAX_ENHANCE_COUNT).withStyle(color));
             tooltip.add(Component.translatable("默认o键打开属性面板，可在属性面板装配").withStyle(ChatFormatting.WHITE));
         }
     }

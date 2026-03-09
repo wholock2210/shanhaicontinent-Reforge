@@ -96,6 +96,7 @@ public class PlayerAttributeCapability extends CapabilityAttributeBase implement
         wuhunListsnameall.add(WuHunName.jingubang);
         wuhunListsnameall.add(WuHunName.huang);
         wuhunListsnameall.add(WuHunName.haotianchui);
+        wuhunListsnameall.add(WuHunName.hacdiemtula);
 
         Collections.sort(wuhunListsnameall);
     }

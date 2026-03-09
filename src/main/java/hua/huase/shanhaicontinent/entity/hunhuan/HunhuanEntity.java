@@ -108,15 +108,15 @@ public class HunhuanEntity extends Entity {
     private Component createStartMessage(boolean isShenci, int nianxian) {
         if (isShenci) {
             ShenciBonus bonus = ShenciBonus.getBonus(nianxian);
-            return Component.literal("开始吸收" + bonus.getTypeName() + "！年限: ")
+            return Component.literal("Bắt đầu hấp thụ" + bonus.getTypeName() + " Niên hạn: ")
                     .append(Component.literal(String.format("%,d", nianxian)).withStyle(ChatFormatting.GOLD))
-                    .append(Component.literal(" (无需消耗精神力)"))
+                    .append(Component.literal(" (Không cần tiêu hao năng lượng tinh thần.)"))
                     .withStyle(bonus.getColor());
         } else {
             double jingshenli = calculateRequiredJingshenli(nianxian);
-            return Component.literal("开始吸收魂环！当前魂环年限为: ")
+            return Component.literal("Hãy bắt đầu hấp thụ hồn hoàn! niên hạn hồn hoàn là:: ")
                     .append(Component.literal(String.format("%,d", nianxian)).withStyle(ChatFormatting.GOLD))
-                    .append(Component.literal(" 最少消耗精神力: "))
+                    .append(Component.literal(" tổng tinh thần lực cần tiêu hao: "))
                     .append(Component.literal(String.format("%.1f", jingshenli)).withStyle(ChatFormatting.RED))
                     .withStyle(ChatFormatting.YELLOW);
         }
@@ -124,10 +124,10 @@ public class HunhuanEntity extends Entity {
 
     private Component createProgressMessage(boolean isShenci, int nianxian, int progress) {
         ShenciBonus bonus = isShenci ? ShenciBonus.getBonus(nianxian) : null;
-        String hunhuanType = isShenci ? bonus.getTypeName() : "魂环";
+        String hunhuanType = isShenci ? bonus.getTypeName() : "hồn hoàn";
         ChatFormatting color = isShenci ? bonus.getColor() : ChatFormatting.YELLOW;
 
-        return Component.literal(hunhuanType + "吸收进度: ")
+        return Component.literal("Tiến trình hấp thu " + hunhuanType + " : ")
                 .append(Component.literal(progress + "%").withStyle(ChatFormatting.GOLD))
                 .withStyle(color);
     }
@@ -206,7 +206,7 @@ public class HunhuanEntity extends Entity {
         }
 
         public String getCompletionMessage() {
-            return typeName + "吸收完成！获得额外加成！";
+            return typeName + "Quá trình hấp thụ hoàn tất!";
         }
 
         public static ShenciBonus getBonus(int nianxian) {

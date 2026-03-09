@@ -90,7 +90,7 @@ public class XiuLuoSword extends WuqiBase {
         // 检查冷却时间
         if (player.getCooldowns().isOnCooldown(this)) {
             if (level.isClientSide) {
-                player.sendSystemMessage(Component.literal("技能冷却中，还剩 " + (player.getCooldowns().getCooldownPercent(this, 0) * 30) + " 秒！"));
+                player.sendSystemMessage(Component.literal("Kỹ năng đang trong thời gian hồi chiêu, còn lại " + (player.getCooldowns().getCooldownPercent(this, 0) * 30) + " giây !"));
             }
             return InteractionResultHolder.fail(stack);
         }
@@ -288,13 +288,13 @@ public class XiuLuoSword extends WuqiBase {
                 BASE_MINGHZHONG,
                 (currentMingzhong - BASE_MINGHZHONG),
                 currentMingzhong)).withStyle(ChatFormatting.YELLOW));
-        list.add(Component.literal("属性解释：例子：物理攻击：基础属性(不变)，(强化属性(单独的强化数值))，[最终属性（基础属性 + 强化属性）]").withStyle(ChatFormatting.GRAY));
+        list.add(Component.literal("Giải thích thuộc tính: Ví dụ: Tấn công vật lý: Thuộc tính cơ bản (không thay đổi), (Thuộc tính nâng cao (giá trị nâng cao riêng)), [Thuộc tính cuối cùng (Thuộc tính cơ bản + Thuộc tính nâng cao)]").withStyle(ChatFormatting.GRAY));
 
 
-        list.add(Component.literal("右键释放修罗神力，技能冷却时间：30秒").withStyle(ChatFormatting.GOLD));
-        list.add(Component.literal("攻击距离玩家8格以内的所有生物").withStyle(ChatFormatting.GRAY));
-        list.add(Component.literal("玩家获得嗜血Buff，持续1分钟，期间击杀一个实体物攻增强3%，最大增幅为765%").withStyle(ChatFormatting.GRAY));
-        list.add(Component.literal("若玩家身上拥有嗜血buff则给buff增加15秒的时长").withStyle(ChatFormatting.GRAY));
+        list.add(Component.literal("Nhấp chuột phải để giải phóng sức mạnh của Asura. Thời gian hồi chiêu: 30 giây.").withStyle(ChatFormatting.GOLD));
+        list.add(Component.literal("Tấn công tất cả sinh vật trong phạm vi 8 ô vuông xung quanh người chơi.").withStyle(ChatFormatting.GRAY));
+        list.add(Component.literal("Người chơi nhận được hiệu ứng Khát Máu kéo dài 1 phút. Trong thời gian này, tiêu diệt một mục tiêu sẽ tăng sát thương vật lý lên 3%, với mức tăng tối đa là 765%.").withStyle(ChatFormatting.GRAY));
+        list.add(Component.literal("Nếu người chơi đang có hiệu ứng Khát Máu, thời gian hiệu lực của hiệu ứng sẽ được tăng thêm 15 giây.").withStyle(ChatFormatting.GRAY));
 
         CompoundTag nbt = itemStack.getTag();
         if (nbt != null && nbt.contains("sh_playername")) {

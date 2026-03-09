@@ -33,8 +33,8 @@ public class dengjijiayi extends Item {
     @Override
     public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag tooltipFlag) {
         super.appendHoverText(itemStack, level, list, tooltipFlag);
-        list.add(Component.literal("右键使用测试丹药，直接增加一级").withStyle(ChatFormatting.DARK_RED));
-        list.add(Component.literal("注意！玩家的其他属性不提升！").withStyle(ChatFormatting.DARK_RED));
-        list.add(Component.literal("注意！使用该丹药提升的等级不可完成成就！").withStyle(ChatFormatting.DARK_RED));
+        list.add(Component.literal("Nhấp chuột phải để sử dụng viên thuốc thử nghiệm, nó sẽ trực tiếp tăng cấp độ lên một.").withStyle(ChatFormatting.DARK_RED));
+        list.add(Component.literal("Lưu ý! Điều này sẽ không làm tăng các thuộc tính khác của người chơi!").withStyle(ChatFormatting.DARK_RED));
+        list.add(Component.literal("Lưu ý! Cấp độ đạt được khi sử dụng loại thần dược này không thể dùng để hoàn thành các thành tích!").withStyle(ChatFormatting.DARK_RED));
     }
 }

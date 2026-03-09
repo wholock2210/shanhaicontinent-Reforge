@@ -345,6 +345,8 @@ public class ModEnLanguageProvider extends LanguageProvider {
         this.add(ItemInit.jineng_htsc_6.get(),"§esoulSkills：§b《haotianProtector》 §f------ martialSoul：§e《haotianHolyHammer》");
         this.add(ItemInit.jineng_htsc_7.get(),"§esoulSkills：§b《lingTianSStrike》 §f------ martialSoul：§e《haotianHolyHammer》");
         this.add(ItemInit.jineng_htsc_8.get(),"§esoulSkills：§b《fallingThunderHammer》 §f------ martialSoul：§e《haotianHolyHammer》");
+        this.add(ItemInit.jineng_hdtl_0.get(),"§evõ hồn-§e hỏa diễm tu la： §f------ §e《Cực hạn hồn khí》");
+        this.add(ItemInit.jineng_hdtl_1.get(),"§eHồn kỹ：§b《Vạn kiếm quy tông》 §f------ Vũ hồn：§e《Hắc Diễm tu la");
         this.add(ItemInit.guoshi_haotianchui    .get(),"§4<haotianHolyHammer> §f------ §c《wuhunFruit》");
         this.add(ItemInit.guoshi_huang          .get(),"§4<huang> §f------ §c《wuhunFruit》");
         this.add(ItemInit.guoshi_jingubang      .get(),"§4<breakingTheHeavenlyGodStick> §f------ §c《wuhunFruit》");

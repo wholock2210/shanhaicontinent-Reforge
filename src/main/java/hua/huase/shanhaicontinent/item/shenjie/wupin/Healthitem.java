@@ -41,6 +41,6 @@ public class Healthitem extends Item {
     // 可选：添加物品提示
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.literal("测试道具-右键一键回满血").withStyle(ChatFormatting.GRAY));
+        list.add(Component.literal("Mục kiểm tra - Nhấp chuột phải để khôi phục hoàn toàn sức khỏe").withStyle(ChatFormatting.GRAY));
     }
 }

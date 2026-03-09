@@ -24,7 +24,7 @@ public class ColdiceItem extends BucketItem {
         if (!player.getAbilities().instabuild) {
             if (!level.isClientSide) {
                 player.displayClientMessage(
-                        Component.literal("不可使用").withStyle(ChatFormatting.RED),
+                        Component.literal("Không thể sử dụng được").withStyle(ChatFormatting.RED),
                         true
                 );
             }

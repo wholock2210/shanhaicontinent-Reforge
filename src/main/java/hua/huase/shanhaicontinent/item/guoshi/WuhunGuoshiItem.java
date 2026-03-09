@@ -14,6 +14,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
+
+import java.lang.reflect.WildcardType;
 import java.util.List;
 
 public class WuhunGuoshiItem extends Item {
@@ -35,6 +37,8 @@ public class WuhunGuoshiItem extends Item {
             case WuHunName.jingubang:
                 itemStack = new ItemStack(ItemInit.guoshi_jingubang.get());
                 break;
+            case WuHunName.hacdiemtula:
+                itemStack = new ItemStack(ItemInit.guoshi_hacdiemtula.get());
         }
         return itemStack;
     }

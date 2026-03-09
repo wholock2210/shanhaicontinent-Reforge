@@ -9,6 +9,7 @@ import hua.huase.shanhaicontinent.capability.playerattribute.PlayerAttributeCapa
 import hua.huase.shanhaicontinent.event.api.LeveRenderPlaerEventPostEvent;
 import hua.huase.shanhaicontinent.network.NetworkHandler;
 import hua.huase.shanhaicontinent.network.client.SyncWuhunDataPacket;
+import hua.huase.shanhaicontinent.potion.PotionAnimation;
 import hua.huase.shanhaicontinent.render.SHRenderApi;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -18,6 +19,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,7 +34,6 @@ import org.joml.Matrix4f;
 
 
 import java.util.*;
-import java.util.List;
 
 import static hua.huase.shanhaicontinent.SHMainBus.HUNHUAN;
 //玩家的魂环渲染
@@ -79,8 +81,20 @@ public class PWRenderPlayerEvent {
     @SubscribeEvent
     public static void renderPlayerEventPost(LeveRenderPlaerEventPostEvent event) {
 
-        renderHunhuan(event.getPlayer(), event.getPartialTick(), event.getPoseStack(),
-                100, 1);
+        PoseStack poseStack = event.getPoseStack();
+        Player player = event.getPlayer();
+        player.getCapability(PlayerAttributeCapabilityProvider.CAPABILITY).ifPresent(capability -> {
+                int count = 0;
+                if (capability.getWuhunList() != null) {
+                    for (MonsterAttributeCapability monsterAttributeCapability : capability.getWuhunList()) {
+                        renderHunhuan(player, event.getPartialTick(), poseStack, monsterAttributeCapability.getNianxian(), count);
+                        count++;
+                    }
+                }
+            }
+        );
+
+        //renderHunhuan(event.getPlayer(), event.getPartialTick(), event.getPoseStack(),100, 1);
     }
 
 

@@ -2,6 +2,8 @@ package hua.huase.shanhaicontinent.util.jinengmianban;
 
 
 import hua.huase.shanhaicontinent.init.ShanhaicontinentModMenus;
+import hua.huase.shanhaicontinent.item.jineng.hacdiemtula.Jineng_HDTL_0;
+import hua.huase.shanhaicontinent.item.jineng.hacdiemtula.Jineng_HDTL_1;
 import hua.huase.shanhaicontinent.item.jineng.haotianshengchui.*;
 import hua.huase.shanhaicontinent.item.jineng.huang.*;
 import hua.huase.shanhaicontinent.item.jineng.jinggubang.*;
@@ -178,7 +180,9 @@ public class JinengmianbanMenu extends AbstractContainerMenu implements Supplier
                 item instanceof Jineng_Huang_4 ||
                 item instanceof Jineng_Huang_6||
                 item instanceof Jineng_Huang_7||
-                item instanceof Jineng_Huang_8;
+                item instanceof Jineng_Huang_8||
+                item instanceof Jineng_HDTL_0||
+                item instanceof Jineng_HDTL_1;
     }
 
     private void saveToPlayerNBT(Player player) {

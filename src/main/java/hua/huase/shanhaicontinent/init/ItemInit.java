@@ -6,6 +6,8 @@ import hua.huase.shanhaicontinent.item.*;
 import hua.huase.shanhaicontinent.item.armor.SHArmorBaseItem;
 import hua.huase.shanhaicontinent.item.armor.SHArmorMaterial;
 import hua.huase.shanhaicontinent.item.guoshi.WuhunGuoshiItem;
+import hua.huase.shanhaicontinent.item.jineng.hacdiemtula.Jineng_HDTL_0;
+import hua.huase.shanhaicontinent.item.jineng.hacdiemtula.Jineng_HDTL_1;
 import hua.huase.shanhaicontinent.item.jineng.haotianshengchui.*;
 import hua.huase.shanhaicontinent.item.jineng.huang.*;
 import hua.huase.shanhaicontinent.item.jineng.jinggubang.*;
@@ -107,6 +109,10 @@ public class  ItemInit {
     public static final RegistryObject<Item> jineng_htsc_7 = ITEMS.register("jineng_htsc_7", () -> new Jineng_HTSC_7(new Item.Properties()));
     public static final RegistryObject<Item> jineng_htsc_8 = ITEMS.register("jineng_htsc_8", () -> new Jineng_HTSC_8(new Item.Properties()));
 
+    public static final RegistryObject<Item> jineng_hdtl_0 = ITEMS.register("jineng_hdtl_0", () -> new Jineng_HDTL_0(Tiers.NETHERITE, 1, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> jineng_hdtl_1 = ITEMS.register("jineng_hdtl_1", () -> new Jineng_HDTL_1(new Item.Properties()));
+
+
 
     public static HashMap<String,ArrayList<RegistryObject<Item>>> JINENGMAP = new HashMap();
     static {
@@ -146,11 +152,20 @@ public class  ItemInit {
         Jienglist3.add(jineng_htsc_8);
         JINENGMAP.put(WuHunName.haotianchui,Jienglist3);
 
+        ArrayList<RegistryObject<Item>> Jienglist4 = new ArrayList<>();
+        Jienglist4.add(jineng_hdtl_0);
+        Jienglist4.add(jineng_hdtl_1);
+        JINENGMAP.put(WuHunName.hacdiemtula, Jienglist4);
+
+
+
     }
 
     public static final RegistryObject<Item> guoshi_huang = ITEMS.register("guoshi_huang",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.huang));
     public static final RegistryObject<Item> guoshi_jingubang = ITEMS.register("guoshi_jingubang",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.jingubang));
     public static final RegistryObject<Item> guoshi_haotianchui = ITEMS.register("guoshi_haotianchui",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.haotianchui));
+    public static final RegistryObject<Item> guoshi_hacdiemtula = ITEMS.register("guoshi_hacdiemtula",() -> new WuhunGuoshiItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWuhunname(WuHunName.hacdiemtula));
+
 
 
     public static final RegistryObject<Item> danyao_qihundan = ITEMS.register("danyao_qihundan", () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenli(100).setMaxjingshenli(10));
@@ -178,9 +193,9 @@ public class  ItemInit {
     public static final RegistryObject<Item> danyao_zengqidan          = ITEMS.register("danyao_zengqidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setJingshenlibaifenbi(5));
 
 
-    public static final RegistryObject<Item> danyao_yishendan          = ITEMS.register("danyao_yishendan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxjingshenli(300).setMaxused(10));
-    public static final RegistryObject<Item> danyao_xisuidan          = ITEMS.register("danyao_xisuidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxshengming(200).setKangbao(3).setWufang(100).setMaxused(10));
-    public static final RegistryObject<Item> danyao_longlidan          = ITEMS.register("danyao_longlidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWugong(66).setWuchuan(10).setBaojishanghai(2).setBaojilv(2).setMaxused(10));
+    public static final RegistryObject<Item> danyao_yishendan          = ITEMS.register("danyao_yishendan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxjingshenli(300));
+    public static final RegistryObject<Item> danyao_xisuidan          = ITEMS.register("danyao_xisuidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setMaxshengming(200).setKangbao(3).setWufang(100));
+    public static final RegistryObject<Item> danyao_longlidan          = ITEMS.register("danyao_longlidan",           () -> new DanYaoItem(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().build())).setWugong(66).setWuchuan(10).setBaojishanghai(2).setBaojilv(2));
 
     public static ArrayList<RegistryObject<Item>> DANYAOLIST = new ArrayList<>();
     static {

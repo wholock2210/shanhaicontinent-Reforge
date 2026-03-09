@@ -347,6 +347,8 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ItemInit.jineng_htsc_6.get(),"§e魂技：§b《浩天护体》 §f------ 武魂：§e《浩天圣锤》");
         this.add(ItemInit.jineng_htsc_7.get(),"§e魂技：§b《凌天一击》 §f------ 武魂：§e《浩天圣锤》");
         this.add(ItemInit.jineng_htsc_8.get(),"§e魂技：§b《落天雷锤》 §f------ 武魂：§e《浩天圣锤》");
+        this.add(ItemInit.jineng_hdtl_0.get(),"§evõ hồn-§e hỏa diễm tu la： §f------ §e《Cực hạn hồn khí》");
+        this.add(ItemInit.jineng_hdtl_1.get(),"§eHồn kỹ：§b《Vạn kiếm quy tông》 §f------ Vũ hồn：§e《Hắc Diễm tu la");
         this.add(ItemInit.guoshi_haotianchui    .get(),"§4<浩天圣锤> §f------ §c《武魂果实》");
         this.add(ItemInit.guoshi_huang          .get(),"§4<荒> §f------ §c《武魂果实》");
         this.add(ItemInit.guoshi_jingubang      .get(),"§4<破天神棍> §f------ §c《武魂果实》");

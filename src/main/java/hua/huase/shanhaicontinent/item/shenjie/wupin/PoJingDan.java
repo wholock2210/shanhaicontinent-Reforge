@@ -39,7 +39,7 @@ public class PoJingDan extends Item {
             if (playerLevel > 50) {
                 doublePlayerAttributes(player);
                 stack.shrink(1);
-                player.sendSystemMessage(Component.literal("丹药能量已被吸收").withStyle(ChatFormatting.GREEN));
+                player.sendSystemMessage(Component.literal("Năng lượng của thần dược đã được hấp thụ.").withStyle(ChatFormatting.GREEN));
             } else {
                 player.sendSystemMessage(Component.translatable("不能吸收"));
                 return stack;
